@@ -1,0 +1,46 @@
+{
+  "operation_id": "4b727d5c-9cb1-4b39-ac27-f034b405d49e",
+  "device_id": "4553502d4952495301001c2904d0ad2a",
+  "action": "firmware.ota",
+  "status": "succeeded",
+  "error": null,
+  "result": {
+    "job_id": 1,
+    "bytes": 1846784,
+    "sha256": "b460d8c9a0e7a759c9b5ea6e4095974a5657f70a09debea0341eeba7583e1027",
+    "partition": "ota_0",
+    "restart_required": true,
+    "completion_evidence": "end_response",
+    "validated_image": {
+      "sha256": "b460d8c9a0e7a759c9b5ea6e4095974a5657f70a09debea0341eeba7583e1027",
+      "size": 1846784,
+      "chip_id": 32,
+      "project_name": "lan_screen",
+      "version": "1.0.1",
+      "elf_sha256": "ef3eb722b7bdb624252c189fcd354d19406a5f0e1820e8b98f1db24a7feead91"
+    },
+    "execution_mode": "recovery",
+    "validation": {
+      "mode": "elf_sha256",
+      "expected_field": "elf_sha256",
+      "actual_field": "firmware_sha256",
+      "expected": "ef3eb722b7bdb624252c189fcd354d19406a5f0e1820e8b98f1db24a7feead91",
+      "actual": "ef3eb722b7bdb624252c189fcd354d19406a5f0e1820e8b98f1db24a7feead91"
+    },
+    "planned_restart_ms": 250,
+    "previous_boot_id": 18133473855057442534,
+    "recovery_boot_id": 11248950856810052658,
+    "recovery": {
+      "device_id": "4553502d4952495301001c2904d0ad2a",
+      "boot_id": 11248950856810052658,
+      "recovery_version": "0.1.4",
+      "partition_table_sha256": "4f8786d12001684a3c02385f31ef167247827bd73b744801494a8c5851bc7231",
+      "boot_id_text": "11248950856810052658"
+    },
+    "boot_id": 1598488517393618455,
+    "healthy": true,
+    "previous_boot_id_text": "18133473855057442534",
+    "recovery_boot_id_text": "11248950856810052658",
+    "boot_id_text": "1598488517393618455"
+  }
+}
