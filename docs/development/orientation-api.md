@@ -35,3 +35,18 @@
 用户再次确认竖直、Type-C 朝下，并轻轻倾斜后放稳。后续数据 +Y 为主（约 0.93–0.96g），+Z 为较小倾斜分量；刚才 +Z 快照采于实体姿态改变前。重新采样中位值：[0.0677490234375, 0.9212646484375, 0.3602294921875].
 
 确认屏幕坐标与 IMU XYZ 一致：+Y 朝顶部，+Z 朝屏幕外，右手坐标的 +X 朝右。静止时加速度与朝下方向相反。Type-C 朝下时应返回 down_face=bottom，rotation_cw_deg=0；左侧朝下则 rotation_cw_deg=90，顶部朝下为180，右侧朝下为270。屏幕朝上时朝下的是 back，屏幕朝下时朝下的是 screen，均不由重力决定画面旋转角。
+
+## 接口契约
+
+- `GET /api/orientation`：独立姿态 JSON。
+- `GET /api/sensors` 与 `ws://IP:81/ws/sensors`：兼容原有字段，新增同格式 `orientation` 对象。
+- 姿态约20Hz计算，传感器WS约10Hz推送，HTTP快照不会重算或修改状态。
+- `down_face`：bottom/top/left/right/screen/back/unknown；`rotation_cw_deg`：0/90/180/270/null。
+- `valid=false` 时不切换画面；valid=true但角度null表示平放，只确定了正反面，不能确定画面平面内的旋转角。
+- `gravity_down`：屏幕坐标下朝下单位向量；`screen_tilt_deg`：屏幕朝上水平为0，竖直为90，朝下为180。
+- confidence是主轴单位分量，不是概率。进入新方向>=0.82并持续200ms，保持已确定同向>=0.70；20Hz EMA alpha=0.25。
+- 0.8–1.2g之外、gyro合速度>45°/s、数据错误或超过250ms未更新时不提供旋转建议。并非精密航姿系统，不能区分所有动态加速度与重力。
+- 固件保持原始480×480 JPEG显示；调用者依旋转建议生成自己的图像。Pillow使用original.rotate(-rotation_cw_deg)，遇到null保留上次有效角度。
+- 浏览器首页显示实时姿态和用法；设备Sensors页显示Down/Rotate；Python Screen.orientation()提供快照。
+
+已完成的源码检查：六面与旋转方向、对角倾斜、运动、自由落体、NaN和时钟回绕的UBSan测试通过；真实LVGL页面交互和两项客户端测试通过，PNG排版已检查；浏览器脚本使用Node --check语法检查通过。最新构建 20261003-223449-build-4775 成功，应用1,852,800 bytes。实机结果待下段记录。
