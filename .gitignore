@@ -2,11 +2,6 @@
 .idf-install*.log
 .codex-runs/
 dist/
-# Vendor SDK checkouts are reproducible dependencies. Track our application
-# source in-place so existing build and Gateway paths stay stable.
+# SDK checkouts and build artifacts are dependencies; the firmware is a gitlink.
 vendor/*
 !vendor/esp-mosaico-vibe/
-vendor/esp-mosaico-vibe/*
-!vendor/esp-mosaico-vibe/projects/
-vendor/esp-mosaico-vibe/projects/*
-!vendor/esp-mosaico-vibe/projects/lan_screen/

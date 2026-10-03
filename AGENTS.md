@@ -30,3 +30,11 @@
 - 用户已授权开发独立 LAN Screen 固件，取代早期 Lua 计数示例作为当前任务。需求和已确认触摸交互见 [LAN Screen 基准](docs/development/lan-screen.md)。
 - PC 自生成画面经 API 推送；480×480、30 FPS 是待实测目标。设备触屏选 Wi-Fi、英文键盘输入密码；顶边下滑设置、底边上滑全局返回、信息页左右切换。REST/WS 输出传感器。
 - 原生工程在 `vendor/esp-mosaico-vibe/projects/lan_screen`，遵循其 AGENTS 和保留 Vibe Mode 的集成契约。不能把构建通过当作刷机或性能验收。
+
+## 版本控制（用户要求，2026-10-03）
+
+- 每次逻辑变动都必须提交 Git；不能只修改文件而不 commit。提交应明确描述改动。
+- 根仓库记录资料和固件子模块指针；固件代码在 `vendor/esp-mosaico-vibe` 子仓库提交。
+- 固件提交后运行 `python3 scripts/save-firmware-history.py`，并在根仓库提交子模块指针及完整 Git bundle。这样本地应用提交即使未发布到官方远程，仍能从根项目恢复。
+- 从根项目新克隆后运行 `python3 scripts/restore-firmware.py`；不要假定官方 upstream 包含我们的本地应用提交。工具不会覆盖已有不同 HEAD 的固件工作区。
+- 编译输出、Python 环境、下载依赖、原始运行日志不纳入源码提交；提交依赖锁及必要的验证摘要。不要未经用户要求推送到公开远程。

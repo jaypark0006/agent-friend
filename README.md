@@ -8,4 +8,10 @@
 - [工程、API、构建和测试说明](vendor/esp-mosaico-vibe/projects/lan_screen/README.md)
 - [官方硬件参考及版本差异](docs/esp-mosaico-reference.md)
 
-2026-10-03：固件已通过 Vibe Mode 成功写入实机并正常启动运行（Boot ID: 7243000534277443063）；屏幕点亮并显示配网引导页面，待实机触屏配网与 480×480 / 30 FPS 局域网推流验证。
+2026-10-03：1.0.0 已在实机运行，6 帧局域网推流通过。1.0.1 增加触摸修复和 API 入口；最新交付证据见 [验证记录](docs/development/lan-screen-validation.md)。
+
+设备当前地址：[API 说明和画面上传](http://192.168.5.61/)。IP 以屏幕实际显示为准。
+
+项目已纳入本地 Git。固件作为子模块独立提交，根仓库附带完整 Git bundle，保存未发布到官方仓库的应用提交。新克隆后运行 `python3 scripts/restore-firmware.py` 恢复固件及两个必要的上游子模块；构建需按工程 README 配置固定版本 ESP-IDF。每次固件修改提交后运行 `python3 scripts/save-firmware-history.py`，再提交根仓库指针和 bundle。
+
+[另一位 AI 的改动复查与本次修复](docs/development/2026-10-03-review-and-fixes.md)。
