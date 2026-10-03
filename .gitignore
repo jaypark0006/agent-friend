@@ -1,0 +1,12 @@
+.DS_Store
+.idf-install*.log
+.codex-runs/
+dist/
+# Vendor SDK checkouts are reproducible dependencies. Track our application
+# source in-place so existing build and Gateway paths stay stable.
+vendor/*
+!vendor/esp-mosaico-vibe/
+vendor/esp-mosaico-vibe/*
+!vendor/esp-mosaico-vibe/projects/
+vendor/esp-mosaico-vibe/projects/*
+!vendor/esp-mosaico-vibe/projects/lan_screen/

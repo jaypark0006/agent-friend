@@ -1,0 +1,37 @@
+{
+  "observed_at": "2026-10-02T19:19:29+08:00",
+  "mac_console_locked": true,
+  "usb_serial_ports": [],
+  "usb_devices": [
+    {
+      "name": "USB2816 Smart Hub",
+      "vendor": "Microchip",
+      "vid": "0x0424",
+      "pid": "0x2816",
+      "location_id": "0x00100000"
+    },
+    {
+      "name": "Hub Feature Controller",
+      "vendor": "Microchip",
+      "vid": "0x0424",
+      "pid": "0x284c",
+      "location_id": "0x00160000"
+    },
+    {
+      "name": "USB5816 Smart Hub",
+      "vendor": "Microchip",
+      "vid": "0x0424",
+      "pid": "0x5816",
+      "location_id": "0x00200000"
+    },
+    {
+      "name": "USB 10_100_1000 LAN",
+      "vendor": "Realtek",
+      "vid": "0x0bda",
+      "pid": "0x8153",
+      "location_id": "0x00240000"
+    }
+  ],
+  "mosaico_identity_verified": false,
+  "firmware_modified": false
+}

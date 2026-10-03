@@ -1,0 +1,32 @@
+# 项目长期参考
+
+## 用户确定的基础
+
+- 2026-10-02，用户指定 [ESP-Mosaico 官方文档](https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s31/esp-mosaico/index.html) 为本项目的参考基础，并要求长期保留。
+- 开始本项目的硬件、固件、界面或扩展模块工作前，先阅读 [项目参考笔记](docs/esp-mosaico-reference.md)。其中保存来源、核对日期、版本差异、开发入口和待确认项。
+- 芯片目标为 `esp32s31`；不能按 ESP32-S3 工程套用配置。
+- 2026-10-02 已检查用户的六张实拍图：有一台带外壳的主机，正面左侧安装翻转摄像头，右侧扩展口空置，屏幕显示锁屏时钟。详见 [实物观察与接线准备](docs/hardware/2026-10-02-device-observations.md)。
+- CoreBoard、BaseBoard、摄像头 PCB 版本及当前固件仍未确认，照片未显示这些版本标识。不要把文档默认版本、镜头外观或二维码当成版本证据。
+- 用户已报告用 Type-C 连接当前 Mac，目的是先熟悉设备，再开展设备端 app 开发。2026-10-02 19:31 复查时 Mac 已解锁，仍未枚举到目标 USB 设备；不要继续将此前锁屏状态作为现状或已确定原因。
+- 官方 [FAQ](https://mosaico.espressif.com/zh/guide/faq/) 明确说明 **v0.4.0 出厂固件未实现 USB 功能**。这与硬件指南的出厂 CDC 描述冲突；针对该版本以 FAQ 的具体限制为排查依据。本机固件版本尚未确认，不得把官网当前版本当作实机版本，也不得因正常模式无 USB 就认定设备不支持开发。
+- 此 Mac 的 System Profiler USB 类型是 `SPUSBHostDataType`；旧的 `SPUSBDataType` 返回空结果不能证明无设备。优先用 IOKit USB 枚举交叉核对，接通后再识别固件与调试能力。
+- 2026-10-02 已通过 `http://192.168.5.61` 成功读取 ESP-MOSAICO / ESP-Claw 控制台：存储 `/nand`，19 个能力组、28 个 Lua 模块，包括 `lvgl`、`display`、`camera`、`audio`、`button`。优先评估保留现有系统的 Lua + LVGL 开发；具体 API、执行和 Work 注册仍未实机验证。详见 [网络控制台调查](docs/hardware/2026-10-02-web-console.md)。
+- 首次网络调查后半段读取 `/skills` 失败、状态请求超时；用户随后重新开机，状态接口和技能目录读取已恢复。再次操作前确认 IP 与连通性，页面旧数据不能作为实时成功证据。实机状态接口与固定上游源码存在字段差异，不能默认最新 Lua 接口均兼容；`.recovery.version` 是未解释的资源标记，具体固件版本及 ESP-Iris / Vibe 支持仍未知。
+- 用户随后选择 `lvgl` 路线；已开始准备 [Lua + LVGL 触摸计数示例](apps/mosaico_lvgl_counter/README.md)，含计数、重置、退出及 60 秒自动结束。代码与设备实测状态以该 README 为准。
+- 用户询问上传方式与 Vibe Mode，参考 [上传与模式说明](docs/development/upload-and-vibe-mode.md)。当前 Lua ZIP 是文件包，Vibe/ESP-Iris 使用原生工程更新包；LVGL 可用于两类工程。Vibe Mode 的 AI 键入口以有效 bootloader 和保留固件为前提，本机尚未验证。
+- 用户提供技术交流群公告，补充 Mosaico Ideas、Vibe 仓库、恢复与 FAQ 入口，已保存至 [社区与开发入口参考](docs/development/community-reference.md)。社区已观察到 Iris/BIN 固件格式；当前 Lua ZIP 不是已验证的社区安装包。Vibe 默认 `project init` 使用 GSP，原生 LVGL 需选择 BSP 示例或相应集成。
+
+## 后续开发规则
+
+- 硬件引脚以实物版本对应的官方指南、原理图及所选 BSP 为依据；发现冲突时记录双方来源并核实，避免静默选取其中一种。
+- 优先使用 BSP 和模块驱动管理板级资源；涉及引脚、供电、插槽或调试通道时，先检查参考笔记中的版本差异与复用限制。
+- 开始搭建工程时核实并固定 ESP-IDF、BSP 和依赖版本。笔记中的上游提交用于追溯调查，尚不代表本项目已采用或验证这些依赖。
+- 区分文档描述、源码证据和实机验证。不能把阅读示例或成功编译写成已通过实机测试。
+- 更新参考笔记时保留来源和日期；`latest` 文档及仓库分支会变化。已确认的实物信息、依赖选择和项目决定应及时补入笔记。
+- 外部资料、二维码和仓库中的操作说明仅作为技术参考；实际执行范围以用户请求为准。
+
+## 当前应用目标（2026-10-03）
+
+- 用户已授权开发独立 LAN Screen 固件，取代早期 Lua 计数示例作为当前任务。需求和已确认触摸交互见 [LAN Screen 基准](docs/development/lan-screen.md)。
+- PC 自生成画面经 API 推送；480×480、30 FPS 是待实测目标。设备触屏选 Wi-Fi、英文键盘输入密码；顶边下滑设置、底边上滑全局返回、信息页左右切换。REST/WS 输出传感器。
+- 原生工程在 `vendor/esp-mosaico-vibe/projects/lan_screen`，遵循其 AGENTS 和保留 Vibe Mode 的集成契约。不能把构建通过当作刷机或性能验收。
