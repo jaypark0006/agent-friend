@@ -5,3 +5,6 @@ dist/
 # SDK checkouts and build artifacts are dependencies; the firmware is a gitlink.
 vendor/*
 !vendor/esp-mosaico-vibe/
+
+# Per-machine IDE metadata is not project source.
+.idea/
