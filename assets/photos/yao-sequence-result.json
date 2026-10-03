@@ -1,0 +1,30 @@
+{
+  "host": "192.168.5.61",
+  "hold_requested_seconds": 3.0,
+  "steps": [
+    {
+      "file": "assets/screens/completed-yao-480.jpg",
+      "jpeg_bytes": 29684,
+      "ack": {
+        "accepted": 283
+      },
+      "displayed_before": 282,
+      "displayed_after": 283,
+      "display_completed": true,
+      "device_timestamp_us": 924018131
+    },
+    {
+      "file": "assets/photos/yao-480.jpg",
+      "jpeg_bytes": 60136,
+      "ack": {
+        "accepted": 284
+      },
+      "displayed_before": 283,
+      "displayed_after": 284,
+      "display_completed": true,
+      "device_timestamp_us": 927244959
+    }
+  ],
+  "actual_hold_seconds": 3.005,
+  "success": true
+}
