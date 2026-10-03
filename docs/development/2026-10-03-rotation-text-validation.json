@@ -1,0 +1,720 @@
+{
+  "initial_status": {
+    "timestamp_us": 69162354,
+    "content_type": "image",
+    "displayed_content_type": "image",
+    "content_generation": 0,
+    "displayed_content_generation": 0,
+    "text_font_size": 0,
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "app": "lan_screen",
+    "version": "1.0.3",
+    "connected": true,
+    "ip": "192.168.5.61",
+    "ssid": "2-3-2G-wifi5",
+    "width": 480,
+    "height": 480,
+    "max_jpeg_bytes": 262144,
+    "received": 0,
+    "displayed": 0,
+    "dropped": 0,
+    "invalid": 0,
+    "display_fps": 0,
+    "decode_ms": 0,
+    "lcd_transfer_ms": 0,
+    "receive_to_display_ms": 0,
+    "frames_ws": "/ws/frames",
+    "telemetry_port": 81
+  },
+  "orientation": {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": false,
+    "reason": "unavailable",
+    "sample_us": 69127190,
+    "sample_age_ms": 42.018,
+    "coordinate_frame": "screen",
+    "down_face": "unknown",
+    "pose": "unknown",
+    "confidence": 0,
+    "rotation_cw_deg": null,
+    "gravity_down": null,
+    "screen_tilt_deg": null,
+    "accel_magnitude_g": null
+  },
+  "info": {
+    "app": "lan_screen",
+    "version": "1.0.3",
+    "frame_format": "480x480 8-bit 3-component baseline JPEG",
+    "max_frame_bytes": 262144,
+    "ack_meaning": "accepted into latest-frame queue; not a display completion",
+    "sensor_push_hz": 10,
+    "orientation_api": "/api/orientation",
+    "orientation_axes": "+X right, +Y top (AI button), +Z out of screen",
+    "frame_orientation": "send unrotated content; device rotates image, UI and touch automatically",
+    "rotation_convention": "clockwise viewed from screen front; null when flat or unreliable",
+    "max_text_utf8_bytes": 1024,
+    "text_font_size_min": 16,
+    "text_font_size_max": 64,
+    "timestamp_unit": "microseconds since boot",
+    "endpoints": [
+      {
+        "method": "GET",
+        "url": "http://192.168.5.61/"
+      },
+      {
+        "method": "GET",
+        "url": "http://192.168.5.61/api/info"
+      },
+      {
+        "method": "GET",
+        "url": "http://192.168.5.61/api/status"
+      },
+      {
+        "method": "GET",
+        "url": "http://192.168.5.61/api/sensors"
+      },
+      {
+        "method": "GET",
+        "url": "http://192.168.5.61/api/orientation"
+      },
+      {
+        "method": "POST",
+        "url": "http://192.168.5.61/api/frame"
+      },
+      {
+        "method": "WS",
+        "url": "ws://192.168.5.61/ws/frames"
+      },
+      {
+        "method": "WS",
+        "url": "ws://192.168.5.61:81/ws/sensors"
+      },
+      {
+        "method": "POST",
+        "url": "http://192.168.5.61/api/text"
+      }
+    ]
+  },
+  "texts": [
+    {
+      "ack": {
+        "accepted": 1,
+        "content_type": "text"
+      },
+      "status": {
+        "timestamp_us": 69253698,
+        "content_type": "text",
+        "displayed_content_type": "text",
+        "content_generation": 1,
+        "displayed_content_generation": 1,
+        "text_font_size": 16,
+        "auto_rotation": true,
+        "display_rotation_cw_deg": 0,
+        "app": "lan_screen",
+        "version": "1.0.3",
+        "connected": true,
+        "ip": "192.168.5.61",
+        "ssid": "2-3-2G-wifi5",
+        "width": 480,
+        "height": 480,
+        "max_jpeg_bytes": 262144,
+        "received": 0,
+        "displayed": 0,
+        "dropped": 0,
+        "invalid": 0,
+        "display_fps": 0,
+        "decode_ms": 0,
+        "lcd_transfer_ms": 0,
+        "receive_to_display_ms": 0,
+        "frames_ws": "/ws/frames",
+        "telemetry_port": 81
+      }
+    },
+    {
+      "ack": {
+        "accepted": 2,
+        "content_type": "text"
+      },
+      "status": {
+        "timestamp_us": 69894819,
+        "content_type": "text",
+        "displayed_content_type": "text",
+        "content_generation": 2,
+        "displayed_content_generation": 2,
+        "text_font_size": 32,
+        "auto_rotation": true,
+        "display_rotation_cw_deg": 0,
+        "app": "lan_screen",
+        "version": "1.0.3",
+        "connected": true,
+        "ip": "192.168.5.61",
+        "ssid": "2-3-2G-wifi5",
+        "width": 480,
+        "height": 480,
+        "max_jpeg_bytes": 262144,
+        "received": 0,
+        "displayed": 0,
+        "dropped": 0,
+        "invalid": 0,
+        "display_fps": 0,
+        "decode_ms": 0,
+        "lcd_transfer_ms": 0,
+        "receive_to_display_ms": 0,
+        "frames_ws": "/ws/frames",
+        "telemetry_port": 81
+      }
+    },
+    {
+      "ack": {
+        "accepted": 3,
+        "content_type": "text"
+      },
+      "status": {
+        "timestamp_us": 70536765,
+        "content_type": "text",
+        "displayed_content_type": "text",
+        "content_generation": 3,
+        "displayed_content_generation": 3,
+        "text_font_size": 48,
+        "auto_rotation": true,
+        "display_rotation_cw_deg": 0,
+        "app": "lan_screen",
+        "version": "1.0.3",
+        "connected": true,
+        "ip": "192.168.5.61",
+        "ssid": "2-3-2G-wifi5",
+        "width": 480,
+        "height": 480,
+        "max_jpeg_bytes": 262144,
+        "received": 0,
+        "displayed": 0,
+        "dropped": 0,
+        "invalid": 0,
+        "display_fps": 0,
+        "decode_ms": 0,
+        "lcd_transfer_ms": 0,
+        "receive_to_display_ms": 0,
+        "frames_ws": "/ws/frames",
+        "telemetry_port": 81
+      }
+    },
+    {
+      "ack": {
+        "accepted": 4,
+        "content_type": "text"
+      },
+      "status": {
+        "timestamp_us": 71188956,
+        "content_type": "text",
+        "displayed_content_type": "text",
+        "content_generation": 4,
+        "displayed_content_generation": 4,
+        "text_font_size": 64,
+        "auto_rotation": true,
+        "display_rotation_cw_deg": 0,
+        "app": "lan_screen",
+        "version": "1.0.3",
+        "connected": true,
+        "ip": "192.168.5.61",
+        "ssid": "2-3-2G-wifi5",
+        "width": 480,
+        "height": 480,
+        "max_jpeg_bytes": 262144,
+        "received": 0,
+        "displayed": 0,
+        "dropped": 0,
+        "invalid": 0,
+        "display_fps": 0,
+        "decode_ms": 0,
+        "lcd_transfer_ms": 0,
+        "receive_to_display_ms": 0,
+        "frames_ws": "/ws/frames",
+        "telemetry_port": 81
+      }
+    }
+  ],
+  "rejections": [
+    {
+      "payload": {
+        "text": "x",
+        "font_size": 0
+      },
+      "status": 400
+    },
+    {
+      "payload": {
+        "text": "x",
+        "font_size": 64.5
+      },
+      "status": 400
+    },
+    {
+      "payload": {
+        "text": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中"
+      },
+      "status": 400
+    },
+    {
+      "payload": {
+        "text": "x",
+        "align": "bogus"
+      },
+      "status": 400
+    },
+    {
+      "payload": {
+        "text": "a\u0000b"
+      },
+      "status": 400
+    },
+    {
+      "payload": {
+        "text": 42
+      },
+      "status": 400
+    }
+  ],
+  "final_text_status": {
+    "timestamp_us": 71973054,
+    "content_type": "text",
+    "displayed_content_type": "text",
+    "content_generation": 6,
+    "displayed_content_generation": 6,
+    "text_font_size": 32,
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "app": "lan_screen",
+    "version": "1.0.3",
+    "connected": true,
+    "ip": "192.168.5.61",
+    "ssid": "2-3-2G-wifi5",
+    "width": 480,
+    "height": 480,
+    "max_jpeg_bytes": 262144,
+    "received": 0,
+    "displayed": 0,
+    "dropped": 0,
+    "invalid": 0,
+    "display_fps": 0,
+    "decode_ms": 0,
+    "lcd_transfer_ms": 0,
+    "receive_to_display_ms": 0,
+    "frames_ws": "/ws/frames",
+    "telemetry_port": 81
+  },
+  "ws_sensors": [
+    {
+      "timestamp_us": 71997531,
+      "sample_us": 71993190,
+      "orientation": {
+        "auto_rotation": true,
+        "display_rotation_cw_deg": 0,
+        "valid": false,
+        "reason": "unavailable",
+        "sample_us": 71993190,
+        "sample_age_ms": 4.365,
+        "coordinate_frame": "screen",
+        "down_face": "unknown",
+        "pose": "unknown",
+        "confidence": 0,
+        "rotation_cw_deg": null,
+        "gravity_down": null,
+        "screen_tilt_deg": null,
+        "accel_magnitude_g": null
+      },
+      "accel_g": null,
+      "gyro_dps": null,
+      "mag0_uT": [
+        -335,
+        49,
+        177
+      ],
+      "mag1_uT": [
+        -973,
+        -32768,
+        633
+      ],
+      "battery": {
+        "voltage_mv": 4178,
+        "current_ma": 0,
+        "temperature_c": 37.350006103515625,
+        "soc_percent": 100
+      }
+    },
+    {
+      "timestamp_us": 72097469,
+      "sample_us": 72093190,
+      "orientation": {
+        "auto_rotation": true,
+        "display_rotation_cw_deg": 0,
+        "valid": false,
+        "reason": "unavailable",
+        "sample_us": 72093190,
+        "sample_age_ms": 4.302,
+        "coordinate_frame": "screen",
+        "down_face": "unknown",
+        "pose": "unknown",
+        "confidence": 0,
+        "rotation_cw_deg": null,
+        "gravity_down": null,
+        "screen_tilt_deg": null,
+        "accel_magnitude_g": null
+      },
+      "accel_g": null,
+      "gyro_dps": null,
+      "mag0_uT": [
+        -333,
+        49,
+        176
+      ],
+      "mag1_uT": [
+        -974,
+        -32768,
+        634
+      ],
+      "battery": {
+        "voltage_mv": 4178,
+        "current_ma": 0,
+        "temperature_c": 37.350006103515625,
+        "soc_percent": 100
+      }
+    },
+    {
+      "timestamp_us": 72197487,
+      "sample_us": 72193190,
+      "orientation": {
+        "auto_rotation": true,
+        "display_rotation_cw_deg": 0,
+        "valid": false,
+        "reason": "unavailable",
+        "sample_us": 72193190,
+        "sample_age_ms": 4.32,
+        "coordinate_frame": "screen",
+        "down_face": "unknown",
+        "pose": "unknown",
+        "confidence": 0,
+        "rotation_cw_deg": null,
+        "gravity_down": null,
+        "screen_tilt_deg": null,
+        "accel_magnitude_g": null
+      },
+      "accel_g": null,
+      "gyro_dps": null,
+      "mag0_uT": [
+        -332,
+        50,
+        177
+      ],
+      "mag1_uT": [
+        -977,
+        -32768,
+        636
+      ],
+      "battery": {
+        "voltage_mv": 4178,
+        "current_ma": 0,
+        "temperature_c": 37.350006103515625,
+        "soc_percent": 100
+      }
+    },
+    {
+      "timestamp_us": 72297479,
+      "sample_us": 72293190,
+      "orientation": {
+        "auto_rotation": true,
+        "display_rotation_cw_deg": 0,
+        "valid": false,
+        "reason": "unavailable",
+        "sample_us": 72293190,
+        "sample_age_ms": 4.312,
+        "coordinate_frame": "screen",
+        "down_face": "unknown",
+        "pose": "unknown",
+        "confidence": 0,
+        "rotation_cw_deg": null,
+        "gravity_down": null,
+        "screen_tilt_deg": null,
+        "accel_magnitude_g": null
+      },
+      "accel_g": null,
+      "gyro_dps": null,
+      "mag0_uT": [
+        -331,
+        49,
+        177
+      ],
+      "mag1_uT": [
+        -977,
+        -32768,
+        635
+      ],
+      "battery": {
+        "voltage_mv": 4178,
+        "current_ma": 0,
+        "temperature_c": 37.350006103515625,
+        "soc_percent": 100
+      }
+    },
+    {
+      "timestamp_us": 72397473,
+      "sample_us": 72343190,
+      "orientation": {
+        "auto_rotation": true,
+        "display_rotation_cw_deg": 0,
+        "valid": false,
+        "reason": "unavailable",
+        "sample_us": 72343190,
+        "sample_age_ms": 54.306,
+        "coordinate_frame": "screen",
+        "down_face": "unknown",
+        "pose": "unknown",
+        "confidence": 0,
+        "rotation_cw_deg": null,
+        "gravity_down": null,
+        "screen_tilt_deg": null,
+        "accel_magnitude_g": null
+      },
+      "accel_g": null,
+      "gyro_dps": null,
+      "mag0_uT": [
+        -331,
+        49,
+        177
+      ],
+      "mag1_uT": [
+        -977,
+        -32768,
+        635
+      ],
+      "battery": {
+        "voltage_mv": 4178,
+        "current_ma": 0,
+        "temperature_c": 37.350006103515625,
+        "soc_percent": 100
+      }
+    },
+    {
+      "timestamp_us": 72497513,
+      "sample_us": 72461190,
+      "orientation": {
+        "auto_rotation": true,
+        "display_rotation_cw_deg": 0,
+        "valid": false,
+        "reason": "unavailable",
+        "sample_us": 72461190,
+        "sample_age_ms": 36.345,
+        "coordinate_frame": "screen",
+        "down_face": "unknown",
+        "pose": "unknown",
+        "confidence": 0,
+        "rotation_cw_deg": null,
+        "gravity_down": null,
+        "screen_tilt_deg": null,
+        "accel_magnitude_g": null
+      },
+      "accel_g": null,
+      "gyro_dps": null,
+      "mag0_uT": [
+        -333,
+        50,
+        177
+      ],
+      "mag1_uT": [
+        -976,
+        -32768,
+        635
+      ],
+      "battery": {
+        "voltage_mv": 4178,
+        "current_ma": 0,
+        "temperature_c": 37.350006103515625,
+        "soc_percent": 100
+      }
+    },
+    {
+      "timestamp_us": 72597486,
+      "sample_us": 72561190,
+      "orientation": {
+        "auto_rotation": true,
+        "display_rotation_cw_deg": 0,
+        "valid": false,
+        "reason": "unavailable",
+        "sample_us": 72561190,
+        "sample_age_ms": 36.319,
+        "coordinate_frame": "screen",
+        "down_face": "unknown",
+        "pose": "unknown",
+        "confidence": 0,
+        "rotation_cw_deg": null,
+        "gravity_down": null,
+        "screen_tilt_deg": null,
+        "accel_magnitude_g": null
+      },
+      "accel_g": null,
+      "gyro_dps": null,
+      "mag0_uT": [
+        -330,
+        50,
+        177
+      ],
+      "mag1_uT": [
+        -976,
+        -32768,
+        635
+      ],
+      "battery": {
+        "voltage_mv": 4178,
+        "current_ma": 0,
+        "temperature_c": 37.350006103515625,
+        "soc_percent": 100
+      }
+    },
+    {
+      "timestamp_us": 72697483,
+      "sample_us": 72661190,
+      "orientation": {
+        "auto_rotation": true,
+        "display_rotation_cw_deg": 0,
+        "valid": false,
+        "reason": "unavailable",
+        "sample_us": 72661190,
+        "sample_age_ms": 36.316,
+        "coordinate_frame": "screen",
+        "down_face": "unknown",
+        "pose": "unknown",
+        "confidence": 0,
+        "rotation_cw_deg": null,
+        "gravity_down": null,
+        "screen_tilt_deg": null,
+        "accel_magnitude_g": null
+      },
+      "accel_g": null,
+      "gyro_dps": null,
+      "mag0_uT": [
+        -333,
+        49,
+        177
+      ],
+      "mag1_uT": [
+        -976,
+        -32768,
+        635
+      ],
+      "battery": {
+        "voltage_mv": 4178,
+        "current_ma": 0,
+        "temperature_c": 37.350006103515625,
+        "soc_percent": 100
+      }
+    },
+    {
+      "timestamp_us": 72797483,
+      "sample_us": 72761190,
+      "orientation": {
+        "auto_rotation": true,
+        "display_rotation_cw_deg": 0,
+        "valid": false,
+        "reason": "unavailable",
+        "sample_us": 72761190,
+        "sample_age_ms": 36.316,
+        "coordinate_frame": "screen",
+        "down_face": "unknown",
+        "pose": "unknown",
+        "confidence": 0,
+        "rotation_cw_deg": null,
+        "gravity_down": null,
+        "screen_tilt_deg": null,
+        "accel_magnitude_g": null
+      },
+      "accel_g": null,
+      "gyro_dps": null,
+      "mag0_uT": [
+        -332,
+        49,
+        176
+      ],
+      "mag1_uT": [
+        -976,
+        -32768,
+        636
+      ],
+      "battery": {
+        "voltage_mv": 4178,
+        "current_ma": 0,
+        "temperature_c": 37.350006103515625,
+        "soc_percent": 100
+      }
+    },
+    {
+      "timestamp_us": 72897473,
+      "sample_us": 72861190,
+      "orientation": {
+        "auto_rotation": true,
+        "display_rotation_cw_deg": 0,
+        "valid": false,
+        "reason": "unavailable",
+        "sample_us": 72861190,
+        "sample_age_ms": 36.306,
+        "coordinate_frame": "screen",
+        "down_face": "unknown",
+        "pose": "unknown",
+        "confidence": 0,
+        "rotation_cw_deg": null,
+        "gravity_down": null,
+        "screen_tilt_deg": null,
+        "accel_magnitude_g": null
+      },
+      "accel_g": null,
+      "gyro_dps": null,
+      "mag0_uT": [
+        -331,
+        50,
+        177
+      ],
+      "mag1_uT": [
+        -977,
+        -32768,
+        633
+      ],
+      "battery": {
+        "voltage_mv": 4178,
+        "current_ma": 0,
+        "temperature_c": 37.350006103515625,
+        "soc_percent": 100
+      }
+    }
+  ],
+  "restored_photo": {
+    "accepted": 1,
+    "status": {
+      "timestamp_us": 78116220,
+      "content_type": "image",
+      "displayed_content_type": "image",
+      "content_generation": 7,
+      "displayed_content_generation": 7,
+      "text_font_size": 32,
+      "auto_rotation": true,
+      "display_rotation_cw_deg": 0,
+      "app": "lan_screen",
+      "version": "1.0.3",
+      "connected": true,
+      "ip": "192.168.5.61",
+      "ssid": "2-3-2G-wifi5",
+      "width": 480,
+      "height": 480,
+      "max_jpeg_bytes": 262144,
+      "received": 1,
+      "displayed": 1,
+      "dropped": 0,
+      "invalid": 0,
+      "display_fps": 0,
+      "decode_ms": 5.364999771118164,
+      "lcd_transfer_ms": 23.454999923706055,
+      "receive_to_display_ms": 73.802001953125,
+      "frames_ws": "/ws/frames",
+      "telemetry_port": 81
+    }
+  }
+}

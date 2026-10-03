@@ -17,8 +17,14 @@ Display budget: BSP 40 MHz × 4 bits = ideal 20 MB/s. RGB565 frame 480×480×2 =
 
 ## 首版产物
 
-实现与 API 文档：[工程 README](../../vendor/esp-mosaico-vibe/projects/lan_screen/README.md)。构建、本机测试及明确的实机缺口见 [验证记录](lan-screen-validation.md)。更新包导出至 `dist/lan_screen/`。已通过官方 Iris 更新安装实机，当前为1.0.2；此前“未刷机”只属于初版构建阶段。
+实现与 API 文档：[工程 README](../../vendor/esp-mosaico-vibe/projects/lan_screen/README.md)。构建、本机测试及明确的实机缺口见 [验证记录](lan-screen-validation.md)。更新包导出至 `dist/lan_screen/`。已通过官方 Iris 更新安装实机，当前为1.0.4；此前“未刷机”只属于初版构建阶段。
 
 ## 姿态 API（2026-10-03）
 
-用户要求判断当前哪边朝下，供自己的局域网程序决定图案方向。独立REST `/api/orientation`、原传感器REST与WS提供同格式姿态。实体坐标核对、角度约定、运动时未知状态和实测结果见 [姿态API说明](orientation-api.md)。固件不自动旋转JPEG。
+用户要求判断当前哪边朝下，供自己的局域网程序决定图案方向。独立REST `/api/orientation`、原传感器REST与WS提供同格式姿态。实体坐标核对、角度约定、运动时未知状态和实测结果见 [姿态API说明](orientation-api.md)。1.0.2由PC旋转；1.0.3已实现设备自动旋转JPEG、菜单、文字和触摸，PC发送原始方向图像。
+
+## 文字显示（1.0.3）
+
+用户要求内容以指定字号在设备上直接显示。新增 `POST /api/text` 接收 JSON：text UTF-8≤1024字节，font_size整数16–64（默认32），align left/center/right（默认left）。中文基本汉字、ASCII和常用中文标点有嵌入字库；16px基础字形缩放，432×384显示区换行，超出高度裁切。没有承诺Emoji或所有Unicode字符。文本和JPEG内容互相替换，菜单保留，上滑返回最新内容。首页提供文字发送控件，Python客户端提供post_text/send_text。
+
+截图核查：1.0.2虽公告Iris screen能力，但LAN Screen没有注册图像后端，官方CLI实际返回 `screen mirror has an empty frame description`。1.0.3本次也未新增截图/实时镜像接口。

@@ -1,0 +1,6362 @@
+[
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 109532190,
+    "sample_age_ms": 23.496,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999637603759766,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0074160415679216385,
+      0.004179008305072784,
+      -0.9999637603759766
+    ],
+    "screen_tilt_deg": 0.4877876341342926,
+    "accel_magnitude_g": 1.0097978115081787
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 109685231,
+    "sample_age_ms": 32.975,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966263771057,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00711566349491477,
+      0.00410199537873268,
+      -0.999966263771057
+    ],
+    "screen_tilt_deg": 0.47063812613487244,
+    "accel_magnitude_g": 1.0100499391555786
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 109838190,
+    "sample_age_ms": 44.167,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999629855155945,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007515886332839727,
+      0.00420345552265644,
+      -0.9999629855155945
+    ],
+    "screen_tilt_deg": 0.4929749369621277,
+    "accel_magnitude_g": 1.0122506618499756
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 110044190,
+    "sample_age_ms": 5.152,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999625086784363,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007616064511239529,
+      0.004121311474591494,
+      -0.9999625086784363
+    ],
+    "screen_tilt_deg": 0.49614015221595764,
+    "accel_magnitude_g": 1.0115070343017578
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 110217190,
+    "sample_age_ms": 6.626,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965727329254,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007431522477418184,
+      0.003647044999524951,
+      -0.999965727329254
+    ],
+    "screen_tilt_deg": 0.474365234375,
+    "accel_magnitude_g": 1.0119905471801758
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 110371217,
+    "sample_age_ms": 25.191,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.99996817111969,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007063194178044796,
+      0.0037195344921201468,
+      -0.99996817111969
+    ],
+    "screen_tilt_deg": 0.4571402370929718,
+    "accel_magnitude_g": 1.011139988899231
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 110526191,
+    "sample_age_ms": 32.348,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966025352478,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0073643955402076244,
+      0.003714343998581171,
+      -0.999966025352478
+    ],
+    "screen_tilt_deg": 0.4722982347011566,
+    "accel_magnitude_g": 1.0102853775024414
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 110679190,
+    "sample_age_ms": 38.74,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999968409538269,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007139433175325394,
+      0.0034841964952647686,
+      -0.999968409538269
+    ],
+    "screen_tilt_deg": 0.4554249048233032,
+    "accel_magnitude_g": 1.0111433267593384
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 110886190,
+    "sample_age_ms": 6.05,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966859817505,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007263575214892626,
+      0.00367148476652801,
+      -0.999966859817505
+    ],
+    "screen_tilt_deg": 0.46646201610565186,
+    "accel_magnitude_g": 1.0106589794158936
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 111041190,
+    "sample_age_ms": 17.552,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999610781669617,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007906021550297737,
+      0.003938619047403336,
+      -0.9999610781669617
+    ],
+    "screen_tilt_deg": 0.5055169463157654,
+    "accel_magnitude_g": 1.0109105110168457
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 111212190,
+    "sample_age_ms": 12.307,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999964416027069,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0074357264675199986,
+      0.00398623663932085,
+      -0.999964416027069
+    ],
+    "screen_tilt_deg": 0.483354926109314,
+    "accel_magnitude_g": 1.0116318464279175
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 111367219,
+    "sample_age_ms": 23.017,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999964416027069,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0076434435322880745,
+      0.0035747280344367027,
+      -0.999964416027069
+    ],
+    "screen_tilt_deg": 0.483354926109314,
+    "accel_magnitude_g": 1.012616515159607
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 111521190,
+    "sample_age_ms": 38.378,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999964416027069,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00748740416020155,
+      0.003898859256878495,
+      -0.999964416027069
+    ],
+    "screen_tilt_deg": 0.483354926109314,
+    "accel_magnitude_g": 1.0112640857696533
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 111674190,
+    "sample_age_ms": 45.273,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999667406082153,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007193468511104584,
+      0.0038395696319639683,
+      -0.9999667406082153
+    ],
+    "screen_tilt_deg": 0.4673002064228058,
+    "accel_magnitude_g": 1.0107743740081787
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 111880190,
+    "sample_age_ms": 30.486,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965786933899,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007350614294409752,
+      0.0037884756457060575,
+      -0.999965786933899
+    ],
+    "screen_tilt_deg": 0.4739525318145752,
+    "accel_magnitude_g": 1.0104029178619385
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 112035233,
+    "sample_age_ms": 52.809,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999654293060303,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00742685655131936,
+      0.0037366412580013275,
+      -0.9999654293060303
+    ],
+    "screen_tilt_deg": 0.4764232635498047,
+    "accel_magnitude_g": 1.0105335712432861
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 112192190,
+    "sample_age_ms": 55.611,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999642372131348,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007711047772318125,
+      0.0034491131082177162,
+      -0.9999642372131348
+    ],
+    "screen_tilt_deg": 0.48456788063049316,
+    "accel_magnitude_g": 1.0107781887054443
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 112363190,
+    "sample_age_ms": 49.805,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967098236084,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007130136713385582,
+      0.0038711647503077984,
+      -0.999967098236084
+    ],
+    "screen_tilt_deg": 0.4647810459136963,
+    "accel_magnitude_g": 1.0104042291641235
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 112571219,
+    "sample_age_ms": 10.182,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999641180038452,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00753376353532076,
+      0.0038797794841229916,
+      -0.9999641180038452
+    ],
+    "screen_tilt_deg": 0.4853748083114624,
+    "accel_magnitude_g": 1.008839726448059
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 112726190,
+    "sample_age_ms": 25.34,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999964952468872,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00756422709673643,
+      0.0035806025844067335,
+      -0.999964952468872
+    ],
+    "screen_tilt_deg": 0.47969770431518555,
+    "accel_magnitude_g": 1.010172963142395
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 112881190,
+    "sample_age_ms": 40.323,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999667406082153,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007317486684769392,
+      0.0035869746934622526,
+      -0.9999667406082153
+    ],
+    "screen_tilt_deg": 0.4673002064228058,
+    "accel_magnitude_g": 1.011872410774231
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 113087190,
+    "sample_age_ms": 7.782,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999654293060303,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0071501019410789,
+      0.004248438403010368,
+      -0.9999654293060303
+    ],
+    "screen_tilt_deg": 0.4764232635498047,
+    "accel_magnitude_g": 1.0104185342788696
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 113240190,
+    "sample_age_ms": 24.509,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999693632125854,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006878445390611887,
+      0.0037318167742341757,
+      -0.9999693632125854
+    ],
+    "screen_tilt_deg": 0.44849780201911926,
+    "accel_magnitude_g": 1.01076602935791
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 113412217,
+    "sample_age_ms": 21.676,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965488910675,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007268190383911133,
+      0.004036582075059414,
+      -0.999965488910675
+    ],
+    "screen_tilt_deg": 0.47601231932640076,
+    "accel_magnitude_g": 1.0109020471572876
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 113567190,
+    "sample_age_ms": 37.35,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999645948410034,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007380693219602108,
+      0.004047008231282234,
+      -0.9999645948410034
+    ],
+    "screen_tilt_deg": 0.48213890194892883,
+    "accel_magnitude_g": 1.0096768140792847
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 113720190,
+    "sample_age_ms": 50.643,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999641180038452,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0074758282862603664,
+      0.003978061489760876,
+      -0.9999641180038452
+    ],
+    "screen_tilt_deg": 0.4853748083114624,
+    "accel_magnitude_g": 1.010408878326416
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 113926190,
+    "sample_age_ms": 14.965,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999626278877258,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0075797829777002335,
+      0.00416139094159007,
+      -0.9999626278877258
+    ],
+    "screen_tilt_deg": 0.49535071849823,
+    "accel_magnitude_g": 1.0109044313430786
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 114081190,
+    "sample_age_ms": 35.86,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999961793422699,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007851202972233295,
+      0.0038493149913847446,
+      -0.999961793422699
+    ],
+    "screen_tilt_deg": 0.5008504390716553,
+    "accel_magnitude_g": 1.0116294622421265
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 114235270,
+    "sample_age_ms": 45.557,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.99996817111969,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0070396591909229755,
+      0.0037556474562734365,
+      -0.99996817111969
+    ],
+    "screen_tilt_deg": 0.4571402370929718,
+    "accel_magnitude_g": 1.0096733570098877
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 114407190,
+    "sample_age_ms": 43.589,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999661445617676,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007292978465557098,
+      0.0038252694066613913,
+      -0.9999661445617676
+    ],
+    "screen_tilt_deg": 0.4714689254760742,
+    "accel_magnitude_g": 1.0090713500976562
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 114613190,
+    "sample_age_ms": 15.317,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999619126319885,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007712107617408037,
+      0.004092118702828884,
+      -0.9999619126319885
+    ],
+    "screen_tilt_deg": 0.5000685453414917,
+    "accel_magnitude_g": 1.0107815265655518
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 114768190,
+    "sample_age_ms": 31.54,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966025352478,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007266970816999674,
+      0.0038858503103256226,
+      -0.999966025352478
+    ],
+    "screen_tilt_deg": 0.4722982347011566,
+    "accel_magnitude_g": 1.0115095376968384
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 114922217,
+    "sample_age_ms": 44.816,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999645948410034,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007505588699132204,
+      0.0037790872156620026,
+      -0.9999645948410034
+    ],
+    "screen_tilt_deg": 0.48213890194892883,
+    "accel_magnitude_g": 1.01125693321228
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 115129223,
+    "sample_age_ms": 11.518,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999962866306305,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007438520435243845,
+      0.0043739257380366325,
+      -0.999962866306305
+    ],
+    "screen_tilt_deg": 0.4937681555747986,
+    "accel_magnitude_g": 1.011026382446289
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 115283190,
+    "sample_age_ms": 18.081,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999651908874512,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007275501266121864,
+      0.004087602254003286,
+      -0.9999651908874512
+    ],
+    "screen_tilt_deg": 0.4780632555484772,
+    "accel_magnitude_g": 1.0095610618591309
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 115456190,
+    "sample_age_ms": 13.355,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999963104724884,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00771105708554387,
+      0.0037820187862962484,
+      -0.999963104724884
+    ],
+    "screen_tilt_deg": 0.4921804368495941,
+    "accel_magnitude_g": 1.010783314704895
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 115611190,
+    "sample_age_ms": 41.579,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999629855155945,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007812743075191975,
+      0.0036167921498417854,
+      -0.9999629855155945
+    ],
+    "screen_tilt_deg": 0.4929749369621277,
+    "accel_magnitude_g": 1.0096877813339233
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 115817190,
+    "sample_age_ms": 5.309,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999595284461975,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00808814074844122,
+      0.003923929762095213,
+      -0.9999595284461975
+    ],
+    "screen_tilt_deg": 0.5154826641082764,
+    "accel_magnitude_g": 1.0105359554290771
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 115971216,
+    "sample_age_ms": 18.528,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999629855155945,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007651519030332565,
+      0.003921302035450935,
+      -0.9999629855155945
+    ],
+    "screen_tilt_deg": 0.4929749369621277,
+    "accel_magnitude_g": 1.011633276939392
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 116125231,
+    "sample_age_ms": 40.841,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999675750732422,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00710125407204032,
+      0.003805947955697775,
+      -0.9999675750732422
+    ],
+    "screen_tilt_deg": 0.4614007771015167,
+    "accel_magnitude_g": 1.0108996629714966
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 116281190,
+    "sample_age_ms": 53.132,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999659061431885,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00757014099508524,
+      0.003283399622887373,
+      -0.9999659061431885
+    ],
+    "screen_tilt_deg": 0.4731261432170868,
+    "accel_magnitude_g": 1.0099254846572876
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 116456190,
+    "sample_age_ms": 44.887,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999622702598572,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00795681122690439,
+      0.003485575085505843,
+      -0.9999622702598572
+    ],
+    "screen_tilt_deg": 0.49771520495414734,
+    "accel_magnitude_g": 1.0098024606704712
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 116663190,
+    "sample_age_ms": 13.201,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999964416027069,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007744545582681894,
+      0.0033393297344446182,
+      -0.999964416027069
+    ],
+    "screen_tilt_deg": 0.483354926109314,
+    "accel_magnitude_g": 1.0127296447753906
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 116816190,
+    "sample_age_ms": 23.748,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999634623527527,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00778128346428275,
+      0.00355542148463428,
+      -0.9999634623527527
+    ],
+    "screen_tilt_deg": 0.4897892475128174,
+    "accel_magnitude_g": 1.0104128122329712
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 117022190,
+    "sample_age_ms": 6.753,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966263771057,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007450115866959095,
+      0.0034646610729396343,
+      -0.999966263771057
+    ],
+    "screen_tilt_deg": 0.47063812613487244,
+    "accel_magnitude_g": 1.0106416940689087
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 117176220,
+    "sample_age_ms": 22.403,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999968409538269,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007171896286308765,
+      0.00344684487208724,
+      -0.999968409538269
+    ],
+    "screen_tilt_deg": 0.4554249048233032,
+    "accel_magnitude_g": 1.0091835260391235
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 117330190,
+    "sample_age_ms": 35.617,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999667406082153,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007107841316610575,
+      0.00398367503657937,
+      -0.9999667406082153
+    ],
+    "screen_tilt_deg": 0.4673002064228058,
+    "accel_magnitude_g": 1.0129743814468384
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 117504191,
+    "sample_age_ms": 24.554,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999969482421875,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006917966064065695,
+      0.00362333538942039,
+      -0.999969482421875
+    ],
+    "screen_tilt_deg": 0.44762441515922546,
+    "accel_magnitude_g": 1.0117475986480713
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 117663190,
+    "sample_age_ms": 37.88,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999656677246094,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0074834334664046764,
+      0.0035422316286712885,
+      -0.9999656677246094
+    ],
+    "screen_tilt_deg": 0.47477754950523376,
+    "accel_magnitude_g": 1.0107758045196533
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 117816190,
+    "sample_age_ms": 53.354,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999650716781616,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007579818833619356,
+      0.003512284718453884,
+      -0.9999650716781616
+    ],
+    "screen_tilt_deg": 0.478881150484085,
+    "accel_magnitude_g": 1.0105292797088623
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 118024190,
+    "sample_age_ms": 11.676,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999650716781616,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007272256072610617,
+      0.004127078223973513,
+      -0.9999650716781616
+    ],
+    "screen_tilt_deg": 0.478881150484085,
+    "accel_magnitude_g": 1.012481927871704
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 118180190,
+    "sample_age_ms": 33.35,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999646544456482,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007445336785167456,
+      0.003919361159205437,
+      -0.9999646544456482
+    ],
+    "screen_tilt_deg": 0.48173293471336365,
+    "accel_magnitude_g": 1.0106555223464966
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 118333190,
+    "sample_age_ms": 48.639,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999651908874512,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007520235609263182,
+      0.003600682830438018,
+      -0.9999651908874512
+    ],
+    "screen_tilt_deg": 0.4780632555484772,
+    "accel_magnitude_g": 1.0115152597427368
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 118557190,
+    "sample_age_ms": 7.585,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999962866306305,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007657842244952917,
+      0.00394023209810257,
+      -0.999962866306305
+    ],
+    "screen_tilt_deg": 0.4937681555747986,
+    "accel_magnitude_g": 1.0121275186538696
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 118710190,
+    "sample_age_ms": 20.501,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999635815620422,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00769068067893386,
+      0.003706451039761305,
+      -0.9999635815620422
+    ],
+    "screen_tilt_deg": 0.48898959159851074,
+    "accel_magnitude_g": 1.0101696252822876
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 118865233,
+    "sample_age_ms": 33.087,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999653100967407,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007310719694942236,
+      0.0039853863418102264,
+      -0.9999653100967407
+    ],
+    "screen_tilt_deg": 0.477243959903717,
+    "accel_magnitude_g": 1.0107718706130981
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 119018190,
+    "sample_age_ms": 45.777,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999648332595825,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007332130800932646,
+      0.004060990642756224,
+      -0.9999648332595825
+    ],
+    "screen_tilt_deg": 0.4805128276348114,
+    "accel_magnitude_g": 1.0102949142456055
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 119225234,
+    "sample_age_ms": 12.848,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999968409538269,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007078787311911583,
+      0.0036098475102335215,
+      -0.999968409538269
+    ],
+    "screen_tilt_deg": 0.4554249048233032,
+    "accel_magnitude_g": 1.0123552083969116
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 119379190,
+    "sample_age_ms": 30.049,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999656677246094,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007406606804579496,
+      0.00370095856487751,
+      -0.9999656677246094
+    ],
+    "screen_tilt_deg": 0.47477754950523376,
+    "accel_magnitude_g": 1.0104106664657593
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 119534191,
+    "sample_age_ms": 43.181,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999961793422699,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0077741858549416065,
+      0.004011616576462984,
+      -0.999961793422699
+    ],
+    "screen_tilt_deg": 0.5008504390716553,
+    "accel_magnitude_g": 1.0107762813568115
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 119707190,
+    "sample_age_ms": 42.619,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999962031841278,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00781362410634756,
+      0.00384894316084683,
+      -0.999962031841278
+    ],
+    "screen_tilt_deg": 0.4992852807044983,
+    "accel_magnitude_g": 1.0105382204055786
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 119912216,
+    "sample_age_ms": 7.841,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999605417251587,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007850884459912777,
+      0.00415440695360303,
+      -0.9999605417251587
+    ],
+    "screen_tilt_deg": 0.508988618850708,
+    "accel_magnitude_g": 1.0116409063339233
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 120066190,
+    "sample_age_ms": 30.011,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999635815620422,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00774122029542923,
+      0.003609750885516405,
+      -0.9999635815620422
+    ],
+    "screen_tilt_deg": 0.48898959159851074,
+    "accel_magnitude_g": 1.0102943181991577
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 120221190,
+    "sample_age_ms": 43.467,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999676942825317,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00714914407581091,
+      0.0036598099395632744,
+      -0.9999676942825317
+    ],
+    "screen_tilt_deg": 0.46055182814598083,
+    "accel_magnitude_g": 1.0105222463607788
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 120425234,
+    "sample_age_ms": 6.266,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966025352478,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007399127818644047,
+      0.0036154487170279026,
+      -0.999966025352478
+    ],
+    "screen_tilt_deg": 0.4722982347011566,
+    "accel_magnitude_g": 1.0105327367782593
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 120529220,
+    "sample_age_ms": 69.674,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999656677246094,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007424499839544296,
+      0.003687567077577114,
+      -0.9999656677246094
+    ],
+    "screen_tilt_deg": 0.47477754950523376,
+    "accel_magnitude_g": 1.0102914571762085
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 120756190,
+    "sample_age_ms": 25.038,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967932701111,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00720797572284937,
+      0.003491677576676011,
+      -0.999967932701111
+    ],
+    "screen_tilt_deg": 0.4588492214679718,
+    "accel_magnitude_g": 1.011873483657837
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 120910217,
+    "sample_age_ms": 39.731,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999963939189911,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007595292292535305,
+      0.0037955581210553646,
+      -0.999963939189911
+    ],
+    "screen_tilt_deg": 0.486582726240158,
+    "accel_magnitude_g": 1.0121240615844727
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 121115233,
+    "sample_age_ms": 4,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999964416027069,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007689357735216618,
+      0.0034895516000688076,
+      -0.999964416027069
+    ],
+    "screen_tilt_deg": 0.483354926109314,
+    "accel_magnitude_g": 1.0095603466033936
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 121271190,
+    "sample_age_ms": 13.007,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999964952468872,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007455111481249332,
+      0.0038183152209967375,
+      -0.999964952468872
+    ],
+    "screen_tilt_deg": 0.47969770431518555,
+    "accel_magnitude_g": 1.0104202032089233
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 121424190,
+    "sample_age_ms": 29.154,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999638199806213,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007717785891145468,
+      0.00357831479050219,
+      -0.9999638199806213
+    ],
+    "screen_tilt_deg": 0.4873863458633423,
+    "accel_magnitude_g": 1.0123622417449951
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 121579190,
+    "sample_age_ms": 43.911,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999665021896362,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0074985455721616745,
+      0.003307145554572344,
+      -0.9999665021896362
+    ],
+    "screen_tilt_deg": 0.4689721465110779,
+    "accel_magnitude_g": 1.009676456451416
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 121750190,
+    "sample_age_ms": 46.257,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999667406082153,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007418482098728418,
+      0.003381990361958742,
+      -0.9999667406082153
+    ],
+    "screen_tilt_deg": 0.4673002064228058,
+    "accel_magnitude_g": 1.0097987651824951
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 121957190,
+    "sample_age_ms": 5.001,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999650716781616,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0076289912685751915,
+      0.0034045095089823008,
+      -0.9999650716781616
+    ],
+    "screen_tilt_deg": 0.478881150484085,
+    "accel_magnitude_g": 1.0105377435684204
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 122113190,
+    "sample_age_ms": 17.396,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999963343143463,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00775728328153491,
+      0.003634916851297021,
+      -0.999963343143463
+    ],
+    "screen_tilt_deg": 0.49058762192726135,
+    "accel_magnitude_g": 1.0113909244537354
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 122266192,
+    "sample_age_ms": 45.279,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999610781669617,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00790024735033512,
+      0.003936948254704475,
+      -0.9999610781669617
+    ],
+    "screen_tilt_deg": 0.5055169463157654,
+    "accel_magnitude_g": 1.0100581645965576
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 122472190,
+    "sample_age_ms": 9.013,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999666213989258,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0072450460866093636,
+      0.0037730426993221045,
+      -0.9999666213989258
+    ],
+    "screen_tilt_deg": 0.4681369662284851,
+    "accel_magnitude_g": 1.0108970403671265
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 122627190,
+    "sample_age_ms": 14.145,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999682903289795,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00712402956560254,
+      0.003575529670342803,
+      -0.9999682903289795
+    ],
+    "screen_tilt_deg": 0.4562833905220032,
+    "accel_magnitude_g": 1.0106507539749146
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 122799221,
+    "sample_age_ms": 22.227,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999638199806213,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007479873951524496,
+      0.004067388828843832,
+      -0.9999638199806213
+    ],
+    "screen_tilt_deg": 0.4873863458633423,
+    "accel_magnitude_g": 1.0104297399520874
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 122953190,
+    "sample_age_ms": 38.17,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999643564224243,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00755848316475749,
+      0.003763586515560746,
+      -0.9999643564224243
+    ],
+    "screen_tilt_deg": 0.4837595820426941,
+    "accel_magnitude_g": 1.0100500583648682
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 123108277,
+    "sample_age_ms": 50.224,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967932701111,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007023958023637533,
+      0.0038402823265641928,
+      -0.999967932701111
+    ],
+    "screen_tilt_deg": 0.4588492214679718,
+    "accel_magnitude_g": 1.0104057788848877
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 123314190,
+    "sample_age_ms": 18.431,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999972403049469,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006682902108877897,
+      0.00324889668263495,
+      -0.999972403049469
+    ],
+    "screen_tilt_deg": 0.4256662130355835,
+    "accel_magnitude_g": 1.0105279684066772
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 123470190,
+    "sample_age_ms": 34.24,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999691247940063,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007033120840787888,
+      0.003509578760713339,
+      -0.9999691247940063
+    ],
+    "screen_tilt_deg": 0.4502396285533905,
+    "accel_magnitude_g": 1.0118745565414429
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 123625190,
+    "sample_age_ms": 49.002,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999669790267944,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007152967620640993,
+      0.003849009284749627,
+      -0.9999669790267944
+    ],
+    "screen_tilt_deg": 0.46562227606773376,
+    "accel_magnitude_g": 1.0106532573699951
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 123798233,
+    "sample_age_ms": 46.455,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967932701111,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006951466668397188,
+      0.003976271487772465,
+      -0.999967932701111
+    ],
+    "screen_tilt_deg": 0.4588492214679718,
+    "accel_magnitude_g": 1.0122381448745728
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 124005190,
+    "sample_age_ms": 10.468,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967098236084,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007544567808508873,
+      0.0029859091155231,
+      -0.999967098236084
+    ],
+    "screen_tilt_deg": 0.4647810459136963,
+    "accel_magnitude_g": 1.0111435651779175
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 124160190,
+    "sample_age_ms": 20.579,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965012073517,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00769755942746997,
+      0.0032858687918633223,
+      -0.999965012073517
+    ],
+    "screen_tilt_deg": 0.47928959131240845,
+    "accel_magnitude_g": 1.0118772983551025
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 124314217,
+    "sample_age_ms": 42.687,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999653100967407,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00735410489141941,
+      0.003894226625561714,
+      -0.9999653100967407
+    ],
+    "screen_tilt_deg": 0.477243959903717,
+    "accel_magnitude_g": 1.012241244316101
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 124520220,
+    "sample_age_ms": 6.3,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999663829803467,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007237580139189959,
+      0.003849659115076065,
+      -0.9999663829803467
+    ],
+    "screen_tilt_deg": 0.46980586647987366,
+    "accel_magnitude_g": 1.0123627185821533
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 124674190,
+    "sample_age_ms": 15.279,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999656081199646,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007417697459459305,
+      0.003715723752975464,
+      -0.9999656081199646
+    ],
+    "screen_tilt_deg": 0.4751895070075989,
+    "accel_magnitude_g": 1.0120021104812622
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 124847190,
+    "sample_age_ms": 21.315,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965488910675,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00749506102874875,
+      0.003573199501261115,
+      -0.999965488910675
+    ],
+    "screen_tilt_deg": 0.47601231932640076,
+    "accel_magnitude_g": 1.0126032829284668
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 125002190,
+    "sample_age_ms": 27.477,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999672174453735,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007263304200023413,
+      0.0035722118336707354,
+      -0.9999672174453735
+    ],
+    "screen_tilt_deg": 0.463938295841217,
+    "accel_magnitude_g": 1.0110228061676025
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 125155190,
+    "sample_age_ms": 46.769,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965786933899,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007209393195807934,
+      0.00405328767374158,
+      -0.999965786933899
+    ],
+    "screen_tilt_deg": 0.4739525318145752,
+    "accel_magnitude_g": 1.009669542312622
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 125360222,
+    "sample_age_ms": 22.141,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999669790267944,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007090595550835133,
+      0.0039710490964353085,
+      -0.9999669790267944
+    ],
+    "screen_tilt_deg": 0.46562227606773376,
+    "accel_magnitude_g": 1.010773777961731
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 125514190,
+    "sample_age_ms": 29.192,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999638199806213,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007606927305459976,
+      0.0038292533718049526,
+      -0.9999638199806213
+    ],
+    "screen_tilt_deg": 0.4873863458633423,
+    "accel_magnitude_g": 1.0116397142410278
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 125668234,
+    "sample_age_ms": 43.933,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999585151672363,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.008010578341782093,
+      0.004341452848166227,
+      -0.9999585151672363
+    ],
+    "screen_tilt_deg": 0.5218958258628845,
+    "accel_magnitude_g": 1.0120033025741577
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 125892190,
+    "sample_age_ms": 3.648,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999661445617676,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0072802649810910225,
+      0.003833271097391844,
+      -0.9999661445617676
+    ],
+    "screen_tilt_deg": 0.4714689254760742,
+    "accel_magnitude_g": 1.0110236406326294
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 126048234,
+    "sample_age_ms": 15.287,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999646544456482,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007583603262901306,
+      0.003639396745711565,
+      -0.9999646544456482
+    ],
+    "screen_tilt_deg": 0.48173293471336365,
+    "accel_magnitude_g": 1.0118767023086548
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 126202219,
+    "sample_age_ms": 31.793,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999608397483826,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0076382621191442,
+      0.004476374946534634,
+      -0.9999608397483826
+    ],
+    "screen_tilt_deg": 0.50706285238266,
+    "accel_magnitude_g": 1.0111570358276367
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 126356190,
+    "sample_age_ms": 49.833,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999642968177795,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007367671001702547,
+      0.00416018208488822,
+      -0.9999642968177795
+    ],
+    "screen_tilt_deg": 0.48416388034820557,
+    "accel_magnitude_g": 1.0113818645477295
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 126564217,
+    "sample_age_ms": 11.437,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967932701111,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007127333898097277,
+      0.003676247550174594,
+      -0.999967932701111
+    ],
+    "screen_tilt_deg": 0.4588492214679718,
+    "accel_magnitude_g": 1.0099132061004639
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 126718236,
+    "sample_age_ms": 22.931,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967336654663,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007170437835156918,
+      0.003733730874955654,
+      -0.999967336654663
+    ],
+    "screen_tilt_deg": 0.46309399604797363,
+    "accel_magnitude_g": 1.0093152523040771
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 126873217,
+    "sample_age_ms": 44.523,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999655485153198,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00762132415547967,
+      0.0033003694843500853,
+      -0.9999655485153198
+    ],
+    "screen_tilt_deg": 0.4756011366844177,
+    "accel_magnitude_g": 1.010892391204834
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 127045190,
+    "sample_age_ms": 31.615,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999659061431885,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00748075358569622,
+      0.0034893848933279514,
+      -0.9999659061431885
+    ],
+    "screen_tilt_deg": 0.4731261432170868,
+    "accel_magnitude_g": 1.0123580694198608
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 127199221,
+    "sample_age_ms": 41.817,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966323375702,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00721330475062132,
+      0.0039014844223856926,
+      -0.999966323375702
+    ],
+    "screen_tilt_deg": 0.47022220492362976,
+    "accel_magnitude_g": 1.0116353034973145
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 127404191,
+    "sample_age_ms": 35.43,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999616742134094,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007879143580794334,
+      0.003823064034804702,
+      -0.9999616742134094
+    ],
+    "screen_tilt_deg": 0.501631259918213,
+    "accel_magnitude_g": 1.0113937854766846
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 127560190,
+    "sample_age_ms": 50.462,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999669790267944,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00713877147063613,
+      0.003895615227520466,
+      -0.9999669790267944
+    ],
+    "screen_tilt_deg": 0.46562227606773376,
+    "accel_magnitude_g": 1.0102766752243042
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 127766190,
+    "sample_age_ms": 14.902,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965012073517,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007226208690553904,
+      0.004229738377034664,
+      -0.999965012073517
+    ],
+    "screen_tilt_deg": 0.47928959131240845,
+    "accel_magnitude_g": 1.0126134157180786
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 127921190,
+    "sample_age_ms": 24.638,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999624490737915,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007535824552178383,
+      0.004279634449630976,
+      -0.9999624490737915
+    ],
+    "screen_tilt_deg": 0.496534377336502,
+    "accel_magnitude_g": 1.01274573802948
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 128093216,
+    "sample_age_ms": 26.167,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999660849571228,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007231275085359812,
+      0.0039391107857227325,
+      -0.9999660849571228
+    ],
+    "screen_tilt_deg": 0.4718838036060333,
+    "accel_magnitude_g": 1.0101590156555176
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 128248234,
+    "sample_age_ms": 34.452,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966263771057,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0072014834731817245,
+      0.003955209162086248,
+      -0.999966263771057
+    ],
+    "screen_tilt_deg": 0.47063812613487244,
+    "accel_magnitude_g": 1.0106562376022339
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 128455190,
+    "sample_age_ms": 19.285,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999968647956848,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00711058359593153,
+      0.0035046979319304228,
+      -0.999968647956848
+    ],
+    "screen_tilt_deg": 0.45370304584503174,
+    "accel_magnitude_g": 1.0112684965133667
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 128610190,
+    "sample_age_ms": 31.18,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999675750732422,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00727014895528555,
+      0.0034684655256569386,
+      -0.9999675750732422
+    ],
+    "screen_tilt_deg": 0.4614007771015167,
+    "accel_magnitude_g": 1.0106496810913086
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 128816190,
+    "sample_age_ms": 4.6,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999963939189911,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007639171089977026,
+      0.003712862730026245,
+      -0.999963939189911
+    ],
+    "screen_tilt_deg": 0.486582726240158,
+    "accel_magnitude_g": 1.011028528213501
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 128920221,
+    "sample_age_ms": 70.263,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999659061431885,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007329453714191914,
+      0.0037933390121907,
+      -0.9999659061431885
+    ],
+    "screen_tilt_deg": 0.4731261432170868,
+    "accel_magnitude_g": 1.0117448568344116
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 129146217,
+    "sample_age_ms": 22.7,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.99996417760849,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007582283578813076,
+      0.003760651685297489,
+      -0.99996417760849
+    ],
+    "screen_tilt_deg": 0.4849714934825897,
+    "accel_magnitude_g": 1.0121333599090576
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 129302221,
+    "sample_age_ms": 37.841,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965012073517,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0076431212946772575,
+      0.003409761004149914,
+      -0.999965012073517
+    ],
+    "screen_tilt_deg": 0.47928959131240845,
+    "accel_magnitude_g": 1.0101643800735474
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 129456190,
+    "sample_age_ms": 50.273,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999696016311646,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007100549526512623,
+      0.0032331126276403666,
+      -0.9999696016311646
+    ],
+    "screen_tilt_deg": 0.4467492997646332,
+    "accel_magnitude_g": 1.0113774538040161
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 129663190,
+    "sample_age_ms": 17.772,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999648332595825,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00762127572670579,
+      0.003503704909235239,
+      -0.9999648332595825
+    ],
+    "screen_tilt_deg": 0.4805128276348114,
+    "accel_magnitude_g": 1.00955605506897
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 129816190,
+    "sample_age_ms": 36.204,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999675750732422,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0071832407265901566,
+      0.003634875640273094,
+      -0.9999675750732422
+    ],
+    "screen_tilt_deg": 0.4614007771015167,
+    "accel_magnitude_g": 1.0111501216888428
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 129972190,
+    "sample_age_ms": 49.393,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.99996817111969,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006982541177421808,
+      0.003856794210150838,
+      -0.99996817111969
+    ],
+    "screen_tilt_deg": 0.4571402370929718,
+    "accel_magnitude_g": 1.0100407600402832
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 130145217,
+    "sample_age_ms": 47.992,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999676942825317,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00718202767893672,
+      0.0036225449293851852,
+      -0.9999676942825317
+    ],
+    "screen_tilt_deg": 0.46055182814598083,
+    "accel_magnitude_g": 1.0111420154571533
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 130353190,
+    "sample_age_ms": 9.499,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999665021896362,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007279972545802593,
+      0.0037381669972091913,
+      -0.9999665021896362
+    ],
+    "screen_tilt_deg": 0.4689721465110779,
+    "accel_magnitude_g": 1.0113950967788696
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 130507225,
+    "sample_age_ms": 24.503,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999693632125854,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00709219928830862,
+      0.003322417614981532,
+      -0.9999693632125854
+    ],
+    "screen_tilt_deg": 0.44849780201911926,
+    "accel_magnitude_g": 1.0101553201675415
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 130661190,
+    "sample_age_ms": 47.961,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999968409538269,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00690843164920807,
+      0.00393151817843318,
+      -0.999968409538269
+    ],
+    "screen_tilt_deg": 0.4554249048233032,
+    "accel_magnitude_g": 1.0117486715316772
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 130868234,
+    "sample_age_ms": 4.347,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999672174453735,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0070738173089921474,
+      0.003955716732889414,
+      -0.9999672174453735
+    ],
+    "screen_tilt_deg": 0.463938295841217,
+    "accel_magnitude_g": 1.0107675790786743
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 131023216,
+    "sample_age_ms": 14.95,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.99996817111969,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00683577312156558,
+      0.004104651510715485,
+      -0.99996817111969
+    ],
+    "screen_tilt_deg": 0.4571402370929718,
+    "accel_magnitude_g": 1.0121142864227295
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 131195190,
+    "sample_age_ms": 5.839,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999648928642273,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00739553663879633,
+      0.00396197522059083,
+      -0.9999648928642273
+    ],
+    "screen_tilt_deg": 0.4801054298877716,
+    "accel_magnitude_g": 1.0110305547714233
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 131349220,
+    "sample_age_ms": 31.142,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965488910675,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007186367642134428,
+      0.004170474596321583,
+      -0.999965488910675
+    ],
+    "screen_tilt_deg": 0.47601231932640076,
+    "accel_magnitude_g": 1.0116257667541504
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 131504191,
+    "sample_age_ms": 44.71,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999651312828064,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0074141388759017,
+      0.003848767839372158,
+      -0.9999651312828064
+    ],
+    "screen_tilt_deg": 0.478472352027893,
+    "accel_magnitude_g": 1.0110204219818115
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 131709190,
+    "sample_age_ms": 19.295,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999722838401794,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006295607425272465,
+      0.003952196333557367,
+      -0.9999722838401794
+    ],
+    "screen_tilt_deg": 0.4265846014022827,
+    "accel_magnitude_g": 1.011128544807434
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 131864190,
+    "sample_age_ms": 31.884,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999688863754272,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006926806643605232,
+      0.003767767921090126,
+      -0.9999688863754272
+    ],
+    "screen_tilt_deg": 0.45197466015815735,
+    "accel_magnitude_g": 1.0110269784927368
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 132018264,
+    "sample_age_ms": 42.377,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999650716781616,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007331570144742727,
+      0.004000785294920206,
+      -0.9999650716781616
+    ],
+    "screen_tilt_deg": 0.478881150484085,
+    "accel_magnitude_g": 1.0116382837295532
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 132190190,
+    "sample_age_ms": 51.716,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999637007713318,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007663235068321228,
+      0.0037352880463004112,
+      -0.9999637007713318
+    ],
+    "screen_tilt_deg": 0.488188624382019,
+    "accel_magnitude_g": 1.0112658739089966
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 132397190,
+    "sample_age_ms": 13.346,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999962866306305,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007864427752792835,
+      0.0035265665501356125,
+      -0.999962866306305
+    ],
+    "screen_tilt_deg": 0.4937681555747986,
+    "accel_magnitude_g": 1.01089870929718
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 132552220,
+    "sample_age_ms": 26.522,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999635815620422,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007854443974792957,
+      0.003333404893055558,
+      -0.9999635815620422
+    ],
+    "screen_tilt_deg": 0.48898959159851074,
+    "accel_magnitude_g": 1.0107728242874146
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 132706190,
+    "sample_age_ms": 53.638,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999963343143463,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007732984609901905,
+      0.0036661108024418354,
+      -0.999963343143463
+    ],
+    "screen_tilt_deg": 0.49058762192726135,
+    "accel_magnitude_g": 1.0118809938430786
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 132913190,
+    "sample_age_ms": 16.859,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967932701111,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007026977837085724,
+      0.0038523725233972073,
+      -0.999967932701111
+    ],
+    "screen_tilt_deg": 0.4588492214679718,
+    "accel_magnitude_g": 1.0111393928527832
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 133067217,
+    "sample_age_ms": 31.445,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999698400497437,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006770092528313398,
+      0.0038232863880693913,
+      -0.9999698400497437
+    ],
+    "screen_tilt_deg": 0.44499388337135315,
+    "accel_magnitude_g": 1.0110125541687012
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 133240190,
+    "sample_age_ms": 25.6,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999685287475586,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007034435868263245,
+      0.0036850578617304564,
+      -0.9999685287475586
+    ],
+    "screen_tilt_deg": 0.454564779996872,
+    "accel_magnitude_g": 1.0122358798980713
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 133395190,
+    "sample_age_ms": 40.206,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999675750732422,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007170577999204397,
+      0.003652333514764905,
+      -0.9999675750732422
+    ],
+    "screen_tilt_deg": 0.4614007771015167,
+    "accel_magnitude_g": 1.0105327367782593
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 133552190,
+    "sample_age_ms": 50.789,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999678134918213,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007262753788381815,
+      0.0034303986467421055,
+      -0.9999678134918213
+    ],
+    "screen_tilt_deg": 0.4597012996673584,
+    "accel_magnitude_g": 1.010660171508789
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 133759190,
+    "sample_age_ms": 36.9,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967932701111,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007240695413202047,
+      0.0034210977610200644,
+      -0.999967932701111
+    ],
+    "screen_tilt_deg": 0.4588492214679718,
+    "accel_magnitude_g": 1.0110188722610474
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 133912190,
+    "sample_age_ms": 53.837,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967098236084,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007499207742512226,
+      0.003106288379058242,
+      -0.999967098236084
+    ],
+    "screen_tilt_deg": 0.4647810459136963,
+    "accel_magnitude_g": 1.0113939046859741
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 134122190,
+    "sample_age_ms": 29.63,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999663829803467,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007284422870725393,
+      0.00375840556807816,
+      -0.9999663829803467
+    ],
+    "screen_tilt_deg": 0.46980586647987366,
+    "accel_magnitude_g": 1.0115095376968384
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 134293190,
+    "sample_age_ms": 25.5,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965786933899,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007331274915486574,
+      0.0038241215515881777,
+      -0.999965786933899
+    ],
+    "screen_tilt_deg": 0.4739525318145752,
+    "accel_magnitude_g": 1.0094387531280518
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 134448235,
+    "sample_age_ms": 49.228,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966263771057,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007396241184324026,
+      0.003582895500585437,
+      -0.999966263771057
+    ],
+    "screen_tilt_deg": 0.47063812613487244,
+    "accel_magnitude_g": 1.0115114450454712
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 134654190,
+    "sample_age_ms": 6.806,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999656677246094,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007364964112639427,
+      0.0037931688129901886,
+      -0.9999656677246094
+    ],
+    "screen_tilt_deg": 0.47477754950523376,
+    "accel_magnitude_g": 1.0105369091033936
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 134808283,
+    "sample_age_ms": 21.154,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999660849571228,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007304920349270105,
+      0.00380567042157054,
+      -0.9999660849571228
+    ],
+    "screen_tilt_deg": 0.4718838036060333,
+    "accel_magnitude_g": 1.012729525566101
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 134963190,
+    "sample_age_ms": 26.605,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999663829803467,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007408806588500738,
+      0.00348804472014308,
+      -0.9999663829803467
+    ],
+    "screen_tilt_deg": 0.46980586647987366,
+    "accel_magnitude_g": 1.011997938156128
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 135169190,
+    "sample_age_ms": 13.949,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999958634376526,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00836589839309454,
+      0.0035632008221000433,
+      -0.999958634376526
+    ],
+    "screen_tilt_deg": 0.5211454033851624,
+    "accel_magnitude_g": 1.0118846893310547
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 135340190,
+    "sample_age_ms": 12.475,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999648332595825,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007402753923088312,
+      0.003917098511010408,
+      -0.9999648332595825
+    ],
+    "screen_tilt_deg": 0.4805128276348114,
+    "accel_magnitude_g": 1.01040518283844
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 135493191,
+    "sample_age_ms": 30.51,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966025352478,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0073081376031041145,
+      0.0038139093667268753,
+      -0.999966025352478
+    ],
+    "screen_tilt_deg": 0.4722982347011566,
+    "accel_magnitude_g": 1.0118745565414429
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 135646190,
+    "sample_age_ms": 46.335,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999666213989258,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00732170045375824,
+      0.003618866205215454,
+      -0.9999666213989258
+    ],
+    "screen_tilt_deg": 0.4681369662284851,
+    "accel_magnitude_g": 1.0106550455093384
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 135854190,
+    "sample_age_ms": 6.219,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999958872795105,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.008244006894528866,
+      0.0037950389087200165,
+      -0.999958872795105
+    ],
+    "screen_tilt_deg": 0.519641399383545,
+    "accel_magnitude_g": 1.0111594200134277
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 136008280,
+    "sample_age_ms": 23.218,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999623894691467,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007763942703604698,
+      0.0038685693871229887,
+      -0.9999623894691467
+    ],
+    "screen_tilt_deg": 0.49692827463150024,
+    "accel_magnitude_g": 1.0121208429336548
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 136162190,
+    "sample_age_ms": 41.311,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999648332595825,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007548218127340078,
+      0.0036288448609411716,
+      -0.9999648332595825
+    ],
+    "screen_tilt_deg": 0.4805128276348114,
+    "accel_magnitude_g": 1.0108975172042847
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 136317218,
+    "sample_age_ms": 58.244,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999968647956848,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0069818985648453236,
+      0.0037325869780033827,
+      -0.999968647956848
+    ],
+    "screen_tilt_deg": 0.45370304584503174,
+    "accel_magnitude_g": 1.0101628303527832
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 136541190,
+    "sample_age_ms": 24.047,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999659061431885,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007412451319396496,
+      0.0036557477433234453,
+      -0.9999659061431885
+    ],
+    "screen_tilt_deg": 0.4731261432170868,
+    "accel_magnitude_g": 1.011883020401001
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 136747190,
+    "sample_age_ms": 20.108,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966263771057,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007247510831803083,
+      0.003854951122775674,
+      -0.999966263771057
+    ],
+    "screen_tilt_deg": 0.47063812613487244,
+    "accel_magnitude_g": 1.009307622909546
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 136902190,
+    "sample_age_ms": 30.983,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999635219573975,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0076040360145270824,
+      0.0038749882951378822,
+      -0.9999635219573975
+    ],
+    "screen_tilt_deg": 0.489389568567276,
+    "accel_magnitude_g": 1.0093210935592651
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 137056216,
+    "sample_age_ms": 50.612,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999687671661377,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00707949697971344,
+      0.0035176705569028854,
+      -0.9999687671661377
+    ],
+    "screen_tilt_deg": 0.4528396725654602,
+    "accel_magnitude_g": 1.011132836341858
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 137263217,
+    "sample_age_ms": 16.677,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999682903289795,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007201158441603184,
+      0.00342064443975687,
+      -0.9999682903289795
+    ],
+    "screen_tilt_deg": 0.4562833905220032,
+    "accel_magnitude_g": 1.0100388526916504
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 137435190,
+    "sample_age_ms": 11.636,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999663829803467,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007260445971041918,
+      0.003794977441430092,
+      -0.9999663829803467
+    ],
+    "screen_tilt_deg": 0.46980586647987366,
+    "accel_magnitude_g": 1.0091869831085205
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 137591190,
+    "sample_age_ms": 43.586,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999653100967407,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0074514034204185,
+      0.00371026387438178,
+      -0.9999653100967407
+    ],
+    "screen_tilt_deg": 0.477243959903717,
+    "accel_magnitude_g": 1.0095534324645996
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 137745218,
+    "sample_age_ms": 54.131,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999685287475586,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006949863862246275,
+      0.00384204788133502,
+      -0.9999685287475586
+    ],
+    "screen_tilt_deg": 0.454564779996872,
+    "accel_magnitude_g": 1.011010766029358
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 137954190,
+    "sample_age_ms": 53.401,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999695420265198,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0067255524918437,
+      0.003958285320550203,
+      -0.9999695420265198
+    ],
+    "screen_tilt_deg": 0.4471870958805084,
+    "accel_magnitude_g": 1.0111404657363892
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 138163190,
+    "sample_age_ms": 27.949,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999963939189911,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007742203306406736,
+      0.003503119107335806,
+      -0.999963939189911
+    ],
+    "screen_tilt_deg": 0.486582726240158,
+    "accel_magnitude_g": 1.010420322418213
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 138367190,
+    "sample_age_ms": 16.378,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999680519104004,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007119004148989916,
+      0.003629127284511924,
+      -0.9999680519104004
+    ],
+    "screen_tilt_deg": 0.4579955041408539,
+    "accel_magnitude_g": 1.012972116470337
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 138540221,
+    "sample_age_ms": 18.607,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999727606773376,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006728469394147396,
+      0.0030389309395104647,
+      -0.9999727606773376
+    ],
+    "screen_tilt_deg": 0.42289912700653076,
+    "accel_magnitude_g": 1.0106451511383057
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 138694190,
+    "sample_age_ms": 33.505,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999970853328705,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006764551158994436,
+      0.003534633433446288,
+      -0.999970853328705
+    ],
+    "screen_tilt_deg": 0.43745478987693787,
+    "accel_magnitude_g": 1.0106562376022339
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 138850190,
+    "sample_age_ms": 47.777,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999969482421875,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006902150809764862,
+      0.0036521765869110823,
+      -0.999969482421875
+    ],
+    "screen_tilt_deg": 0.44762441515922546,
+    "accel_magnitude_g": 1.0095484256744385
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 139057191,
+    "sample_age_ms": 8.397,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999645948410034,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007452829275280237,
+      0.003891028929501772,
+      -0.9999645948410034
+    ],
+    "screen_tilt_deg": 0.48213890194892883,
+    "accel_magnitude_g": 1.010302186012268
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 139212221,
+    "sample_age_ms": 19.684,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999674558639526,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007021949626505375,
+      0.003982506692409515,
+      -0.9999674558639526
+    ],
+    "screen_tilt_deg": 0.462248146533966,
+    "accel_magnitude_g": 1.0102871656417847
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 139367190,
+    "sample_age_ms": 42.683,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999648928642273,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007511781062930822,
+      0.003727375064045191,
+      -0.9999648928642273
+    ],
+    "screen_tilt_deg": 0.4801054298877716,
+    "accel_magnitude_g": 1.0117571353912354
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 139544191,
+    "sample_age_ms": 37.018,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999638199806213,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007791939657181501,
+      0.0033982463646680117,
+      -0.9999638199806213
+    ],
+    "screen_tilt_deg": 0.4873863458633423,
+    "accel_magnitude_g": 1.010660171508789
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 139697190,
+    "sample_age_ms": 52.338,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999651312828064,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007433262187987566,
+      0.003797129262238741,
+      -0.9999651312828064
+    ],
+    "screen_tilt_deg": 0.478472352027893,
+    "accel_magnitude_g": 1.0122463703155518
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 139904370,
+    "sample_age_ms": 21.426,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999659061431885,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007295119110494852,
+      0.003871017135679722,
+      -0.9999659061431885
+    ],
+    "screen_tilt_deg": 0.4731261432170868,
+    "accel_magnitude_g": 1.0088167190551758
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 140060190,
+    "sample_age_ms": 41.731,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999653697013855,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007531510666012764,
+      0.00354969734326005,
+      -0.9999653697013855
+    ],
+    "screen_tilt_deg": 0.4768337607383728,
+    "accel_magnitude_g": 1.0107747316360474
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 140267190,
+    "sample_age_ms": 5.991,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999662041664124,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0072986064478755,
+      0.0038055337499827147,
+      -0.9999662041664124
+    ],
+    "screen_tilt_deg": 0.47105371952056885,
+    "accel_magnitude_g": 1.0121212005615234
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 140422191,
+    "sample_age_ms": 20.285,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967098236084,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00728315906599164,
+      0.003571724519133568,
+      -0.999967098236084
+    ],
+    "screen_tilt_deg": 0.4647810459136963,
+    "accel_magnitude_g": 1.0116268396377563
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 140593190,
+    "sample_age_ms": 18.384,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999667406082153,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007185793481767178,
+      0.0038321861065924168,
+      -0.9999667406082153
+    ],
+    "screen_tilt_deg": 0.4673002064228058,
+    "accel_magnitude_g": 1.01102089881897
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 140748263,
+    "sample_age_ms": 28.554,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999680519104004,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00708010420203209,
+      0.003722229041159153,
+      -0.9999680519104004
+    ],
+    "screen_tilt_deg": 0.4579955041408539,
+    "accel_magnitude_g": 1.0096741914749146
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 140902190,
+    "sample_age_ms": 43.172,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999968647956848,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007050515618175268,
+      0.0035973582416772842,
+      -0.999968647956848
+    ],
+    "screen_tilt_deg": 0.45370304584503174,
+    "accel_magnitude_g": 1.011256217956543
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 141108281,
+    "sample_age_ms": 3.741,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999680519104004,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007144770119339228,
+      0.003570675617083907,
+      -0.9999680519104004
+    ],
+    "screen_tilt_deg": 0.4579955041408539,
+    "accel_magnitude_g": 1.0122437477111816
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 141262190,
+    "sample_age_ms": 18.615,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965786933899,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0075334529392421246,
+      0.0034311306662857533,
+      -0.999965786933899
+    ],
+    "screen_tilt_deg": 0.4739525318145752,
+    "accel_magnitude_g": 1.0105348825454712
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 141417190,
+    "sample_age_ms": 42.786,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999645948410034,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007623066194355488,
+      0.003542539430782199,
+      -0.9999645948410034
+    ],
+    "screen_tilt_deg": 0.48213890194892883,
+    "accel_magnitude_g": 1.0104135274887085
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 141572190,
+    "sample_age_ms": 58.401,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999963939189911,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007476059719920158,
+      0.004035744350403547,
+      -0.999963939189911
+    ],
+    "screen_tilt_deg": 0.486582726240158,
+    "accel_magnitude_g": 1.0124943256378174
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 141796190,
+    "sample_age_ms": 3.439,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999642372131348,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00737804500386119,
+      0.004126573912799358,
+      -0.9999642372131348
+    ],
+    "screen_tilt_deg": 0.48456788063049316,
+    "accel_magnitude_g": 1.0105348825454712
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 141950220,
+    "sample_age_ms": 36.417,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965786933899,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007271411828696728,
+      0.00394379859790206,
+      -0.999965786933899
+    ],
+    "screen_tilt_deg": 0.4739525318145752,
+    "accel_magnitude_g": 1.0107671022415161
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 142156269,
+    "sample_age_ms": 17.979,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999963343143463,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00765318050980568,
+      0.0038436444010585546,
+      -0.999963343143463
+    ],
+    "screen_tilt_deg": 0.49058762192726135,
+    "accel_magnitude_g": 1.012241244316101
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 142311190,
+    "sample_age_ms": 40.337,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999968409538269,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0072175501845777035,
+      0.00332823651842773,
+      -0.999968409538269
+    ],
+    "screen_tilt_deg": 0.4554249048233032,
+    "accel_magnitude_g": 1.0110137462615967
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 142517190,
+    "sample_age_ms": 32.398,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999651908874512,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007302946876734495,
+      0.004031437449157238,
+      -0.9999651908874512
+    ],
+    "screen_tilt_deg": 0.4780632555484772,
+    "accel_magnitude_g": 1.008824348449707
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 142741222,
+    "sample_age_ms": 5.263,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999669790267944,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007035375107079744,
+      0.00406360812485218,
+      -0.9999669790267944
+    ],
+    "screen_tilt_deg": 0.46562227606773376,
+    "accel_magnitude_g": 1.0106501579284668
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 142897190,
+    "sample_age_ms": 42.794,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967932701111,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00708306161686778,
+      0.00372272846288979,
+      -0.999967932701111
+    ],
+    "screen_tilt_deg": 0.4588492214679718,
+    "accel_magnitude_g": 1.0101733207702637
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 143104317,
+    "sample_age_ms": 12.959,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999656677246094,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007294658105820417,
+      0.0039296806789934635,
+      -0.9999656677246094
+    ],
+    "screen_tilt_deg": 0.47477754950523376,
+    "accel_magnitude_g": 1.010780692100525
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 143258234,
+    "sample_age_ms": 50.976,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967336654663,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007121231872588396,
+      0.003821187885478139,
+      -0.999967336654663
+    ],
+    "screen_tilt_deg": 0.46309399604797363,
+    "accel_magnitude_g": 1.0126045942306519
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 143464190,
+    "sample_age_ms": 14.442,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999647736549377,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007273006718605757,
+      0.004211158957332373,
+      -0.9999647736549377
+    ],
+    "screen_tilt_deg": 0.48091986775398254,
+    "accel_magnitude_g": 1.0115100145339966
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 143618235,
+    "sample_age_ms": 31.407,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999635815620422,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00744908768683672,
+      0.00417452910915017,
+      -0.9999635815620422
+    ],
+    "screen_tilt_deg": 0.48898959159851074,
+    "accel_magnitude_g": 1.0107723474502563
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 143792222,
+    "sample_age_ms": 49.342,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999625086784363,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007541034370660782,
+      0.004261890891939402,
+      -0.9999625086784363
+    ],
+    "screen_tilt_deg": 0.49614015221595764,
+    "accel_magnitude_g": 1.0118801593780518
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 143997190,
+    "sample_age_ms": 19.873,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999653100967407,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007425678428262472,
+      0.0037557019386440516,
+      -0.9999653100967407
+    ],
+    "screen_tilt_deg": 0.477243959903717,
+    "accel_magnitude_g": 1.011386513710022
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 144152190,
+    "sample_age_ms": 27.972,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966859817505,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0071611967869102955,
+      0.003878012765198946,
+      -0.999966859817505
+    ],
+    "screen_tilt_deg": 0.46646201610565186,
+    "accel_magnitude_g": 1.010406255722046
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 144305191,
+    "sample_age_ms": 51.333,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999690055847168,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0070561738684773445,
+      0.003515783231705427,
+      -0.9999690055847168
+    ],
+    "screen_tilt_deg": 0.4511079490184784,
+    "accel_magnitude_g": 1.0103999376297
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 144512190,
+    "sample_age_ms": 17.198,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999680519104004,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0071089970879256725,
+      0.003650856902822852,
+      -0.9999680519104004
+    ],
+    "screen_tilt_deg": 0.4579955041408539,
+    "accel_magnitude_g": 1.0109107494354248
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 144667216,
+    "sample_age_ms": 26.631,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999969780445099,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007022161036729813,
+      0.0033234008587896824,
+      -0.999969780445099
+    ],
+    "screen_tilt_deg": 0.4454333782196045,
+    "accel_magnitude_g": 1.0104008913040161
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 144841223,
+    "sample_age_ms": 19.746,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999703764915466,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00670166127383709,
+      0.0037983248475939035,
+      -0.9999703764915466
+    ],
+    "screen_tilt_deg": 0.44101864099502563,
+    "accel_magnitude_g": 1.00931191444397
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 145046190,
+    "sample_age_ms": 27.147,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999672174453735,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007241142448037863,
+      0.0036278862971812487,
+      -0.9999672174453735
+    ],
+    "screen_tilt_deg": 0.463938295841217,
+    "accel_magnitude_g": 1.0109002590179443
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 145253190,
+    "sample_age_ms": 20.843,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999676942825317,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007235671393573284,
+      0.0035137925297021866,
+      -0.9999676942825317
+    ],
+    "screen_tilt_deg": 0.46055182814598083,
+    "accel_magnitude_g": 1.0107718706130981
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 145460191,
+    "sample_age_ms": 5.834,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966025352478,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00731322867795825,
+      0.003789274487644434,
+      -0.999966025352478
+    ],
+    "screen_tilt_deg": 0.4722982347011566,
+    "accel_magnitude_g": 1.0116372108459473
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 145666217,
+    "sample_age_ms": 22.992,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999962031841278,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007601454854011536,
+      0.004274304490536451,
+      -0.999962031841278
+    ],
+    "screen_tilt_deg": 0.4992852807044983,
+    "accel_magnitude_g": 1.0120117664337158
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 145994190,
+    "sample_age_ms": 39.434,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999654293060303,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007227398920804262,
+      0.004119034856557846,
+      -0.9999654293060303
+    ],
+    "screen_tilt_deg": 0.4764232635498047,
+    "accel_magnitude_g": 1.0101739168167114
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 146200191,
+    "sample_age_ms": 4.746,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999614357948303,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007595335599035025,
+      0.004402825143188238,
+      -0.9999614357948303
+    ],
+    "screen_tilt_deg": 0.5031890869140625,
+    "accel_magnitude_g": 1.011762261390686
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 146356190,
+    "sample_age_ms": 22.975,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999667406082153,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007026122882962227,
+      0.004134319722652435,
+      -0.9999667406082153
+    ],
+    "screen_tilt_deg": 0.4673002064228058,
+    "accel_magnitude_g": 1.0117504596710205
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 146512190,
+    "sample_age_ms": 37.188,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999964714050293,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007270916365087032,
+      0.004216514993458986,
+      -0.999964714050293
+    ],
+    "screen_tilt_deg": 0.48132652044296265,
+    "accel_magnitude_g": 1.01042377948761
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 146718233,
+    "sample_age_ms": 20.858,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999674558639526,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007354375906288624,
+      0.0033009357284754515,
+      -0.9999674558639526
+    ],
+    "screen_tilt_deg": 0.462248146533966,
+    "accel_magnitude_g": 1.012981653213501
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 146889190,
+    "sample_age_ms": 50.89,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999701380729675,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006916445214301348,
+      0.00345597555860877,
+      -0.9999701380729675
+    ],
+    "screen_tilt_deg": 0.44278982281684875,
+    "accel_magnitude_g": 1.0094242095947266
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 148402190,
+    "sample_age_ms": 24.133,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999659061431885,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007370402570813894,
+      0.00371095072478056,
+      -0.9999659061431885
+    ],
+    "screen_tilt_deg": 0.4731261432170868,
+    "accel_magnitude_g": 1.0116280317306519
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 148557190,
+    "sample_age_ms": 41.151,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966025352478,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007483483292162418,
+      0.0034668210428208113,
+      -0.999966025352478
+    ],
+    "screen_tilt_deg": 0.4722982347011566,
+    "accel_magnitude_g": 1.0105334520339966
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 148763190,
+    "sample_age_ms": 38.781,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965786933899,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007425837684422731,
+      0.0036212310660630465,
+      -0.999965786933899
+    ],
+    "screen_tilt_deg": 0.4739525318145752,
+    "accel_magnitude_g": 1.011995553970337
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 150398235,
+    "sample_age_ms": 7.12,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999968409538269,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007173741236329079,
+      0.003415462328121066,
+      -0.999968409538269
+    ],
+    "screen_tilt_deg": 0.4554249048233032,
+    "accel_magnitude_g": 1.0118768215179443
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 150553217,
+    "sample_age_ms": 35.112,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999674558639526,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007132330909371376,
+      0.003780603874474764,
+      -0.9999674558639526
+    ],
+    "screen_tilt_deg": 0.462248146533966,
+    "accel_magnitude_g": 1.0115121603012085
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 150760221,
+    "sample_age_ms": 19.826,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999716877937317,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0062424554489552975,
+      0.004187447018921375,
+      -0.9999716877937317
+    ],
+    "screen_tilt_deg": 0.43114715814590454,
+    "accel_magnitude_g": 1.011261224746704
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 150915190,
+    "sample_age_ms": 40.087,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999653697013855,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00718228192999959,
+      0.00422087637707591,
+      -0.9999653697013855
+    ],
+    "screen_tilt_deg": 0.4768337607383728,
+    "accel_magnitude_g": 1.0124937295913696
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 151086190,
+    "sample_age_ms": 40.571,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999964416027069,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007485151290893555,
+      0.003904667217284441,
+      -0.999964416027069
+    ],
+    "screen_tilt_deg": 0.483354926109314,
+    "accel_magnitude_g": 1.0108927488327026
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 151293190,
+    "sample_age_ms": 20.968,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999661445617676,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007433763705193996,
+      0.00351319252513349,
+      -0.9999661445617676
+    ],
+    "screen_tilt_deg": 0.4714689254760742,
+    "accel_magnitude_g": 1.009922742843628
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 151448234,
+    "sample_age_ms": 51.753,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967932701111,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007358502130955458,
+      0.003153969766572118,
+      -0.999967932701111
+    ],
+    "screen_tilt_deg": 0.4588492214679718,
+    "accel_magnitude_g": 1.0118767023086548
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 151914190,
+    "sample_age_ms": 54.479,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999655485153198,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00748121738433838,
+      0.0035860727075487375,
+      -0.9999655485153198
+    ],
+    "screen_tilt_deg": 0.4756011366844177,
+    "accel_magnitude_g": 1.010899305343628
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 152143190,
+    "sample_age_ms": 10.824,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999675750732422,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007331309840083122,
+      0.003318606875836849,
+      -0.9999675750732422
+    ],
+    "screen_tilt_deg": 0.4614007771015167,
+    "accel_magnitude_g": 1.0115119218826294
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 152297217,
+    "sample_age_ms": 53.963,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999678134918213,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007103343028575182,
+      0.0037467675283551216,
+      -0.9999678134918213
+    ],
+    "screen_tilt_deg": 0.4597012996673584,
+    "accel_magnitude_g": 1.0106507539749146
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 152557190,
+    "sample_age_ms": 20.485,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.99996817111969,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00697419699281454,
+      0.0038818996399641037,
+      -0.99996817111969
+    ],
+    "screen_tilt_deg": 0.4571402370929718,
+    "accel_magnitude_g": 1.012726902961731
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 152764221,
+    "sample_age_ms": 29.702,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999672174453735,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007185169029980898,
+      0.003724816720932722,
+      -0.9999672174453735
+    ],
+    "screen_tilt_deg": 0.463938295841217,
+    "accel_magnitude_g": 1.0111461877822876
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 152920191,
+    "sample_age_ms": 49.653,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999642372131348,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007560286670923233,
+      0.003785012988373637,
+      -0.9999642372131348
+    ],
+    "screen_tilt_deg": 0.48456788063049316,
+    "accel_magnitude_g": 1.0090696811676025
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 153075220,
+    "sample_age_ms": 63.657,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999968647956848,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00706649012863636,
+      0.003573029302060604,
+      -0.999968647956848
+    ],
+    "screen_tilt_deg": 0.45370304584503174,
+    "accel_magnitude_g": 1.0117381811141968
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 153302231,
+    "sample_age_ms": 16.973,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967932701111,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007123625837266445,
+      0.003668037476018071,
+      -0.999967932701111
+    ],
+    "screen_tilt_deg": 0.4588492214679718,
+    "accel_magnitude_g": 1.010896921157837
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 153456221,
+    "sample_age_ms": 48.066,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999709725379944,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0067350962199270725,
+      0.0035453718155622482,
+      -0.9999709725379944
+    ],
+    "screen_tilt_deg": 0.4365592896938324,
+    "accel_magnitude_g": 1.0105358362197876
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 153662234,
+    "sample_age_ms": 25.195,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999637603759766,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007361977826803923,
+      0.00427492382004857,
+      -0.9999637603759766
+    ],
+    "screen_tilt_deg": 0.4877876341342926,
+    "accel_magnitude_g": 1.010418176651001
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 153868190,
+    "sample_age_ms": 17.109,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999638199806213,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007430151104927063,
+      0.0041502430103719234,
+      -0.9999638199806213
+    ],
+    "screen_tilt_deg": 0.4873863458633423,
+    "accel_magnitude_g": 1.0108919143676758
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 154023222,
+    "sample_age_ms": 45.761,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999969780445099,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006798495072871447,
+      0.0037725490983575583,
+      -0.999969780445099
+    ],
+    "screen_tilt_deg": 0.4454333782196045,
+    "accel_magnitude_g": 1.0107667446136475
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 154247191,
+    "sample_age_ms": 10.718,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999964952468872,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007401559967547655,
+      0.003897673450410366,
+      -0.999964952468872
+    ],
+    "screen_tilt_deg": 0.47969770431518555,
+    "accel_magnitude_g": 1.0104142427444458
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 154403190,
+    "sample_age_ms": 27.823,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.99996817111969,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007093565072864294,
+      0.003659078385680914,
+      -0.99996817111969
+    ],
+    "screen_tilt_deg": 0.4571402370929718,
+    "accel_magnitude_g": 1.012110948562622
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 154661190,
+    "sample_age_ms": 8.122,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999968945980072,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0068919784389436245,
+      0.00381447421386838,
+      -0.999968945980072
+    ],
+    "screen_tilt_deg": 0.4515415132045746,
+    "accel_magnitude_g": 1.009798526763916
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 154816223,
+    "sample_age_ms": 40.869,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999963939189911,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007430359721183777,
+      0.00412421114742756,
+      -0.999963939189911
+    ],
+    "screen_tilt_deg": 0.486582726240158,
+    "accel_magnitude_g": 1.0120075941085815
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 155073222,
+    "sample_age_ms": 15.955,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999635815620422,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007453300524502993,
+      0.004153047688305378,
+      -0.9999635815620422
+    ],
+    "screen_tilt_deg": 0.48898959159851074,
+    "accel_magnitude_g": 1.01102352142334
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 155297190,
+    "sample_age_ms": 23.856,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999659061431885,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00744906533509493,
+      0.0035660737194120884,
+      -0.9999659061431885
+    ],
+    "screen_tilt_deg": 0.4731261432170868,
+    "accel_magnitude_g": 1.0108990669250488
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 155503191,
+    "sample_age_ms": 18.47,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999960482120514,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00801441725343466,
+      0.0038606529124081135,
+      -0.999960482120514
+    ],
+    "screen_tilt_deg": 0.5093729496002197,
+    "accel_magnitude_g": 1.0110310316085815
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 155658190,
+    "sample_age_ms": 37.471,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999611973762512,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007964346557855606,
+      0.0037769018672406673,
+      -0.9999611973762512
+    ],
+    "screen_tilt_deg": 0.504742205142975,
+    "accel_magnitude_g": 1.0098119974136353
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 155916190,
+    "sample_age_ms": 6.41,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999635815620422,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007428282871842384,
+      0.004201206844300032,
+      -0.9999635815620422
+    ],
+    "screen_tilt_deg": 0.48898959159851074,
+    "accel_magnitude_g": 1.0124812126159668
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 156226219,
+    "sample_age_ms": 22.172,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999661445617676,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0070019057020545,
+      0.00430661952123046,
+      -0.9999661445617676
+    ],
+    "screen_tilt_deg": 0.4714689254760742,
+    "accel_magnitude_g": 1.0115177631378174
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 156450217,
+    "sample_age_ms": 18.355,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999653697013855,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007400588132441044,
+      0.0038118332158774137,
+      -0.9999653697013855
+    ],
+    "screen_tilt_deg": 0.4768337607383728,
+    "accel_magnitude_g": 1.0117541551589966
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 156606243,
+    "sample_age_ms": 42.528,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999614357948303,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00768444687128067,
+      0.004257155116647482,
+      -0.9999614357948303
+    ],
+    "screen_tilt_deg": 0.5031890869140625,
+    "accel_magnitude_g": 1.0103020668029785
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 156915190,
+    "sample_age_ms": 5.126,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999667406082153,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007370693143457174,
+      0.00349720730446279,
+      -0.9999667406082153
+    ],
+    "screen_tilt_deg": 0.4673002064228058,
+    "accel_magnitude_g": 1.0100456476211548
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 157070190,
+    "sample_age_ms": 27.275,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999669790267944,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0071566784754395485,
+      0.0038555313367396593,
+      -0.9999669790267944
+    ],
+    "screen_tilt_deg": 0.46562227606773376,
+    "accel_magnitude_g": 1.0127350091934204
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 157276220,
+    "sample_age_ms": 10.313,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999688863754272,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0070154257118701935,
+      0.0036199423484504223,
+      -0.9999688863754272
+    ],
+    "screen_tilt_deg": 0.45197466015815735,
+    "accel_magnitude_g": 1.0110161304473877
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 157398190,
+    "sample_age_ms": 50.375,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999970257282257,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006830562371760607,
+      0.0035614545922726393,
+      -0.999970257282257
+    ],
+    "screen_tilt_deg": 0.44190514087677,
+    "accel_magnitude_g": 1.010282039642334
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 157605360,
+    "sample_age_ms": 7.106,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999648332595825,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007320764008909464,
+      0.004074782598763704,
+      -0.9999648332595825
+    ],
+    "screen_tilt_deg": 0.4805128276348114,
+    "accel_magnitude_g": 1.0101654529571533
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 157759190,
+    "sample_age_ms": 19.444,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999653100967407,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007314612623304129,
+      0.003984070848673582,
+      -0.9999653100967407
+    ],
+    "screen_tilt_deg": 0.477243959903717,
+    "accel_magnitude_g": 1.0105308294296265
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 157914190,
+    "sample_age_ms": 37.568,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999961793422699,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007729188073426485,
+      0.0040779453702270985,
+      -0.999961793422699
+    ],
+    "screen_tilt_deg": 0.5008504390716553,
+    "accel_magnitude_g": 1.009806513786316
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 158119217,
+    "sample_age_ms": 51.443,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999632239341736,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0073902118019759655,
+      0.00434732949361205,
+      -0.9999632239341736
+    ],
+    "screen_tilt_deg": 0.49138468503952026,
+    "accel_magnitude_g": 1.0110197067260742
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 158327190,
+    "sample_age_ms": 45.661,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999634623527527,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007322713267058134,
+      0.004401827696710825,
+      -0.9999634623527527
+    ],
+    "screen_tilt_deg": 0.4897892475128174,
+    "accel_magnitude_g": 1.0111435651779175
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 158653190,
+    "sample_age_ms": 34.115,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965012073517,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00759071810171008,
+      0.003511519404128194,
+      -0.999965012073517
+    ],
+    "screen_tilt_deg": 0.47928959131240845,
+    "accel_magnitude_g": 1.0112677812576294
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 158964190,
+    "sample_age_ms": 32.577,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999651312828064,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007457447238266468,
+      0.0037402280140668154,
+      -0.9999651312828064
+    ],
+    "screen_tilt_deg": 0.478472352027893,
+    "accel_magnitude_g": 1.0123521089553833
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 159170190,
+    "sample_age_ms": 22.768,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966263771057,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007159068249166012,
+      0.0040205675177276134,
+      -0.999966263771057
+    ],
+    "screen_tilt_deg": 0.47063812613487244,
+    "accel_magnitude_g": 1.0115199089050293
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 159376190,
+    "sample_age_ms": 61.112,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999650716781616,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007442207541316748,
+      0.0038057586643844843,
+      -0.9999650716781616
+    ],
+    "screen_tilt_deg": 0.478881150484085,
+    "accel_magnitude_g": 1.0104119777679443
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 159652233,
+    "sample_age_ms": 15.064,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999632835388184,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0076370551250875,
+      0.003862393321469426,
+      -0.9999632835388184
+    ],
+    "screen_tilt_deg": 0.49098628759384155,
+    "accel_magnitude_g": 1.0110282897949219
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 159807190,
+    "sample_age_ms": 49.019,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999651908874512,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007380438037216663,
+      0.00389277539215982,
+      -0.9999651908874512
+    ],
+    "screen_tilt_deg": 0.4780632555484772,
+    "accel_magnitude_g": 1.0104082822799683
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 160013190,
+    "sample_age_ms": 21.466,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999669790267944,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007395371329039335,
+      0.0033774764742702246,
+      -0.9999669790267944
+    ],
+    "screen_tilt_deg": 0.46562227606773376,
+    "accel_magnitude_g": 1.0117493867874146
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 160166190,
+    "sample_age_ms": 55.205,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999696612358093,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006869690027087927,
+      0.003654435509815812,
+      -0.9999696612358093
+    ],
+    "screen_tilt_deg": 0.4463110864162445,
+    "accel_magnitude_g": 1.0091851949691772
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 160376190,
+    "sample_age_ms": 33.561,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999675750732422,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007023755460977554,
+      0.003945966251194477,
+      -0.9999675750732422
+    ],
+    "screen_tilt_deg": 0.4614007771015167,
+    "accel_magnitude_g": 1.0093069076538086
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 160549190,
+    "sample_age_ms": 29.345,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967336654663,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006901520770043135,
+      0.004203641787171364,
+      -0.999967336654663
+    ],
+    "screen_tilt_deg": 0.46309399604797363,
+    "accel_magnitude_g": 1.009791612625122
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 160754222,
+    "sample_age_ms": 34.933,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966859817505,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00703952368348837,
+      0.004086641129106283,
+      -0.999966859817505
+    ],
+    "screen_tilt_deg": 0.46646201610565186,
+    "accel_magnitude_g": 1.0096795558929443
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 160908190,
+    "sample_age_ms": 51.927,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999661445617676,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007253693882375956,
+      0.00389793561771512,
+      -0.9999661445617676
+    ],
+    "screen_tilt_deg": 0.4714689254760742,
+    "accel_magnitude_g": 1.010414719581604
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 161115190,
+    "sample_age_ms": 35.591,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999675750732422,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007247664034366608,
+      0.003528053406625986,
+      -0.9999675750732422
+    ],
+    "screen_tilt_deg": 0.4614007771015167,
+    "accel_magnitude_g": 1.0118733644485474
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 161323190,
+    "sample_age_ms": 29.853,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999966025352478,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007408571895211935,
+      0.0035987214650958776,
+      -0.999966025352478
+    ],
+    "screen_tilt_deg": 0.4722982347011566,
+    "accel_magnitude_g": 1.0104066133499146
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 161477217,
+    "sample_age_ms": 61.395,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999654293060303,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007542027160525322,
+      0.003492592368274927,
+      -0.9999654293060303
+    ],
+    "screen_tilt_deg": 0.4764232635498047,
+    "accel_magnitude_g": 1.0113860368728638
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 161710190,
+    "sample_age_ms": 53.542,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999693632125854,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006978398654609919,
+      0.0035373903810977936,
+      -0.9999693632125854
+    ],
+    "screen_tilt_deg": 0.44849780201911926,
+    "accel_magnitude_g": 1.0130834579467773
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 161917190,
+    "sample_age_ms": 47.987,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967098236084,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007188768591731787,
+      0.003747105598449707,
+      -0.999967098236084
+    ],
+    "screen_tilt_deg": 0.4647810459136963,
+    "accel_magnitude_g": 1.0102863311767578
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 162122267,
+    "sample_age_ms": 33.023,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965012073517,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007387800142169,
+      0.003927977290004492,
+      -0.999965012073517
+    ],
+    "screen_tilt_deg": 0.47928959131240845,
+    "accel_magnitude_g": 1.0107775926589966
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 162327190,
+    "sample_age_ms": 22.417,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999635815620422,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007272737566381693,
+      0.004461398348212242,
+      -0.9999635815620422
+    ],
+    "screen_tilt_deg": 0.48898959159851074,
+    "accel_magnitude_g": 1.0105407238006592
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 162482265,
+    "sample_age_ms": 36.267,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999641180038452,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00747581897303462,
+      0.0039767324924469,
+      -0.9999641180038452
+    ],
+    "screen_tilt_deg": 0.4853748083114624,
+    "accel_magnitude_g": 1.010041356086731
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 162655190,
+    "sample_age_ms": 29.866,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999646544456482,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0075102816335856915,
+      0.0037898130249232054,
+      -0.9999646544456482
+    ],
+    "screen_tilt_deg": 0.48173293471336365,
+    "accel_magnitude_g": 1.0117594003677368
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 162810190,
+    "sample_age_ms": 50.642,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999642968177795,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007664795499294996,
+      0.003581938100978732,
+      -0.9999642968177795
+    ],
+    "screen_tilt_deg": 0.48416388034820557,
+    "accel_magnitude_g": 1.0106617212295532
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 163017190,
+    "sample_age_ms": 13.505,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999648332595825,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00759266735985875,
+      0.0035430449061095715,
+      -0.9999648332595825
+    ],
+    "screen_tilt_deg": 0.4805128276348114,
+    "accel_magnitude_g": 1.01138973236084
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 163171217,
+    "sample_age_ms": 30.412,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999963641166687,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007787939626723528,
+      0.0034510621335357428,
+      -0.999963641166687
+    ],
+    "screen_tilt_deg": 0.48858925700187683,
+    "accel_magnitude_g": 1.0102940797805786
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 163326190,
+    "sample_age_ms": 44.574,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999645352363586,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007675153203308582,
+      0.0034716282971203327,
+      -0.9999645352363586
+    ],
+    "screen_tilt_deg": 0.48254460096359253,
+    "accel_magnitude_g": 1.0121216773986816
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 163535191,
+    "sample_age_ms": 5.907,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967336654663,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006886627990752459,
+      0.004233981482684612,
+      -0.999967336654663
+    ],
+    "screen_tilt_deg": 0.46309399604797363,
+    "accel_magnitude_g": 1.0096697807312012
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 163639190,
+    "sample_age_ms": 64.942,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999627470970154,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007494157180190086,
+      0.00428971042856574,
+      -0.9999627470970154
+    ],
+    "screen_tilt_deg": 0.4945600628852844,
+    "accel_magnitude_g": 1.011895775794983
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 163864190,
+    "sample_age_ms": 22.589,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999969244003296,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006933395750820637,
+      0.00366436573676765,
+      -0.999969244003296
+    ],
+    "screen_tilt_deg": 0.4493695795536041,
+    "accel_magnitude_g": 1.010519027709961
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 164017190,
+    "sample_age_ms": 39.498,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999688267707825,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006975733675062656,
+      0.0036930604837834835,
+      -0.9999688267707825
+    ],
+    "screen_tilt_deg": 0.4524073600769043,
+    "accel_magnitude_g": 1.0099196434020996
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 164172233,
+    "sample_age_ms": 51.332,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999674558639526,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0072046066634356976,
+      0.003631279105320573,
+      -0.9999674558639526
+    ],
+    "screen_tilt_deg": 0.462248146533966,
+    "accel_magnitude_g": 1.0113887786865234
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 164379190,
+    "sample_age_ms": 16.458,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999674558639526,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007326217368245125,
+      0.003365717828273773,
+      -0.9999674558639526
+    ],
+    "screen_tilt_deg": 0.462248146533966,
+    "accel_magnitude_g": 1.009795904159546
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 164535190,
+    "sample_age_ms": 27.182,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999637603759766,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00783309154212475,
+      0.0033342938404530287,
+      -0.9999637603759766
+    ],
+    "screen_tilt_deg": 0.4877876341342926,
+    "accel_magnitude_g": 1.0094521045684814
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 164688190,
+    "sample_age_ms": 59.837,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999661445617676,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00739301834255457,
+      0.0036131772212684155,
+      -0.9999661445617676
+    ],
+    "screen_tilt_deg": 0.4714689254760742,
+    "accel_magnitude_g": 1.011020541191101
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 164912245,
+    "sample_age_ms": 49.351,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999678134918213,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00733969360589981,
+      0.0032343370839953423,
+      -0.9999678134918213
+    ],
+    "screen_tilt_deg": 0.4597012996673584,
+    "accel_magnitude_g": 1.0102858543395996
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 165119190,
+    "sample_age_ms": 35.228,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999698400497437,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006977509707212448,
+      0.0034302968997508287,
+      -0.9999698400497437
+    ],
+    "screen_tilt_deg": 0.44499388337135315,
+    "accel_magnitude_g": 1.0124809741973877
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 165325190,
+    "sample_age_ms": 16.019,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999665021896362,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007143733091652393,
+      0.003988031763583422,
+      -0.9999665021896362
+    ],
+    "screen_tilt_deg": 0.4689721465110779,
+    "accel_magnitude_g": 1.0120115280151367
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 165478190,
+    "sample_age_ms": 43.841,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999667406082153,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006934423465281725,
+      0.00428983848541975,
+      -0.9999667406082153
+    ],
+    "screen_tilt_deg": 0.4673002064228058,
+    "accel_magnitude_g": 1.0102957487106323
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 165738190,
+    "sample_age_ms": 60.185,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999709129333496,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006971622817218304,
+      0.003118969965726137,
+      -0.9999709129333496
+    ],
+    "screen_tilt_deg": 0.43700724840164185,
+    "accel_magnitude_g": 1.0135802030563354
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 166014190,
+    "sample_age_ms": 38.642,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999696016311646,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00700106704607606,
+      0.0034393672831356525,
+      -0.9999696016311646
+    ],
+    "screen_tilt_deg": 0.4467492997646332,
+    "accel_magnitude_g": 1.01138436794281
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 166169190,
+    "sample_age_ms": 48.516,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999650716781616,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007543381303548813,
+      0.0035873749293386936,
+      -0.9999650716781616
+    ],
+    "screen_tilt_deg": 0.478881150484085,
+    "accel_magnitude_g": 1.0112721920013428
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 166376190,
+    "sample_age_ms": 5.591,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999611973762512,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007977889850735664,
+      0.0037321129348129034,
+      -0.9999611973762512
+    ],
+    "screen_tilt_deg": 0.504742205142975,
+    "accel_magnitude_g": 1.01127290725708
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 166530217,
+    "sample_age_ms": 38.372,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999680519104004,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00703357718884945,
+      0.0037961851339787245,
+      -0.9999680519104004
+    ],
+    "screen_tilt_deg": 0.4579955041408539,
+    "accel_magnitude_g": 1.0105189085006714
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 166738190,
+    "sample_age_ms": 12.815,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965786933899,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007558871991932392,
+      0.0033602926414459944,
+      -0.999965786933899
+    ],
+    "screen_tilt_deg": 0.4739525318145752,
+    "accel_magnitude_g": 1.0112645626068115
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 166909190,
+    "sample_age_ms": 14.167,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999627470970154,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0077934665605425835,
+      0.003701015841215849,
+      -0.9999627470970154
+    ],
+    "screen_tilt_deg": 0.4945600628852844,
+    "accel_magnitude_g": 1.0101721286773682
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 167064190,
+    "sample_age_ms": 24.225,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999653100967407,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007471694611012936,
+      0.0036891403142362833,
+      -0.9999653100967407
+    ],
+    "screen_tilt_deg": 0.477243959903717,
+    "accel_magnitude_g": 1.0119984149932861
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 167219190,
+    "sample_age_ms": 44.514,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999968647956848,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00714685581624508,
+      0.0034122534561902285,
+      -0.999968647956848
+    ],
+    "screen_tilt_deg": 0.45370304584503174,
+    "accel_magnitude_g": 1.0121208429336548
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 167425190,
+    "sample_age_ms": 9.943,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999653100967407,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007305474020540714,
+      0.003987414296716452,
+      -0.9999653100967407
+    ],
+    "screen_tilt_deg": 0.477243959903717,
+    "accel_magnitude_g": 1.0100432634353638
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 167578190,
+    "sample_age_ms": 25.077,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999651312828064,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007433114107698202,
+      0.003801081096753478,
+      -0.9999651312828064
+    ],
+    "screen_tilt_deg": 0.478472352027893,
+    "accel_magnitude_g": 1.012487530708313
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 167733190,
+    "sample_age_ms": 40.855,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999653100967407,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007417451590299606,
+      0.0037792969960719347,
+      -0.9999653100967407
+    ],
+    "screen_tilt_deg": 0.477243959903717,
+    "accel_magnitude_g": 1.0106574296951294
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 167904190,
+    "sample_age_ms": 31.414,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999965786933899,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007184830494225025,
+      0.004092983435839415,
+      -0.999965786933899
+    ],
+    "screen_tilt_deg": 0.4739525318145752,
+    "accel_magnitude_g": 1.010656714439392
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 168059216,
+    "sample_age_ms": 49.993,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999693632125854,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006821407936513424,
+      0.003841436468064785,
+      -0.9999693632125854
+    ],
+    "screen_tilt_deg": 0.44849780201911926,
+    "accel_magnitude_g": 1.0121139287948608
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 168266221,
+    "sample_age_ms": 20.558,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999685287475586,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.0069407201372087,
+      0.0038444101810455322,
+      -0.9999685287475586
+    ],
+    "screen_tilt_deg": 0.454564779996872,
+    "accel_magnitude_g": 1.0118844509124756
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 168421190,
+    "sample_age_ms": 32.329,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999968409538269,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00693231914192438,
+      0.003907827660441399,
+      -0.999968409538269
+    ],
+    "screen_tilt_deg": 0.4554249048233032,
+    "accel_magnitude_g": 1.0116254091262817
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 168576221,
+    "sample_age_ms": 46.198,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999971568584442,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006772550288587809,
+      0.003287774510681629,
+      -0.999971568584442
+    ],
+    "screen_tilt_deg": 0.4320538640022278,
+    "accel_magnitude_g": 1.0112619400024414
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 168782234,
+    "sample_age_ms": 20.992,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999967098236084,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007000782992690802,
+      0.004083702806383371,
+      -0.999967098236084
+    ],
+    "screen_tilt_deg": 0.4647810459136963,
+    "accel_magnitude_g": 1.0104056596755981
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 168956190,
+    "sample_age_ms": 14.731,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999687671661377,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.006954525597393513,
+      0.003775178687646985,
+      -0.9999687671661377
+    ],
+    "screen_tilt_deg": 0.4528396725654602,
+    "accel_magnitude_g": 1.0100388526916504
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 169110216,
+    "sample_age_ms": 27.686,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.9999655485153198,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007330981083214283,
+      0.0038977451622486115,
+      -0.9999655485153198
+    ],
+    "screen_tilt_deg": 0.4756011366844177,
+    "accel_magnitude_g": 1.0120022296905518
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 169266220,
+    "sample_age_ms": 44.502,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999961793422699,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.00781621877104044,
+      0.003914601635187864,
+      -0.999961793422699
+    ],
+    "screen_tilt_deg": 0.5008504390716553,
+    "accel_magnitude_g": 1.0099279880523682
+  },
+  {
+    "auto_rotation": true,
+    "display_rotation_cw_deg": 0,
+    "valid": true,
+    "reason": "stable",
+    "sample_us": 169471190,
+    "sample_age_ms": 10.048,
+    "coordinate_frame": "screen",
+    "down_face": "back",
+    "pose": "screen_up",
+    "confidence": 0.999963104724884,
+    "rotation_cw_deg": null,
+    "gravity_down": [
+      0.007737102918326855,
+      0.00374678848311305,
+      -0.999963104724884
+    ],
+    "screen_tilt_deg": 0.4921804368495941,
+    "accel_magnitude_g": 1.011156439781189
+  }
+]

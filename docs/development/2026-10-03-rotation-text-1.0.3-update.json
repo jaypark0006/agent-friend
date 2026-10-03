@@ -1,0 +1,100 @@
+{
+  "operation_id": "1b1a60bf-fbbb-4384-a4e4-46168f0698b7",
+  "device_id": "4553502d4952495301001c2904d0ad2a",
+  "actor_type": "local",
+  "actor_name": "Unauthenticated local client",
+  "action": "firmware.ota",
+  "status": "succeeded",
+  "error": null,
+  "created_ns": 1791040185120256000,
+  "started_ns": 1791040185120759000,
+  "finished_ns": 1791040225425490000,
+  "queue_position": 0,
+  "request_fingerprint": "sha256:v1:8ec35f60648a6a2b1fbba39b506a86efdd108854fe7a2c75b8d8ebe4420977f5",
+  "params": {
+    "image": {
+      "sha256": "f698d8c158bf017ac128dd1c9808714b0ad57fc7a49550cc90d02b8febcbff0e",
+      "size": 4752368,
+      "chip_id": 32,
+      "project_name": "lan_screen",
+      "version": "1.0.3",
+      "elf_sha256": "943d8672b0250dfcd16fbd42ccac3840ed21658aef9cc9bab850851cfae13d21"
+    },
+    "artifact_id": "943d8672b0250dfcd16fbd42ccac3840ed21658aef9cc9bab850851cfae13d21",
+    "execution_mode": "recovery",
+    "validation_mode": "elf_sha256",
+    "compatibility": {
+      "chip_target": "esp32s31",
+      "product_contract": "esp-mosaico/v1",
+      "board_id": "esp-mosaico",
+      "layout_id": "mosaico-retained-recovery-2m-v1",
+      "recovery_abi": 1
+    },
+    "preconditions": {
+      "recovery_version": "0.1.4",
+      "partition_table_sha256": "4f8786d12001684a3c02385f31ef167247827bd73b744801494a8c5851bc7231"
+    }
+  },
+  "result": {
+    "job_id": 1,
+    "bytes": 4752368,
+    "sha256": "f698d8c158bf017ac128dd1c9808714b0ad57fc7a49550cc90d02b8febcbff0e",
+    "partition": "ota_0",
+    "restart_required": true,
+    "completion_evidence": "end_response",
+    "validated_image": {
+      "sha256": "f698d8c158bf017ac128dd1c9808714b0ad57fc7a49550cc90d02b8febcbff0e",
+      "size": 4752368,
+      "chip_id": 32,
+      "project_name": "lan_screen",
+      "version": "1.0.3",
+      "elf_sha256": "943d8672b0250dfcd16fbd42ccac3840ed21658aef9cc9bab850851cfae13d21"
+    },
+    "execution_mode": "recovery",
+    "validation": {
+      "mode": "elf_sha256",
+      "expected_field": "elf_sha256",
+      "actual_field": "firmware_sha256",
+      "expected": "943d8672b0250dfcd16fbd42ccac3840ed21658aef9cc9bab850851cfae13d21",
+      "actual": "943d8672b0250dfcd16fbd42ccac3840ed21658aef9cc9bab850851cfae13d21"
+    },
+    "planned_restart_ms": 250,
+    "previous_boot_id": 13599928357229674083,
+    "recovery_boot_id": 15632067330980858452,
+    "recovery": {
+      "device_id": "4553502d4952495301001c2904d0ad2a",
+      "boot_id": 15632067330980858452,
+      "recovery_version": "0.1.4",
+      "partition_table_sha256": "4f8786d12001684a3c02385f31ef167247827bd73b744801494a8c5851bc7231",
+      "boot_id_text": "15632067330980858452"
+    },
+    "boot_id": 12958330531850462200,
+    "healthy": true,
+    "previous_boot_id_text": "13599928357229674083",
+    "recovery_boot_id_text": "15632067330980858452",
+    "boot_id_text": "12958330531850462200"
+  },
+  "progress": {
+    "stage": "succeeded",
+    "progress_permille": 1000,
+    "updated_ns": 1791040225425477000,
+    "previous_boot_id": 13599928357229674083,
+    "previous_boot_id_text": "13599928357229674083",
+    "recovery_boot_id": 15632067330980858452,
+    "recovery_boot_id_text": "15632067330980858452",
+    "writer_boot_id": 15632067330980858452,
+    "recovery": {
+      "device_id": "4553502d4952495301001c2904d0ad2a",
+      "boot_id": 15632067330980858452,
+      "recovery_version": "0.1.4",
+      "partition_table_sha256": "4f8786d12001684a3c02385f31ef167247827bd73b744801494a8c5851bc7231",
+      "boot_id_text": "15632067330980858452"
+    },
+    "writer_boot_id_text": "15632067330980858452",
+    "device_progress_permille": 950,
+    "job_id": 1,
+    "bytes_received": 4752368,
+    "bytes_total": 4752368,
+    "partition": "ota_0"
+  }
+}
