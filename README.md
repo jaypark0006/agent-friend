@@ -1,13 +1,15 @@
 # Mosaico LAN Screen
 
-当前已安装版本：**1.1.2**（2026-10-04）。
+当前已安装版本：**1.1.6**（2026-10-04）；待刷机代码：**1.1.7**。按用户要求，后续只开发代码，2026-10-05 再安排刷机验证。
 
 当前工程：[`vendor/esp-mosaico-vibe/projects/lan_screen`](vendor/esp-mosaico-vibe/projects/lan_screen/README.md)。
 
 触屏配网、图片与推送消息双主页面、历史和已读状态、设备自动旋转、实时截图预览、REST / WebSocket 传感器接口。
 
 - [确认过的需求](docs/development/lan-screen.md)
-- [工程、API、构建和测试说明](vendor/esp-mosaico-vibe/projects/lan_screen/README.md)
+- [工程、API和构建说明](vendor/esp-mosaico-vibe/projects/lan_screen/README.md)
+- [本轮代码与明天刷机事项](docs/development/2026-10-04-scroll-and-browser-upload.md)
+- [用户开发工作方式](docs/development/agent-work-preferences.md)
 - [官方硬件参考及版本差异](docs/esp-mosaico-reference.md)
 
 2026-10-03：1.0.0 已在实机运行，6 帧局域网推流通过。1.0.1 增加触摸修复和 API 入口；1.0.2 增加姿态 API；1.0.4 已安装，提供设备自动旋转、可指定字号的中文/英文文字 API，并修复 IMU 初始化失败不重试和字库缺失。这是早期版本记录；最新双主页面功能见 [使用说明](docs/development/main-pages-and-preview.md)。
@@ -21,3 +23,5 @@
 姿态接口：[GET /api/orientation](http://192.168.5.61/api/orientation)。原传感器 REST 和传感器 WebSocket 也包含 `orientation`。字段、旋转约定、实体标定及实测记录见 [姿态 API](docs/development/orientation-api.md)。
 
 文字推送：`POST /api/text`，JSON `{"text":"你好，Mosaico！\n第二行","font_size":32,"align":"center"}`。字号16–64，刷新设备首页可直接发送。可带 time:"HH:MM"，消息追加保留历史。屏幕截图：GET /api/screenshot；网页可启动约2Hz实时预览。最新交付见 [双主页面与截图](docs/development/main-pages-and-preview.md)，早期记录见 [自动旋转与文字](docs/development/auto-rotation-text.md)。
+
+待刷入的1.1.7增加浏览器图片自动转换：在宿主机上将图片绘制为480×480，编码并压缩到256 KiB内的baseline JPEG，发送前可预览、保存，并可选择完整显示或中心裁切。文字滚动已加入字形缓存、内部DMA双缓冲与统一刷新调度；30 FPS为目标，1.1.7尚未编译、运行或验证。
