@@ -50,3 +50,14 @@
 - 浏览器首页显示实时姿态和用法；设备Sensors页显示Down/Rotate；Python Screen.orientation()提供快照。
 
 已完成的源码检查：六面与旋转方向、对角倾斜、运动、自由落体、NaN和时钟回绕的UBSan测试通过；真实LVGL页面交互和两项客户端测试通过，PNG排版已检查；浏览器脚本使用Node --check语法检查通过。最新构建 20261003-223449-build-4775 成功，应用1,852,800 bytes。实机结果待下段记录。
+
+## 实机交付（1.0.2）
+
+- 固件源码提交 `5940f76`；姿态算法提交 `dd84e24`。根仓库同时保存子模块引用与完整 bundle，所有独立改动已分别提交。
+- 官方 app-update 操作 `e72f9b27-5683-42f5-9d6f-3bda00991bde` 成功。同一 Device ID `4553502d4952495301001c2904d0ad2a`，normal Boot `1598488517393618455` → Vibe Boot `4383474843991914375` → 1.0.2 normal Boot `13599928357229674083`，healthy=true，crash_count=0。
+- 固件 ELF SHA `e2bd529b91899b31a8ef2e7fea4ce006f1cdb3244348a3bd49fd7cd3aee16292` 与设备匹配，分区表不变；不重写 Wi-Fi 凭据/保留 Vibe 固件。
+- 独立 REST、原传感器 REST 的 orientation、新 API 清单和 Python Screen.orientation() 均实测通过。10 次 WS 推送耗时0.979秒，每次带 orientation。
+- 本次实际快照：valid=true、down_face=back、pose=screen_up、rotation_cw_deg=null、confidence≈0.998、screen_tilt_deg≈3.57°，采样年龄约36ms。这是屏幕朝上近平放的数据，不把旧的竖放标定姿态当成当前姿态。
+- 浏览器首页真实加载固件1.0.2和实时姿态，API说明及两个WS地址正确显示。
+- 更新重启后，通过既有画面WS恢复姚明照片，received=displayed=1，invalid=0。
+- [API/WS 结构化证据](2026-10-03-orientation-validation.json)；[更新证据](2026-10-03-orientation-update.json)。六面逻辑均有主机测试，物理侧面方向依据两种实体标定姿态；未逐一拍摄六面实物验收。
