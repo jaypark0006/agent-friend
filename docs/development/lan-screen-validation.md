@@ -78,3 +78,6 @@
 ## 2026-10-03 1.0.2：姿态接口
 
 独立 `/api/orientation`、原传感器REST与WS均已实测。固定屏幕坐标、六面识别、旋转建议、运动/失效/过期处理已实现；UI模拟器、UBSan与客户端检查通过，同一设备更新正常且healthy。详细构建、标定、交付与验证边界见 [姿态API记录](orientation-api.md)。所有变动及固件bundle已逐次Git提交。
+
+
+2026-10-04追加：最终1.1.2已通过官方app-update安装，双主页面、历史与已读、时分/字号、截图/预览和性能优化已交付。详见[使用说明](main-pages-and-preview.md)和[结构化验证](2026-10-04-main-pages-validation.json)。
