@@ -1,0 +1,12 @@
+{
+  "ack": {
+    "accepted": 282
+  },
+  "displayed_before": 281,
+  "displayed_after": 282,
+  "display_completed": true,
+  "invalid_before": 1,
+  "invalid_after": 1,
+  "ip": "192.168.5.61",
+  "jpeg_bytes": 61273
+}
