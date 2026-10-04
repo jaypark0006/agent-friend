@@ -1,0 +1,131 @@
+{
+  "date": "2026-10-04",
+  "authorization": "用户回复 OK 开始吧，授权本轮编译及刷机；不进行功能自测或性能测量。",
+  "compiled_source_commit": "d83c8eaeccf782dd4b0b55c370e102fa75d48c26",
+  "sdk_commit": "7b9cc1ac79f865983f59bb8ff3ff43eb74ff1dbe",
+  "build": {
+    "schema_version": 1,
+    "run_id": "20261004-090502-build-59950",
+    "action": "build",
+    "status": "ok",
+    "exit_code": 0,
+    "duration_seconds": 32.738,
+    "project": "/Users/qilei/mosaico/vendor/esp-mosaico-vibe/projects/lan_screen",
+    "idf_path": "/Users/qilei/esp/esp-idf-mosaico-7b9cc1a",
+    "target": "esp32s31",
+    "warnings": 2,
+    "diagnostic": null,
+    "artifacts": [
+      {
+        "path": "/Users/qilei/mosaico/vendor/esp-mosaico-vibe/projects/lan_screen/build/lan_screen.bin",
+        "size_bytes": 4597136
+      },
+      {
+        "path": "/Users/qilei/mosaico/vendor/esp-mosaico-vibe/projects/lan_screen/build/lan_screen.elf",
+        "size_bytes": 23671196
+      },
+      {
+        "path": "/Users/qilei/mosaico/vendor/esp-mosaico-vibe/projects/lan_screen/build/ota_data_initial.bin",
+        "size_bytes": 8192
+      }
+    ],
+    "raw_log": "/Users/qilei/mosaico/vendor/esp-mosaico-vibe/projects/lan_screen/.codex-runs/idf-low-noise-build/20261004-090502-build-59950/raw.log",
+    "clean_log": "/Users/qilei/mosaico/vendor/esp-mosaico-vibe/projects/lan_screen/.codex-runs/idf-low-noise-build/20261004-090502-build-59950/clean.log",
+    "result_file": "/Users/qilei/mosaico/vendor/esp-mosaico-vibe/projects/lan_screen/.codex-runs/idf-low-noise-build/20261004-090502-build-59950/result.json"
+  },
+  "installation": {
+    "operation_id": "f1d2c91a-2ef7-4e16-9af3-5d193ab8bc25",
+    "device_id": "4553502d4952495301001c2904d0ad2a",
+    "action": "firmware.ota",
+    "status": "succeeded",
+    "params": {
+      "image": {
+        "sha256": "b758df1ebce3b8c01beb1a030a062f629e2e02c5472fd59e5803a339ea658bdf",
+        "size": 4597136,
+        "chip_id": 32,
+        "project_name": "lan_screen",
+        "version": "1.1.7",
+        "elf_sha256": "087b7aa1ba4cb3266a879f3995f4170b3f5607082dadd04116864351e3b673f7"
+      },
+      "artifact_id": "087b7aa1ba4cb3266a879f3995f4170b3f5607082dadd04116864351e3b673f7",
+      "execution_mode": "recovery",
+      "validation_mode": "elf_sha256",
+      "compatibility": {
+        "chip_target": "esp32s31",
+        "product_contract": "esp-mosaico/v1",
+        "board_id": "esp-mosaico",
+        "layout_id": "mosaico-retained-recovery-2m-v1",
+        "recovery_abi": 1
+      },
+      "preconditions": {
+        "recovery_version": "0.1.4",
+        "partition_table_sha256": "4f8786d12001684a3c02385f31ef167247827bd73b744801494a8c5851bc7231"
+      }
+    },
+    "result": {
+      "job_id": 1,
+      "bytes": 4597136,
+      "sha256": "b758df1ebce3b8c01beb1a030a062f629e2e02c5472fd59e5803a339ea658bdf",
+      "partition": "ota_0",
+      "restart_required": true,
+      "completion_evidence": "end_response",
+      "validated_image": {
+        "sha256": "b758df1ebce3b8c01beb1a030a062f629e2e02c5472fd59e5803a339ea658bdf",
+        "size": 4597136,
+        "chip_id": 32,
+        "project_name": "lan_screen",
+        "version": "1.1.7",
+        "elf_sha256": "087b7aa1ba4cb3266a879f3995f4170b3f5607082dadd04116864351e3b673f7"
+      },
+      "execution_mode": "recovery",
+      "validation": {
+        "mode": "elf_sha256",
+        "expected_field": "elf_sha256",
+        "actual_field": "firmware_sha256",
+        "expected": "087b7aa1ba4cb3266a879f3995f4170b3f5607082dadd04116864351e3b673f7",
+        "actual": "087b7aa1ba4cb3266a879f3995f4170b3f5607082dadd04116864351e3b673f7"
+      },
+      "planned_restart_ms": 250,
+      "previous_boot_id": 11813911580659686083,
+      "recovery_boot_id": 14872672055456839790,
+      "recovery": {
+        "device_id": "4553502d4952495301001c2904d0ad2a",
+        "boot_id": 14872672055456839790,
+        "recovery_version": "0.1.4",
+        "partition_table_sha256": "4f8786d12001684a3c02385f31ef167247827bd73b744801494a8c5851bc7231",
+        "boot_id_text": "14872672055456839790"
+      },
+      "boot_id": 1668320010910873631,
+      "healthy": true,
+      "previous_boot_id_text": "11813911580659686083",
+      "recovery_boot_id_text": "14872672055456839790",
+      "boot_id_text": "1668320010910873631"
+    }
+  },
+  "installation_log": "/Users/qilei/mosaico/vendor/esp-mosaico-vibe/.codex-runs/mosaico/20261004T010546Z-install/raw.log",
+  "post_install_device": {
+    "device_id": "4553502d4952495301001c2904d0ad2a",
+    "boot_id": 1668320010910873631,
+    "firmware_mode": "normal",
+    "app_version": "1.1.7",
+    "firmware_sha256": "087b7aa1ba4cb3266a879f3995f4170b3f5607082dadd04116864351e3b673f7",
+    "stale": false,
+    "crash_count": 0,
+    "crash_loop_triggered": false,
+    "crash_recovery_pending": false,
+    "layout_id": "mosaico-retained-recovery-2m-v1",
+    "project_name": "lan_screen"
+  },
+  "post_install_device_log": "/Users/qilei/mosaico/vendor/esp-mosaico-vibe/.codex-runs/mosaico/20261004T010646Z-device-status/raw.log",
+  "http_status_observation": {
+    "url": "http://192.168.5.61/api/status",
+    "version": "1.1.7",
+    "connected": true,
+    "ip": "192.168.5.61",
+    "image_history_count": 0,
+    "message_count": 0
+  },
+  "functional_tests_run": false,
+  "benchmarks_run": false,
+  "feature_acceptance": "用户体验后反馈；未验证文字滚动帧率或浏览器图片转换效果。"
+}

@@ -1,6 +1,6 @@
 # Mosaico LAN Screen
 
-当前已安装版本：**1.1.6**（2026-10-04）；待刷机代码：**1.1.7**。按用户要求，后续只开发代码，2026-10-05 再安排刷机验证。
+当前已安装版本：**1.1.7**（2026-10-04，用户本轮授权编译与刷机）。设备正常启动、联网，功能效果由用户体验反馈；未运行测试或性能基准。
 
 当前工程：[`vendor/esp-mosaico-vibe/projects/lan_screen`](vendor/esp-mosaico-vibe/projects/lan_screen/README.md)。
 
@@ -8,7 +8,7 @@
 
 - [确认过的需求](docs/development/lan-screen.md)
 - [工程、API和构建说明](vendor/esp-mosaico-vibe/projects/lan_screen/README.md)
-- [本轮代码与明天刷机事项](docs/development/2026-10-04-scroll-and-browser-upload.md)
+- [本轮功能与安装记录](docs/development/2026-10-04-scroll-and-browser-upload.md)
 - [用户开发工作方式](docs/development/agent-work-preferences.md)
 - [官方硬件参考及版本差异](docs/esp-mosaico-reference.md)
 
@@ -24,4 +24,4 @@
 
 文字推送：`POST /api/text`，JSON `{"text":"你好，Mosaico！\n第二行","font_size":32,"align":"center"}`。字号16–64，刷新设备首页可直接发送。可带 time:"HH:MM"，消息追加保留历史。屏幕截图：GET /api/screenshot；网页可启动约2Hz实时预览。最新交付见 [双主页面与截图](docs/development/main-pages-and-preview.md)，早期记录见 [自动旋转与文字](docs/development/auto-rotation-text.md)。
 
-待刷入的1.1.7增加浏览器图片自动转换：在宿主机上将图片绘制为480×480，编码并压缩到256 KiB内的baseline JPEG，发送前可预览、保存，并可选择完整显示或中心裁切。文字滚动已加入字形缓存、内部DMA双缓冲与统一刷新调度；30 FPS为目标，1.1.7尚未编译、运行或验证。
+1.1.7增加浏览器图片自动转换：在宿主机上将图片绘制为480×480，编码并压缩到256 KiB内的baseline JPEG，发送前可预览、保存，并可选择完整显示或中心裁切。文字滚动已加入字形缓存、内部DMA双缓冲与统一刷新调度；30 FPS为目标，本版未测量滚动帧率。刷新设备首页即可使用新版上传界面。
