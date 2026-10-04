@@ -2,7 +2,9 @@
 
 ## 本次最新交付与授权（2026-10-04）
 
-- 最新安装1.1.22：按用户要求新增网页#ws固定URL/JSON/收发历史三块管理面板，订阅通道开连接即订阅，推送通道JSON文字/切页/config/get/ping并回显request_id；原二进制JPEG不变。:81/ws/sensors增加当前连接subscribe/unsubscribe/get/ping，旧客户端默认10Hz兼容。历史有界、展开/暂停记录/导出/清空，不自动重发。HTTP/WS共用文字及切页应用逻辑。编译刷入normal/healthy确认完成，本轮未WS联调、浏览器测试或推送测试内容。见docs/development/2026-10-04-ws-workbench-1.1.22.md。
+- 最新安装1.1.23：用户澄清摄像头页面的“下”仍按重力，人像应保持正向；此前固定0°为需求误解，已撤销。左槽当前装配Type-C朝下头像朝右，增加270°顺时针安装校正，视频再抵消实际LCD角度：frame=(270-display+360)%360。所有页面/触摸继续自动旋转；camera_frame_rotation_cw_deg暴露到orientation/status/WS，处理帧HTTP预览共用变换，原始采集API保留。方向变化由最新原始处理帧重绘而非旋转提示标记；2×2四点平均保留。已编译并官方app-update安装，normal/healthy、crash_count=0，本轮未开启摄像头或做效果测试。见docs/development/2026-10-04-camera-gravity-compensation-1.1.23.md。
+
+- 此前安装1.1.22：按用户要求新增网页#ws固定URL/JSON/收发历史三块管理面板，订阅通道开连接即订阅，推送通道JSON文字/切页/config/get/ping并回显request_id；原二进制JPEG不变。:81/ws/sensors增加当前连接subscribe/unsubscribe/get/ping，旧客户端默认10Hz兼容。历史有界、展开/暂停记录/导出/清空，不自动重发。HTTP/WS共用文字及切页应用逻辑。编译刷入normal/healthy确认完成，本轮未WS联调、浏览器测试或推送测试内容。见docs/development/2026-10-04-ws-workbench-1.1.22.md。
 
 - 此前安装1.1.21：用户反馈摄像头也随重力转导致判断方向不自然，摄像头页固定原生0°/Type-C边朝下，其他页面继续重力旋转；摄像头期间保留最新可靠姿态，退出恢复。等触摸松开/排空DMA后改LCD和触摸方向。orientation/status/传感器WS的auto_rotation在设备摄像头页false，其余true；原始姿态建议角仍正常。编译刷入及normal/healthy确认完成，本轮未做效果测试。见docs/development/2026-10-04-camera-fixed-rotation-1.1.21.md。
 
