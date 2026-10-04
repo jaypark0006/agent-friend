@@ -1,5 +1,12 @@
 # 项目长期参考
 
+## 当前文档入口（2026-10-04整理）
+
+- 当前功能/API/开发流程：[应用文档索引](vendor/esp-mosaico-vibe/projects/lan_screen/docs/README.md)。
+- 已完成静态源码review和[分阶段重构计划](vendor/esp-mosaico-vibe/projects/lan_screen/docs/refactor-plan.md)，尚未执行业务重构；本轮只改文档，不编译/刷入/测试，最近安装仍为1.1.24。
+- 以下交付记录保留各版本当时事实，旧条目的“当前”“待刷入”“已测试”不能覆盖新版本说明。新增功能同步当前说明及API，架构/所有权改变同步审查与计划，历史证据不改写成新版本验收。
+
+
 ## 本次最新交付与授权（2026-10-04）
 
 - 最新安装1.1.24：用户实测1.1.23 Type-C朝下正向但左右反、两侧朝下倒置。补齐镜像安装校准Mx*R270，逆屏幕变换在校准后执行，等价于先(270+实际LCD角)%360顺时针旋转再水平翻转。显示/转向重绘/HTTP处理帧预览共用source_pixel；标记不翻转。orientation/status/WS新增camera_frame_mirror_x=true，camera.render mirror_x=true和响应头X-Frame-Mirror-X:true，旋转字段指翻转前角度。界面/触摸重力方向、2×2平均和原始采集API保持。已编译并官方app-update安装normal/healthy、crash_count=0，未自行开启摄像头或测试画面效果。见docs/development/2026-10-04-camera-mirror-calibration-1.1.24.md。

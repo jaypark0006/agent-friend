@@ -1,5 +1,8 @@
 # 自动旋转与文字 API 交付
 
+> 版本专题/历史记录：文中版本、授权、待办和验收描述对应当时，不代表当前状态。最新功能、API、架构与重构计划见[当前文档索引](../../vendor/esp-mosaico-vibe/projects/lan_screen/docs/README.md)。
+
+
 2026-10-03，ESP-Mosaico LAN Screen，当前1.0.4。用户授权设备本地重力旋转、指定字号文字API；所有代码和验证摘要提交Git，根仓库存完整固件bundle。
 
 ## 当前功能

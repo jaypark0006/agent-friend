@@ -1,5 +1,8 @@
 # LAN Screen 首版验证记录
 
+> 版本专题/历史记录：文中版本、授权、待办和验收描述对应当时，不代表当前状态。最新功能、API、架构与重构计划见[当前文档索引](../../vendor/esp-mosaico-vibe/projects/lan_screen/docs/README.md)。
+
+
 日期：2026-10-03（Asia/Shanghai）。首部分保存早期构建快照；后文记录已安装实机的结果。当前为 **1.0.2，已安装并运行**。
 
 ## 构建

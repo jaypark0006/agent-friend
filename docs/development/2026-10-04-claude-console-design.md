@@ -1,5 +1,8 @@
 # Claude 控制台设计咨询
 
+> 版本专题/历史记录：文中版本、授权、待办和验收描述对应当时，不代表当前状态。最新功能、API、架构与重构计划见[当前文档索引](../../vendor/esp-mosaico-vibe/projects/lan_screen/docs/README.md)。
+
+
 2026-10-04，按用户要求通过本机 Claude CLI 咨询设计。只提供现有静态 HTML/CSS，请求工具禁用，未让该会话修改代码或执行测试。
 
 请求模型参数：`claude-opus-5-5`。CLI 返回的该项 canonicalModel 为 `claude-opus-5`；这里保留实际返回标记，不另行声称已核验后台模型身份。

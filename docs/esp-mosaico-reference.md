@@ -1,5 +1,8 @@
 # ESP-Mosaico 项目参考笔记
 
+> 本页保留2026-10-02起的官方资料调查与当时现场状态，不在本次文档整理中重新核验外部latest内容。当前工程为原生LAN Screen 1.1.24，已使用Git、固定ESP-IDF/BSP并完成官方安装；左侧摄像头、右侧交互子板。较早“未建仓库/未刷机/右槽空置/Lua优先”只描述历史。当前事实及验证边界见[应用文档](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/current-state.md)，依赖固定点见[开发说明](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/development.md)。
+
+
 核对日期：2026-10-02（Asia/Shanghai）。用户指定的基础资料：[官方文档首页](https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s31/esp-mosaico/index.html)。
 
 本文件是项目长期参考，不是实物验收报告。调查开始时目录为空。已通过 Wi-Fi 读取设备控制台，USB 通信未建立；用户随后选择 LVGL 路线，已准备 Lua 触摸计数示例。尚无 Git 仓库，未配置 ESP-IDF 工具链、编译固件工程或烧录固件。实际硬件版本与正式应用需求仍待确定。

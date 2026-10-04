@@ -1,35 +1,19 @@
 # Mosaico LAN Screen
 
-当前已编译并安装：**1.1.24**（2026-10-04）。补齐摄像头左右校正，并修正侧放时镜像与重力旋转的组合顺序；界面/触摸继续随重力，2px四点合并和WS管理面板保持。官方normal/healthy确认完成，本轮未开启摄像头或做画面效果测试。见[摄像头镜像校正交付](docs/development/2026-10-04-camera-mirror-calibration-1.1.24.md)。
+ESP-Mosaico / ESP32-S31局域网显示固件：图片、推送文字、摄像头三个设备主页面，触屏Wi-Fi设置、自动旋转、RAM历史/未读、屏幕截图、传感器REST/WS和交互子板控制。
 
-此前交付：**1.1.16**（2026-10-04）。图片和文字共用一个“自动切换”复选框，设备与网页立即保存；后续测试由用户执行。右侧交互子板已识别，统一WS、RGB控制、麦克风WAV与摄像头原始帧已收到实机响应；没有新增测试或运行单元测试、模拟器、性能基准。
+最近安装 **1.1.24**（2026-10-04），官方安装确认normal/healthy。最新相机镜像与方向修正已刷入，未进行新一轮画面效果测试。30FPS仍是目标，不能将旧版短测用于当前性能承诺。
 
-当前工程：[`vendor/esp-mosaico-vibe/projects/lan_screen`](vendor/esp-mosaico-vibe/projects/lan_screen/README.md)。
+- [项目文档总索引](docs/README.md)
+- [当前功能与验证边界](vendor/esp-mosaico-vibe/projects/lan_screen/docs/current-state.md)
+- [REST / WebSocket接口](vendor/esp-mosaico-vibe/projects/lan_screen/docs/api.md)
+- [架构review](vendor/esp-mosaico-vibe/projects/lan_screen/docs/architecture-review.md)
+- [分阶段重构计划](vendor/esp-mosaico-vibe/projects/lan_screen/docs/refactor-plan.md)
+- [固定依赖、编译与官方刷入](vendor/esp-mosaico-vibe/projects/lan_screen/docs/development.md)
+- [最新固件安装记录](docs/development/2026-10-04-camera-mirror-calibration-1.1.24.md)
 
-触屏配网、图片与推送消息双主页面、历史和已读状态、设备自动旋转、实时截图预览、REST / WebSocket 传感器接口。
+固件源码在[projects/lan_screen](vendor/esp-mosaico-vibe/projects/lan_screen/README.md)。本仓库保存资料、固件子模块指针和完整Git bundle；固件origin是官方仓库，但我们的提交仅在本地，尚未发布到GitHub。根仓库尚未配置远程。
 
-- [确认过的需求](docs/development/lan-screen.md)
-- [工程、API和构建说明](vendor/esp-mosaico-vibe/projects/lan_screen/README.md)
-- [本轮编译与安装记录](docs/development/2026-10-04-install-1.1.17.md)
-- [用户开发工作方式](docs/development/agent-work-preferences.md)
-- [官方硬件参考及版本差异](docs/esp-mosaico-reference.md)
+最近设备地址：[控制台](http://192.168.5.61/)，DHCP地址以设备显示为准。网页查看/控制一页、图片/文字推送一页，另有摄像头、HTTP和WS入口。设备页与网页入口不是同一套页面生命周期。
 
-2026-10-03：1.0.0 已在实机运行，6 帧局域网推流通过。1.0.1 增加触摸修复和 API 入口；1.0.2 增加姿态 API；1.0.4 已安装，提供设备自动旋转、可指定字号的中文/英文文字 API，并修复 IMU 初始化失败不重试和字库缺失。这是早期版本记录；最新双主页面功能见 [使用说明](docs/development/main-pages-and-preview.md)。
-
-设备当前地址：[网页控制台](http://192.168.5.61/)。IP 以屏幕实际显示为准。
-
-项目已纳入本地 Git。固件作为子模块独立提交，根仓库附带完整 Git bundle，保存未发布到官方仓库的应用提交。新克隆后运行 `python3 scripts/restore-firmware.py` 恢复固件及两个必要的上游子模块；构建需按工程 README 配置固定版本 ESP-IDF。每次固件修改提交后运行 `python3 scripts/save-firmware-history.py`，再提交根仓库指针和 bundle。
-
-[另一位 AI 的改动复查与本次修复](docs/development/2026-10-03-review-and-fixes.md)。
-
-姿态接口：[GET /api/orientation](http://192.168.5.61/api/orientation)。原传感器 REST 和传感器 WebSocket 也包含 `orientation`。字段、旋转约定、实体标定及实测记录见 [姿态 API](docs/development/orientation-api.md)。
-
-文字推送：`POST /api/text`，JSON `{"text":"你好，Mosaico！\n第二行","font_size":32,"align":"center"}`。字号16–64，刷新设备首页可直接发送。可带 time:"HH:MM"，消息追加保留历史。屏幕截图：GET /api/screenshot；网页可启动约2Hz实时预览。最新交付见 [双主页面与截图](docs/development/main-pages-and-preview.md)，早期记录见 [自动旋转与文字](docs/development/auto-rotation-text.md)。
-
-1.1.7增加浏览器图片自动转换：在宿主机上将图片绘制为480×480，编码并压缩到256 KiB内的baseline JPEG，发送前可预览、保存，并可选择完整显示或中心裁切。文字滚动已加入字形缓存、内部DMA双缓冲与统一刷新调度；30 FPS为目标，本版未测量滚动帧率。刷新设备首页即可使用新版上传界面。
-
-1.1.8–1.1.13的消息到达设置、滑动动画、粘贴截图、长文字已读修复、扩展音视频接口和新Web控制台已随1.1.15安装。之前各功能文档保留当时“仅源码交付”的历史状态，以本页和最新交付记录为准。
-
-1.1.15增加多功能交互子板：环境光、PIR运动、两路按键/触摸状态及事件；六颗RGB全灯/单灯控制、NEC红外、模式和启用开关。统一 `ws://192.168.5.61:81/ws/sensors` 返回所有传感器状态，REST同结构 `/api/sensors`。网页“查看设备 → 传感器与采集”提供实时数据与折叠控制，HTTP Try有请求示例及本地Mock。
-
-[交互子板API与最新实机记录](docs/development/interaction-subboard-api.md)。[新网页控制台设计](docs/development/web-console.md)。本机touch模式观测到跳变，默认采用机械key；摄像头和麦克风默认关闭，按需开启。IR只确认驱动发射，未确认外部电器接收；手势/30FPS没有本轮验收。
+每个逻辑改动须Git commit。固件提交后在根目录运行 `python3 scripts/save-firmware-history.py`，再提交bundle和指针；新克隆运行 `python3 scripts/restore-firmware.py`。功能改动默认编译、刷入及确认版本；测试仅在当次明确要求时执行。**本轮文档整理和重构计划没有改变运行代码，也没有重刷设备。**

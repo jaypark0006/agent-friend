@@ -1,5 +1,8 @@
 # 第一个 Lua + LVGL 示例
 
+> 历史Lua/LVGL计数示例，保留早期ESP-Claw路线调查；当前固件为[原生LAN Screen](../../vendor/esp-mosaico-vibe/projects/lan_screen/docs/README.md)，不将此ZIP作为当前刷机包。
+
+
 480×480 触摸计数器：点击 `+1 TAP` 增加数字，`Reset` 清零，`Exit` 退出。默认 60 秒自动结束，结束时调用 `lvgl.deinit()`。计数只保存在当前作业内存中。
 
 这是可供部署验证的源代码，尚未上传到设备或通过实机测试。参考 ESP-Claw 提交 `9f92961687df06250df62c187979fa1ff67708f4` 的 [LVGL 文档](https://github.com/espressif/esp-claw/blob/9f92961687df06250df62c187979fa1ff67708f4/components/lua_modules/lua_module_lvgl/README.md) 与 [system 文档](https://github.com/espressif/esp-claw/blob/9f92961687df06250df62c187979fa1ff67708f4/components/lua_modules/lua_module_system/README.md)。实机固件版本仍未知，接口兼容性需要实际运行确认。

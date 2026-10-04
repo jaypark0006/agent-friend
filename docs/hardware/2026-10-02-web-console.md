@@ -1,5 +1,8 @@
 # ESP-Mosaico 网络控制台与脚本开发调查
 
+> 版本专题/历史记录：文中版本、授权、待办和验收描述对应当时，不代表当前状态。最新功能、API、架构与重构计划见[当前文档索引](../../vendor/esp-mosaico-vibe/projects/lan_screen/docs/README.md)。
+
+
 日期：2026-10-02（Asia/Shanghai）。这是项目长期参考；实机观察、上游源码和开发建议分别记录。未部署或运行应用。
 
 ## 实机读到的内容
