@@ -160,3 +160,12 @@ USB 自动下载和日志依赖固件实现。硬件指南称出厂固件集成 
 - 工程：用户选择 Lua + LVGL 起步，已有 [触摸计数示例](../apps/mosaico_lvgl_counter/README.md) 与 ZIP，静态语法和元数据检查通过、实机运行未验证；正式应用目标、ESP-IDF 提交、BSP 提交、固件依赖锁文件及分区布局尚未选择。
 - 验证：构建、显示触摸、音频、传感器、模块发现与恢复烧录——均未执行。
 - 建议顺序（项目建议，并非官方强制要求）：恢复网络连通 → 确定首个应用功能 → 核对实机 Lua 接口及运行入口 → 验证最小显示触摸应用；若需求超出当前固件，再确认硬件、固定原生依赖、验证恢复路径并开发独立固件。
+
+
+## 8. 2026-10-04交互子板与当前固件（更新后的事实）
+
+用户新增[多功能交互子板](https://docs.espressif.com/projects/esp-dev-kits/zh_CN/latest/esp32s31/esp-mosaico/user_guide_interact.html)，并授权刷机/重启/验证。当前安装LAN Screen1.1.15，地址192.168.5.61。此前右槽空置的照片只代表10月2日，当前实机EEPROM确认右槽0x16交互子板，左槽0x07摄像头；两槽描述符hardware_version0x0102，不等同PCB丝印核对。
+
+交互子板提供GL5506光敏、AS312 PIR、两路机械/电容共享输入、六颗WS2812、NEC38kHz红外发射和AT24C02 EEPROM。左/右LDR53/46、IR48/47、两键13/11与12/10、PIR4/5、LED15/38；EEPROM0x50/0x51，右槽旋转180°。按固定BSP模块管理器和mosaico_module_interact申请资源，禁止绕过识别直接驱动未知板。
+
+统一REST/WS包含子板，默认key模式；AUTO优先touch，本机曾跳变，机械模式稳定观测。灯光/IR命令、统一WS、麦克风WAV及摄像头原始帧均取得真实接口证据；未确认真实按压/PIR移动触发、触摸可靠性、IR外部接收与30FPS。详见[交互子板与统一API](development/interaction-subboard-api.md)。本文前面的旧Lua阶段、未选依赖/未验证记录保留历史，以最新记录为准。
