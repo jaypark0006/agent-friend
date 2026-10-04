@@ -2,7 +2,9 @@
 
 ## 本次最新交付与授权（2026-10-04）
 
-- 最新安装1.1.23：用户澄清摄像头页面的“下”仍按重力，人像应保持正向；此前固定0°为需求误解，已撤销。左槽当前装配Type-C朝下头像朝右，增加270°顺时针安装校正，视频再抵消实际LCD角度：frame=(270-display+360)%360。所有页面/触摸继续自动旋转；camera_frame_rotation_cw_deg暴露到orientation/status/WS，处理帧HTTP预览共用变换，原始采集API保留。方向变化由最新原始处理帧重绘而非旋转提示标记；2×2四点平均保留。已编译并官方app-update安装，normal/healthy、crash_count=0，本轮未开启摄像头或做效果测试。见docs/development/2026-10-04-camera-gravity-compensation-1.1.23.md。
+- 最新安装1.1.24：用户实测1.1.23 Type-C朝下正向但左右反、两侧朝下倒置。补齐镜像安装校准Mx*R270，逆屏幕变换在校准后执行，等价于先(270+实际LCD角)%360顺时针旋转再水平翻转。显示/转向重绘/HTTP处理帧预览共用source_pixel；标记不翻转。orientation/status/WS新增camera_frame_mirror_x=true，camera.render mirror_x=true和响应头X-Frame-Mirror-X:true，旋转字段指翻转前角度。界面/触摸重力方向、2×2平均和原始采集API保持。已编译并官方app-update安装normal/healthy、crash_count=0，未自行开启摄像头或测试画面效果。见docs/development/2026-10-04-camera-mirror-calibration-1.1.24.md。
+
+- 此前安装1.1.23：用户澄清摄像头页面的“下”仍按重力，人像应保持正向；此前固定0°为需求误解，已撤销。左槽当前装配Type-C朝下头像朝右，增加270°顺时针安装校正，视频再抵消实际LCD角度：frame=(270-display+360)%360。所有页面/触摸继续自动旋转；camera_frame_rotation_cw_deg暴露到orientation/status/WS，处理帧HTTP预览共用变换，原始采集API保留。方向变化由最新原始处理帧重绘而非旋转提示标记；2×2四点平均保留。已编译并官方app-update安装，normal/healthy、crash_count=0，本轮未开启摄像头或做效果测试。见docs/development/2026-10-04-camera-gravity-compensation-1.1.23.md。
 
 - 此前安装1.1.22：按用户要求新增网页#ws固定URL/JSON/收发历史三块管理面板，订阅通道开连接即订阅，推送通道JSON文字/切页/config/get/ping并回显request_id；原二进制JPEG不变。:81/ws/sensors增加当前连接subscribe/unsubscribe/get/ping，旧客户端默认10Hz兼容。历史有界、展开/暂停记录/导出/清空，不自动重发。HTTP/WS共用文字及切页应用逻辑。编译刷入normal/healthy确认完成，本轮未WS联调、浏览器测试或推送测试内容。见docs/development/2026-10-04-ws-workbench-1.1.22.md。
 
