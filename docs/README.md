@@ -1,12 +1,15 @@
 # 项目文档索引
 
-更新：2026-10-04。当前基线1.1.24；本轮完成文档与静态review，没有执行重构或效果测试。
+更新：2026-10-05。当前基线1.1.26；P1–P5重构已落地，完成编译与官方刷入，不包含功能测试。
 
 ## 当前说明
 
 - [应用文档总入口](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/README.md)
 - [当前功能/验证边界](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/current-state.md)
 - [REST与WebSocket](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/api.md)
+- [当前架构](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/architecture.md)
+- [内存预算](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/memory-budget.md)
+- [本轮重构交付](development/2026-10-05-refactor-1.1.26.md)
 - [源码架构审查](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/architecture-review.md)
 - [重构计划](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/refactor-plan.md)
 - [开发与交付](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/development.md)
