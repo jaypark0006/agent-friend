@@ -25,3 +25,5 @@
 文字推送：`POST /api/text`，JSON `{"text":"你好，Mosaico！\n第二行","font_size":32,"align":"center"}`。字号16–64，刷新设备首页可直接发送。可带 time:"HH:MM"，消息追加保留历史。屏幕截图：GET /api/screenshot；网页可启动约2Hz实时预览。最新交付见 [双主页面与截图](docs/development/main-pages-and-preview.md)，早期记录见 [自动旋转与文字](docs/development/auto-rotation-text.md)。
 
 1.1.7增加浏览器图片自动转换：在宿主机上将图片绘制为480×480，编码并压缩到256 KiB内的baseline JPEG，发送前可预览、保存，并可选择完整显示或中心裁切。文字滚动已加入字形缓存、内部DMA双缓冲与统一刷新调度；30 FPS为目标，本版未测量滚动帧率。刷新设备首页即可使用新版上传界面。
+
+待安装源码**1.1.8**：新文字到达时可配置“保持当前页面＋未读提示”（默认）或“自动切到文字页”。设备Messages设置页、网页和`GET/POST /api/config`均可配置，重启保留。此轮仅完成代码，未编译或刷入。见[消息到达设置](docs/development/message-arrival-settings.md)。
