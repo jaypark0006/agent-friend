@@ -1,8 +1,8 @@
 # Mosaico LAN Screen
 
-待安装源码：**1.1.17**。设备查看/控制/快速设置合页，图片文字并列发送，WS直接接收确认；新增独立摄像头色块功能页，本地256×256处理并显示，目标30FPS。此轮未编译、刷机或测试。见[网页改版](docs/development/dense-web-console.md)和[摄像头色块](docs/development/camera-color-blocks.md)。
+当前已编译并安装：**1.1.17**（2026-10-04）。设备查看/控制/快速设置合页，图片文字并列发送，WS直接接收确认；新增独立摄像头色块功能页，本地256×256处理并显示，目标30FPS。官方app-update完成，设备报告1.1.17、normal/healthy；未测试功能或测量帧率。见[网页改版](docs/development/dense-web-console.md)和[摄像头色块](docs/development/camera-color-blocks.md)。
 
-当前已安装版本：**1.1.16**（2026-10-04）。图片和文字共用一个“自动切换”复选框，设备与网页立即保存；后续测试由用户执行。右侧交互子板已识别，统一WS、RGB控制、麦克风WAV与摄像头原始帧已收到实机响应；没有新增测试或运行单元测试、模拟器、性能基准。
+此前交付：**1.1.16**（2026-10-04）。图片和文字共用一个“自动切换”复选框，设备与网页立即保存；后续测试由用户执行。右侧交互子板已识别，统一WS、RGB控制、麦克风WAV与摄像头原始帧已收到实机响应；没有新增测试或运行单元测试、模拟器、性能基准。
 
 当前工程：[`vendor/esp-mosaico-vibe/projects/lan_screen`](vendor/esp-mosaico-vibe/projects/lan_screen/README.md)。
 
@@ -10,7 +10,7 @@
 
 - [确认过的需求](docs/development/lan-screen.md)
 - [工程、API和构建说明](vendor/esp-mosaico-vibe/projects/lan_screen/README.md)
-- [本轮功能与安装记录](docs/development/2026-10-04-scroll-and-browser-upload.md)
+- [本轮编译与安装记录](docs/development/2026-10-04-install-1.1.17.md)
 - [用户开发工作方式](docs/development/agent-work-preferences.md)
 - [官方硬件参考及版本差异](docs/esp-mosaico-reference.md)
 
