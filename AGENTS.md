@@ -104,3 +104,8 @@
 - 2026-10-04用户要求REST/WS暴露麦克风、按键、摄像头。待安装源码1.1.12新增AI/BOOT事件环（16条）、麦克风20ms音量/峰值/削波及WAV快照、左侧摄像头描述符探测/状态/原始UYVY帧。GET/POST microphone/camera控制，默认关闭、仅RAM；202是异步请求，观察applied_request_id/state/valid。原有sensors REST/10Hz WS新增三类状态，无连续PCM/视频WS流。不改按键启动模式，不启用未知摄像头/闪光灯、不重置共享I2C供电。新增camera0.2.0及esp_video2.4.1依赖，依赖锁待下次授权编译解析更新。本轮未编译、运行、测试、刷机或实机采集，设备仍1.1.7。见docs/development/extended-sensor-api.md。
 
 - 2026-10-04用户要求网页从文档页改成Web控制台，查看与发送分入口，不默认展开，提供Postman式HTTP Try和预留Mock。1.1.13源码已重写首页/查看/推送/设置/工作台，详情与编辑器默认折叠、实时截图默认关闭；JSON/请求示例集中于Try，可编辑Headers/Body及本地Mock模板，只点击执行才发请求。Mock响应明确标记且不冒充设备数据，当前设备查询独立运行。复用浏览器压缩、粘贴/拖放和既有API；静态CSS/JS本地嵌入，无外部CDN或新前端构建依赖。此轮未编译、运行、浏览器验证、测试或刷机，设备仍1.1.7，待安装源码1.1.13。见docs/development/web-console.md。
+
+## 默认随身屏通知（2026-10-07）
+
+- 用户指定本机Codex有实际交付的任务收尾时，使用全局 `mosaico-notify` 技能发送简短结果和配图；普通问答不推送，用户当次禁止通知时跳过。
+- 技能源在 `skills/mosaico-notify`；身份匹配与动态IP发现、部分成功语义以SKILL.md为准。离线不影响主任务，不为通知自行做测试。
