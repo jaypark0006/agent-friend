@@ -81,9 +81,13 @@ def discover(explicit):
 
 def card(args):
     from PIL import Image, ImageDraw, ImageFont, ImageOps
-    font_path = '/System/Library/Fonts/PingFang.ttc'
-    if not Path(font_path).exists():
-        raise RuntimeError('缺少中文字体 PingFang.ttc，请配置本机中文字体路径')
+    font_path = next((str(p) for p in [
+        Path('/System/Library/Fonts/PingFang.ttc'),
+        Path('/System/Library/Fonts/STHeiti Medium.ttc'),
+        Path('/System/Library/Fonts/STHeiti Light.ttc')
+    ] if p.exists()), None)
+    if not font_path:
+        raise RuntimeError('缺少可用中文字体，请配置本机中文字体路径')
     def font(size):
         return ImageFont.truetype(font_path, size)
     im = Image.new('RGB', (480, 480), '#101820')
