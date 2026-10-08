@@ -1,340 +1,369 @@
-<div id="mosaico-motion-study">
-  <div class="viz-carousel viz-dotted-background" aria-label="顿悟效果方案" data-previous-label="上一种" data-next-label="下一种">
-    <section data-variant="光核展开" aria-label="光核展开动画方案">
-      <div class="ms-stage" data-scene="orb">
-        <div class="ms-screen">
-          <canvas width="480" height="480" role="img" aria-label="活动光核，随所选状态改变动作">Codex 活动动画样稿</canvas>
-          <div class="ms-top"><span>CODEX</span><span>活动屏</span></div>
-          <div class="ms-copy"><div class="ms-eyebrow">进行中</div><h2>正在梳理思路</h2><p>让零散的线索逐渐清晰</p></div>
-          <div class="ms-bottom"><span class="ms-dot"></span><span class="ms-state" aria-live="polite">工作中</span><span class="ms-sample">效果样稿</span></div>
-        </div>
-        <div class="ms-controls" aria-label="触发活动状态">
-          <button class="btn btn-primary" type="button" data-event="insight">播放顿悟</button>
-          <button class="btn" type="button" data-event="working" aria-pressed="true">工作中</button>
-          <button class="btn" type="button" data-event="waiting" aria-pressed="false">等待</button>
-          <button class="btn" type="button" data-event="done" aria-pressed="false">完成</button>
-          <button class="btn btn-ghost" type="button" data-pause>暂停动画</button>
-        </div>
-      </div>
-    </section>
-    <section data-variant="思路连成星图" aria-label="思路连成星图动画方案" hidden>
-      <div class="ms-stage" data-scene="constellation">
-        <div class="ms-screen">
-          <canvas width="480" height="480" role="img" aria-label="散落的线索，顿悟时汇聚成连通的星图">Codex 活动动画样稿</canvas>
-          <div class="ms-top"><span>CODEX</span><span>活动屏</span></div>
-          <div class="ms-copy"><div class="ms-eyebrow">进行中</div><h2>正在梳理思路</h2><p>让零散的线索逐渐清晰</p></div>
-          <div class="ms-bottom"><span class="ms-dot"></span><span class="ms-state" aria-live="polite">工作中</span><span class="ms-sample">效果样稿</span></div>
-        </div>
-        <div class="ms-controls" aria-label="触发活动状态">
-          <button class="btn btn-primary" type="button" data-event="insight">播放顿悟</button>
-          <button class="btn" type="button" data-event="working" aria-pressed="true">工作中</button>
-          <button class="btn" type="button" data-event="waiting" aria-pressed="false">等待</button>
-          <button class="btn" type="button" data-event="done" aria-pressed="false">完成</button>
-          <button class="btn btn-ghost" type="button" data-pause>暂停动画</button>
-        </div>
-      </div>
-    </section>
+<div id="mosaico-liquid-study" aria-label="纯动画活动屏">
+  <div class="ml-stage viz-dotted-background">
+    <div class="ml-screen" aria-label="液态金属交织流动；顿悟时舒展，等待时悬停，完成时收束">
+      <canvas width="480" height="480" role="img" aria-label="三维活动动画">三维活动动画需要 WebGL 2</canvas>
+    </div>
   </div>
-  <div class="viz-row text-small" style="margin-top:12px"><span>480 × 480 · 动画样稿 · 未接入实时活动</span></div>
+  <div class="viz-controls" style="justify-content:center;margin-top:16px" aria-label="预览动作，不属于设备画面">
+    <button type="button" class="btn" data-motion="working" aria-pressed="true">工作</button>
+    <button type="button" class="btn btn-primary" data-motion="insight" aria-pressed="false">顿悟</button>
+    <button type="button" class="btn" data-motion="waiting" aria-pressed="false">等待</button>
+    <button type="button" class="btn" data-motion="done" aria-pressed="false">完成</button>
+    <button type="button" class="btn btn-ghost" data-pause>暂停</button>
+  </div>
+  <div class="viz-row text-small" style="justify-content:center;margin-top:10px">
+    <span data-status role="status">正在载入三维材质…</span>
+  </div>
 </div>
 <style>
-  #mosaico-motion-study .ms-stage {
-    --ms-bg: light-dark(#f2f7f5, #10191d);
-    --ms-fg: light-dark(#1c343b, #eaf4f2);
-    --ms-soft: light-dark(#51666c, #a3b5b8);
-    --ms-line: light-dark(#d3e1df, #2a3a40);
-    --ms-work: light-dark(#138176, #78e2cd);
-    --ms-insight: light-dark(#a36b19, #f2ce8d);
-    --ms-wait: light-dark(#7454ab, #bba5e0);
-    --ms-done: light-dark(#247654, #8dd9a9);
-    --ms-active: var(--ms-work);
-    padding: 20px 12px 12px;
+  #mosaico-liquid-study .ml-stage { padding: 16px 8px; }
+  #mosaico-liquid-study .ml-screen {
+    --ml-bg: light-dark(#e7e5e3, #07090f);
+    --ml-haze: light-dark(#acb8c5, #182239);
+    width: min(100%, 480px); aspect-ratio: 1; margin: 0 auto;
+    overflow: hidden; background: var(--ml-bg); border-radius: 24px; isolation: isolate;
   }
-  #mosaico-motion-study .ms-screen {
-    position: relative;
-    width: min(100%, 480px);
-    aspect-ratio: 1;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 28px;
-    background: var(--ms-bg);
-    color: var(--ms-fg);
-    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", sans-serif;
-  }
-  #mosaico-motion-study canvas { width: 100%; height: 100%; display: block; }
-  #mosaico-motion-study .ms-top {
-    position: absolute; inset: 6% 7% auto;
-    display: flex; justify-content: space-between;
-    font-size: 12px; font-weight: 500; letter-spacing: 2px; color: var(--ms-soft);
-  }
-  #mosaico-motion-study .ms-copy { position: absolute; top: 68%; left: 7%; right: 7%; }
-  #mosaico-motion-study .ms-eyebrow { font-size: 12px; letter-spacing: 2px; color: var(--ms-active); }
-  #mosaico-motion-study .ms-copy h2 { margin: 6px 0; font-size: clamp(20px, 4.5vw, 28px); line-height: 1.2; font-weight: 500; color: var(--ms-fg); }
-  #mosaico-motion-study .ms-copy p { margin: 0; font-size: 12px; line-height: 1.5; color: var(--ms-soft); }
-  #mosaico-motion-study .ms-bottom {
-    position: absolute; inset: auto 7% 5%; display: flex; align-items: center; gap: 7px;
-    color: var(--ms-soft); font-size: 12px;
-  }
-  #mosaico-motion-study .ms-dot { width: 5px; height: 5px; background: var(--ms-active); border-radius: 50%; }
-  #mosaico-motion-study .ms-sample { margin-left: auto; }
-  #mosaico-motion-study .ms-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 16px; }
-  @media(max-width: 380px) {
-    #mosaico-motion-study .ms-stage { padding: 14px 4px 12px; }
-    #mosaico-motion-study .ms-copy { top: 65%; }
-    #mosaico-motion-study .ms-copy h2 { margin: 4px 0; }
-    #mosaico-motion-study .ms-bottom { bottom: 4%; }
-  }
+  #mosaico-liquid-study canvas { display: block; width: 100%; height: 100%; }
 </style>
-<script>
-(() => {
-  const root = document.getElementById('mosaico-motion-study');
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const settings = { duration: 2.8, glow: 1 };
-  const copy = {
-    working: ['进行中', '正在梳理思路', '让零散的线索逐渐清晰', '工作中'],
-    insight: ['顿悟', '找到关键联系', '思路接上了，继续向前', '发现关键线索'],
-    waiting: ['等待你', '在这里等你', '你准备好后，我们继续', '等待输入'],
-    done: ['已完成', '这一步，完成了', '让结果安静地留在这里', '完成']
+<script type="module">
+const root = document.getElementById('mosaico-liquid-study');
+const screen = root.querySelector('.ml-screen');
+const canvas = root.querySelector('canvas');
+const status = root.querySelector('[data-status]');
+const pauseButton = root.querySelector('[data-pause]');
+const motionButtons = [...root.querySelectorAll('[data-motion]')];
+const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+const settings = { duration: 3.6, radiance: 0.8 };
+const state = { mode: 'working', time: 0, elapsed: 0, paused: motionPreference.matches,
+  visible: true, opening: 0, heat: 0, scale: 1, drift: 1, finish: 0 };
+const labels = { working: '工作', insight: '顿悟', waiting: '等待', done: '完成' };
+const clamp = (x, lo = 0, hi = 1) => Math.min(hi, Math.max(lo, x));
+const smooth = x => { const t = clamp(x); return t * t * (3 - 2 * t); };
+let alive = true;
+let ready = false;
+let drawStill = () => {};
+let dispose = () => {};
+
+function readSaved(saved) {
+  const prefs = saved?.privateContent;
+  if (!prefs) return;
+  if (Number.isFinite(prefs.duration)) settings.duration = clamp(prefs.duration, 2.4, 5);
+  if (Number.isFinite(prefs.radiance)) settings.radiance = clamp(prefs.radiance, 0.25, 1.2);
+  if (Object.hasOwn(labels, prefs.mode)) state.mode = prefs.mode;
+  state.paused = motionPreference.matches || prefs.paused === true;
+  state.elapsed = state.paused ? (state.mode === 'insight' ? settings.duration * 0.46 : state.mode === 'done' ? 3 : 0) : 0;
+}
+function remember() {
+  if (window.openai?.setWidgetState) window.openai.setWidgetState({
+    modelContent: { design: '纯动画 · 液态结', event: state.mode, insightSeconds: settings.duration },
+    privateContent: { ...settings, mode: state.mode, paused: state.paused }
+  }).catch(() => {});
+}
+function controls() {
+  motionButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.motion === state.mode)));
+  pauseButton.textContent = state.paused ? '播放' : '暂停';
+  canvas.setAttribute('aria-label', `液态金属三维动画：${labels[state.mode]}`);
+}
+function select(mode) {
+  state.mode = mode;
+  state.elapsed = state.paused ? (mode === 'insight' ? settings.duration * 0.46 : mode === 'done' ? 3 : 0) : 0;
+  controls(); remember(); drawStill();
+}
+readSaved(window.openai?.widgetState);
+controls();
+motionButtons.forEach(button => { button.disabled = true; button.addEventListener('click', () => select(button.dataset.motion)); });
+pauseButton.disabled = true;
+pauseButton.addEventListener('click', () => { state.paused = !state.paused; controls(); remember(); drawStill(); });
+window.addEventListener('openai:set_globals', event => {
+  if (event.detail?.globals?.widgetState) {
+    readSaved(event.detail.globals.widgetState); controls(); drawStill();
+  }
+});
+motionPreference.addEventListener('change', event => {
+  if (event.matches) { state.paused = true; controls(); drawStill(); }
+});
+
+try {
+  // Version-pinned static modules; no activity, device, or other data requests.
+  const [THREE, { EffectComposer }, { RenderPass }, { UnrealBloomPass }, { OutputPass }] = await Promise.all([
+    import('https://esm.sh/three@0.180.0'),
+    import('https://esm.sh/three@0.180.0/examples/jsm/postprocessing/EffectComposer.js'),
+    import('https://esm.sh/three@0.180.0/examples/jsm/postprocessing/RenderPass.js'),
+    import('https://esm.sh/three@0.180.0/examples/jsm/postprocessing/UnrealBloomPass.js'),
+    import('https://esm.sh/three@0.180.0/examples/jsm/postprocessing/OutputPass.js')
+  ]);
+  if (!root.isConnected) throw new Error('closed');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'low-power' });
+  renderer.setPixelRatio(1); renderer.setSize(480, 480, false);
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.15;
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(36, 1, 0.1, 40);
+  camera.position.set(0, 0, 5.4);
+
+  // Broad cool studio reflections, a warm edge, and dark gaps between them.
+  const studio = new THREE.Scene(); studio.background = new THREE.Color('#0b101c');
+  const lampGeometry = new THREE.PlaneGeometry(1, 1);
+  const lampMaterials = [];
+  function lamp(position, size, rgb, energy) {
+    const color = new THREE.Color(rgb).multiplyScalar(energy);
+    const material = new THREE.MeshBasicMaterial({ color, side: THREE.DoubleSide });
+    lampMaterials.push(material);
+    const panel = new THREE.Mesh(lampGeometry, material);
+    panel.position.set(...position); panel.scale.set(size[0], size[1], 1); panel.lookAt(0, 0, 0);
+    studio.add(panel);
+  }
+  lamp([-3, 3, 3], [2.2, 6], '#dcefff', 7);
+  lamp([4, 0.5, 2], [0.7, 5], '#abc7ff', 6);
+  lamp([0, -4, 1], [5, 0.45], '#f1b785', 4);
+  lamp([1, 2, -4], [3, 3], '#d2aeed', 5);
+  lamp([-4, -0.5, -2], [1, 2.5], '#a4dccf', 2.8);
+  const pmrem = new THREE.PMREMGenerator(renderer);
+  const environment = pmrem.fromScene(studio, 0.035);
+  scene.environment = environment.texture;
+  pmrem.dispose(); lampGeometry.dispose(); lampMaterials.forEach(material => material.dispose());
+  const keyLight = new THREE.DirectionalLight('#edf3ff', 2.6);
+  keyLight.position.set(-3, 4, 5); scene.add(keyLight);
+  const warmLight = new THREE.PointLight('#ffc98e', 0, 10, 2);
+  warmLight.position.set(0.1, 0.1, 1.5); scene.add(warmLight);
+
+  const uniforms = { uTime: { value: 0 }, uOpen: { value: 0 }, uFinish: { value: 0 } };
+  const surfaceCode = `
+    uniform float uTime;
+    uniform float uOpen;
+    uniform float uFinish;
+    const float TAU = 6.28318530718;
+    vec3 spine(float u) {
+      float a = u * TAU;
+      float r = 0.70 + 0.30 * cos(3.0 * a + uTime * 0.16);
+      vec3 knot = vec3(r * cos(2.0 * a), r * sin(2.0 * a), 0.34 * sin(3.0 * a + uTime * 0.16));
+      knot.x += 0.065 * sin(a * 5.0 + uTime * 0.5);
+      knot.y += 0.05 * sin(a * 4.0 - uTime * 0.4);
+      float petal = 1.08 + 0.11 * cos(5.0 * a + uTime * 0.12);
+      vec3 unfolded = vec3(petal * cos(a), petal * sin(a), 0.20 * sin(3.0 * a + uTime * 0.2));
+      vec3 sealed = vec3(0.80 * cos(a), 0.80 * sin(a), 0.12 * sin(2.0 * a));
+      return mix(mix(knot, unfolded, uOpen), sealed, uFinish);
+    }
+    vec3 surface(vec2 param) {
+      float u = param.x;
+      float v = param.y * TAU;
+      vec3 c = spine(u);
+      vec3 t = normalize(spine(u + 0.0005) - spine(u - 0.0005));
+      vec3 n = normalize(cross(t, vec3(0.0, 0.0, 1.0)));
+      vec3 b = cross(t, n);
+      float radius = mix(0.175, 0.088, uOpen);
+      radius = mix(radius, 0.205, uFinish);
+      radius *= 1.0 + (1.0 - uFinish) * 0.16 * sin(u * TAU * 3.0 - uTime * 0.65);
+      float twist = v + u * TAU * 2.0 + uTime * 0.10;
+      float width = mix(1.0, 1.72, uOpen);
+      float depth = mix(0.90, 0.52, uOpen);
+      return c + n * cos(twist) * radius * width + b * sin(twist) * radius * depth;
+    }
+  `;
+  const surfaceMaterial = new THREE.MeshPhysicalMaterial({
+    color: '#aebace', metalness: 0.94, roughness: 0.18, clearcoat: 1, clearcoatRoughness: 0.13,
+    iridescence: 0.55, iridescenceIOR: 1.35, iridescenceThicknessRange: [180, 380], envMapIntensity: 1.15,
+    emissive: '#ffae52', emissiveIntensity: 0
+  });
+  surfaceMaterial.onBeforeCompile = shader => {
+    Object.assign(shader.uniforms, uniforms);
+    shader.vertexShader = shader.vertexShader.replace('#include <common>', '#include <common>\n' + surfaceCode);
+    shader.vertexShader = shader.vertexShader.replace('#include <beginnormal_vertex>', `
+      vec3 here = surface(uv);
+      vec3 du = surface(uv + vec2(0.0003, 0.0)) - surface(uv - vec2(0.0003, 0.0));
+      vec3 dv = surface(uv + vec2(0.0, 0.0003)) - surface(uv - vec2(0.0, 0.0003));
+      vec3 objectNormal = normalize(cross(dv, du));
+      #ifdef USE_TANGENT
+        vec3 objectTangent = normalize(du);
+      #endif
+    `);
+    shader.vertexShader = shader.vertexShader.replace('#include <begin_vertex>', 'vec3 transformed = here;');
   };
-  const tokens = { working: '--ms-work', insight: '--ms-insight', waiting: '--ms-wait', done: '--ms-done' };
-  const clamp = (v, lo = 0, hi = 1) => Math.max(lo, Math.min(hi, v));
-  const ease = v => { const x = clamp(v); return x * x * (3 - 2 * x); };
-  const mix = (a, b, t) => a + (b - a) * t;
-  const stages = Array.from(root.querySelectorAll('.ms-stage')).map(element => {
-    const canvas = element.querySelector('canvas');
-    return { element, canvas, ctx: canvas.getContext('2d'), variant: element.closest('[data-variant]'),
-      scene: element.dataset.scene, state: 'working', elapsed: 0, clock: 0,
-      paused: reducedMotion.matches, visible: true, palette: {} };
+  surfaceMaterial.customProgramCacheKey = () => 'mosaico-liquid-knot-v2';
+  function parametricGrid(columns, rows) {
+    const positions = [], uv = [], normals = [], indices = [];
+    for (let u = 0; u <= columns; u++) for (let v = 0; v <= rows; v++) {
+      positions.push(0, 0, 0); normals.push(0, 0, 1); uv.push(u / columns, v / rows);
+      if (u < columns && v < rows) {
+        const a = u * (rows + 1) + v, b = a + rows + 1;
+        indices.push(a, a + 1, b, a + 1, b + 1, b);
+      }
+    }
+    const geometry = new THREE.BufferGeometry();
+    geometry.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+    geometry.setAttribute('normal', new THREE.Float32BufferAttribute(normals, 3));
+    geometry.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2));
+    geometry.setIndex(indices); return geometry;
+  }
+  const surfaceGeometry = parametricGrid(288, 28);
+  const sculpture = new THREE.Mesh(surfaceGeometry, surfaceMaterial); sculpture.frustumCulled = false;
+  const body = new THREE.Group(); body.add(sculpture); scene.add(body);
+  const beadGeometry = new THREE.SphereGeometry(1, 24, 16);
+  const beadMaterial = new THREE.MeshPhysicalMaterial({ color: '#b6c7df', metalness: 0.96,
+    roughness: 0.14, clearcoat: 1, iridescence: 0.6, iridescenceIOR: 1.35 });
+  const beads = [];
+  for (let i = 0; i < 5; i++) { const bead = new THREE.Mesh(beadGeometry, beadMaterial); scene.add(bead); beads.push(bead); }
+
+  // A finite release of sparks, rather than a permanently busy background.
+  const seeds = new Float32Array(160 * 3);
+  for (let i = 0; i < 160; i++) {
+    seeds[i * 3] = ((i * 0.61803398875) % 1) * Math.PI * 2;
+    seeds[i * 3 + 1] = ((i * 0.754877666) % 1);
+    seeds[i * 3 + 2] = ((i * 0.56984029) % 1);
+  }
+  const sparkGeometry = new THREE.BufferGeometry();
+  sparkGeometry.setAttribute('position', new THREE.BufferAttribute(seeds, 3));
+  const sparkMaterial = new THREE.ShaderMaterial({
+    uniforms: { uSpread: { value: 0 }, uAlpha: { value: 0 } },
+    transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+    vertexShader: `
+      uniform float uSpread; varying float vAlpha;
+      void main() {
+        float a = position.x + uSpread * (0.4 + position.z);
+        float r = 0.55 + uSpread * (0.4 + position.y * 0.95);
+        vec3 p = vec3(cos(a) * r, sin(a) * r, (position.z - 0.5) * uSpread * 1.2);
+        p.y += uSpread * uSpread * 0.20;
+        vec4 mv = modelViewMatrix * vec4(p, 1.0);
+        gl_Position = projectionMatrix * mv;
+        gl_PointSize = (1.5 + position.z * 2.0) * 4.0 / max(1.0, -mv.z);
+        vAlpha = 0.25 + position.y * 0.75;
+      }
+    `,
+    fragmentShader: `
+      uniform float uAlpha; varying float vAlpha;
+      void main() {
+        float d = length(gl_PointCoord - 0.5) * 2.0;
+        if (d > 1.0) discard;
+        gl_FragColor = vec4(vec3(1.8, 0.95, 0.35), (1.0 - smoothstep(0.15, 1.0, d)) * uAlpha * vAlpha);
+      }
+    `
   });
-
-  function recolor(stage) {
-    const probe = document.createElement('span');
-    probe.hidden = true;
-    stage.element.appendChild(probe);
-    for (const [key, token] of Object.entries({ ...tokens, line: '--ms-line', fg: '--ms-fg' })) {
-      probe.style.color = `var(${token})`;
-      stage.palette[key] = getComputedStyle(probe).color;
+  const sparks = new THREE.Points(sparkGeometry, sparkMaterial); sparks.frustumCulled = false; scene.add(sparks);
+  const atmosphereMaterial = new THREE.ShaderMaterial({
+    uniforms: { uBase: { value: new THREE.Color() }, uHaze: { value: new THREE.Color() }, uHeat: { value: 0 } },
+    depthWrite: false, depthTest: false,
+    vertexShader: `varying vec2 vUv; void main() { vUv = uv; gl_Position = vec4(position.xy, 0.9999, 1.0); }`,
+    fragmentShader: `
+      varying vec2 vUv; uniform vec3 uBase; uniform vec3 uHaze; uniform float uHeat;
+      void main() {
+        vec2 p = vUv - 0.5;
+        float haze = exp(-dot(p * vec2(1.0, 1.2), p * vec2(1.0, 1.2)) * 10.0);
+        float center = exp(-dot(p, p) * 32.0);
+        vec3 color = mix(uBase, uHaze, haze * 0.32);
+        color += vec3(0.25, 0.085, 0.018) * center * uHeat;
+        float grain = fract(sin(dot(gl_FragCoord.xy, vec2(12.9898,78.233))) * 43758.5453) - 0.5;
+        gl_FragColor = vec4(max(vec3(0.0), color + grain * 0.0015), 1.0);
+      }
+    `
+  });
+  const atmosphereGeometry = new THREE.PlaneGeometry(2, 2);
+  const atmosphere = new THREE.Mesh(atmosphereGeometry, atmosphereMaterial);
+  atmosphere.frustumCulled = false; atmosphere.renderOrder = -100; scene.add(atmosphere);
+  function applyTheme() {
+    const probe = document.createElement('span'); probe.hidden = true; screen.appendChild(probe);
+    probe.style.color = 'var(--ml-bg)'; atmosphereMaterial.uniforms.uBase.value.set(getComputedStyle(probe).color);
+    probe.style.color = 'var(--ml-haze)'; atmosphereMaterial.uniforms.uHaze.value.set(getComputedStyle(probe).color);
+    probe.remove(); if (ready) drawStill();
+  }
+  applyTheme();
+  const target = new THREE.WebGLRenderTarget(480, 480, { type: THREE.HalfFloatType }); target.samples = 4;
+  const composer = new EffectComposer(renderer, target);
+  const renderPass = new RenderPass(scene, camera);
+  const bloom = new UnrealBloomPass(new THREE.Vector2(480, 480), 0.30, 0.45, 1.15);
+  const output = new OutputPass();
+  composer.addPass(renderPass); composer.addPass(bloom); composer.addPass(output); composer.setSize(480, 480);
+  const silver = new THREE.Color('#aebace'), gold = new THREE.Color('#f1c995');
+  const tilt = new THREE.Vector2();
+  screen.addEventListener('pointermove', event => {
+    const rect = screen.getBoundingClientRect();
+    tilt.set(((event.clientX - rect.left) / rect.width - 0.5) * 0.18, ((event.clientY - rect.top) / rect.height - 0.5) * 0.18);
+    if (state.paused) drawStill();
+  });
+  screen.addEventListener('pointerleave', () => { tilt.set(0, 0); if (state.paused) drawStill(); });
+  function targets() {
+    const p = clamp(state.elapsed / settings.duration);
+    if (state.mode === 'insight') {
+      const charge = smooth(p / 0.20) * (1 - smooth((p - 0.20) / 0.16));
+      const opening = smooth((p - 0.19) / 0.26) * (1 - smooth((p - 0.77) / 0.23));
+      const heat = smooth((p - 0.16) / 0.18) * (1 - smooth((p - 0.64) / 0.36));
+      return { opening, heat, scale: 1 - charge * 0.25 + Math.sin(opening * Math.PI) * 0.045, drift: 0.25, finish: 0,
+        spread: smooth((p - 0.32) / 0.60), spark: Math.sin(Math.PI * smooth((p - 0.30) / 0.68)) * 0.8 };
     }
-    probe.remove();
+    if (state.mode === 'waiting') return { opening: 0.3, heat: 0, scale: 0.9, drift: 0.12, finish: 0, spread: 0, spark: 0 };
+    if (state.mode === 'done') return { opening: 0, heat: 0.12, scale: 0.88, drift: 0.04,
+      finish: smooth(state.elapsed / 2), spread: 0, spark: 0 };
+    return { opening: 0, heat: 0, scale: 1, drift: 1, finish: 0, spread: 0, spark: 0 };
   }
-
-  function updateText(stage) {
-    const text = copy[stage.state];
-    stage.element.querySelector('.ms-eyebrow').textContent = text[0];
-    stage.element.querySelector('h2').textContent = text[1];
-    stage.element.querySelector('.ms-copy p').textContent = text[2];
-    stage.element.querySelector('.ms-state').textContent = text[3];
-    stage.canvas.setAttribute('aria-label', `${stage.variant.dataset.variant}：${text[3]}`);
-    stage.element.style.setProperty('--ms-active', `var(${tokens[stage.state]})`);
-    for (const button of stage.element.querySelectorAll('[aria-pressed]')) {
-      button.setAttribute('aria-pressed', String(button.dataset.event === stage.state));
-    }
-    stage.element.querySelector('[data-pause]').textContent = stage.paused ? '播放动画' : '暂停动画';
-  }
-
-  function remember(stage) {
-    if (!window.openai?.setWidgetState) return;
-    window.openai.setWidgetState({
-      modelContent: { animationStyle: stage.variant.dataset.variant, event: stage.state, insightSeconds: settings.duration },
-      privateContent: { duration: settings.duration, glow: settings.glow,
-        scenes: stages.map(s => ({ scene: s.scene, event: s.state, paused: s.paused })) }
-    }).catch(() => {});
-  }
-
-  function restore(saved) {
-    const values = saved?.privateContent;
-    if (!values) return;
-    if (Number.isFinite(values.duration)) settings.duration = clamp(values.duration, 1.8, 4);
-    if (Number.isFinite(values.glow)) settings.glow = clamp(values.glow, 0.5, 1.5);
-    for (const stage of stages) {
-      const state = Array.isArray(values.scenes) && values.scenes.find(s => s.scene === stage.scene);
-      if (state && Object.hasOwn(copy, state.event)) {
-        stage.state = state.event;
-        stage.paused = reducedMotion.matches || state.paused === true;
-        stage.elapsed = stage.paused ? (stage.state === 'insight' ? settings.duration * 0.48 : stage.state === 'done' ? 1.5 : 0) : 0;
-      }
-    }
-  }
-
-  function select(stage, event) {
-    stage.state = event;
-    stage.elapsed = stage.paused ? (event === 'insight' ? settings.duration * 0.48 : event === 'done' ? 1.5 : 0) : 0;
-    updateText(stage);
-    remember(stage);
-    draw(stage);
-  }
-
-  function dot(ctx, x, y, radius, color, alpha = 1) {
-    ctx.globalAlpha = clamp(alpha);
-    ctx.fillStyle = color;
-    ctx.beginPath(); ctx.arc(x, y, Math.max(0.1, radius), 0, Math.PI * 2); ctx.fill();
-  }
-
-  function glow(ctx, x, y, radius, color, strength) {
-    for (let i = 8; i > 0; i--) dot(ctx, x, y, radius * i / 8, color, 0.012 * strength);
-  }
-
-  function path(ctx, points, color, alpha, width = 1) {
-    if (points.length < 2) return;
-    ctx.globalAlpha = clamp(alpha); ctx.strokeStyle = color; ctx.lineWidth = width;
-    ctx.beginPath(); ctx.moveTo(points[0][0], points[0][1]);
-    points.slice(1).forEach(p => ctx.lineTo(p[0], p[1])); ctx.stroke();
-  }
-
-  function draw(stage) {
-    const ctx = stage.ctx;
-    if (!ctx) return;
-    const p = stage.palette;
-    ctx.clearRect(0, 0, 480, 480);
-    ctx.lineCap = 'round'; ctx.lineJoin = 'round';
-    const insight = stage.state === 'insight';
-    const done = stage.state === 'done';
-    const waiting = stage.state === 'waiting';
-    const f = insight ? clamp(stage.elapsed / settings.duration) : 0;
-    const gather = insight ? ease(f / 0.24) * (1 - ease((f - 0.30) / 0.25)) : 0;
-    const bloom = insight ? Math.sin(Math.PI * ease((f - 0.24) / 0.70)) : 0;
-    const expansion = insight ? ease((f - 0.29) / 0.43) : 0;
-    const calm = done ? ease(stage.elapsed / 1.4) : 0;
-    const movement = done ? Math.min(stage.elapsed, 1.4) * 0.25 : waiting ? stage.clock * 0.09 : stage.clock * 0.30;
-    const breathing = done ? 0 : Math.sin(stage.clock * (waiting ? 1 : 1.7)) * 2;
-    const color = p[stage.state];
-    const cx = 240, cy = 204;
-
-    // One bounded glow, no full-screen flashes or repeated insight pulses.
-    glow(ctx, cx, cy, 100 + bloom * 65, color, settings.glow * (0.5 + bloom * 2));
-    if (stage.scene === 'orb') {
-      const radius = (66 + breathing) * (1 - gather * 0.32 + bloom * 0.15);
-      for (let ring = 0; ring < 7; ring++) {
-        const tilt = ring * Math.PI / 7 + movement * 0.32;
-        const points = [];
-        for (let j = 0; j <= 96; j++) {
-          const a = j * Math.PI / 48;
-          const x = Math.cos(a) * radius;
-          const y = Math.sin(a) * radius * (0.28 + 0.10 * Math.sin(tilt));
-          points.push([cx + x * Math.cos(tilt) - y * Math.sin(tilt), cy + x * Math.sin(tilt) + y * Math.cos(tilt)]);
-        }
-        path(ctx, points, color, 0.23 + bloom * 0.14, 1.1);
-      }
-      for (let i = 0; i < 70; i++) {
-        const z = 1 - 2 * (i + 0.5) / 70;
-        const a = i * 2.399963 + movement;
-        const r = Math.sqrt(1 - z * z);
-        const depth = Math.sin(a) * r;
-        dot(ctx, cx + Math.cos(a) * r * radius, cy + z * radius,
-          0.8 + (depth + 1) * 0.6, color, 0.25 + (depth + 1) * 0.26);
-      }
-      dot(ctx, cx, cy, 5 + bloom * 8, color, 0.8);
-      glow(ctx, cx, cy, 22 + bloom * 13, color, settings.glow * 1.8);
-      for (let i = 0; i < 12; i++) {
-        const a = i * Math.PI / 6 + movement * 0.25;
-        const r = (108 + Math.sin(i * 1.4 + movement) * 9) * (1 - gather * 0.66);
-        dot(ctx, cx + Math.cos(a) * r, cy + Math.sin(a) * r * 0.83,
-          1.4, color, 0.18 + bloom * 0.25);
-      }
-    } else {
-      const connection = done ? calm : insight ? ease((f - 0.15) / 0.38) : waiting ? 0.05 : 0.12;
-      const points = [];
-      for (let i = 0; i < 15; i++) {
-        const a = i * 2.399963;
-        const r = 28 + Math.sqrt(i / 14) * 87;
-        const drift = (1 - connection) * 10;
-        const targetX = cx + Math.cos(a) * r;
-        const targetY = cy + Math.sin(a) * r * 0.78;
-        const x = mix(targetX + Math.sin(movement + i) * drift, targetX, connection);
-        const y = mix(targetY + Math.cos(movement * 0.7 + i * 2) * drift, targetY, connection);
-        points.push([x, y]);
-      }
-      for (let i = 1; i < points.length; i++) {
-        const parent = Math.floor((i - 1) / 2);
-        const progress = ease(connection * 2.3 - i / 14);
-        const endpoint = [mix(points[parent][0], points[i][0], progress), mix(points[parent][1], points[i][1], progress)];
-        path(ctx, [points[parent], endpoint], color, 0.25 + bloom * 0.35, 1.5);
-      }
-      points.forEach(([x, y], i) => {
-        dot(ctx, x, y, (i === 0 ? 6 : 2.5) + bloom * 1.7, color, 0.55 + connection * 0.4);
-        if (connection > 0.3) glow(ctx, x, y, 15, color, settings.glow * connection);
-      });
-    }
-    if (insight && f > 0.29) {
-      const radius = 34 + expansion * 114;
-      const points = [];
-      for (let i = 0; i <= 128; i++) {
-        const a = i * Math.PI / 64;
-        points.push([cx + Math.cos(a) * radius, cy + Math.sin(a) * radius * 0.73]);
-      }
-      path(ctx, points, color, Math.sin(Math.PI * expansion) * 0.75, 1.8);
-      for (let i = 0; i < 18; i++) {
-        const a = i * Math.PI / 9 + 0.2;
-        dot(ctx, cx + Math.cos(a) * radius, cy + Math.sin(a) * radius * 0.73,
-          1 + bloom, color, (1 - expansion) * 0.65);
-      }
-    }
-    if (done) {
-      const points = [];
-      for (let i = 0; i <= 100 * calm; i++) {
-        const a = -Math.PI / 2 + i * Math.PI / 50;
-        points.push([cx + Math.cos(a) * 106, cy + Math.sin(a) * 106]);
-      }
-      path(ctx, points, color, 0.35, 1.5);
-    }
-    ctx.globalAlpha = 1;
-  }
-
-  restore(window.openai?.widgetState);
-  stages.forEach(stage => {
-    recolor(stage); updateText(stage); draw(stage);
-    stage.element.querySelectorAll('[data-event]').forEach(button => {
-      button.addEventListener('click', () => select(stage, button.dataset.event));
+  function render(dt, instant = false) {
+    const next = targets();
+    const blend = instant ? 1 : 1 - Math.exp(-dt * 8);
+    for (const key of ['opening', 'heat', 'scale', 'drift', 'finish']) state[key] += (next[key] - state[key]) * blend;
+    state.time += dt * state.drift;
+    uniforms.uTime.value = state.time; uniforms.uOpen.value = state.opening; uniforms.uFinish.value = state.finish;
+    surfaceMaterial.color.copy(silver).lerp(gold, state.heat * 0.82 + state.finish * 0.2);
+    surfaceMaterial.roughness = 0.18 - state.heat * 0.045;
+    surfaceMaterial.emissiveIntensity = state.heat * 0.35 * settings.radiance;
+    surfaceMaterial.iridescence = 0.55 * (1 - state.heat * 0.75);
+    body.scale.setScalar(state.scale);
+    const quiet = 1 - state.finish;
+    body.rotation.set(0.26 + Math.sin(state.time * 0.25) * 0.18 * quiet + tilt.y,
+      0.18 + Math.sin(state.time * 0.18) * 0.25 * quiet + tilt.x, -0.26 + state.time * 0.09 * quiet);
+    body.position.y = Math.sin(state.time * 0.7) * 0.035 * quiet;
+    beads.forEach((bead, i) => {
+      const a = i * Math.PI * 2 / 5 + state.time * (0.18 + i * 0.012);
+      const r = (1.3 + i * 0.07) * (1 - state.opening * 0.05 - state.finish * 0.35);
+      bead.position.set(Math.cos(a) * r, Math.sin(a) * r * 0.75, Math.sin(a + 1) * 0.55 - 0.15);
+      const size = (0.018 + (i % 3) * 0.012) * (1 - state.finish);
+      bead.scale.set(size * 1.1, size * (1.1 + state.heat * 2), size);
     });
-    stage.element.querySelector('[data-pause]').addEventListener('click', () => {
-      stage.paused = !stage.paused;
-      updateText(stage); remember(stage); draw(stage);
-    });
+    warmLight.intensity = state.heat * 6 * settings.radiance;
+    atmosphereMaterial.uniforms.uHeat.value = state.heat * settings.radiance;
+    bloom.strength = 0.24 + state.heat * settings.radiance * 0.65;
+    sparkMaterial.uniforms.uSpread.value = next.spread; sparkMaterial.uniforms.uAlpha.value = next.spark * settings.radiance;
+    sparks.visible = next.spark > 0.001; composer.render();
+  }
+  drawStill = () => { if (ready && alive) render(0, state.paused); };
+  const visibility = new IntersectionObserver(entries => { state.visible = entries[0].isIntersecting; }); visibility.observe(screen);
+  const themeObserver = new MutationObserver(applyTheme);
+  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['style', 'class', 'data-theme'] });
+  const appearance = matchMedia('(prefers-color-scheme: dark)'); appearance.addEventListener('change', applyTheme);
+  dispose = () => {
+    if (!alive) return;
+    alive = false; renderer.setAnimationLoop(null); visibility.disconnect(); themeObserver.disconnect();
+    appearance.removeEventListener('change', applyTheme);
+    [surfaceGeometry, beadGeometry, sparkGeometry, atmosphereGeometry].forEach(g => g.dispose());
+    [surfaceMaterial, beadMaterial, sparkMaterial, atmosphereMaterial].forEach(m => m.dispose());
+    environment.dispose(); bloom.dispose(); output.dispose(); composer.dispose(); renderer.dispose();
+  };
+  canvas.addEventListener('webglcontextlost', event => {
+    event.preventDefault(); state.paused = true; controls();
+    status.textContent = '三维画面已暂停；重新打开可重新载入。';
+    dispose(); motionButtons.forEach(button => { button.disabled = true; }); pauseButton.disabled = true;
   });
-
-  const observer = new IntersectionObserver(entries => {
-    for (const entry of entries) {
-      const stage = stages.find(s => s.canvas === entry.target);
-      if (stage) stage.visible = entry.isIntersecting;
-    }
-  });
-  stages.forEach(stage => observer.observe(stage.canvas));
-  const refreshPalette = () => stages.forEach(stage => { recolor(stage); draw(stage); });
-  const themeObserver = new MutationObserver(refreshPalette);
-  themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ['class', 'style', 'data-theme'] });
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', refreshPalette);
-  reducedMotion.addEventListener('change', event => {
-    if (event.matches) stages.forEach(stage => { stage.paused = true; updateText(stage); draw(stage); });
-  });
-  window.addEventListener('openai:set_globals', event => {
-    const state = event.detail?.globals?.widgetState;
-    if (state) { restore(state); stages.forEach(stage => { updateText(stage); draw(stage); }); }
-  });
+  window.addEventListener('pagehide', dispose, { once: true });
+  ready = true; motionButtons.forEach(button => { button.disabled = false; }); pauseButton.disabled = false;
+  status.textContent = '视觉样稿 · 未连接实时活动或设备';
+  render(0, true);
   let previous = performance.now();
-  function tick(now) {
-    const dt = Math.min((now - previous) / 1000, 0.05);
-    previous = now;
-    if (!root.isConnected) { observer.disconnect(); themeObserver.disconnect(); return; }
-    if (!document.hidden) for (const stage of stages) {
-      if (stage.paused || !stage.visible || stage.variant.hidden) continue;
-      if (stage.state === 'done' && stage.elapsed >= 1.5) continue;
-      stage.clock += dt; stage.elapsed += dt;
-      if (stage.state === 'insight' && stage.elapsed >= settings.duration) {
-        stage.state = 'working'; stage.elapsed = 0; updateText(stage);
-      }
-      draw(stage);
-    }
-    requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
+  renderer.setAnimationLoop(now => {
+    if (!root.isConnected) { dispose(); return; }
+    const dt = Math.min((now - previous) / 1000, 0.05); previous = now;
+    if (!alive || document.hidden || !state.visible || state.paused) return;
+    if (state.mode === 'done' && state.elapsed > 3.2) return;
+    state.elapsed += dt;
+    if (state.mode === 'insight' && state.elapsed >= settings.duration) { state.mode = 'working'; state.elapsed = 0; controls(); }
+    render(dt);
+  });
   if (globalThis.Tweak) {
-    const tweak = new Tweak({ container: root, onChange: () => {
-      stages.forEach(draw);
-      const stage = stages.find(s => !s.variant.hidden) || stages[0];
-      remember(stage);
-    } });
-    tweak.addSlider(settings, 'duration', { label: '顿悟时长', min: 1.8, max: 4, step: 0.1, unit: '秒' });
-    tweak.addSlider(settings, 'glow', { label: '光晕强度', min: 0.5, max: 1.5, step: 0.1 });
+    const tweak = new Tweak({ container: root, onChange: () => { remember(); drawStill(); } });
+    tweak.addSlider(settings, 'duration', { label: '顿悟展开时长', min: 2.4, max: 5, step: 0.1, unit: '秒' });
+    tweak.addSlider(settings, 'radiance', { label: '发光强度', min: 0.25, max: 1.2, step: 0.05 });
   }
-})();
+} catch (error) {
+  dispose();
+  if (root.isConnected) {
+    status.textContent = '三维资源未能载入，或当前环境不支持 WebGL 2。'; status.setAttribute('role', 'alert');
+    motionButtons.forEach(button => { button.disabled = true; }); pauseButton.disabled = true;
+  }
+}
 </script>
