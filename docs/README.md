@@ -54,6 +54,7 @@
 
 ## 其他项目资料
 
+- [Codex 实时活动屏动作样稿](design/codex-activity-motion.md)
 - [早期Lua计数示例](../apps/mosaico_lvgl_counter/README.md)
 - [实拍图片来源](../assets/photos/README.md)
 - [屏幕素材来源](../assets/screens/README.md)
