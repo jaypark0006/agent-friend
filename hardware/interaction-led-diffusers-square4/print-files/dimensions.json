@@ -1,0 +1,34 @@
+{
+  "clearance_per_side_mm": 0.2,
+  "bottom_chamfer_mm": 0.15,
+  "parts": [
+    {
+      "name": "01_square4_diffuser",
+      "width_mm": 7.650000199999999,
+      "length_mm": 7.75,
+      "thickness_mm": 0.8,
+      "outer_corner_radius_mm": 0.75
+    },
+    {
+      "name": "02_square4_diffuser",
+      "width_mm": 7.650000199999999,
+      "length_mm": 7.75,
+      "thickness_mm": 0.8,
+      "outer_corner_radius_mm": 0.75
+    },
+    {
+      "name": "03_square4_diffuser",
+      "width_mm": 7.650000199999999,
+      "length_mm": 7.75,
+      "thickness_mm": 0.8,
+      "outer_corner_radius_mm": 0.75
+    },
+    {
+      "name": "04_square4_diffuser",
+      "width_mm": 7.650000199999999,
+      "length_mm": 7.75,
+      "thickness_mm": 0.8,
+      "outer_corner_radius_mm": 0.75
+    }
+  ]
+}

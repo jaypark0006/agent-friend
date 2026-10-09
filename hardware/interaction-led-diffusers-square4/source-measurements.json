@@ -1,0 +1,57 @@
+{
+  "source_file": "ESP-Mosaico_Module_Interaction_square4-3D.3mf",
+  "source_sha256": "8ee0478b84d0025c83cbcb69b60c0c7910d99190452fc00aada208974aa509da",
+  "source_object": "3D/Objects/object_5.model",
+  "unit": "millimeter",
+  "measurement_section_z": -4.2,
+  "cavity_x_limits": [
+    -20.9125,
+    -12.8625
+  ],
+  "cavities": [
+    {
+      "number": 1,
+      "y_limits": [
+        12.80747,
+        20.95747
+      ],
+      "width_mm": 8.05,
+      "length_mm": 8.15,
+      "all_corner_radius_mm": 0.95
+    },
+    {
+      "number": 2,
+      "y_limits": [
+        1.55249,
+        9.70249
+      ],
+      "width_mm": 8.05,
+      "length_mm": 8.15,
+      "all_corner_radius_mm": 0.95
+    },
+    {
+      "number": 3,
+      "y_limits": [
+        -9.70249,
+        -1.55249
+      ],
+      "width_mm": 8.05,
+      "length_mm": 8.15,
+      "all_corner_radius_mm": 0.95
+    },
+    {
+      "number": 4,
+      "y_limits": [
+        -20.95747,
+        -12.80747
+      ],
+      "width_mm": 8.05,
+      "length_mm": 8.15,
+      "all_corner_radius_mm": 0.95
+    }
+  ],
+  "opening_type": "Through opening; no complete support floor under the diffuser.",
+  "method": "Horizontal triangle-mesh sections and original mesh vertices, compared in the preceding measurement turn.",
+  "physical_fit_verified": false,
+  "optical_performance_verified": false
+}
