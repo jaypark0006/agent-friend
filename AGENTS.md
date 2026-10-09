@@ -1,7 +1,8 @@
 # 项目长期参考
 
-## 当前文档入口（2026-10-05更新）
+## 当前文档入口（2026-10-09更新）
 
+- 最新安装1.1.27（2026-10-09）：修复交互板共享模块管理器初始化竞争，失败每500ms重试并更新ready/error；官方编译刷入normal/healthy、crash_count=0，地址192.168.5.137。本轮未做灯光效果测试，见[交付记录](docs/development/2026-10-09-interact-init-1.1.27.md)。
 - 当前功能/API/开发流程：[应用文档索引](vendor/esp-mosaico-vibe/projects/lan_screen/docs/README.md)。
 - 已完成[分阶段重构计划](vendor/esp-mosaico-vibe/projects/lan_screen/docs/refactor-plan.md)的P1–P5迁移，当前模块和保留边界见[架构说明](vendor/esp-mosaico-vibe/projects/lan_screen/docs/architecture.md)。1.1.26已编译与官方刷入；没有本轮效果测试。
 - 1.1.26增加类型化命令/值快照、集中页面控制和相机意图服务、显示管线拆分、增量消息卡片、图片引用与1MiB历史预算、相机缓存借用及网页生命周期模块。最多16张受字节容量限制；原始相机独立请求可保持离页采集，显式关闭全局停止。详见[交付记录](docs/development/2026-10-05-refactor-1.1.26.md)。
