@@ -1,0 +1,56 @@
+{
+  "source_file": "ESP-Mosaico_Module_Interaction_alignedcircles-3D.3mf",
+  "source_sha256": "811de396b52c447fb4143d51a1d43c474928c8ff65a2c71d7d5ec9499c96dcda",
+  "source_object": "3D/Objects/object_2.model",
+  "unit": "millimeter",
+  "measurement_section_z": -4.2,
+  "cavity_x_limits": [
+    -20.9125004,
+    -12.8625002
+  ],
+  "cavities": [
+    {
+      "number": 1,
+      "y_limits": [
+        11.2170725,
+        20.9574699
+      ],
+      "outer_corners_radius": 0.95
+    },
+    {
+      "number": 2,
+      "y_limits": [
+        1.60341358,
+        10.4136581
+      ],
+      "outer_corners_radius": 0
+    },
+    {
+      "number": 3,
+      "y_limits": [
+        -10.413661,
+        -1.60341549
+      ],
+      "outer_corners_radius": 0
+    },
+    {
+      "number": 4,
+      "y_limits": [
+        -20.9574738,
+        -11.2170744
+      ],
+      "outer_corners_radius": 0.95
+    }
+  ],
+  "central_slit_y_limits": [
+    -0.800000191,
+    0.799998283
+  ],
+  "front_surface_z": -5.44999981,
+  "cavity_floor_z": -4.25,
+  "straight_wall_top_z": -2.85,
+  "partition_top_z": -2.09143877,
+  "method": "Horizontal triangle-mesh sections plus original vertex coordinates; no image-scale estimation.",
+  "physical_fit_verified": false,
+  "optical_performance_verified": false
+}

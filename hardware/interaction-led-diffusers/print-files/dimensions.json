@@ -1,0 +1,34 @@
+{
+  "clearance_per_side_mm": 0.2,
+  "bottom_chamfer_mm": 0.15,
+  "parts": [
+    {
+      "name": "01_outer_end",
+      "width_mm": 7.650000199999999,
+      "length_mm": 9.340399399999999,
+      "thickness_mm": 0.8,
+      "outer_corner_radius_mm": 0.75
+    },
+    {
+      "name": "02_inner_middle",
+      "width_mm": 7.650000199999999,
+      "length_mm": 8.410245,
+      "thickness_mm": 0.8,
+      "outer_corner_radius_mm": 0
+    },
+    {
+      "name": "03_inner_middle",
+      "width_mm": 7.650000199999999,
+      "length_mm": 8.410245,
+      "thickness_mm": 0.8,
+      "outer_corner_radius_mm": 0
+    },
+    {
+      "name": "04_outer_end",
+      "width_mm": 7.650000199999999,
+      "length_mm": 9.340399399999999,
+      "thickness_mm": 0.8,
+      "outer_corner_radius_mm": 0.75
+    }
+  ]
+}
