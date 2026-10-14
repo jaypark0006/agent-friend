@@ -12,7 +12,7 @@ def main():
     p = argparse.ArgumentParser(description="Report agent progress to Mosaico screen")
     p.add_argument("--id", default="codex", help="Unique agent identifier")
     p.add_argument("--title", default="Codex Assistant", help="Agent title")
-    p.add_argument("--status", required=True, help="Current action description")
+    p.add_argument("--status", default="", help="Current action description")
     p.add_argument("--progress", type=int, default=-1, help="0..100 progress percentage, or -1")
     p.add_argument("--color", default="#39e69d", help="Theme hex color")
     p.add_argument("--badge", default=None, help="Badge pill (e.g. RUNNING, DONE)")
