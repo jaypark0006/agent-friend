@@ -26,7 +26,22 @@ python3 SKILL_DIR/scripts/progress.py --id 'codex' --title 'Codex' --status '功
 * `color`：主题十六进制颜色（例如绿色 `#39e69d`、蓝色 `#4fa3e3`、黄色 `#e5c07b`）。
 * `done`：标记为已完成。
 
-## 二、任务收尾通知（状态卡片与配图）
+## 二、触屏人工决策与交互授权（Human-in-the-Loop）
+
+当 Agent 遇到关键步骤（如高危命令、生产部署、删除操作或方向选择）需要用户决策时，可以在随身屏弹出触摸按钮，并等待用户直接在屏幕上触控批准或取消：
+
+```sh
+# 屏幕弹出确认按钮，并在终端阻塞等待用户点击（输出 JSON 决策结果）：
+python3 SKILL_DIR/scripts/progress.py --id 'deploy' --title '生产部署' \
+  --status '准备发布到生产环境，请点屏幕确认' --progress 85 \
+  --confirm --btn1 '批准' --btn2 '拒绝' --wait-confirm
+```
+
+* `--confirm`：在卡片下方渲染两个触控实体按钮；
+* `--btn1` / `--btn2`：主按钮（默认 `Approve`）与副按钮（默认 `Cancel`）文本；
+* `--wait-confirm`：自动轮询等待用户点击屏幕，用户触控后随身屏会给出翡翠绿/琥珀色闪烁反馈，并返回形如 `{"ip": "...", "decision": "批准"}` 的 JSON。
+
+## 三、任务收尾通知（状态卡片与配图）
 
 当有实际交付的任务最终收尾时，调用 `notify.py` 发送最终总结卡片：
 
@@ -38,13 +53,13 @@ python3 SKILL_DIR/scripts/notify.py --title '任务已完成' --text '已更新�
 * 字体自动选择本机 PingFang 或 STHeiti。
 * 用户要求不打断当前屏幕时加 `--keep-view`。
 
-## 三、网络发现与设备边界
+## 四、网络发现与设备边界
 
 * 固定目标硬件 MAC `1c:29:04:d0:ad:2a`。
 * 优先使用 ARP、成功缓存和当前局域网网段动态发现，可通过 `--ip` 指定候选 IP。
 * 设备端已内置自描述技能端点 `http://<IP>/skill`，新接入的 Agent 亦可直接读取该端点自动获得完整 API 契约。
 
-## 四、维护与全局副本
+## 五、维护与全局副本
 
 * 跟踪源：`/Users/qilei/mosaico/skills/mosaico-notify`
 * 全局安装副本：`~/.codex/skills/mosaico-notify`
