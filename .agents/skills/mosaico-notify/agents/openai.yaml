@@ -1,0 +1,6 @@
+interface:
+  display_name: "Mosaico 随身通知"
+  short_description: "任务结束后寻找随身屏的新地址，生成状态配图并推送文字与图片"
+  default_prompt: "使用 $mosaico-notify 将本次任务结果和合适的配图推送到我的随身显示器。"
+policy:
+  allow_implicit_invocation: true

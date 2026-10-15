@@ -1,11 +1,11 @@
 ---
 name: mosaico-notify
-description: 向用户的 ESP-Mosaico 随身显示器推送任务过程进度、完成/失败通知及配图。用户已指定它为本机默认任务进度与完成通知设备；Codex/Agent 在长任务或多步执行期间上报实时进度，并在任务收尾时发送最终交付状态。
+description: 向用户的 ESP-Mosaico 随身显示器推送任务过程进度、完成/失败通知及配图。用户已指定它为本机默认任务进度与完成通知设备；Antigravity / Codex / AI 智能体在长任务或多步执行期间上报实时进度，并在任务收尾时发送最终交付状态。
 ---
 
 # Mosaico 随身通知与任务进度流
 
-用户已授权：本机 Codex / AI 智能体在执行任务时，可将当前进度推送到随身屏；在完成有实际交付的任务时，向随身屏发送简短完成消息并生成配图。
+用户已授权：本机 Antigravity / Codex / AI 智能体在执行任务时，可将当前进度推送到随身屏；在完成有实际交付的任务时，向随身屏发送简短完成消息并生成配图。
 
 ## 一、任务执行过程中的进度推送（多 Agent 看板流水线）
 
@@ -13,18 +13,23 @@ description: 向用户的 ESP-Mosaico 随身显示器推送任务过程进度、
 
 ```sh
 # 上报执行中步骤（例如进度 50%）
-python3 SKILL_DIR/scripts/progress.py --id 'codex' --title 'Codex' --status '正在修改代码与重构...' --progress 50 --color '#39e69d'
+python3 SKILL_DIR/scripts/progress.py --id 'antigravity' --title 'Antigravity' --status '正在修改代码与重构...' --progress 50 --color '#39e69d'
 
 # 任务完成时标记 100% DONE
-python3 SKILL_DIR/scripts/progress.py --id 'codex' --title 'Codex' --status '功能代码已全部交付并刷入' --progress 100 --done
+python3 SKILL_DIR/scripts/progress.py --id 'antigravity' --title 'Antigravity' --status '功能代码已全部交付并刷入' --progress 100 --done
+
+# 移除指定 Agent 卡片
+python3 SKILL_DIR/scripts/progress.py --id 'antigravity' --delete
 ```
 
-* `id`：当前 Agent 或任务唯一标识符（如 `codex`、`backend`、`tester`）。
+* `id`：当前 Agent 或任务唯一标识符（如 `antigravity`、`codex`、`backend`、`tester`）。
 * `title`：任务或 Agent 名称。
 * `status`：当前正在执行的一行简短描述（≤64 字节）。
-* `progress`：0..100 整数（-1 隐藏进度条）。
+* `progress`：0..100 整数（-1 隐藏进度条；0..99 触发跑马灯流动光效）。
+* `badge`：状态胶囊文本（如 `RUNNING`、`DONE`、`REVIEW` 等）。
 * `color`：主题十六进制颜色（例如绿色 `#39e69d`、蓝色 `#4fa3e3`、黄色 `#e5c07b`）。
 * `done`：标记为已完成。
+* `delete`：从屏幕看板中移除对应任务卡片。
 
 ## 二、触屏人工决策与交互授权（Human-in-the-Loop）
 
@@ -53,14 +58,24 @@ python3 SKILL_DIR/scripts/notify.py --title '任务已完成' --text '已更新�
 * 字体自动选择本机 PingFang 或 STHeiti。
 * 用户要求不打断当前屏幕时加 `--keep-view`。
 
-## 四、网络发现与设备边界
+## 四、网络发现与设备端 REST API
 
 * 固定目标硬件 MAC `1c:29:04:d0:ad:2a`。
 * 优先使用 ARP、成功缓存和当前局域网网段动态发现，可通过 `--ip` 指定候选 IP。
-* 设备端已内置自描述技能端点 `http://<IP>/skill`，新接入的 Agent 亦可直接读取该端点自动获得完整 API 契约。
+* 设备端直接提供自描述端点与轻量 REST 接口：
+  - `GET /skill`：返回设备自描述 Markdown 契约与使用示例；
+  - `POST /api/widget`：直接推送多 Agent 进度（格式同 `progress.py` 发送的 JSON）；
+  - `GET /api/widget`：查询当前活跃 Agent 列表、历史与状态；
+  - `POST /api/text`：向消息流页面追加文字消息；
+  - `GET /api/screenshot`：获取当前屏幕实时渲染帧（480x480 BMP）；
+  - `GET /api/status`：获取当前设备运行状态、IP、Wi-Fi 与渲染帧率；
+  - `GET /api/sensors`：获取姿态 IMU、电池电量、按键与交互子板状态。
 
-## 五、维护与全局副本
+## 五、维护与多 Agent 平台副本
 
+本技能支持 Antigravity 与 Codex 多平台自动发现：
 * 跟踪源：`/Users/qilei/mosaico/skills/mosaico-notify`
-* 全局安装副本：`~/.codex/skills/mosaico-notify`
-* 修改本技能时同步更新全局副本。
+* Antigravity 工程级技能：`/Users/qilei/mosaico/.agents/skills/mosaico-notify`
+* Antigravity 全局技能：`~/.gemini/config/skills/mosaico-notify`
+* Codex 全局技能：`~/.codex/skills/mosaico-notify`
+* 修改本技能时同步更新上述所有副本。

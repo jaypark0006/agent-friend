@@ -8,3 +8,6 @@ vendor/*
 
 # Per-machine IDE metadata is not project source.
 .idea/
+
+__pycache__/
+*.pyc
