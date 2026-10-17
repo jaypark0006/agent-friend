@@ -2,7 +2,8 @@
 
 ## 当前文档入口（2026-10-17更新）
 
-- 最新安装1.1.31（2026-10-17）：全面重构 Web 控制台为 5 大职能工作台（实时大屏、AI流水线、内容与历史、外设与传感器、开发者工具集），集成 RAM 历史、Agent 模板快捷注入、50Hz 原生 LED 动效触发、传感器矩阵与开发者子标签页；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-web-console-refactor-1.1.31.md)。
+- 最新安装1.1.32（2026-10-17）：Pipeline 任务队列引入双阶段匹配（Two-Pass Slot Matching），已完成任务保留为历史记录（绿色100%固定），同Agent新对话自动在尾部追加新卡片；解除列表垂直滚动与翻页手势冲突，引入非置底不抢焦保护；全面优化UI锁针零栈拷贝，根除任务栈溢出；receipt.py默认取消强切图片页以保持流水线大屏；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-pipeline-history-1.1.32.md)。
+- 此前安装1.1.31（2026-10-17）：全面重构 Web 控制台为 5 大职能工作台（实时大屏、AI流水线、内容与历史、外设与传感器、开发者工具集），集成 RAM 历史、Agent 模板快捷注入、50Hz 原生 LED 动效触发、传感器矩阵与开发者子标签页；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-web-console-refactor-1.1.31.md)。
 - 此前安装1.1.30（2026-10-17）：引入交互板原生50Hz平滑LED预制动画灯效（breathe/chase/rainbow/alert/success/off）、会话内单轮对话Progress生命周期重置、任务完成交付证明配图（receipt.py）；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-led-presets-and-turn-lifecycle-1.1.30.md)。
 - 此前安装1.1.29（2026-10-17）：吸收esp-gsp架构精髓，引入数据驱动的声明式UI描述（status_card_schema）与卡片确定性子组件/槽位就地更新（In-place Updates），彻底避免高频进度上报时的LVGL堆内存碎片与布局重排；官方编译刷入normal/healthy、crash_count=0。本轮未做功能或效果测试，见[交付记录](docs/development/2026-10-17-esp-gsp-optimizations-1.1.29.md)。
 - 此前安装1.1.28（2026-10-17）：固件与Agent技能对齐，新增`/skills`路径别名与自描述技能服务；更新全局与项目mosaico-notify skill规则（防覆盖条款、周期刷新与Agent自主决策）；官方编译刷入normal/healthy、crash_count=0。

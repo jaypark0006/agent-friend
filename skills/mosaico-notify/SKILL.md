@@ -28,7 +28,7 @@ description: 发现并连接用户的 ESP-Mosaico 随身副屏与硬件交互终
      ```sh
      python3 SKILL_DIR/scripts/receipt.py --agent 'Antigravity' --title '任务已完成' --items '关键改动1' '关键改动2' '实机编译刷入成功' --version '1.1.30'
      ```
-   - 脚本会自动将 480x480 卡片推送到设备存储历史并切到图片主屏展示给用户。也可传入 `--image <path>` 呈现架构图、测试图或截图。
+   - 脚本会自动将 480x480 卡片推送到设备存储历史（默认保留随身屏当前 Pipeline 大屏与滚动任务历史，不强制跳转打断用户视线；如需显式切屏可指定 `--switch-page`）。也可传入 `--image <path>` 呈现架构图、测试图或截图。
 
 4. **预制交互板 LED 情绪与状态灯效（Preset LED Effects）**：
    - 交互副板提供 6 颗高亮 RGB LED，已固化 50Hz 平滑原生动画预制灯效：

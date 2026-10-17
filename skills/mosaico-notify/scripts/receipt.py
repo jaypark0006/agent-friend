@@ -112,7 +112,7 @@ def main():
     p.add_argument("--color", default="#4fa3e3", help="Accent hex color")
     p.add_argument("--image", default=None, help="Optional custom image path instead of generated card")
     p.add_argument("--ip", default=None, help="Device IP")
-    p.add_argument("--switch-page", action="store_true", default=True, help="Switch screen to image page (default: True)")
+    p.add_argument("--switch-page", action="store_true", default=False, help="Switch screen to image page (default: False)")
     args = p.parse_args()
 
     ip = discover(args.ip)
