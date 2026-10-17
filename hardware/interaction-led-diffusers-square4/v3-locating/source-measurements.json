@@ -1,0 +1,80 @@
+{
+  "source_file": "ESP-Mosaico_Module_Interaction_square4-3D.3mf",
+  "source_sha256": "8ee0478b84d0025c83cbcb69b60c0c7910d99190452fc00aada208974aa509da",
+  "source_object": "3D/Objects/object_5.model",
+  "unit": "millimeter",
+  "measurement_section_z": -4.2,
+  "cavity_x_limits": [
+    -20.9125,
+    -12.8625
+  ],
+  "cavities": [
+    {
+      "number": 1,
+      "y_limits": [
+        12.80747,
+        20.95747
+      ],
+      "width_mm": 8.05,
+      "length_mm": 8.15,
+      "all_corner_radius_mm": 0.95
+    },
+    {
+      "number": 2,
+      "y_limits": [
+        1.55249,
+        9.70249
+      ],
+      "width_mm": 8.05,
+      "length_mm": 8.15,
+      "all_corner_radius_mm": 0.95
+    },
+    {
+      "number": 3,
+      "y_limits": [
+        -9.70249,
+        -1.55249
+      ],
+      "width_mm": 8.05,
+      "length_mm": 8.15,
+      "all_corner_radius_mm": 0.95
+    },
+    {
+      "number": 4,
+      "y_limits": [
+        -20.95747,
+        -12.80747
+      ],
+      "width_mm": 8.05,
+      "length_mm": 8.15,
+      "all_corner_radius_mm": 0.95
+    }
+  ],
+  "opening_type": "Through opening; no complete support floor under the diffuser.",
+  "method": "Horizontal triangle-mesh sections and original mesh vertices, compared in the preceding measurement turn.",
+  "physical_fit_verified": false,
+  "optical_performance_verified": false,
+  "revision": "V3 2026-10-17",
+  "design_dimensions": {
+    "flange_width_mm": 9.25,
+    "flange_length_mm": 9.85,
+    "flange_corner_radius_mm": 0.8,
+    "membrane_thickness_mm": 0.4,
+    "locator_outer_width_mm": 7.8500000000000005,
+    "locator_outer_length_mm": 7.95,
+    "locator_corner_radius_mm": 0.85,
+    "locator_wall_mm": 0.5,
+    "locator_height_mm": 0.8,
+    "overall_height_mm": 1.2000000000000002,
+    "locator_clearance_per_side_mm": 0.1,
+    "flange_clearance_per_side_mm": 0.15,
+    "lead_in_per_side_mm": 0.1,
+    "lead_in_height_mm": 0.2,
+    "forward_overlap_per_side_x_mm": 0.6,
+    "forward_overlap_per_side_y_mm": 0.85,
+    "install_direction": "Raised locator faces the front aperture; flange rests on rear ledge.",
+    "rearward_snap_lock": false
+  },
+  "independent_objects": 4,
+  "source_shell_modified": false
+}

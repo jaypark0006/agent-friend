@@ -1,0 +1,26 @@
+{
+  "revision": "V3",
+  "independent_objects": 4,
+  "identical_parts": true,
+  "source_shell_modified": false,
+  "dimensions": {
+    "flange_width_mm": 9.25,
+    "flange_length_mm": 9.85,
+    "flange_corner_radius_mm": 0.8,
+    "membrane_thickness_mm": 0.4,
+    "locator_outer_width_mm": 7.8500000000000005,
+    "locator_outer_length_mm": 7.95,
+    "locator_corner_radius_mm": 0.85,
+    "locator_wall_mm": 0.5,
+    "locator_height_mm": 0.8,
+    "overall_height_mm": 1.2000000000000002,
+    "locator_clearance_per_side_mm": 0.1,
+    "flange_clearance_per_side_mm": 0.15,
+    "lead_in_per_side_mm": 0.1,
+    "lead_in_height_mm": 0.2,
+    "forward_overlap_per_side_x_mm": 0.6,
+    "forward_overlap_per_side_y_mm": 0.85,
+    "install_direction": "Raised locator faces the front aperture; flange rests on rear ledge.",
+    "rearward_snap_lock": false
+  }
+}

@@ -1,6 +1,6 @@
 # ESP-Mosaico square4：四块相同的白色 PLA 均光板
 
-> **2026-10-17：本页下述 V1 已被用户实物反馈否定：过厚且会掉出。请使用 [V2 台阶承托薄片](v2-ledge/README.md)。本目录原 `print-files` 和 `mosaico-square4-led-diffusers.zip` 仅保留旧版记录，不应继续打印。**
+> **当前推荐文件（2026-10-17）：[V3 独立定位均光件](v3-locating/README.md)。V1 用户反馈过厚且会掉出，V2 大平片缺少安装定位；旧文件只保留版本记录，不建议继续打印。**
 
 2026-10-09，为用户提供的 `ESP-Mosaico_Module_Interaction_square4-3D.3mf` 单独生成。原始壳体未修改。此前 alignedcircles 的两长、两短均光板不适用此版本。
 

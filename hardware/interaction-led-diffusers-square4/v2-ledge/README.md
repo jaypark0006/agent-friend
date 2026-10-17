@@ -1,5 +1,7 @@
 # square4 V2：0.40 mm 台阶承托均光薄片
 
+> **已由 [V3 独立定位均光件](../v3-locating/README.md) 取代。V2 仍为平片，没有伸入前孔的定位圈，不作为当前推荐打印件。**
+
 2026-10-17，根据用户实物反馈“V1 太厚且会掉出”重新设计。适用于 `ESP-Mosaico_Module_Interaction_square4-3D.3mf`，不适用于 alignedcircles。
 
 ## 改正的结构依据
