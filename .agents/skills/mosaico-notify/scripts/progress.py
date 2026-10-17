@@ -9,9 +9,10 @@ sys.path.insert(0, str(Path(__file__).parent))
 from notify import discover, request
 
 def main():
-    p = argparse.ArgumentParser(description="Report agent progress to Mosaico screen")
-    p.add_argument("--id", default="codex", help="Unique agent identifier")
-    p.add_argument("--title", default="Codex Assistant", help="Agent title")
+    p = argparse.ArgumentParser(description="Report task progress to Mosaico screen")
+    p.add_argument("--id", default=None, help="Unique task/conversation identifier (decided by agent)")
+    p.add_argument("--title", default=None, help="Task title displayed on screen (decided by agent)")
+    p.add_argument("--agent", default=None, help="Optional agent identity (e.g. Antigravity, Codex)")
     p.add_argument("--status", default="", help="Current action description")
     p.add_argument("--progress", type=int, default=-1, help="0..100 progress percentage, or -1")
     p.add_argument("--color", default="#39e69d", help="Theme hex color")
@@ -31,9 +32,12 @@ def main():
         print("Device not found on local network", file=sys.stderr)
         sys.exit(1)
 
+    task_id = args.id or "task-1"
+    task_title = args.title or (f"[{args.agent}] Task" if args.agent else "Task")
+
     payload = {
-        "id": args.id,
-        "title": args.title,
+        "id": task_id,
+        "title": task_title,
         "status": args.status,
         "progress": args.progress,
         "color": args.color,
@@ -41,6 +45,8 @@ def main():
     }
     if args.badge:
         payload["badge"] = args.badge
+    elif args.agent:
+        payload["badge"] = args.agent
     if args.confirm:
         payload["action"] = {"type": "confirm", "options": [args.btn1, args.btn2]}
     if args.done or args.progress >= 100:
@@ -75,7 +81,7 @@ def main():
                 time.sleep(0.5)
                 st = request(ip, "/api/widget", timeout=3)
                 for it in st.get("agents", []):
-                    if it.get("id") == args.id:
+                    if it.get("id") == task_id:
                         res_val = it.get("action", {}).get("result")
                         if res_val:
                             print(json.dumps({"ip": ip, "decision": res_val, "agent": it}))

@@ -18,10 +18,12 @@ description: 发现并连接用户的 ESP-Mosaico 随身副屏与硬件交互终
    - 动态拉取权威设备规范：`curl -s http://<DEVICE_IP>/skills` 作为固件能力与 API 唯一权威依据。
 
 2. **单轮对话即新进度周期（Turn Progress Lifecycle）**：
-   - 在每个 Session 内部，**用户的每一次对话 / 每一个新需求都是一个全新的 Progress 生命周期**。
-   - 收到新指令开始工作时，必须立即上报初始进度（如 `--progress 10`），自动重置 `done` 状态为进行中，并简述本轮目标；
-   - 涉及多步骤、重构、编译刷机时，动态推进至 30%~80%；
-   - 任务完成时推进至 `--progress 100 --done`。
+   - 在每个 Session 内部，**用户的每一次对话 / 每一个新需求都是一个全新的任务（Task）**。
+   - **`--id` 是任务唯一标识（Task Key）**：由 Agent 自主决定（如 `task-1`、`turn-xxx`）；它仅作为内部卡片寻址与状态更新的主键，**无需且不会在屏幕上显示**。
+   - **`--title` 是屏幕上显示的标题**：由 Agent 自主决定（如 `[Antigravity] 优化数据流`），展示给用户。
+   - 收到新指令开始工作时，必须生成本轮对话专属的全新 `--id` 上报初始进度（如 `--progress 10`），自动在随身屏追加全新进度条；
+   - 本轮后续多步骤、编译刷机时，**复用相同的 `--id`** 动态推进至 30%~80%；
+   - 任务完成时推进至 `--progress 100 --done`，作为已完成历史固定在随身屏上。
 
 3. **任务完成交付证明配图（Proof of Work Receipt Image）**：
    - **所有 Agent 任务完成交付时，必须向随身屏推送一张专属生成的 480x480 交付证明配图**，直观证明完成了什么：
@@ -40,10 +42,10 @@ description: 发现并连接用户的 ESP-Mosaico 随身副屏与硬件交互终
      - `off`：熄灭关闭
    - **快捷联动**：在 `progress.py` 中直接指定 `--led <effect>`，或调用 `led.py`：
      ```sh
-     # 思考或分析时
-     python3 SKILL_DIR/scripts/progress.py --id 'antigravity' --title 'Antigravity' --status '正在构思方案...' --progress 15 --led breathe
-     # 编译或耗时执行时
-     python3 SKILL_DIR/scripts/progress.py --id 'antigravity' --title 'Antigravity' --status '正在编译刷机...' --progress 60 --led chase
+     # 思考或分析时（由 Agent 传入本轮专属 task-id 与 title）
+     python3 SKILL_DIR/scripts/progress.py --id 'task-1' --title '[Antigravity] 重构核心逻辑' --status '正在构思方案...' --progress 15 --led breathe
+     # 编译或耗时执行时（保持相同 task-id 更新当前进度条）
+     python3 SKILL_DIR/scripts/progress.py --id 'task-1' --title '[Antigravity] 重构核心逻辑' --status '正在编译刷机...' --progress 60 --led chase
      # 等待触屏决策时（自动触发 alert 双闪）
-     python3 SKILL_DIR/scripts/progress.py --id 'antigravity' --title 'Antigravity' --status '请确认部署' --confirm --wait-confirm
+     python3 SKILL_DIR/scripts/progress.py --id 'task-1' --title '[Antigravity] 重构核心逻辑' --status '请确认部署' --confirm --wait-confirm
      ```
