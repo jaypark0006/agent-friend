@@ -2,7 +2,8 @@
 
 ## 当前文档入口（2026-10-17更新）
 
-- 最新安装1.1.37（2026-10-17）：针对 Pipeline 任务长列表上下滑动卡顿问题进行深层优化；卡片文字全面接入 16px RAM 字形度量与点阵缓存（彻底根除 Flash SPI 阻塞）、移出 Flex 动态布局改为绝对坐标线性排版、剥除卡片边框抗锯齿计算、列表滚动期间动态隐藏（Hidden）渐变光柱节点、下沉底部检测频率；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-pipeline-scroll-optimization-1.1.37.md)。
+- 最新安装1.1.38（2026-10-17）：修复 Pipeline 左右切页返回时历史卡片重叠与滚动丢失问题；卡片布局引入 `get_card_height` 样式优先判定、卡片绝对坐标严格按尺寸与间距线性排版（根除 unready coords 导致的卡片千层饼压盖与容器高度收缩假死）、新增页面切换滚动位置记忆与平滑还原（`widget_scroll_saved`）；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-pipeline-switch-loss-1.1.38.md)。
+- 此前安装1.1.37（2026-10-17）：针对 Pipeline 任务长列表上下滑动卡顿问题进行深层优化；卡片文字全面接入 16px RAM 字形度量与点阵缓存（彻底根除 Flash SPI 阻塞）、移出 Flex 动态布局改为绝对坐标线性排版、剥除卡片边框抗锯齿计算、列表滚动期间动态隐藏（Hidden）渐变光柱节点、下沉底部检测频率；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-pipeline-scroll-optimization-1.1.37.md)。
 - 此前安装1.1.36（2026-10-17）：彻底解耦 Agent 身份与任务唯一键；`id` 正式规范为任务/对话主键（由 Agent 自主定义，仅作槽位寻址，不在屏上展示），`title` 由 Agent 自主指定展示标题，固件匹配算法简化为确定性 ID 直配并扩容容量至 64 字节；同步更新 Skill 与全局规则（明确三段式结构 `<自己是谁>:<Session名称>-<当前Task名称>`、Session 名统一性与 16~22 字符长度控制）；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-task-key-skill-refactor-1.1.36.md)。
 - 此前安装1.1.35（2026-10-17）：全面优化 Pipeline 列表垂直滑动性能与跟手触控；引入触控按下与滚动期间的动效智能静默机制（彻底杜绝拖拽中的脏区重绘与软件渐变开销）、卡片非交互组件 Clickable 标志剥除（根除点击死区判定）、移除弹性阻尼 4x 减速因数、输入设备滑动起步阈值降至 3px、启用样式查找缓存与去遮罩化；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-pipeline-scroll-performance-1.1.35.md)。
 - 此前安装1.1.34（2026-10-17）：简化 Web 控制台 AI 流水线页面；剔除冗余的 antigravity/codex/deploy 虚假预制芯片，统一为单套标准中立的任务步骤注入器；保留并突出实体交互板 LED 动效控制栏；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-web-console-unification-1.1.34.md)。
