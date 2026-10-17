@@ -2,7 +2,7 @@
 
 ## 当前文档入口（2026-10-17更新）
 
-- 最新安装1.1.36（2026-10-17）：彻底解耦 Agent 身份与任务唯一键；`id` 正式规范为任务/对话主键（由 Agent 自主定义，仅作槽位寻址，不在屏上展示），`title` 由 Agent 自主指定展示标题，固件匹配算法简化为确定性 ID 直配并扩容容量至 64 字节；同步更新 Skill 与全局规则；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-task-key-skill-refactor-1.1.36.md)。
+- 最新安装1.1.36（2026-10-17）：彻底解耦 Agent 身份与任务唯一键；`id` 正式规范为任务/对话主键（由 Agent 自主定义，仅作槽位寻址，不在屏上展示），`title` 由 Agent 自主指定展示标题，固件匹配算法简化为确定性 ID 直配并扩容容量至 64 字节；同步更新 Skill 与全局规则（明确三段式结构 `<自己是谁>:<Session名称>-<当前Task名称>`、Session 名统一性与 16~22 字符长度控制）；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-task-key-skill-refactor-1.1.36.md)。
 - 此前安装1.1.35（2026-10-17）：全面优化 Pipeline 列表垂直滑动性能与跟手触控；引入触控按下与滚动期间的动效智能静默机制（彻底杜绝拖拽中的脏区重绘与软件渐变开销）、卡片非交互组件 Clickable 标志剥除（根除点击死区判定）、移除弹性阻尼 4x 减速因数、输入设备滑动起步阈值降至 3px、启用样式查找缓存与去遮罩化；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-pipeline-scroll-performance-1.1.35.md)。
 - 此前安装1.1.34（2026-10-17）：简化 Web 控制台 AI 流水线页面；剔除冗余的 antigravity/codex/deploy 虚假预制芯片，统一为单套标准中立的任务步骤注入器；保留并突出实体交互板 LED 动效控制栏；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-web-console-unification-1.1.34.md)。
 - 此前安装1.1.33（2026-10-17）：全面重构进度条扫光与LED跑马灯动效；引入对称双半区水平渐变光柱（两端透明，中心90%纯白高光），行程扩展为 -90px 至 +420px 全量程平滑滑入滑出，彻底解决高亮底色对比度缺失导致的前段失明与尾部闪烁问题；交互副板升级为连续余弦高光扩散光束；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-symmetric-gradient-shimmer-1.1.33.md)。

@@ -11,7 +11,7 @@ from notify import discover, request
 def main():
     p = argparse.ArgumentParser(description="Report task progress to Mosaico screen")
     p.add_argument("--id", default=None, help="Unique task/conversation identifier (decided by agent)")
-    p.add_argument("--title", default=None, help="Task title displayed on screen (decided by agent)")
+    p.add_argument("--title", default=None, help="Task title on screen (recommended: <Agent>:<Session>-<Task>, concise <=22 CJK chars)")
     p.add_argument("--agent", default=None, help="Optional agent identity (e.g. Antigravity, Codex)")
     p.add_argument("--status", default="", help="Current action description")
     p.add_argument("--progress", type=int, default=-1, help="0..100 progress percentage, or -1")

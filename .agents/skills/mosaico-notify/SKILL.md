@@ -17,11 +17,14 @@ description: 发现并连接用户的 ESP-Mosaico 随身副屏与硬件交互终
    - 检查局域网缓存（`~/.cache/mosaico-notify/address.json`）或自动扫描。
    - 动态拉取权威设备规范：`curl -s http://<DEVICE_IP>/skills` 作为固件能力与 API 唯一权威依据。
 
-2. **单轮对话即新进度周期（Turn Progress Lifecycle）**：
+2. **单轮对话即新进度周期与 Title 规范（Turn-based Task Lifecycle & Title Spec）**：
    - 在每个 Session 内部，**用户的每一次对话 / 每一个新需求都是一个全新的任务（Task）**。
    - **`--id` 是任务唯一标识（Task Key）**：由 Agent 自主决定（如 `task-1`、`turn-xxx`）；它仅作为内部卡片寻址与状态更新的主键，**无需且不会在屏幕上显示**。
-   - **`--title` 是屏幕上显示的标题**：由 Agent 自主决定（如 `[Antigravity] 优化数据流`），展示给用户。
-   - 收到新指令开始工作时，必须生成本轮对话专属的全新 `--id` 上报初始进度（如 `--progress 10`），自动在随身屏追加全新进度条；
+   - **`--title` 推荐三段式结构并严格控制字数**：
+     - **推荐格式**：`<自己是谁>:<Session名称>-<当前Task名称>`（例如 `Antigravity:Skill规范-Title命名规则`、`Codex:PETG-切片参数调整`）。
+     - **Session 名称统一性**：**同一个 Session 内部的所有对话/Task，title 里面的 `<Session名称>` 必须保持一致**，确保在随身屏上下滑动回溯时一目了然。
+     - **严格控制字数**：随身屏卡片标题区域宽度约为 280px，推荐长度严格控制在 **16 ~ 22 个中文字符以内**（或 35 个半角字符以内），短小精炼，避免多行折行或被截断。
+   - 收到新指令开始工作时，必须生成本轮专属的全新 `--id`，以上述规范的 `--title` 上报初始进度（如 `--progress 10`），自动在随身屏追加全新进度条；
    - 本轮后续多步骤、编译刷机时，**复用相同的 `--id`** 动态推进至 30%~80%；
    - 任务完成时推进至 `--progress 100 --done`，作为已完成历史固定在随身屏上。
 
@@ -42,10 +45,10 @@ description: 发现并连接用户的 ESP-Mosaico 随身副屏与硬件交互终
      - `off`：熄灭关闭
    - **快捷联动**：在 `progress.py` 中直接指定 `--led <effect>`，或调用 `led.py`：
      ```sh
-     # 思考或分析时（由 Agent 传入本轮专属 task-id 与 title）
-     python3 SKILL_DIR/scripts/progress.py --id 'task-1' --title '[Antigravity] 重构核心逻辑' --status '正在构思方案...' --progress 15 --led breathe
+     # 思考或分析时（由 Agent 传入本轮专属 task-id，以及统一 Session 的三段式精简 title）
+     python3 SKILL_DIR/scripts/progress.py --id 'task-1' --title 'Antigravity:Skill规范-Title命名规范' --status '正在构思方案...' --progress 15 --led breathe
      # 编译或耗时执行时（保持相同 task-id 更新当前进度条）
-     python3 SKILL_DIR/scripts/progress.py --id 'task-1' --title '[Antigravity] 重构核心逻辑' --status '正在编译刷机...' --progress 60 --led chase
+     python3 SKILL_DIR/scripts/progress.py --id 'task-1' --title 'Antigravity:Skill规范-Title命名规范' --status '正在编译刷机...' --progress 60 --led chase
      # 等待触屏决策时（自动触发 alert 双闪）
-     python3 SKILL_DIR/scripts/progress.py --id 'task-1' --title '[Antigravity] 重构核心逻辑' --status '请确认部署' --confirm --wait-confirm
+     python3 SKILL_DIR/scripts/progress.py --id 'task-1' --title 'Antigravity:Skill规范-Title命名规范' --status '请确认部署' --confirm --wait-confirm
      ```
