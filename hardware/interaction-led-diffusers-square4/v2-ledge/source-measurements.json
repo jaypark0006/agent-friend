@@ -1,0 +1,76 @@
+{
+  "source_file": "ESP-Mosaico_Module_Interaction_square4-3D.3mf",
+  "source_sha256": "8ee0478b84d0025c83cbcb69b60c0c7910d99190452fc00aada208974aa509da",
+  "source_object": "3D/Objects/object_5.model",
+  "unit": "millimeter",
+  "measurement_section_z": [
+    -2.851,
+    -2.849,
+    -2.45
+  ],
+  "cavity_x_limits": [
+    -20.9125,
+    -12.8625
+  ],
+  "cavities": [
+    {
+      "number": 1,
+      "y_limits": [
+        12.80747,
+        20.95747
+      ],
+      "width_mm": 8.05,
+      "length_mm": 8.15,
+      "all_corner_radius_mm": 0.95
+    },
+    {
+      "number": 2,
+      "y_limits": [
+        1.55249,
+        9.70249
+      ],
+      "width_mm": 8.05,
+      "length_mm": 8.15,
+      "all_corner_radius_mm": 0.95
+    },
+    {
+      "number": 3,
+      "y_limits": [
+        -9.70249,
+        -1.55249
+      ],
+      "width_mm": 8.05,
+      "length_mm": 8.15,
+      "all_corner_radius_mm": 0.95
+    },
+    {
+      "number": 4,
+      "y_limits": [
+        -20.95747,
+        -12.80747
+      ],
+      "width_mm": 8.05,
+      "length_mm": 8.15,
+      "all_corner_radius_mm": 0.95
+    }
+  ],
+  "opening_type": "Through opening; no complete support floor under the diffuser.",
+  "method": "Original shell horizontal mesh sections straddling the Z=-2.85 shoulder; no slicer or printer operation.",
+  "physical_fit_verified": false,
+  "optical_performance_verified": false,
+  "revision": "V2 2026-10-17",
+  "rear_ledge_z": -2.85,
+  "rear_recess_width_mm": 9.55,
+  "rear_recess_length_mm": 10.15,
+  "rear_corner_radius_mm": 0.95,
+  "nominal_single_side_recess_gap_mm": 0.15,
+  "model_width_mm": 9.25,
+  "model_length_mm": 9.85,
+  "model_thickness_mm": 0.4,
+  "forward_overlap_per_side_mm": {
+    "x": 0.6,
+    "y": 0.85
+  },
+  "retention": "Positive frontward stop on shell ledge; no inward snap lock.",
+  "v1_user_feedback": "Too thick and drops out."
+}

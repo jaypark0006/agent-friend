@@ -1,0 +1,42 @@
+{
+  "clearance_per_side_mm": 0.15,
+  "bottom_chamfer_mm": 0.05,
+  "parts": [
+    {
+      "name": "01_square4_v2_ledge_diffuser",
+      "width_mm": 9.25,
+      "length_mm": 9.85,
+      "thickness_mm": 0.4,
+      "outer_corner_radius_mm": 0.7999999999999999,
+      "overlap_past_front_opening_x_mm": 0.5999999999999996,
+      "overlap_past_front_opening_y_mm": 0.8499999999999996
+    },
+    {
+      "name": "02_square4_v2_ledge_diffuser",
+      "width_mm": 9.25,
+      "length_mm": 9.85,
+      "thickness_mm": 0.4,
+      "outer_corner_radius_mm": 0.7999999999999999,
+      "overlap_past_front_opening_x_mm": 0.5999999999999996,
+      "overlap_past_front_opening_y_mm": 0.8499999999999996
+    },
+    {
+      "name": "03_square4_v2_ledge_diffuser",
+      "width_mm": 9.25,
+      "length_mm": 9.85,
+      "thickness_mm": 0.4,
+      "outer_corner_radius_mm": 0.7999999999999999,
+      "overlap_past_front_opening_x_mm": 0.5999999999999996,
+      "overlap_past_front_opening_y_mm": 0.8499999999999996
+    },
+    {
+      "name": "04_square4_v2_ledge_diffuser",
+      "width_mm": 9.25,
+      "length_mm": 9.85,
+      "thickness_mm": 0.4,
+      "outer_corner_radius_mm": 0.7999999999999999,
+      "overlap_past_front_opening_x_mm": 0.5999999999999996,
+      "overlap_past_front_opening_y_mm": 0.8499999999999996
+    }
+  ]
+}
