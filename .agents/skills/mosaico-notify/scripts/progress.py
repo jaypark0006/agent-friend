@@ -22,6 +22,7 @@ def main():
     p.add_argument("--btn1", default="Approve", help="Primary button text (default: Approve)")
     p.add_argument("--btn2", default="Cancel", help="Secondary button text (default: Cancel)")
     p.add_argument("--wait-confirm", action="store_true", help="Block until user touches a button on the screen")
+    p.add_argument("--led", choices=["breathe", "chase", "marquee", "rainbow", "alert", "warning", "success", "solid", "off"], default=None, help="Trigger subboard LED animation")
     p.add_argument("--ip", default=None, help="Device IP candidate")
     args = p.parse_args()
 
@@ -44,8 +45,27 @@ def main():
         payload["action"] = {"type": "confirm", "options": [args.btn1, args.btn2]}
     if args.done or args.progress >= 100:
         payload["done"] = True
+    elif args.progress >= 0:
+        payload["done"] = False
     if args.delete:
         payload["delete"] = True
+
+    # Synchronize interaction subboard LED effect
+    led_effect = args.led
+    if not led_effect:
+        if args.confirm:
+            led_effect = "alert"
+        elif args.done or args.progress >= 100:
+            led_effect = "success"
+    if led_effect:
+        try:
+            from led import hex_to_rgb
+            led_payload = {"slot": "right", "effect": led_effect}
+            if args.color and led_effect not in ["rainbow", "off"]:
+                led_payload["color"] = hex_to_rgb(args.color)
+            request(ip, "/api/interact/leds", json.dumps(led_payload).encode("utf-8"), timeout=2)
+        except Exception:
+            pass
 
     try:
         res = request(ip, "/api/widget", json.dumps(payload).encode("utf-8"), timeout=3)

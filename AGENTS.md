@@ -2,7 +2,8 @@
 
 ## 当前文档入口（2026-10-17更新）
 
-- 最新安装1.1.29（2026-10-17）：吸收esp-gsp架构精髓，引入数据驱动的声明式UI描述（status_card_schema）与卡片确定性子组件/槽位就地更新（In-place Updates），彻底避免高频进度上报时的LVGL堆内存碎片与布局重排；官方编译刷入normal/healthy、crash_count=0。本轮未做功能或效果测试，见[交付记录](docs/development/2026-10-17-esp-gsp-optimizations-1.1.29.md)。
+- 最新安装1.1.30（2026-10-17）：引入交互板原生50Hz平滑LED预制动画灯效（breathe/chase/rainbow/alert/success/off）、会话内单轮对话Progress生命周期重置、任务完成交付证明配图（receipt.py）；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-led-presets-and-turn-lifecycle-1.1.30.md)。
+- 此前安装1.1.29（2026-10-17）：吸收esp-gsp架构精髓，引入数据驱动的声明式UI描述（status_card_schema）与卡片确定性子组件/槽位就地更新（In-place Updates），彻底避免高频进度上报时的LVGL堆内存碎片与布局重排；官方编译刷入normal/healthy、crash_count=0。本轮未做功能或效果测试，见[交付记录](docs/development/2026-10-17-esp-gsp-optimizations-1.1.29.md)。
 - 此前安装1.1.28（2026-10-17）：固件与Agent技能对齐，新增`/skills`路径别名与自描述技能服务；更新全局与项目mosaico-notify skill规则（防覆盖条款、周期刷新与Agent自主决策）；官方编译刷入normal/healthy、crash_count=0。
 - 此前安装1.1.27（2026-10-09）：修复交互板共享模块管理器初始化竞争，失败每500ms重试并更新ready/error；官方编译刷入normal/healthy、crash_count=0，地址192.168.5.137。本轮未做灯光效果测试，见[交付记录](docs/development/2026-10-09-interact-init-1.1.27.md)。
 - 当前功能/API/开发流程：[应用文档索引](vendor/esp-mosaico-vibe/projects/lan_screen/docs/README.md)。
@@ -108,9 +109,11 @@
 
 - 2026-10-04用户要求网页从文档页改成Web控制台，查看与发送分入口，不默认展开，提供Postman式HTTP Try和预留Mock。1.1.13源码已重写首页/查看/推送/设置/工作台，详情与编辑器默认折叠、实时截图默认关闭；JSON/请求示例集中于Try，可编辑Headers/Body及本地Mock模板，只点击执行才发请求。Mock响应明确标记且不冒充设备数据，当前设备查询独立运行。复用浏览器压缩、粘贴/拖放和既有API；静态CSS/JS本地嵌入，无外部CDN或新前端构建依赖。此轮未编译、运行、浏览器验证、测试或刷机，设备仍1.1.7，待安装源码1.1.13。见docs/development/web-console.md。
 
-## 默认随身屏通知与任务流推送（2026-10-15 更新）
+## 默认随身屏通知与任务流推送（2026-10-17 更新）
 
 - 用户指定本机 Antigravity / Codex / AI 智能体在执行多步骤任务或耗时任务期间，主动调用 `skills/mosaico-notify/scripts/progress.py` 或 `POST /api/widget` 向随身屏流水线看板上报实时进度与当前步骤（动态 3 个槽位，自动排队、进度条跑马灯光效、触控确认与历史滚动）。
-- 当 Agent 遇到高危/关键决策时，可通过 `--confirm --wait-confirm` 在随身屏弹出触摸确认按键，等待用户屏幕触控裁决。
-- 有实际交付的任务收尾时，向随身屏发送 100% 完成状态或 `mosaico-notify` 简短结果配图；普通单轮轻问答不推送，用户当次禁止通知时跳过。
+- **单轮对话即新进度周期**：每个 Session 内部用户的每一次对话/新需求均为独立的 Progress 生命周期。进入对话立即上报初始进度（如 `--progress 10`），自动重置 `done=false`；执行中推进 30%~80%；收尾推 100%。
+- **完工交付证明配图强制要求**：所有 Agent 任务完成时，必须生成并推送一张自己设计的交付证明卡片或结果图（调用 `skills/mosaico-notify/scripts/receipt.py`），直观证明完成了什么并自动切到图片主屏。
+- **预制交互板 LED 情绪与状态灯效**：交互副板 6 颗 RGB LED 预置原生 50Hz 动画（`breathe` 思考、`chase` 运行、`alert` 触屏确认警示、`success` 完工双闪庆祝、`rainbow` 七彩流转、`off` 熄灭），可通过 `progress.py --led <effect>` 或 `led.py` 直接调用。
+- 当 Agent 遇到高危/关键决策时，可通过 `--confirm --wait-confirm` 在随身屏弹出触摸确认按键，等待用户屏幕触控裁决（自动触发 `--led alert`）。
 - 技能源在 `skills/mosaico-notify`；工程 Antigravity 技能在 `.agents/skills/mosaico-notify`；全局副本分别在 `~/.codex/skills/mosaico-notify` 与 `~/.gemini/config/skills/mosaico-notify`。身份匹配与动态 IP 发现以 SKILL.md 为准。离线不影响主任务，不为通知自行做额外测试。
