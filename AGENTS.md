@@ -2,7 +2,8 @@
 
 ## 当前文档入口（2026-10-17更新）
 
-- 最新安装1.1.34（2026-10-17）：简化 Web 控制台 AI 流水线页面；剔除冗余的 antigravity/codex/deploy 虚假预制芯片，统一为单套标准中立的任务步骤注入器；保留并突出实体交互板 LED 动效控制栏；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-web-console-unification-1.1.34.md)。
+- 最新安装1.1.35（2026-10-17）：全面优化 Pipeline 列表垂直滑动性能与跟手触控；引入触控按下与滚动期间的动效智能静默机制（彻底杜绝拖拽中的脏区重绘与软件渐变开销）、卡片非交互组件 Clickable 标志剥除（根除点击死区判定）、移除弹性阻尼 4x 减速因数、输入设备滑动起步阈值降至 3px、启用样式查找缓存与去遮罩化；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-pipeline-scroll-performance-1.1.35.md)。
+- 此前安装1.1.34（2026-10-17）：简化 Web 控制台 AI 流水线页面；剔除冗余的 antigravity/codex/deploy 虚假预制芯片，统一为单套标准中立的任务步骤注入器；保留并突出实体交互板 LED 动效控制栏；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-web-console-unification-1.1.34.md)。
 - 此前安装1.1.33（2026-10-17）：全面重构进度条扫光与LED跑马灯动效；引入对称双半区水平渐变光柱（两端透明，中心90%纯白高光），行程扩展为 -90px 至 +420px 全量程平滑滑入滑出，彻底解决高亮底色对比度缺失导致的前段失明与尾部闪烁问题；交互副板升级为连续余弦高光扩散光束；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-symmetric-gradient-shimmer-1.1.33.md)。
 - 此前安装1.1.32（2026-10-17）：Pipeline 任务队列引入双阶段匹配（Two-Pass Slot Matching），已完成任务保留为历史记录（绿色100%固定），同Agent新对话自动在尾部追加新卡片；解除列表垂直滚动与翻页手势冲突，引入非置底不抢焦保护；全面优化UI锁针零栈拷贝，根除任务栈溢出；receipt.py默认取消强切图片页以保持流水线大屏；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-pipeline-history-1.1.32.md)。
 - 此前安装1.1.31（2026-10-17）：全面重构 Web 控制台为 5 大职能工作台（实时大屏、AI流水线、内容与历史、外设与传感器、开发者工具集），集成 RAM 历史、Agent 模板快捷注入、50Hz 原生 LED 动效触发、传感器矩阵与开发者子标签页；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-web-console-refactor-1.1.31.md)。
