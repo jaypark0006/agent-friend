@@ -133,7 +133,7 @@ def main():
         jpeg_bytes = render_receipt(args)
 
     import urllib.request
-    req = urllib.request.Request(f"http://{ip}/api/image", data=jpeg_bytes, headers={"Content-Type": "image/jpeg"}, method="POST")
+    req = urllib.request.Request(f"http://{ip}/api/frame", data=jpeg_bytes, headers={"Content-Type": "image/jpeg"}, method="POST")
     with urllib.request.urlopen(req, timeout=5) as resp:
         res = json.loads(resp.read().decode('utf-8', errors='replace'))
         print(json.dumps({"ip": ip, "image_result": res}))
@@ -142,7 +142,7 @@ def main():
         try:
             req_view = urllib.request.Request(
                 f"http://{ip}/api/view",
-                data=json.dumps({"page": "home"}).encode("utf-8"),
+                data=json.dumps({"page": "image"}).encode("utf-8"),
                 headers={"Content-Type": "application/json"},
                 method="POST"
             )
