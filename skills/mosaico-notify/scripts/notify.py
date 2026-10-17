@@ -42,7 +42,7 @@ def request(ip, path, body=None, mime='application/json', timeout=3):
         raw = response.read(262145)
         if len(raw) > 262144:
             raise ValueError('oversized response')
-        return json.loads(raw)
+        return json.loads(raw.decode('utf-8', errors='replace'))
 
 def identify(ip):
     try:
