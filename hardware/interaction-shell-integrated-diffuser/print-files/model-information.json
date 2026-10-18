@@ -1,0 +1,64 @@
+{
+  "source_file": "ESP-Mosaico_Module_Interaction_square4-3D.3mf",
+  "source_sha256": "8ee0478b84d0025c83cbcb69b60c0c7910d99190452fc00aada208974aa509da",
+  "front_source": "3D/Objects/object_5.model",
+  "back_source": "3D/Objects/object_6.model",
+  "revision": "Integrated shell, 2026-10-19",
+  "source_front_face_z_mm": -5.44999981,
+  "film_thickness_mm": 0.4,
+  "film_centres_source_xy": [
+    [
+      -16.8875,
+      16.88247
+    ],
+    [
+      -16.8875,
+      5.62749
+    ],
+    [
+      -16.8875,
+      -5.62749
+    ],
+    [
+      -16.8875,
+      -16.88247
+    ]
+  ],
+  "patch_width_mm": 9.75,
+  "patch_length_mm": 9.85,
+  "patch_radius_mm": 1.8,
+  "construction": "Boolean union with original front shell; patches overlap original front rim.",
+  "print_orientation": "Original front face down; new thin films begin at build-plane Z=0.",
+  "source_shell_bounds_mm": [
+    [
+      -22.4500008,
+      -22.4500008,
+      -5.44999981
+    ],
+    [
+      22.4500008,
+      22.4500008,
+      5.44999981
+    ]
+  ],
+  "result_print_bounds_mm": [
+    [
+      -22.450000762939453,
+      -22.450000762939453,
+      0.0
+    ],
+    [
+      22.450000762939453,
+      22.450000762939453,
+      10.899999619265136
+    ]
+  ],
+  "build_status": "Error.NoError",
+  "source_volume_mm3": 4297.202123888477,
+  "result_volume_mm3": 4426.558431136534,
+  "front_exported_as_one_object": true,
+  "back_cover_geometry_modified": false,
+  "slicer_run": false,
+  "physical_fit_verified": false,
+  "optical_performance_verified": false
+}

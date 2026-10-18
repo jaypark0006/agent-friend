@@ -1,6 +1,6 @@
 # ESP-Mosaico square4：四块相同的白色 PLA 均光板
 
-> **当前推荐文件（2026-10-17）：[V3 独立定位均光件](v3-locating/README.md)。V1 用户反馈过厚且会掉出，V2 大平片缺少安装定位；旧文件只保留版本记录，不建议继续打印。**
+> **2026-10-19：用户实拍反馈独立小件仍不便安装，当前方案改为[直接修改原前壳的一体均光薄膜版](../interaction-shell-integrated-diffuser/README.md)。本目录 V1/V2/V3 仅保留历史，不再作为本次推荐打印文件。**
 
 2026-10-09，为用户提供的 `ESP-Mosaico_Module_Interaction_square4-3D.3mf` 单独生成。原始壳体未修改。此前 alignedcircles 的两长、两短均光板不适用此版本。
 
