@@ -9,8 +9,10 @@ import json
 import os
 from pathlib import Path
 import re
+import socket
 import subprocess
 import sys
+import time
 import urllib.request
 
 MAC = '1c:29:04:d0:ad:2a'
@@ -51,8 +53,40 @@ def identify(ip):
     except Exception:
         return None
 
+def ssdp_discover(timeout=0.6):
+    targets = [
+        'M-SEARCH * HTTP/1.1\r\nHOST: 239.255.255.250:1900\r\nMAN: "ssdp:discover"\r\nMX: 1\r\nST: urn:mosaico:device:screen:1\r\n\r\n',
+        'M-SEARCH * HTTP/1.1\r\nHOST: 239.255.255.250:1900\r\nMAN: "ssdp:discover"\r\nMX: 1\r\nST: urn:schemas-upnp-org:device:Basic:1\r\n\r\n',
+        'M-SEARCH * HTTP/1.1\r\nHOST: 239.255.255.250:1900\r\nMAN: "ssdp:discover"\r\nMX: 1\r\nST: ssdp:all\r\n\r\n',
+    ]
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+        s.settimeout(timeout)
+        for t in targets:
+            try:
+                s.sendto(t.encode('ascii'), ('239.255.255.250', 1900))
+            except OSError:
+                pass
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            try:
+                data, (addr, _) = s.recvfrom(2048)
+                text = data.decode('utf-8', errors='ignore')
+                if 'mosaico' in text.lower() or 'lan_screen' in text.lower() or '4553502d-4952-4953' in text.lower():
+                    m = re.search(r'location:\s*http://([^/:]+)', text, re.IGNORECASE)
+                    return m.group(1) if m else addr
+            except (socket.timeout, OSError):
+                break
+    except Exception:
+        pass
+    return None
+
 def discover(explicit):
     candidates = [explicit] if explicit else []
+    ssdp_ip = ssdp_discover(timeout=0.5)
+    if ssdp_ip:
+        candidates.append(ssdp_ip)
     candidates += [ip for ip, mac in neighbors().items() if mac == MAC]
     try:
         candidates.append(json.loads(CACHE.read_text())['ip'])
