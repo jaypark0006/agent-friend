@@ -1,8 +1,9 @@
 # 项目长期参考
 
-## 当前文档入口（2026-10-19更新）
+## 当前文档入口（2026-10-25更新）
 
-- 最新交付1.1.41（2026-10-19）：引入 SSDP 局域网组播服务发现与 UPnP 基础设备描述支持；监听 239.255.255.250:1900 响应 M-SEARCH（支持 ssdp:all、upnp:rootdevice、Basic:1 及 urn:mosaico:device:screen:1），周期与开机 NOTIFY 广播；新增 `/description.xml` 提供 Windows 资源管理器原生识别与 Presentation Web 入口，SCPD 锚定 `/skills`；客户端 `notify.py` 优先走 SSDP 毫秒级探测，淘汰全子网盲扫；官方编译通过，产物 5,036,416 字节，按指示暂不刷入待后续择机刷机。见[交付记录](docs/development/2026-10-19-ssdp-upnp-discovery-1.1.41.md)。
+- 最新交付1.1.42（2026-10-25）：全量落地代码健壮性与多模态 UX 体验重构；引入 `utf8_safe_copy` 截断对齐防乱码黑块，扩容 status/badge 缓冲区，修复 Kconfig 静态版本覆盖并全局统一收拢版本为 1.1.42；随身屏顶栏 5 个 Page Dots 扩充 8px 触控热区支持直达点按跳页；瘦身 Status/Media 底部 44px 按钮为优雅的 80x4px 圆角药丸 Home Bar，Pipeline 任务列表高度扩容至 414px；实现交互副板左右物理按键直接裁决 Pipeline 步骤（左键=Approve，右键=Cancel，屏幕提示 `[L]` / `[R]`）；引入副板 PIR 传感器免触感应唤醒息屏与调暗屏幕；Web 控制台增加极客深海暗色模式（自适应/顶栏 🌓 一键切换）与 50Hz 纯 CSS 流光扫射动效，任务注入表单收纳折叠；官方编译刷入 normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-25-ux-code-refactor-1.1.42.md)。
+- 此前交付1.1.41（2026-10-19）：引入 SSDP 局域网组播服务发现与 UPnP 基础设备描述支持；监听 239.255.255.250:1900 响应 M-SEARCH（支持 ssdp:all、upnp:rootdevice、Basic:1 及 urn:mosaico:device:screen:1），周期与开机 NOTIFY 广播；新增 `/description.xml` 提供 Windows 资源管理器原生识别与 Presentation Web 入口，SCPD 锚定 `/skills`；客户端 `notify.py` 优先走 SSDP 毫秒级探测，淘汰全子网盲扫；官方编译通过，产物 5,036,416 字节，按指示暂不刷入待后续择机刷机。见[交付记录](docs/development/2026-10-19-ssdp-upnp-discovery-1.1.41.md)。
 - 此前安装1.1.40（2026-10-19）：根除顶栏电量刷新递归持有非递归互斥锁导致的 GUI 任务死锁与滑动冻屏问题；剥除 `screen_ui_refresh_battery` 内部加锁，确保 Display 线程构建 Pipeline 卡片与顶栏组件时安全无阻塞；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-19-gui-deadlock-fix-1.1.40.md)。
 - 此前安装1.1.39（2026-10-19）：解决低电量意外关机与开机震动欠压死循环痛点；随身屏五大顶层页面（Dashboard、Pipeline、Media、Messages、Camera）顶栏右上角常驻电池指示胶囊（自适应充电闪电高光、放电多档位电池符号与橙/红低电量警示）；修复 BQ27220 电量计单次初始化失步并引入后台周期自愈重试机制；Dashboard 首屏电源卡片直观结构化显示电量百分比、毫伏数与充放电电流；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-19-battery-ui-gauge-recovery-1.1.39.md)。
 - 此前安装1.1.38（2026-10-17）：修复 Pipeline 左右切页返回时历史卡片重叠与滚动丢失问题；卡片布局引入 `get_card_height` 样式优先判定、卡片绝对坐标严格按尺寸与间距线性排版（根除 unready coords 导致的卡片千层饼压盖与容器高度收缩假死）、新增页面切换滚动位置记忆与平滑还原（`widget_scroll_saved`）；官方编译刷入normal/healthy、crash_count=0。见[交付记录](docs/development/2026-10-17-pipeline-switch-loss-1.1.38.md)。
