@@ -1,0 +1,77 @@
+{
+  "prepared_date": "2026-10-25",
+  "timezone": "Asia/Shanghai",
+  "firmware_version": "1.1.42",
+  "firmware_source_commit": "ad98f5b022073ec5f6fb8d74b366816a51ff11b3",
+  "current_capture": {
+    "file": "screenshots/01-media-empty-current-1.1.42.png",
+    "method": "official mosaico.py iris screenshot",
+    "device_id": "4553502d4952495301001c2904d0ad2a",
+    "boot_id": "11792535779495099431",
+    "operation_id": "731caa4c-17a8-4169-84f5-3901135638a2",
+    "width": 480,
+    "height": 480,
+    "app_version": "1.1.42",
+    "firmware_sha256": "9370f010cd77a3b0b1ba290a9213b698e732b0e00106aecd460c1b13d8abc01f"
+  },
+  "historical_copies": [
+    {
+      "source": "docs/development/screenshots/2026-10-04-functional-pages/device-text.png",
+      "copy": "screenshots/02-messages-device-historical.png"
+    },
+    {
+      "source": "docs/development/screenshots/2026-10-04-functional-pages/device-image.png",
+      "copy": "screenshots/03-media-device-historical.png"
+    },
+    {
+      "source": "docs/development/screenshots/2026-10-04-functional-pages/device-camera.png",
+      "copy": "screenshots/04-camera-device-historical.png"
+    },
+    {
+      "source": "vendor/esp-mosaico-vibe/projects/lan_screen/sim/artifacts/wifi.png",
+      "copy": "screenshots/05-wifi-simulator-historical.png"
+    },
+    {
+      "source": "vendor/esp-mosaico-vibe/projects/lan_screen/sim/artifacts/keyboard.png",
+      "copy": "screenshots/06-keyboard-simulator-historical.png"
+    },
+    {
+      "source": "vendor/esp-mosaico-vibe/projects/lan_screen/sim/artifacts/settings.png",
+      "copy": "screenshots/07-settings-simulator-obsolete.png"
+    }
+  ],
+  "source_snapshots": {
+    "device": [
+      "screen_ui.c",
+      "screen_ui_messages.c",
+      "screen_widget.c",
+      "screen_widget.h",
+      "screen_logic.c",
+      "screen_logic.h",
+      "screen_pages.c",
+      "screen_pages.h",
+      "screen_renderer.c",
+      "screen_renderer.h",
+      "screen_font.h",
+      "screen_camera_service.c",
+      "screen_camera_service.h",
+      "screen_camera_transform.c",
+      "screen_display.c"
+    ],
+    "web": [
+      "api.html",
+      "console.css",
+      "console-api.js",
+      "console-camera.js",
+      "console-http.js",
+      "console-lifecycle.js",
+      "console-send.js",
+      "console-ui.js",
+      "console-view.js",
+      "console-ws.js",
+      "console.js",
+      "image-upload.js"
+    ]
+  },
+  "scope": "Reference collection only. No firmware changes, builds, flashing, simulator runs, browser automation or functional/performance tests."
+}

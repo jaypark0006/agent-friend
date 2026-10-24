@@ -1,0 +1,582 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>Mosaico · 控制台</title><link rel="stylesheet" href="/console.css"></head>
+<body>
+<svg class="svg-defs" aria-hidden="true"><defs>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7v10H3Z M9 20v-7h6v7"/></symbol>
+<symbol id="i-view" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="m3 3 18 9-18 9 4-9Zm4 9h14"/></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="8" cy="6" r="2"/><circle cx="16" cy="12" r="2"/><circle cx="10" cy="18" r="2"/></symbol>
+<symbol id="i-code" viewBox="0 0 24 24"><path d="m7 6-6 6 6 6m10-12 6 6-6 6m-3-16-4 20"/></symbol>
+<symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m3 17 6-6 4 4 3-3 5 5"/></symbol>
+<symbol id="i-text" viewBox="0 0 24 24"><path d="M4 5h16M12 5v15M8 20h8M4 5v4m16-4v4"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h16m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V3m-5 5 5-5 5 5M4 16v5h16v-5"/></symbol>
+</defs></svg>
+<header class="app-header"><a class="brand" href="#view"><span class="brand-mark">m</span>Mosaico</a>
+<nav aria-label="主导航">
+  <a href="#view" data-nav="view">🖥️ 实时大屏</a>
+  <a href="#pipeline" data-nav="pipeline">🤖 AI 流水线</a>
+  <a href="#send" data-nav="send">📨 内容与历史</a>
+  <a href="#interact" data-nav="interact">🎛️ 外设与传感器</a>
+  <a href="#devtools" data-nav="devtools">🛠️ 开发者工具</a>
+</nav>
+<div class="header-state"><button id="theme-toggle" class="secondary small" type="button" title="切换深浅主题" style="padding:3px 7px;font-size:12px;border-radius:14px;cursor:pointer;">🌓</button><span class="badge" id="connection">连接中</span><span class="host" id="host"></span></div>
+</header>
+<div class="status-strip"><span id="breadcrumb">控制台 / 实时大屏</span><span id="firmware">固件 —</span><span>当前 <b id="home-page">—</b></span><span>文字未读 <b id="home-unread">—</b></span><span id="home-fps">— FPS</span></div>
+<main>
+
+<!-- DOMAIN 1: 实时大屏 (#view) -->
+<section data-screen="view">
+<div class="device-layout">
+<article class="card screen-card">
+<div class="card-heading">
+<h2>设备画面</h2><span class="badge subtle" id="device-page">—</span>
+</div>
+<div class="device-frame">
+<div class="screen-placeholder" id="preview-empty"><svg><use href="#i-view"/></svg><span>获取设备画面</span></div>
+<img id="preview" width="480" height="480" alt="设备当前画面" hidden>
+</div>
+<div class="row wrap"><button id="snapshot" class="secondary small">截图</button><label class="check"><input id="preview-toggle" type="checkbox">实时预览</label><a id="snapshot-download" class="text-button" download="mosaico-screen.bmp" hidden>保存</a></div>
+<p class="hint" id="preview-state" role="status">实时预览约2帧/秒</p>
+<div class="segmented" id="page-control">
+  <button data-page="status">📊 看板</button>
+  <button data-page="widget">🤖 流水线</button>
+  <button data-page="image">🖼️ 媒体</button>
+  <button data-page="text">💬 消息</button>
+  <button data-page="camera">📷 镜头</button>
+  <button data-page="settings">⚙️ 设置</button>
+</div>
+<p class="hint" id="view-result" role="status"></p>
+<div class="mini-stats"><span>图片未读 <b id="image-unread">—</b></span><span>文字未读 <b id="message-unread">—</b></span></div>
+</article>
+
+<div class="device-data">
+<div class="device-summary card">
+<div class="card-heading"><h2>设备状态概览</h2><span class="badge subtle">HUD</span></div>
+<dl class="kv summary-kv">
+<div><dt>Wi-Fi</dt><dd id="wifi-name">—</dd></div>
+<div><dt>IP 地址</dt><dd id="device-ip">—</dd></div>
+<div><dt>电池电量</dt><dd id="battery-level">—</dd></div>
+<div><dt>重力朝向</dt><dd id="down-face">—</dd></div>
+<div><dt>屏幕旋转</dt><dd id="rotation">—</dd></div>
+</dl>
+</div>
+
+<article class="card quick-settings">
+<div class="card-heading"><h2>快速设置</h2><span class="hint">立即保存</span></div>
+<label class="check"><input id="auto-switch" type="checkbox" disabled>自动切换</label>
+<span class="hint">收到图片 / 文字时自动切到对应页</span>
+<p id="config-result" class="hint" role="status"></p>
+</article>
+
+<article class="card">
+<div class="card-heading"><h2>渲染性能与帧率</h2><span class="badge subtle">Performance</span></div>
+<dl class="kv">
+<div><dt>显示 / GUI FPS</dt><dd id="fps-value">—</dd></div>
+<div><dt>接收 / 显示 / 丢弃</dt><dd id="frame-counts">—</dd></div>
+<div><dt>解码 / LCD传输</dt><dd id="timings">—</dd></div>
+</dl>
+</article>
+</div>
+</div>
+</section>
+
+<!-- DOMAIN 2: AI 流水线 (#pipeline) -->
+<section data-screen="pipeline" hidden>
+<div class="page-heading">
+  <div>
+    <h2>AI 任务流水线工作台 (Pipeline Workbench)</h2>
+    <p class="hint">多智能体进度大屏看板 · 动态流光扫射 · 队列入场 · 触屏人工批准回调</p>
+  </div>
+  <div class="row">
+    <button id="pipeline-refresh" class="secondary small">刷新队列</button>
+    <button id="pipeline-switch-screen" class="small">大屏切到流水线</button>
+  </div>
+</div>
+
+<div class="agent-templates card" style="margin-bottom: 14px; padding: 10px 14px; background: #f8fafc; border: 1px solid var(--line); border-radius: 8px;">
+  <div class="row wrap between" style="align-items: center; gap: 8px;">
+    <span style="font-size: 11px; font-weight: 600; color: #475569;">交互板 LED 动效:</span>
+    <div class="row wrap" style="align-items: center; gap: 6px;">
+      <button type="button" class="led-preset-btn small secondary" data-effect="breathe" style="color: #4fa3e3;">深呼吸</button>
+      <button type="button" class="led-preset-btn small secondary" data-effect="chase" style="color: #39e69d;">跑马灯</button>
+      <button type="button" class="led-preset-btn small secondary" data-effect="rainbow" style="color: #bd93f9;">彩虹</button>
+      <button type="button" class="led-preset-btn small secondary" data-effect="alert" style="color: #ff6b6b;">警报</button>
+      <button type="button" class="led-preset-btn small secondary" data-effect="success" style="color: #22c55e;">成功</button>
+      <button type="button" class="led-preset-btn small secondary" data-effect="off" style="color: #64748b;">熄灭</button>
+    </div>
+  </div>
+</div>
+
+<div class="pipeline-layout">
+  <article class="card">
+    <div class="card-heading">
+      <h3>随身屏当前队列卡片</h3>
+      <button id="pipeline-clear-all" class="text-button" style="color:#b44a36">清空全部队列</button>
+    </div>
+    <div id="pipeline-list" class="pipeline-list">
+      <p class="hint">正在加载流水线卡片…</p>
+    </div>
+  </article>
+
+  <details class="card fold" id="pipeline-inject-fold" style="margin-top:0;">
+    <summary><span><strong>注入 / 更新 Agent 步骤</strong><small>POST /api/widget · 开发者辅助注入</small></span><span class="fold-arrow">⌄</span></summary>
+    <div class="fold-body" style="padding-top:10px;">
+      <form id="pipeline-form" class="field-grid" onsubmit="return false;">
+        <div class="field">
+          <label>Agent 标识 (ID)</label>
+          <input id="pipe-id" value="agent" placeholder="例如 agent, task, deploy">
+        </div>
+        <div class="field">
+          <label>任务/角色标题 (Title)</label>
+          <input id="pipe-title" value="AI Agent" placeholder="例如 任务规划, 代码重构">
+        </div>
+        <div class="field">
+          <label>当前正在执行的步骤 (Status)</label>
+          <input id="pipe-status" value="正在执行任务并同步进度..." placeholder="当前步骤简述">
+        </div>
+        <div class="field">
+          <label>进度百分比 (<span id="pipe-progress-label">60%</span>)</label>
+          <input id="pipe-progress" type="range" min="0" max="100" value="60">
+        </div>
+        <div class="field">
+          <label>主题流光颜色</label>
+          <div class="row wrap">
+            <input id="pipe-color" type="color" value="#39e69d">
+            <button type="button" class="color-chip secondary small" style="background:#39e69d;color:#000;border:0" onclick="$('pipe-color').value='#39e69d'">翡翠绿</button>
+            <button type="button" class="color-chip secondary small" style="background:#4fa3e3;color:#000;border:0" onclick="$('pipe-color').value='#4fa3e3'">天际蓝</button>
+            <button type="button" class="color-chip secondary small" style="background:#e5c07b;color:#000;border:0" onclick="$('pipe-color').value='#e5c07b'">琥珀金</button>
+            <button type="button" class="color-chip secondary small" style="background:#ff6b6b;color:#fff;border:0" onclick="$('pipe-color').value='#ff6b6b'">警报红</button>
+            <button type="button" class="color-chip secondary small" style="background:#bd93f9;color:#000;border:0" onclick="$('pipe-color').value='#bd93f9'">梦幻紫</button>
+          </div>
+        </div>
+        <div class="field">
+          <label class="check">
+            <input id="pipe-confirm" type="checkbox">
+            在屏幕上弹出人工确认按钮（Human-in-the-Loop）
+          </label>
+          <div id="pipe-confirm-opts" class="row wrap" style="margin-top:6px" hidden>
+            <input id="pipe-btn1" value="批准" style="width:100px" placeholder="主按钮">
+            <input id="pipe-btn2" value="取消" style="width:100px" placeholder="副按钮">
+          </div>
+        </div>
+        <div class="row wrap" style="margin-top:14px">
+          <button id="pipe-send" type="button">推送步骤到随身屏</button>
+          <button id="pipe-done" type="button" class="secondary">标记完成 (100% DONE)</button>
+        </div>
+        <p id="pipe-result" class="hint" role="status"></p>
+      </form>
+    </div>
+  </details>
+</div>
+</section>
+
+<!-- DOMAIN 3: 内容与历史 (#send) -->
+<section data-screen="send" hidden>
+<div class="page-heading">
+<h1>内容与历史</h1><span class="hint">图片与文字独立发送 · 浏览设备内存历史</span>
+</div>
+<div class="send-grid">
+<article class="card">
+<div class="card-heading">
+<h2>图片 / 截图推送</h2><span class="badge subtle">480 × 480</span>
+</div>
+<div id="paste-zone" class="drop-zone" tabindex="0" role="region" aria-label="图片拖放和粘贴区">
+<div class="square-preview">
+<div id="upload-empty" class="screen-placeholder"><svg><use href="#i-image"/></svg><strong>粘贴截图 · 拖入图片</strong><span>⌘V / Ctrl+V · <label for="file" class="file-link">选择文件</label></span></div>
+<img id="upload-preview" width="480" height="480" alt="待发送图片" hidden>
+</div>
+<input type="file" id="file" class="visually-hidden" accept="image/*,.heic,.heif">
+</div>
+<div class="row between wrap image-toolbar">
+  <label class="inline-field">布局
+    <select id="image-fit"><option value="contain">完整显示</option><option value="cover">中心裁切</option></select>
+  </label>
+  <label for="file" class="file-link">换图</label>
+  <a id="download-image" class="text-button" download="frame-480.jpg" hidden>下载 JPEG</a>
+</div>
+<p id="image-details" class="hint">自动压缩到合法 JPEG，原图留在浏览器</p>
+<div class="send-action"><button id="send-image" disabled>发送图片</button><span id="image-result" class="hint" role="status"></span></div>
+</article>
+
+<article class="card text-composer">
+<div class="card-heading">
+<h2>文字卡片推送</h2><button id="text-sample" class="text-button small">示例</button>
+</div>
+<textarea id="text-input" rows="9" placeholder="输入文字，⌘Enter / Ctrl+Enter 发送" aria-label="推送文字"></textarea>
+<div class="row between"><span id="text-counter" class="hint">0 / 1024 字节</span><span class="hint">16–64 px</span></div>
+<div class="text-options">
+  <label class="field">字号 <span id="font-label">32 px</span><input id="font-size" type="range" min="16" max="64" value="32"></label>
+  <label class="field">对齐<select id="text-align"><option value="left">左对齐</option><option value="center">居中</option><option value="right">右对齐</option></select></label>
+  <label class="field">时间<input id="text-time" type="time" aria-label="消息显示时间"></label>
+</div>
+<details>
+<summary>排版预览</summary>
+<div class="text-preview">
+<div class="text-time" id="text-preview-time">—</div>
+<div id="text-preview-content">你的文字会显示在这里</div>
+</div>
+<p class="hint">换行与字形以设备为准</p>
+</details>
+<div class="send-action"><button id="send-text">发送文字</button><span id="text-result" class="hint" role="status"></span></div>
+</article>
+</div>
+
+<!-- Integrated Content History -->
+<details class="card fold history-section" id="history-detail" open style="margin-top: 14px;">
+<summary><span><strong>设备内存历史记录</strong><small>已保留在设备 RAM 中的图片和文字</small></span><span class="fold-arrow">⌄</span></summary>
+<div class="fold-body">
+<div class="row between wrap" style="margin-bottom: 10px;">
+<div class="segmented"><button data-history="images" class="selected">图片历史</button><button data-history="messages">文字历史</button></div>
+<button id="refresh-history" class="secondary small">刷新历史</button>
+</div>
+<div id="history-list" class="history-list"></div>
+<p id="history-state" class="hint" role="status">设备最多保留 16 张图片与 32 条消息，重启清空。</p>
+<div id="history-preview-wrap" hidden>
+<img id="history-preview" width="480" height="480" alt="历史图片">
+<button id="close-history-preview" class="secondary small">收起图片</button>
+</div>
+</div>
+</details>
+
+<article class="card receipts" style="margin-top: 14px;">
+<div class="card-heading">
+<h2>本会话发送记录</h2><span class="hint">接收回执 ≠ 已显示 / 已读</span>
+</div>
+<div id="send-receipts"><p class="hint">还未发送内容</p></div>
+</article>
+</section>
+
+<!-- DOMAIN 4: 外设与传感器 (#interact) -->
+<section data-screen="interact" hidden>
+<div class="page-heading">
+<h1>外设与传感器</h1><span class="hint">6-LED 原生动效 · 交互子板 · 板载六轴姿态与麦克风</span>
+</div>
+
+<div class="hardware-layout">
+<article class="card interact-tile">
+<div class="card-heading">
+  <div class="row" style="gap: 8px;">
+    <h2>多功能交互子板</h2>
+    <span id="interact-presence" class="badge subtle">等待识别</span>
+  </div>
+  <label class="inline-field" style="margin: 0;">插槽
+    <select id="interact-slot" style="padding: 2px 6px; font-size: 11px;">
+      <option value="right">右侧槽 (Right)</option>
+      <option value="left">左侧槽 (Left)</option>
+    </select>
+  </label>
+</div>
+
+<!-- Sensor HUD Panel -->
+<div class="interact-hud" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; margin-bottom: 12px;">
+  <div class="hud-card" style="background: #f8fafc; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px;">
+    <div style="font-size: 10px; color: var(--muted); display: flex; justify-content: space-between;">
+      <span>环境光照</span>
+      <span id="interact-light" style="font-weight: 600; color: #334155;">—</span>
+    </div>
+    <div style="background: #e2e8f0; height: 5px; border-radius: 3px; margin-top: 6px; overflow: hidden;">
+      <div id="interact-light-bar" style="background: #eab308; height: 100%; width: 0%; transition: width 0.3s;"></div>
+    </div>
+  </div>
+  <div class="hud-card" style="background: #f8fafc; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px;">
+    <div style="font-size: 10px; color: var(--muted);">人体红外感应 (PIR)</div>
+    <div style="margin-top: 4px; display: flex; align-items: center; gap: 6px;">
+      <span id="interact-pir-dot" style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #94a3b8;"></span>
+      <span id="interact-motion" style="font-size: 11px; font-weight: 600; color: #334155;">—</span>
+    </div>
+  </div>
+  <div class="hud-card" style="background: #f8fafc; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px;">
+    <div style="font-size: 10px; color: var(--muted);">物理按键 (左 / 右)</div>
+    <div style="margin-top: 4px; display: flex; gap: 4px;">
+      <span id="interact-key-l" class="badge subtle" style="padding: 2px 6px; font-size: 10px;">左: 松开</span>
+      <span id="interact-key-r" class="badge subtle" style="padding: 2px 6px; font-size: 10px;">右: 松开</span>
+    </div>
+  </div>
+  <div class="hud-card" style="background: #f8fafc; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px;">
+    <div style="font-size: 10px; color: var(--muted);">输入模式</div>
+    <div style="margin-top: 4px; font-size: 11px; font-weight: 600; color: #2563eb;" id="interact-mode">—</div>
+  </div>
+</div>
+
+<!-- Tactile RGB Console -->
+<div class="interact-led-console" style="background: #0f172a; border-radius: 8px; padding: 12px; color: #f8fafc; margin-bottom: 10px;">
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #38bdf8;"></span>
+      <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.5px;">6-LED 动态灯带 (50Hz 原生动画)</span>
+    </div>
+    <span id="interact-led-target-label" style="font-size: 11px; color: #94a3b8;">已选: 全部六颗</span>
+  </div>
+
+  <!-- 6-LED Strip Visualizer -->
+  <div id="led-strip" style="display: flex; justify-content: space-between; background: #1e293b; border-radius: 20px; padding: 6px 16px; margin-bottom: 12px;">
+    <button type="button" class="led-node" data-idx="0" style="width: 28px; height: 28px; border-radius: 50%; border: 2px solid #334155; background: #090d16; cursor: pointer; padding: 0; outline: none; transition: all 0.2s;"></button>
+    <button type="button" class="led-node" data-idx="1" style="width: 28px; height: 28px; border-radius: 50%; border: 2px solid #334155; background: #090d16; cursor: pointer; padding: 0; outline: none; transition: all 0.2s;"></button>
+    <button type="button" class="led-node" data-idx="2" style="width: 28px; height: 28px; border-radius: 50%; border: 2px solid #334155; background: #090d16; cursor: pointer; padding: 0; outline: none; transition: all 0.2s;"></button>
+    <button type="button" class="led-node" data-idx="3" style="width: 28px; height: 28px; border-radius: 50%; border: 2px solid #334155; background: #090d16; cursor: pointer; padding: 0; outline: none; transition: all 0.2s;"></button>
+    <button type="button" class="led-node" data-idx="4" style="width: 28px; height: 28px; border-radius: 50%; border: 2px solid #334155; background: #090d16; cursor: pointer; padding: 0; outline: none; transition: all 0.2s;"></button>
+    <button type="button" class="led-node" data-idx="5" style="width: 28px; height: 28px; border-radius: 50%; border: 2px solid #334155; background: #090d16; cursor: pointer; padding: 0; outline: none; transition: all 0.2s;"></button>
+  </div>
+
+  <!-- Native 50Hz Presets Grid -->
+  <div style="font-size: 10px; color: #94a3b8; margin-bottom: 6px;">原生平滑动画预制 (Native 50Hz LED Effects)</div>
+  <div class="row wrap" style="gap: 6px; margin-bottom: 12px;">
+    <button type="button" class="led-preset-btn small secondary" data-effect="breathe" style="background:#082f49;border-color:#38bdf8;color:#7dd3fc">🌌 深呼吸 (Breathe)</button>
+    <button type="button" class="led-preset-btn small secondary" data-effect="chase" style="background:#064e3b;border-color:#34d399;color:#a7f3d0">💫 流水跑马 (Chase)</button>
+    <button type="button" class="led-preset-btn small secondary" data-effect="rainbow" style="background:#3b0764;border-color:#c084fc;color:#e9d5ff">🌈 七彩流转 (Rainbow)</button>
+    <button type="button" class="led-preset-btn small secondary" data-effect="alert" style="background:#451a03;border-color:#fb923c;color:#fed7aa">⚠️ 等待确认 (Alert)</button>
+    <button type="button" class="led-preset-btn small secondary" data-effect="success" style="background:#14532d;border-color:#4ade80;color:#bbf7d0">🎉 交付庆祝 (Success)</button>
+    <button id="interact-led-off" type="button" class="small secondary" style="background:#1e293b;border-color:#475569;color:#cbd5e1">⬛ 立即全灭</button>
+  </div>
+
+  <!-- One-shot notification flashes -->
+  <div style="font-size: 10px; color: #64748b; margin-bottom: 6px;">旧版静态单次通知闪烁</div>
+  <div class="row wrap" style="gap: 6px; margin-bottom: 12px;">
+    <button id="preset-notify-done" type="button" class="small secondary" style="background: #14532d; border-color: #22c55e; color: #86efac;">🟢 完成通知 (绿)</button>
+    <button id="preset-notify-pulse" type="button" class="small secondary" style="background: #082f49; border-color: #0284c7; color: #7dd3fc;">🔵 进展闪烁 (青)</button>
+    <button id="preset-notify-alert" type="button" class="small secondary" style="background: #451a03; border-color: #f97316; color: #fdba74;">🟠 警报提示 (橙)</button>
+  </div>
+
+  <!-- Manual Color & Brightness -->
+  <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+    <div style="display: flex; align-items: center; gap: 6px;">
+      <span style="font-size: 11px; color: #94a3b8;">选色:</span>
+      <div id="color-chips" style="display: flex; gap: 5px;">
+        <span class="color-chip" data-color="#00e5ff" style="display: inline-block; width: 18px; height: 18px; border-radius: 50%; background: #00e5ff; cursor: pointer; border: 1px solid #38bdf8;"></span>
+        <span class="color-chip" data-color="#10b981" style="display: inline-block; width: 18px; height: 18px; border-radius: 50%; background: #10b981; cursor: pointer; border: 1px solid #34d399;"></span>
+        <span class="color-chip" data-color="#f59e0b" style="display: inline-block; width: 18px; height: 18px; border-radius: 50%; background: #f59e0b; cursor: pointer; border: 1px solid #fbbf24;"></span>
+        <span class="color-chip" data-color="#8b5cf6" style="display: inline-block; width: 18px; height: 18px; border-radius: 50%; background: #8b5cf6; cursor: pointer; border: 1px solid #a78bfa;"></span>
+        <span class="color-chip" data-color="#ef4444" style="display: inline-block; width: 18px; height: 18px; border-radius: 50%; background: #ef4444; cursor: pointer; border: 1px solid #f87171;"></span>
+        <span class="color-chip" data-color="#ffffff" style="display: inline-block; width: 18px; height: 18px; border-radius: 50%; background: #ffffff; cursor: pointer; border: 1px solid #e2e8f0;"></span>
+      </div>
+      <input id="interact-color" type="color" value="#00e5ff" style="width: 24px; height: 24px; padding: 0; border: 0; background: transparent; cursor: pointer;">
+    </div>
+    <select id="interact-led" style="padding: 3px 6px; font-size: 11px; background: #1e293b; color: #f8fafc; border-color: #475569;">
+      <option value="all">全部六颗</option>
+      <option value="0">LED 0</option><option value="1">LED 1</option>
+      <option value="2">LED 2</option><option value="3">LED 3</option>
+      <option value="4">LED 4</option><option value="5">LED 5</option>
+    </select>
+    <div style="display: flex; align-items: center; gap: 6px; flex: 1; min-width: 130px;">
+      <span style="font-size: 11px; color: #94a3b8; white-space: nowrap;">亮度:</span>
+      <input id="interact-brightness" type="range" min="0" max="64" value="20" style="flex: 1;">
+      <span id="brightness-val" style="font-size: 11px; color: #cbd5e1; font-variant-numeric: tabular-nums; min-width: 24px;">20</span>
+    </div>
+    <button id="interact-led-send" class="small" style="background: #2563eb; color: #fff; padding: 4px 10px;">应用灯光</button>
+  </div>
+</div>
+
+<!-- Infrared & Configuration collapsible -->
+<details style="margin-top: 4px;">
+<summary style="padding: 6px 0; font-size: 11px;">红外遥控发射 (NEC)</summary>
+<div class="row wrap" style="gap: 8px; margin-top: 6px;">
+  <label class="inline-field">NEC地址 <input id="interact-ir-address" type="number" min="0" max="255" value="0" style="width: 60px; padding: 2px 6px; font-size: 11px;"></label>
+  <label class="inline-field">命令码 <input id="interact-ir-command" type="number" min="0" max="255" value="0" style="width: 60px; padding: 2px 6px; font-size: 11px;"></label>
+  <button id="interact-ir-send" class="small secondary" style="padding: 3px 8px;">发射一次红外</button>
+</div>
+</details>
+
+<details style="margin-top: 4px;">
+<summary style="padding: 6px 0; font-size: 11px;">子板输入模式与设置</summary>
+<div class="row wrap" style="gap: 8px; margin-top: 6px;">
+  <label class="inline-field">输入模式
+    <select id="interact-input-mode" style="padding: 2px 6px; font-size: 11px;">
+      <option value="auto">自动 (优先触摸)</option>
+      <option value="key">机械按键模式</option>
+      <option value="touch">电容触摸模式</option>
+    </select>
+  </label>
+  <button id="interact-config" class="small" style="padding: 3px 8px;">保存并应用</button>
+  <button id="interact-disable" class="small secondary" style="padding: 3px 8px;">停用此子板</button>
+</div>
+</details>
+
+<p id="interact-result" class="hint" role="status" style="margin-top: 6px;"></p>
+<p id="interact-event" class="hint" style="margin-top: 2px;"></p>
+</article>
+
+<!-- Onboard Sensors Panel -->
+<article class="card sensors-panel">
+<div class="card-heading">
+<h2>板载六轴姿态与音视频传感器</h2>
+<div class="row"><span class="badge subtle" id="sensor-source">等待连接</span><label class="check"><input id="sensors-live" type="checkbox" checked>实时 WS</label></div>
+</div>
+<div class="sensor-grid">
+<article class="sensor-tile">
+<h3>运动 / 姿态 (IMU)</h3>
+<p class="hint" id="motion-state">等待数据</p>
+<dl class="kv">
+<div><dt>加速度 g</dt><dd id="accel">—</dd></div>
+<div><dt>角速度 °/s</dt><dd id="gyro">—</dd></div>
+<div><dt>磁场 μT</dt><dd id="magnetic">—</dd></div>
+</dl>
+</article>
+
+<article class="sensor-tile">
+<h3>按键 / 电池供电</h3>
+<div class="row"><span id="ai-button" class="badge subtle">AI —</span><span id="boot-button" class="badge subtle">BOOT —</span></div>
+<p class="hint" id="button-event">暂无事件</p>
+<dl class="kv">
+<div><dt>电压 / 电流</dt><dd id="battery-electrical">—</dd></div>
+<div><dt>电池温度</dt><dd id="battery-temperature">—</dd></div>
+</dl>
+</article>
+
+<article class="sensor-tile">
+<div class="card-heading">
+<h3>板载麦克风</h3><label class="check"><input type="checkbox" data-capture="microphone" disabled>采集</label>
+</div>
+<p id="microphone-state" class="hint">等待数据</p><meter id="mic-level" min="0" max="1" value="0" aria-label="麦克风峰值"></meter>
+<p class="hint" id="mic-value">音量 —</p><a href="/api/microphone/audio" class="text-button" download="microphone.wav">下载 WAV</a>
+</article>
+
+<article class="sensor-tile">
+<div class="card-heading">
+<h3>板载摄像头 (左侧)</h3><label class="check"><input type="checkbox" data-capture="camera" disabled>采集</label>
+</div>
+<p id="camera-state" class="hint">等待数据</p>
+<p class="hint" id="camera-size">尺寸 —</p>
+<div class="row"><a href="/api/camera/frame" class="text-button" download="camera.uyvy">原始帧</a><a href="#devtools" class="text-button">色块 Studio ↗</a></div>
+</article>
+</div>
+
+<p id="capture-result" class="hint" role="status"></p>
+
+<details style="margin-top: 10px;">
+<summary>传感器快照 JSON 与 WebSocket 订阅</summary>
+<div class="row wrap"><code id="ws-address"></code><button id="copy-sensors" class="text-button small">复制 JSON</button></div>
+<pre id="sensor-json">等待数据</pre>
+</details>
+</article>
+</div>
+</section>
+
+<!-- DOMAIN 5: 开发者工具 (#devtools) -->
+<section data-screen="devtools" hidden>
+<div class="page-heading">
+  <div>
+    <h2>开发者工具 (Developer Tools)</h2>
+    <p class="hint">统一测试调试工作台 · HTTP API 接口 · WebSocket 数据流 · 摄像头色块 Studio</p>
+  </div>
+  <div class="devtools-nav segmented">
+    <button type="button" data-devtab="http" class="selected">HTTP 接口调试</button>
+    <button type="button" data-devtab="ws">WebSocket 工作台</button>
+    <button type="button" data-devtab="camera">摄像头色块 Studio</button>
+  </div>
+</div>
+
+<!-- DevPanel 1: HTTP API -->
+<div data-devpanel="http">
+<article class="card request-workspace">
+<div class="row between wrap"><select id="http-preset" aria-label="请求示例"></select><button id="reset-request" class="text-button small">重置示例</button></div>
+<div id="try-editor">
+<div class="request-line">
+  <select id="http-method" aria-label="HTTP方法"><option>GET</option><option>POST</option><option>PUT</option><option>PATCH</option><option>DELETE</option></select>
+  <input id="http-path" value="/api/status" aria-label="请求路径" spellcheck="false">
+  <select id="http-target" aria-label="请求目标"><option value="device">设备</option><option value="mock">Mock</option></select>
+  <button id="execute-request">执行</button>
+</div>
+<details id="request-params">
+<summary>参数 · Headers / Body</summary>
+<div class="request-params-grid"><label class="field">Headers（JSON）<textarea id="http-headers" class="code-input" rows="3" spellcheck="false">{}</textarea></label>
+<div><label class="field">Body<select id="http-body-kind"><option value="none">无</option><option value="json">JSON</option><option value="text">文本</option><option value="image">当前已准备图片</option><option value="file">文件</option></select></label><textarea id="http-body" class="code-input" rows="5" aria-label="请求体" spellcheck="false" hidden></textarea>
+<div id="http-image-note" class="hint" hidden>使用推送页已转换的 JPEG · <a href="#send">准备图片</a></div>
+<label id="http-file-field" class="field" hidden>请求文件<input id="http-file" type="file"></label>
+</div>
+</div>
+</details>
+<details id="mock-params" hidden>
+<summary>Mock 模板</summary><textarea id="mock-body" class="code-input" rows="7" aria-label="Mock响应模板" spellcheck="false"></textarea>
+</details>
+<p id="try-notice" class="hint" role="status">仅点击执行才发送请求</p>
+<div class="response-heading">
+<h3>响应</h3>
+<div class="row"><span id="response-meta" class="badge subtle">尚未执行</span><button id="copy-response" class="text-button small" disabled>复制</button><a id="download-response" class="text-button small" hidden download="response.bin">下载</a></div>
+</div>
+<div id="response-content" class="response-box">等待请求</div>
+<details id="response-headers-detail" hidden>
+<summary>响应 Headers</summary><pre id="response-headers"></pre>
+</details>
+</div>
+</article>
+</div>
+
+<!-- DevPanel 2: WebSocket Workbench -->
+<div data-devpanel="ws" hidden>
+<article class="card ws-workspace">
+<div class="ws-connection">
+  <select id="ws-channel" aria-label="WS通道"><option value="sensors">传感器订阅 (10Hz)</option><option value="frames">内容推送 / 控制</option></select>
+  <input id="ws-url" readonly aria-label="设备WebSocket地址">
+  <label class="check"><input type="checkbox" id="ws-connect">连接</label>
+  <span id="ws-state" class="badge subtle">未连接</span>
+</div>
+<div class="ws-composer">
+<div class="row between wrap"><select id="ws-preset" aria-label="WS JSON示例"></select>
+<div class="row"><button id="ws-reset" class="text-button small">重置JSON</button><button id="ws-send-image" class="secondary small" disabled>发已准备图片</button><button id="ws-send" disabled>发送JSON</button></div>
+</div><textarea id="ws-json" class="code-input" rows="6" spellcheck="false" aria-label="WS发送JSON"></textarea>
+<p id="ws-notice" class="hint" role="status">开启连接即订阅传感器；JSON仅点击发送才发出，⌘Enter / Ctrl+Enter发送</p>
+</div>
+<div class="ws-history-toolbar">
+<h3>发送 / 响应历史</h3><span id="ws-count" class="hint">↑ 0 / ↓ 0</span><label class="check"><input type="checkbox" id="ws-record" checked>记录接收</label><label class="check"><input type="checkbox" id="ws-follow" checked>跟随</label><button id="ws-export" class="text-button small">导出</button><button id="ws-clear" class="text-button small">清空</button>
+</div>
+<div id="ws-history" class="ws-history">
+<p class="hint ws-empty">等待连接与收发消息；点击记录展开完整JSON</p>
+</div>
+</article>
+</div>
+
+<!-- DevPanel 3: Camera Block Studio -->
+<div data-devpanel="camera" hidden>
+<div class="camera-feature-grid">
+<article class="card">
+<div class="card-heading">
+<h2>运行控制</h2><span class="badge subtle" id="camera-render-state">未运行</span>
+</div>
+<div class="row wrap">
+  <label class="inline-field">目标 FPS<input id="camera-render-fps" type="number" min="1" max="30" value="30"></label>
+  <label class="inline-field">色块大小
+    <select id="camera-render-block">
+      <option value="1">1 px</option>
+      <option value="2" selected>2 px · 4像素合一</option>
+      <option value="4">4 px</option>
+      <option value="8">8 px</option>
+      <option value="16">16 px</option>
+      <option value="32">32 px</option>
+      <option value="64">64 px</option>
+    </select>
+  </label>
+  <button id="camera-render-start">设备打开 / 应用参数</button>
+  <button id="camera-render-stop" class="secondary">设备退出</button>
+</div>
+<p id="camera-render-result" class="hint" role="status">设备左右滑到摄像头页自动开启，离开设备页自动关闭</p>
+<dl class="kv">
+<div><dt>摄像头采集</dt><dd id="camera-render-capture-fps">—</dd></div>
+<div><dt>色块生成 / 屏幕呈现</dt><dd id="camera-render-actual-fps">—</dd></div>
+<div><dt>已生成 / 已呈现</dt><dd id="camera-render-count">—</dd></div>
+<div><dt>处理耗时</dt><dd id="camera-render-ms">—</dd></div>
+</dl>
+<p class="hint">设备图片、文字、摄像头是左右切换的三个主页面；摄像头由设备页面管理开关，关闭网页不会关闭设备摄像头。30 FPS 是目标，实际受硬件吞吐限制。</p>
+</article>
+
+<article class="card camera-feature-preview">
+<div class="card-heading">
+<h2>256 × 256 预览</h2><label class="check"><input type="checkbox" id="camera-render-preview">网页预览</label>
+</div><canvas id="camera-render-canvas" width="256" height="256" aria-label="摄像头色块预览"></canvas>
+<p id="camera-render-preview-state" class="hint" role="status">进入本页自动预览，约5帧/秒；不影响设备目标帧率</p>
+</article>
+</div>
+</div>
+
+</section>
+
+</main>
+<footer>
+  <span><span class="status-dot" id="sidebar-dot"></span><span id="sidebar-state">正在连接</span> · <span id="sidebar-host"></span></span>
+  <a href="/api/info" target="_blank" rel="noopener">接口清单</a>
+  <span id="last-update">尚未同步</span>
+</footer>
+<div id="toast" class="toast" role="status" hidden></div>
+<script type="module" src="/console.js"></script>
+</body></html>

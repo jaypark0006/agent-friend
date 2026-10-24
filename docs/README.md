@@ -54,6 +54,7 @@
 
 ## 其他项目资料
 
+- [LAN Screen 1.1.42 典型 GUI 与 Claude 重设计参考包](design/gui-reference-1.1.42/README.md)
 - [Codex 实时活动屏动作样稿](design/codex-activity-motion.md)
 - [早期Lua计数示例](../apps/mosaico_lvgl_counter/README.md)
 - [实拍图片来源](../assets/photos/README.md)
