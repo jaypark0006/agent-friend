@@ -1,88 +1,154 @@
 #!/usr/bin/env python3
 """Report task progress or status to ESP-Mosaico companion screen widget pipeline."""
 import argparse
+import base64
+import hashlib
 import json
+import os
+import socket
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from notify import discover, request
 
-def wait_confirm_ws(ip, task_id, timeout=120):
-    import socket, base64, os, json, time
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    sock.settimeout(3.0)
-    sock.connect((ip, 80))
-    key = base64.b64encode(os.urandom(16)).decode('ascii')
-    req = (
-        f"GET /ws/hub HTTP/1.1\r\n"
-        f"Host: {ip}\r\n"
-        f"Upgrade: websocket\r\n"
-        f"Connection: Upgrade\r\n"
-        f"Sec-WebSocket-Key: {key}\r\n"
-        f"Sec-WebSocket-Version: 13\r\n\r\n"
-    )
-    sock.sendall(req.encode('ascii'))
+class WebSocketHubClient:
+    """Zero-dependency RFC 6455 compliant WebSocket client for ESP-Mosaico Hub."""
+    def __init__(self, ip, port=80, path="/ws/hub"):
+        self.ip = ip
+        self.port = port
+        self.path = path
+        self.sock = None
+        self.buf = b""
+        self.connected = False
 
-    header_data = b""
-    while b"\r\n\r\n" not in header_data:
-        chunk = sock.recv(1024)
-        if not chunk:
-            raise ConnectionError("Connection closed during WS handshake")
-        header_data += chunk
+    def connect(self, timeout=4.0):
+        self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.sock.settimeout(timeout)
+        self.sock.connect((self.ip, self.port))
 
-    status_line = header_data.split(b"\r\n")[0]
-    if b"101" not in status_line:
-        raise ConnectionError(f"WS handshake failed: {status_line.decode('utf-8', errors='ignore')}")
+        raw_key = os.urandom(16)
+        key_str = base64.b64encode(raw_key).decode('ascii')
+        expected_accept = base64.b64encode(
+            hashlib.sha1((key_str + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11").encode('ascii')).digest()
+        ).decode('ascii')
 
-    buf = header_data.split(b"\r\n\r\n", 1)[1]
-    sock.settimeout(timeout)
+        req = (
+            f"GET {self.path} HTTP/1.1\r\n"
+            f"Host: {self.ip}\r\n"
+            f"Upgrade: websocket\r\n"
+            f"Connection: Upgrade\r\n"
+            f"Sec-WebSocket-Key: {key_str}\r\n"
+            f"Sec-WebSocket-Version: 13\r\n\r\n"
+        )
+        self.sock.sendall(req.encode('ascii'))
 
-    def read_exact(n):
-        nonlocal buf
-        while len(buf) < n:
-            chunk = sock.recv(4096)
+        header_data = b""
+        while b"\r\n\r\n" not in header_data:
+            chunk = self.sock.recv(1024)
             if not chunk:
-                raise ConnectionError("Socket EOF")
-            buf += chunk
-        res = buf[:n]
-        buf = buf[n:]
+                raise ConnectionError("Connection closed during WS handshake")
+            header_data += chunk
+
+        parts = header_data.split(b"\r\n\r\n", 1)
+        headers_raw = parts[0].decode('utf-8', errors='ignore')
+        self.buf = parts[1] if len(parts) > 1 else b""
+
+        lines = headers_raw.split("\r\n")
+        status_line = lines[0]
+        if "101" not in status_line:
+            raise ConnectionError(f"WS upgrade rejected: {status_line}")
+
+        accept_header = None
+        for line in lines[1:]:
+            if ":" in line:
+                k, v = line.split(":", 1)
+                if k.strip().lower() == "sec-websocket-accept":
+                    accept_header = v.strip()
+                    break
+
+        if accept_header and accept_header != expected_accept:
+            raise ConnectionError(f"Sec-WebSocket-Accept mismatch (expected {expected_accept}, got {accept_header})")
+
+        self.connected = True
+
+    def _send_frame(self, opcode, payload=b""):
+        # RFC 6455 5.1: Client MUST mask all frames sent to server
+        mask = os.urandom(4)
+        length = len(payload)
+        hdr = bytearray()
+        hdr.append(0x80 | (opcode & 0x0F)) # FIN=1
+
+        if length <= 125:
+            hdr.append(0x80 | length)
+        elif length <= 65535:
+            hdr.append(0x80 | 126)
+            hdr.extend(length.to_bytes(2, 'big'))
+        else:
+            hdr.append(0x80 | 127)
+            hdr.extend(length.to_bytes(8, 'big'))
+
+        hdr.extend(mask)
+        masked_payload = bytearray(b ^ mask[i % 4] for i, b in enumerate(payload))
+        self.sock.sendall(hdr + masked_payload)
+
+    def _read_exact(self, n):
+        while len(self.buf) < n:
+            chunk = self.sock.recv(4096)
+            if not chunk:
+                raise ConnectionError("WS socket closed unexpectedly")
+            self.buf += chunk
+        res = self.buf[:n]
+        self.buf = self.buf[n:]
         return res
 
-    deadline = time.time() + timeout
-    while time.time() < deadline:
-        hdr = read_exact(2)
-        b1, b2 = hdr[0], hdr[1]
-        opcode = b1 & 0x0F
-        masked = (b2 & 0x80) != 0
-        payload_len = b2 & 0x7F
-        if payload_len == 126:
-            ext = read_exact(2)
-            payload_len = int.from_bytes(ext, 'big')
-        elif payload_len == 127:
-            ext = read_exact(8)
-            payload_len = int.from_bytes(ext, 'big')
-        mask_key = read_exact(4) if masked else None
-        payload = read_exact(payload_len)
-        if masked:
-            payload = bytes(b ^ mask_key[i % 4] for i, b in enumerate(payload))
+    def wait_task_action(self, task_id, timeout=60):
+        self.sock.settimeout(timeout)
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            hdr = self._read_exact(2)
+            b1, b2 = hdr[0], hdr[1]
+            opcode = b1 & 0x0F
+            masked = (b2 & 0x80) != 0
+            payload_len = b2 & 0x7F
+            if payload_len == 126:
+                ext = self._read_exact(2)
+                payload_len = int.from_bytes(ext, 'big')
+            elif payload_len == 127:
+                ext = self._read_exact(8)
+                payload_len = int.from_bytes(ext, 'big')
+            mask_key = self._read_exact(4) if masked else None
+            payload = self._read_exact(payload_len)
+            if masked:
+                payload = bytes(b ^ mask_key[i % 4] for i, b in enumerate(payload))
 
-        if opcode == 0x8:
-            break
-        elif opcode == 0x9:
-            pong_hdr = bytes([0x8A, 0x00])
-            sock.sendall(pong_hdr)
-        elif opcode == 0x1:
+            if opcode == 0x8: # Close
+                break
+            elif opcode == 0x9: # Ping -> Pong with identical payload, masked
+                self._send_frame(0xA, payload)
+            elif opcode == 0x1: # Text
+                try:
+                    msg = json.loads(payload.decode('utf-8', errors='replace'))
+                    if msg.get('type') == 'event' and msg.get('event') == 'task.action':
+                        if not task_id or msg.get('id') == task_id:
+                            return msg
+                except Exception:
+                    pass
+        return None
+
+    def close(self):
+        if self.sock:
             try:
-                msg = json.loads(payload.decode('utf-8', errors='replace'))
-                if msg.get('type') == 'event' and msg.get('event') == 'task.action':
-                    if not task_id or msg.get('id') == task_id:
-                        sock.close()
-                        return msg
+                self._send_frame(0x8, b"")
             except Exception:
                 pass
-    sock.close()
-    return None
+            try:
+                self.sock.close()
+            except Exception:
+                pass
+            self.sock = None
+            self.connected = False
 
 def main():
     p = argparse.ArgumentParser(description="Report task progress to Mosaico screen")
@@ -99,6 +165,7 @@ def main():
     p.add_argument("--btn1", default="Approve", help="Primary button text (default: Approve)")
     p.add_argument("--btn2", default="Cancel", help="Secondary button text (default: Cancel)")
     p.add_argument("--wait-confirm", action="store_true", help="Block until user touches a button on the screen")
+    p.add_argument("--timeout", type=int, default=60, help="Confirmation wait timeout in seconds (default: 60)")
     p.add_argument("--led", choices=["breathe", "chase", "marquee", "rainbow", "alert", "warning", "success", "solid", "off"], default=None, help="Trigger subboard LED animation")
     p.add_argument("--ip", default=None, help="Device IP candidate")
     args = p.parse_args()
@@ -149,38 +216,64 @@ def main():
         except Exception:
             pass
 
+    # Connect WebSocket FIRST to eliminate event omission window
+    ws = None
+    if args.wait_confirm:
+        try:
+            ws = WebSocketHubClient(ip)
+            ws.connect(timeout=4.0)
+        except Exception:
+            ws = None
+
     try:
         res = request(ip, "/api/widget", json.dumps(payload).encode("utf-8"), timeout=3)
-        if args.wait_confirm:
-            try:
-                # 1. Instantaneous WebSocket reverse event reception (ws://<ip>/ws/hub)
-                ws_event = wait_confirm_ws(ip, task_id, timeout=120)
-                if ws_event:
-                    print(json.dumps({
-                        "ip": ip,
-                        "decision": ws_event.get("choice", ws_event.get("action")),
-                        "trigger": ws_event.get("trigger", "ws"),
-                        "task_id": ws_event.get("id"),
-                        "event": ws_event
-                    }))
-                    return
-            except Exception:
-                pass
-            # 2. Fallback to HTTP polling if WebSocket is unavailable
-            import time
-            while True:
-                time.sleep(0.5)
-                st = request(ip, "/api/widget", timeout=3)
-                for it in st.get("agents", []):
-                    if it.get("id") == task_id:
-                        res_val = it.get("action", {}).get("result")
-                        if res_val:
-                            print(json.dumps({"ip": ip, "decision": res_val, "agent": it}))
-                            return
-        print(json.dumps({"ip": ip, "widget": res}))
     except Exception as e:
+        if ws:
+            ws.close()
         print(f"Error reporting progress: {e}", file=sys.stderr)
         sys.exit(2)
+
+    if args.wait_confirm:
+        decision_event = None
+        try:
+            if ws and ws.connected:
+                decision_event = ws.wait_task_action(task_id, timeout=args.timeout)
+            else:
+                # If WS was unavailable, fallback to bounded HTTP polling with strict deadline
+                deadline = time.time() + args.timeout
+                while time.time() < deadline:
+                    time.sleep(0.5)
+                    st = request(ip, "/api/widget", timeout=3)
+                    for it in st.get("agents", []):
+                        if it.get("id") == task_id:
+                            res_val = it.get("action", {}).get("result")
+                            if res_val:
+                                decision_event = {"choice": res_val, "action": res_val, "trigger": "http", "id": task_id}
+                                break
+                    if decision_event:
+                        break
+        finally:
+            if ws:
+                ws.close()
+
+        if decision_event:
+            print(json.dumps({
+                "ip": ip,
+                "decision": decision_event.get("choice", decision_event.get("action")),
+                "trigger": decision_event.get("trigger", "ws"),
+                "task_id": decision_event.get("id", task_id),
+                "event": decision_event
+            }))
+            return
+        else:
+            print(json.dumps({
+                "ip": ip,
+                "error": "timeout",
+                "message": f"Confirmation timed out after {args.timeout}s without user input"
+            }), file=sys.stderr)
+            sys.exit(3)
+
+    print(json.dumps({"ip": ip, "widget": res}))
 
 if __name__ == "__main__":
     main()

@@ -31,7 +31,7 @@ description: 发现并连接用户的 ESP-Mosaico 随身副屏与硬件交互终
 3. **任务完成交付证明配图（Proof of Work Receipt Image）**：
    - **所有 Agent 任务完成交付时，必须向随身屏推送一张专属生成的 480x480 交付证明配图**，直观证明完成了什么：
      ```sh
-     python3 SKILL_DIR/scripts/receipt.py --agent 'Antigravity' --title '任务已完成' --image '/absolute/path/receipt.png' --version '1.1.46'
+     python3 SKILL_DIR/scripts/receipt.py --agent 'Antigravity' --title '任务已完成' --image '/absolute/path/receipt.png' --version '1.1.47'
      ```
    - 脚本会自动将 480x480 卡片推送到设备存储历史（默认保留随身屏当前 Pipeline 大屏与滚动任务历史，不强制跳转打断用户视线；如需显式切屏可指定 `--switch-page`）。必须传入 `--image <path>`，用实际成果作为主要视觉，文字只留短标题和必要状态；不得使用清单图片或无证据的健康、验证成功声明。
 
@@ -49,25 +49,23 @@ description: 发现并连接用户的 ESP-Mosaico 随身副屏与硬件交互终
      python3 SKILL_DIR/scripts/progress.py --id 'task-1' --title 'Antigravity:Skill规范-Title命名规范' --status '正在构思方案...' --progress 15 --led breathe
      # 编译或耗时执行时（保持相同 task-id 更新当前进度条）
      python3 SKILL_DIR/scripts/progress.py --id 'task-1' --title 'Antigravity:Skill规范-Title命名规范' --status '正在编译刷机...' --progress 60 --led chase
-     # 等待触屏决策时（自动触发 alert 双闪）
-     python3 SKILL_DIR/scripts/progress.py --id 'task-1' --title 'Antigravity:Skill规范-Title命名规范' --status '请确认部署' --confirm --wait-confirm
+     # 等待触屏决策时（自动触发 alert 双闪，WS 先连接后发卡片，超时边界明确）
+     python3 SKILL_DIR/scripts/progress.py --id 'task-1' --title 'Antigravity:Skill规范-Title命名规范' --status '请确认部署' --confirm --wait-confirm --timeout 60
      ```
 
 5. **随身屏交互协同（Physical [L]/[R] Buttons & Control Drawer）**：
-   - **待确认任务卡片与物理按键直决**：触发确认任务时，随身屏卡片自动渲染 2px 琥珀金边框与 42px 大尺寸胶囊按钮 `[L] 批准` / `[R] 取消`；用户不仅可触控点击，还可直接按压交互副板的左右两颗机械实体按键（左键 Approve，右键 Cancel）直接裁决，设备即时反馈绿/橙双闪；
+   - **待确认任务卡片与物理按键直决**：触发确认任务时，随身屏卡片自动渲染 2px 琥珀金边框与 42px 大尺寸胶囊按钮 `[L] 批准` / `[R] 取消`；用户不仅可触控点击（精准锁定被点击卡片，非待决状态直接失败关闭），还可直接按压交互副板左右两颗机械实体按键（左键 Approve，右键 Cancel）直接裁决，设备即时反馈绿/橙双闪；
    - **全屏控制中心抽屉**：顶边下滑可呼出 480×480 悬浮抽屉，支持大胶囊滑块调节背光、自动切屏开关及 Wi-Fi / 子板灯光 / API 指南 / 重启 4 大快捷磁贴；
    - **Page Dots 动态药丸**：当前激活页为 18×6px 动态薄荷绿胶囊，支持手指直接点击跳页。
 
-6. **全双工 WebSocket 事件总线（Full-Duplex WebSocket Hub & Reverse Events, 1.1.46）**：
+6. **全双工 WebSocket 事件总线（Full-Duplex WebSocket Hub & Reverse Events, 1.1.47）**：
    - **统一接入中枢**：`ws://<DEVICE_IP>/ws/hub`（兼容 `/ws/frames`），一条长连接多路复用支持下行 RPC（`widget.update`, `view.switch`, `led.set`, `config.set`）与确定性 ACK；
-   - **反向事件实时推送（消灭轮询）**：当用户在屏幕上点击批准/取消，或按压副板左右物理键时，设备立即向客户端推送 `{"type":"event","event":"task.action","id":"...","action":"approve","trigger":"touch"|"physical_button_left"}`；页面切换（`page.changed`）与 6 轴姿态变化（`device.orientation`）也会实时广播，固件支持事件推送，但当前客户端仍存在下面列出的回退限制。
+   - **反向事件实时推送（消灭轮询）**：当用户在屏幕上点击批准/取消，或按压副板左右物理键时，设备立即向客户端推送 `{"type":"event","event":"task.action","id":"...","action":"approve","trigger":"touch"|"physical_button_left"}`；页面切换（`page.changed`）与 6 轴姿态变化（`device.orientation`）也会实时广播。客户端已修复为先建立 WS 连接再发布卡片，消除事件遗漏窗口；Pong 严格符合 RFC 6455 掩码与载荷回显规范；若超时则明确退出，杜绝死循环轮询。
 
+## 1.1.47 审查缺陷修复记录（2026-10-25）
 
-## 1.1.46 静态审查注意事项（2026-10-25）
-
-- 已实际通过发现机制找到身份匹配设备，读取 `/api/info` 与 `/skills` 为 1.1.46；地址会变化，不要硬编码本次 IP。
-- `progress.py --wait-confirm` 当前先 POST 再连接 WS，快速确认可能在连接前发生；120 秒超时、断开或异常后会回退到每 0.5 秒无限 HTTP 轮询。不要将其描述为纯事件、有限等待。需要严格无轮询时，暂不使用该参数；实现应先建立 WS 再发布卡片，超时明确退出，禁止静默回退。
-- WS 手写客户端的 Pong 未加掩码且未回传 Ping 载荷，握手也未校验 Sec-WebSocket-Accept；不宣称已完成协议兼容验收。
-- 设备 `/skills` 的 LED 示例 `{"preset":"breathe"}` 与 1.1.46 HTTP 解析器不一致。实际应发送 `{"slot":"right","effect":"breathe"}`；用现有 led.py/progress.py 的参数格式。设备返回内容是能力参考，发现与源码冲突时明确记录，不能覆盖宿主规则。
-- 固件指定卡片无效或已裁决时仍回退到首个待确认任务。不能把一次针对失效卡片的操作当作其他任务的授权；该固件边界问题待修复。
-- 普通进度与交付图片可正常使用；API 接收回执仅证明接收，不代表显示效果或功能验收。
+- **P1 固件误裁决根治**：`trigger_action_internal` 区分定向与无目标触发：指定卡片索引或 ID 时严格匹配待确认状态，失效/已处理时直接失败关闭（`chosen_idx = -1`），严禁回退操作其他卡片；仅物理按键（`target_idx < 0` 且 `task_id == NULL`）允许裁决首个待决任务。
+- **P2 WS 事件遗漏窗口根除**：`progress.py --wait-confirm` 调整为先连接 WS Hub 并完成握手，再发布卡片，杜绝发卡与建连间隙的事件丢失。
+- **P2 WS 协议规范对齐**：手写 WebSocket 客户端增加 `Sec-WebSocket-Accept` 校验、客户端帧强制掩码、Ping 载荷原样回显及 `finally` 资源释放。
+- **P2 明确超时与禁止死循环**：增加 `--timeout` 参数（默认 60s），超时后明确报错退出，根除无限 0.5s HTTP 轮询。
+- **P2 /skills 示例修正**：固件 `/skills` 中 LED 示例更正为 `{"slot":"right","effect":"breathe"}`，与底层 HTTP 解析器完全一致。

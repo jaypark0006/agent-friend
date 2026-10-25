@@ -80,7 +80,7 @@ def render_receipt(args):
 
     # Bottom Stat Row
     # Pill 1: Version
-    ver_text = f"v{args.version}" if args.version else "v1.1.46"
+    ver_text = f"v{args.version}" if args.version else "v1.1.47"
     d.rounded_rectangle((28, 380, 150, 422), radius=8, fill='#162534', outline='#243647', width=1)
     d.text((40, 392), ver_text, font=f(14), fill='#4fa3e3')
 
@@ -108,7 +108,7 @@ def main():
     p.add_argument("--agent", default="Antigravity", help="Agent identifier name")
     p.add_argument("--title", required=True, help="Task title / headline")
     p.add_argument("--items", nargs="+", help="Accomplishment bullet points")
-    p.add_argument("--version", default="1.1.46", help="Firmware / project version tag")
+    p.add_argument("--version", default="1.1.47", help="Firmware / project version tag")
     p.add_argument("--color", default="#4fa3e3", help="Accent hex color")
     p.add_argument("--image", default=None, help="Optional custom image path instead of generated card")
     p.add_argument("--ip", default=None, help="Device IP")
