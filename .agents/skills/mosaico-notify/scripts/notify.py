@@ -82,6 +82,15 @@ def ssdp_discover(timeout=0.6):
         pass
     return None
 
+def save_cache(ip):
+    try:
+        CACHE.parent.mkdir(parents=True, exist_ok=True)
+        temp = CACHE.with_name('address.' + str(os.getpid()) + '.tmp')
+        temp.write_text(json.dumps({'ip': ip, 'mac': MAC}))
+        temp.replace(CACHE)
+    except Exception:
+        pass
+
 def discover(explicit):
     candidates = [explicit] if explicit else []
     ssdp_ip = ssdp_discover(timeout=0.5)
@@ -95,6 +104,7 @@ def discover(explicit):
     candidates.append('192.168.5.61')
     for ip in dict.fromkeys(x for x in candidates if x):
         if identify(ip):
+            save_cache(ip)
             return ip
     route = command('/sbin/route', '-n', 'get', 'default')
     match = re.search(r'interface:\s*(\S+)', route)
@@ -110,6 +120,7 @@ def discover(explicit):
             with concurrent.futures.ThreadPoolExecutor(max_workers=12) as pool:
                 matches = [x for x in pool.map(identify, (str(h) for h in network.hosts())) if x]
             if len(matches) == 1:
+                save_cache(matches[0])
                 return matches[0]
     raise RuntimeError('未找到身份匹配的随身屏；确认同一局域网，或通过 --ip 提供当前地址。')
 
@@ -175,9 +186,7 @@ def main():
             raise ValueError('title + text must be <=1024 UTF-8 bytes')
         jpeg=card(args)
         ip=discover(args.ip); results['ip']=ip
-        CACHE.parent.mkdir(parents=True,exist_ok=True)
-        temp=CACHE.with_name('address.'+str(os.getpid())+'.tmp')
-        temp.write_text(json.dumps({'ip':ip,'mac':MAC})); temp.replace(CACHE)
+        save_cache(ip)
         def post(path, value):
             return request(ip,path,json.dumps(value,ensure_ascii=False).encode('utf-8'))
         results['text']=post('/api/text',{'text':text,'font_size':28,'align':'left','time':datetime.datetime.now().strftime('%H:%M')})

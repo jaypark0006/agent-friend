@@ -9,8 +9,10 @@ import json
 import os
 from pathlib import Path
 import re
+import socket
 import subprocess
 import sys
+import time
 import urllib.request
 
 MAC = '1c:29:04:d0:ad:2a'
@@ -51,8 +53,49 @@ def identify(ip):
     except Exception:
         return None
 
+def ssdp_discover(timeout=0.6):
+    targets = [
+        'M-SEARCH * HTTP/1.1\r\nHOST: 239.255.255.250:1900\r\nMAN: "ssdp:discover"\r\nMX: 1\r\nST: urn:mosaico:device:screen:1\r\n\r\n',
+        'M-SEARCH * HTTP/1.1\r\nHOST: 239.255.255.250:1900\r\nMAN: "ssdp:discover"\r\nMX: 1\r\nST: urn:schemas-upnp-org:device:Basic:1\r\n\r\n',
+        'M-SEARCH * HTTP/1.1\r\nHOST: 239.255.255.250:1900\r\nMAN: "ssdp:discover"\r\nMX: 1\r\nST: ssdp:all\r\n\r\n',
+    ]
+    try:
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
+        s.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+        s.settimeout(timeout)
+        for t in targets:
+            try:
+                s.sendto(t.encode('ascii'), ('239.255.255.250', 1900))
+            except OSError:
+                pass
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            try:
+                data, (addr, _) = s.recvfrom(2048)
+                text = data.decode('utf-8', errors='ignore')
+                if 'mosaico' in text.lower() or 'lan_screen' in text.lower() or '4553502d-4952-4953' in text.lower():
+                    m = re.search(r'location:\s*http://([^/:]+)', text, re.IGNORECASE)
+                    return m.group(1) if m else addr
+            except (socket.timeout, OSError):
+                break
+    except Exception:
+        pass
+    return None
+
+def save_cache(ip):
+    try:
+        CACHE.parent.mkdir(parents=True, exist_ok=True)
+        temp = CACHE.with_name('address.' + str(os.getpid()) + '.tmp')
+        temp.write_text(json.dumps({'ip': ip, 'mac': MAC}))
+        temp.replace(CACHE)
+    except Exception:
+        pass
+
 def discover(explicit):
     candidates = [explicit] if explicit else []
+    ssdp_ip = ssdp_discover(timeout=0.5)
+    if ssdp_ip:
+        candidates.append(ssdp_ip)
     candidates += [ip for ip, mac in neighbors().items() if mac == MAC]
     try:
         candidates.append(json.loads(CACHE.read_text())['ip'])
@@ -61,6 +104,7 @@ def discover(explicit):
     candidates.append('192.168.5.61')
     for ip in dict.fromkeys(x for x in candidates if x):
         if identify(ip):
+            save_cache(ip)
             return ip
     route = command('/sbin/route', '-n', 'get', 'default')
     match = re.search(r'interface:\s*(\S+)', route)
@@ -76,6 +120,7 @@ def discover(explicit):
             with concurrent.futures.ThreadPoolExecutor(max_workers=12) as pool:
                 matches = [x for x in pool.map(identify, (str(h) for h in network.hosts())) if x]
             if len(matches) == 1:
+                save_cache(matches[0])
                 return matches[0]
     raise RuntimeError('未找到身份匹配的随身屏；确认同一局域网，或通过 --ip 提供当前地址。')
 
@@ -141,9 +186,7 @@ def main():
             raise ValueError('title + text must be <=1024 UTF-8 bytes')
         jpeg=card(args)
         ip=discover(args.ip); results['ip']=ip
-        CACHE.parent.mkdir(parents=True,exist_ok=True)
-        temp=CACHE.with_name('address.'+str(os.getpid())+'.tmp')
-        temp.write_text(json.dumps({'ip':ip,'mac':MAC})); temp.replace(CACHE)
+        save_cache(ip)
         def post(path, value):
             return request(ip,path,json.dumps(value,ensure_ascii=False).encode('utf-8'))
         results['text']=post('/api/text',{'text':text,'font_size':28,'align':'left','time':datetime.datetime.now().strftime('%H:%M')})

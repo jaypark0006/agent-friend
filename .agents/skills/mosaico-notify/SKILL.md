@@ -31,7 +31,7 @@ description: 发现并连接用户的 ESP-Mosaico 随身副屏与硬件交互终
 3. **任务完成交付证明配图（Proof of Work Receipt Image）**：
    - **所有 Agent 任务完成交付时，必须向随身屏推送一张专属生成的 480x480 交付证明配图**，直观证明完成了什么：
      ```sh
-     python3 SKILL_DIR/scripts/receipt.py --agent 'Antigravity' --title '任务已完成' --items '关键改动1' '关键改动2' '实机编译刷入成功' --version '1.1.45'
+     python3 SKILL_DIR/scripts/receipt.py --agent 'Antigravity' --title '任务已完成' --items '关键改动1' '关键改动2' '实机编译刷入成功' --version '1.1.46'
      ```
    - 脚本会自动将 480x480 卡片推送到设备存储历史（默认保留随身屏当前 Pipeline 大屏与滚动任务历史，不强制跳转打断用户视线；如需显式切屏可指定 `--switch-page`）。也可传入 `--image <path>` 呈现架构图、测试图或截图。
 
@@ -58,7 +58,7 @@ description: 发现并连接用户的 ESP-Mosaico 随身副屏与硬件交互终
    - **全屏控制中心抽屉**：顶边下滑可呼出 480×480 悬浮抽屉，支持大胶囊滑块调节背光、自动切屏开关及 Wi-Fi / 子板灯光 / API 指南 / 重启 4 大快捷磁贴；
    - **Page Dots 动态药丸**：当前激活页为 18×6px 动态薄荷绿胶囊，支持手指直接点击跳页。
 
-6. **全双工 WebSocket 事件总线（Full-Duplex WebSocket Hub & Reverse Events, 1.1.45）**：
+6. **全双工 WebSocket 事件总线（Full-Duplex WebSocket Hub & Reverse Events, 1.1.46）**：
    - **统一接入中枢**：`ws://<DEVICE_IP>/ws/hub`（兼容 `/ws/frames`），一条长连接多路复用支持下行 RPC（`widget.update`, `view.switch`, `led.set`, `config.set`）与确定性 ACK；
    - **反向事件实时推送（消灭轮询）**：当用户在屏幕上点击批准/取消，或按压副板左右物理键时，设备立即向客户端推送 `{"type":"event","event":"task.action","id":"...","action":"approve","trigger":"touch"|"physical_button_left"}`；页面切换（`page.changed`）与 6 轴姿态变化（`device.orientation`）也会实时广播，彻底终结 HTTP 轮询。
 

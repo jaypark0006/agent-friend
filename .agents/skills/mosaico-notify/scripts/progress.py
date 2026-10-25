@@ -8,6 +8,82 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from notify import discover, request
 
+def wait_confirm_ws(ip, task_id, timeout=120):
+    import socket, base64, os, json, time
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    sock.settimeout(3.0)
+    sock.connect((ip, 80))
+    key = base64.b64encode(os.urandom(16)).decode('ascii')
+    req = (
+        f"GET /ws/hub HTTP/1.1\r\n"
+        f"Host: {ip}\r\n"
+        f"Upgrade: websocket\r\n"
+        f"Connection: Upgrade\r\n"
+        f"Sec-WebSocket-Key: {key}\r\n"
+        f"Sec-WebSocket-Version: 13\r\n\r\n"
+    )
+    sock.sendall(req.encode('ascii'))
+
+    header_data = b""
+    while b"\r\n\r\n" not in header_data:
+        chunk = sock.recv(1024)
+        if not chunk:
+            raise ConnectionError("Connection closed during WS handshake")
+        header_data += chunk
+
+    status_line = header_data.split(b"\r\n")[0]
+    if b"101" not in status_line:
+        raise ConnectionError(f"WS handshake failed: {status_line.decode('utf-8', errors='ignore')}")
+
+    buf = header_data.split(b"\r\n\r\n", 1)[1]
+    sock.settimeout(timeout)
+
+    def read_exact(n):
+        nonlocal buf
+        while len(buf) < n:
+            chunk = sock.recv(4096)
+            if not chunk:
+                raise ConnectionError("Socket EOF")
+            buf += chunk
+        res = buf[:n]
+        buf = buf[n:]
+        return res
+
+    deadline = time.time() + timeout
+    while time.time() < deadline:
+        hdr = read_exact(2)
+        b1, b2 = hdr[0], hdr[1]
+        opcode = b1 & 0x0F
+        masked = (b2 & 0x80) != 0
+        payload_len = b2 & 0x7F
+        if payload_len == 126:
+            ext = read_exact(2)
+            payload_len = int.from_bytes(ext, 'big')
+        elif payload_len == 127:
+            ext = read_exact(8)
+            payload_len = int.from_bytes(ext, 'big')
+        mask_key = read_exact(4) if masked else None
+        payload = read_exact(payload_len)
+        if masked:
+            payload = bytes(b ^ mask_key[i % 4] for i, b in enumerate(payload))
+
+        if opcode == 0x8:
+            break
+        elif opcode == 0x9:
+            pong_hdr = bytes([0x8A, 0x00])
+            sock.sendall(pong_hdr)
+        elif opcode == 0x1:
+            try:
+                msg = json.loads(payload.decode('utf-8', errors='replace'))
+                if msg.get('type') == 'event' and msg.get('event') == 'task.action':
+                    if not task_id or msg.get('id') == task_id:
+                        sock.close()
+                        return msg
+            except Exception:
+                pass
+    sock.close()
+    return None
+
 def main():
     p = argparse.ArgumentParser(description="Report task progress to Mosaico screen")
     p.add_argument("--id", default=None, help="Unique task/conversation identifier (decided by agent)")
@@ -76,6 +152,21 @@ def main():
     try:
         res = request(ip, "/api/widget", json.dumps(payload).encode("utf-8"), timeout=3)
         if args.wait_confirm:
+            try:
+                # 1. Instantaneous WebSocket reverse event reception (ws://<ip>/ws/hub)
+                ws_event = wait_confirm_ws(ip, task_id, timeout=120)
+                if ws_event:
+                    print(json.dumps({
+                        "ip": ip,
+                        "decision": ws_event.get("choice", ws_event.get("action")),
+                        "trigger": ws_event.get("trigger", "ws"),
+                        "task_id": ws_event.get("id"),
+                        "event": ws_event
+                    }))
+                    return
+            except Exception:
+                pass
+            # 2. Fallback to HTTP polling if WebSocket is unavailable
             import time
             while True:
                 time.sleep(0.5)

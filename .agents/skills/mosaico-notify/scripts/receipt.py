@@ -60,7 +60,7 @@ def render_receipt(args):
     d.rounded_rectangle((28, box_top, 452, box_top + box_h), radius=12, fill='#121a24', outline='#1d2b3a', width=1)
     d.text((42, box_top + 12), "COMPLETED DELIVERABLES & OUTCOMES", font=f(13), fill='#5b7288')
 
-    items = args.items if args.items else ["任务已顺利达成目标", "各项逻辑与代码变更已落地", "实机部署与健康状态核验正常"]
+    items = args.items if args.items else ["任务已顺利达成目标", "各项逻辑与代码变更已落地"]
     y = box_top + 40
     item_font = f(16)
     for it in items[:5]:
@@ -80,21 +80,21 @@ def render_receipt(args):
 
     # Bottom Stat Row
     # Pill 1: Version
-    ver_text = f"v{args.version}" if args.version else "v1.1.30"
+    ver_text = f"v{args.version}" if args.version else "v1.1.46"
     d.rounded_rectangle((28, 380, 150, 422), radius=8, fill='#162534', outline='#243647', width=1)
     d.text((40, 392), ver_text, font=f(14), fill='#4fa3e3')
 
     # Pill 2: Status
     d.rounded_rectangle((162, 380, 310, 422), radius=8, fill='#162e22', outline='#285438', width=1)
-    d.text((176, 392), "100% HEALTHY", font=f(14), fill='#39e69d')
+    d.text((176, 392), "DELIVERED", font=f(14), fill='#39e69d')
 
     # Pill 3: Target
     d.rounded_rectangle((322, 380, 452, 422), radius=8, fill='#162534', outline='#243647', width=1)
     d.text((338, 392), "ESP-MOSAICO", font=f(14), fill='#a0b2c6')
 
     # Footer signature
-    d.text((28, 440), "VERIFIED & SIGNED BY AGENT PIPELINE", font=f(11), fill='#455667')
-    d.text((366, 440), "NORMAL MODE", font=f(11), fill='#39e69d')
+    d.text((28, 440), "DELIVERED TO COMPANION DISPLAY", font=f(11), fill='#455667')
+    d.text((382, 440), "COMPLETED", font=f(11), fill='#39e69d')
 
     for quality in (90, 82, 70, 50):
         buf = io.BytesIO()
@@ -108,7 +108,7 @@ def main():
     p.add_argument("--agent", default="Antigravity", help="Agent identifier name")
     p.add_argument("--title", required=True, help="Task title / headline")
     p.add_argument("--items", nargs="+", help="Accomplishment bullet points")
-    p.add_argument("--version", default="1.1.30", help="Firmware / project version tag")
+    p.add_argument("--version", default="1.1.46", help="Firmware / project version tag")
     p.add_argument("--color", default="#4fa3e3", help="Accent hex color")
     p.add_argument("--image", default=None, help="Optional custom image path instead of generated card")
     p.add_argument("--ip", default=None, help="Device IP")
