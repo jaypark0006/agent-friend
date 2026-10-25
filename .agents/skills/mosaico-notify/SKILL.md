@@ -52,3 +52,9 @@ description: 发现并连接用户的 ESP-Mosaico 随身副屏与硬件交互终
      # 等待触屏决策时（自动触发 alert 双闪）
      python3 SKILL_DIR/scripts/progress.py --id 'task-1' --title 'Antigravity:Skill规范-Title命名规范' --status '请确认部署' --confirm --wait-confirm
      ```
+
+5. **随身屏 1.1.43 交互协同（Physical [L]/[R] Buttons & Control Drawer）**：
+   - **待确认任务卡片与物理按键直决**：触发确认任务时，随身屏卡片自动渲染 2px 琥珀金边框与 42px 大尺寸胶囊按钮 `[L] 批准` / `[R] 取消`；用户不仅可触控点击，还可直接按压交互副板的左右两颗机械实体按键（左键 Approve，右键 Cancel）直接裁决，设备即时反馈绿/橙双闪；
+   - **全屏控制中心抽屉**：顶边下滑可呼出 480×480 悬浮抽屉，支持大胶囊滑块调节背光、自动切屏开关及 Wi-Fi / 子板灯光 / API 指南 / 重启 4 大快捷磁贴；
+   - **Page Dots 动态药丸**：当前激活页为 18×6px 动态薄荷绿胶囊，支持手指直接点击跳页。
+

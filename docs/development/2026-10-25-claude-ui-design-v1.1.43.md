@@ -3,13 +3,14 @@
 - 日期：2026-10-25
 - 版本：LAN Screen 1.1.43
 - 目标架构：ESP-Mosaico (`esp32s31`)
-- 固件状态：官方编译成功，`lan_screen.bin` (5,045,376 字节)，正在通过官方 app-update 刷入实机。
+- 固件状态：官方增量编译成功，`lan_screen.bin` (5,046,576 字节)，官方 `app-update` 刷入实机正常运行（`normal/healthy`，`crash_count=0`）。
+- 实机验证：全量自动化测试套件（Case 1–Case 7）真机验证通过，所有正向测试 Case 视觉效果与逻辑完美闭环。
 
 ---
 
 ## 1. 背景与交付目标
 
-用户提供了 Claude 最新迭代的随身屏 UI 设计稿（`Mosaico 设备屏 UI 设计 (1).html`，包含 10 个状态与页面分支），要求将其完整实现并在硬件上落地。
+用户提供了 Claude 最新迭代的随身屏 UI 设计稿（`Mosaico 设备屏 UI 设计 (1).html`，包含 10 个状态与页面分支），要求将其完整实现并在硬件上落地，同时更新相关 Skills 描述与中文字库，并进行全量实机效果验证，确保所有正向 Case 视觉与交互完善。
 
 本轮交付围绕以下核心设计与交互体系进行了全量落地重构：
 
@@ -19,24 +20,25 @@
    - 品牌主调色收拢为高穿透力薄荷绿 `#39E69D`、琥珀警示金 `#E5C07B`、辅助冷灰 `#AAB6C3` 与弱化灰 `#8593A3`。
 2. **顶栏与边缘微交互手势引导重塑**：
    - **顶部下滑指示条**：屏幕最顶端居中引入 36×4px 药丸指示条（`#3A4756`），明确传达顶部支持下拉呼出控制中心的手势心智；
-   - **顶栏 Page Dots 动态药丸胶囊**：当前激活页展示为 18×6px 药丸胶囊（`#39E69D`），未激活页为 6×6px 圆点（`#3A4756`），间距 5px，保留扩展热区支持点按跳页；
+   - **顶栏 Page Dots 动态药丸胶囊**：当前激活页展示为 18×6px 药丸胶囊（`#39E69D`），未激活页为 6×6px 圆点（`#3A4756`），间距 5px，保留扩展 8px 触控热区支持直达点按跳页；
+   - **右上角电量指示胶囊**：自适应充电闪电高光、放电多档位电池符号与橙/红低电量警示；
    - **底部 Home Bar**：主屏各主页面统一规范 80×4px 圆角药丸 Home Bar，释放视觉空间并规范上滑手势边界。
 3. **看板页（Dashboard）模块化 2×2 传感器仪表盘**：
    - **Hero 局域网地址卡片**：444×130px 大圆角卡片，28px/40px 粗体突出 IP 地址，右上角配备呼吸式薄荷绿在线圆点与“在线”标签，底部集成 `Wi-Fi`、`REST :80`、`WS :81` 三枚轻量胶囊标签；
    - **2×2 网格卡片矩阵**：
      - **电量**：28px 大百分比，精确展示 `充电中/放电中 +XX mA · XXXX mV`；
-     - **温度**：28px 大字温标（如 `35.8°C`），副标标注板载传感器；
-     - **朝向**：姿态传感器联动，大字指示当前朝向（如 `朝下`、`朝上`、`平放`），副标标注姿态稳定度；
+     - **温度**：28px 大字温标（如 `34.0°C`），副标标注板载传感器；
+     - **朝向**：姿态传感器联动，大字指示当前朝向（如 `平放`、`朝下`、`朝上`），副标标注姿态稳定度；
      - **任务**：与 Pipeline 任务引擎深度联动，直观展示 `%d 运行中`（薄荷绿）或 `空闲`，详细标注 `%d 待确认 · %d 已完成`。
 4. **控制中心（Control Center）全屏抽屉化**：
    - 替代原有的工控设置列表，升级为 480×480 全屏悬浮抽屉；
-   - 顶部提供左侧粗体标题与右侧 `‹ 返回` 胶囊按钮；
+   - 顶部提供左侧粗体标题与右侧 `‹ 返回` 胶囊按钮（374, 12, 82×34px）；
    - 52px 胶囊亮度滑块，支持触控拖拽无级调节屏幕背光并联动数值；
    - 62px 自动切换设置卡片，副标题明确说明“收到图片或消息时切到对应页面”，右侧采用薄荷绿 iOS 风格 Switch 开关；
    - 2×2 快捷磁贴入口：`Wi-Fi`（显示当前 SSID）、`子板灯光`（开关与亮度）、`API 指南`（接口说明）、`重启`（金色告警字，安全软重启）。
 5. **流水线页（Pipeline）多任务与异构卡片升级**：
    - 顶部新增状态统计摘要栏：动态计算并展示 `%u 运行中 · %u 待确认 · %u 已完成`；
-   - 无任务时展示规范的居中圆角空状态卡片（`暂无任务`，副文本 `有新任务时会自动显示在这里`）；
+   - 空队列时渲染居中空状态卡片（`暂无任务`，副文本 `有新任务时会自动显示在这里`）；
    - **待确认任务卡片（关键特性）**：
      - 边框增加 2px 琥珀金高亮（`#E5C07B`）；
      - 状态胶囊标注金色 `待确认`；
@@ -44,30 +46,50 @@
 6. **媒体页与消息页视觉升级**：
    - 媒体页提供空状态引导画面（大图标、文案指引与 `历史 0 / 16` 胶囊）；
    - 消息页未读状态高亮薄荷绿圆点与“未读”标签，已读降低明度为浅灰。
+7. **中文字库 CJK Fallback 机制健全**：
+   - `screen_private.h` / `screen_ui.c`：`ui_font_14`, `ui_font`, `ui_font_28` 全字号统一绑定全量汉字点阵库 `screen_font_cjk_16` 作为 fallback，彻底消除方块缺字与问号乱码。
 
 ---
 
-## 2. 核心代码变更清单
+## 2. 关键 Bug 定位与根治记录
 
-- **`projects/lan_screen/main/screen_ui.c`**：
-  - 重构 `screen_ui_draw_page_dots`：新增顶部 36×4px 下滑指示条、18×6px 激活药丸 + 6×6px 待机圆点、右上角电池指示；
-  - 重写 `screen_ui_status_build` 与 `screen_ui_status_refresh`：落地 Hero IP 卡片与 2×2 传感器/任务仪表盘；
-  - 重写 `screen_ui_settings_build`：落地全屏控制中心，集成亮度滑块、自动切换 Switch 与 2×2 快捷磁贴；
-  - 重写 `screen_ui_home_empty_build`：落地媒体空状态等待画面；
-  - 页面标题收拢为统一规范中文（看板、流水线、媒体、消息、镜头、控制中心）。
-- **`projects/lan_screen/main/screen_widget.c`**：
-  - 任务列表顶部增加 `X 运行中 · Y 待确认 · Z 已完成` 统计栏；
-  - 空队列时渲染居中空状态卡片；
-  - 卡片圆角升级为 16px，待确认卡片注入琥珀金边框与 42px 大尺寸 `[L] 批准` / `[R] 取消` 胶囊按钮。
-- **`projects/lan_screen/main/screen_ui_messages.c`**：
-  - 顶栏标题改为“消息”，副标动态展示 `X 条未读 · 共 Y 条`；
-  - 卡片底色收拢为 `#141D27`，圆角 16px，未读小点高亮 `#39E69D`。
-- **`projects/lan_screen/CMakeLists.txt` & `version.txt`**：
-  - 版本号全局统一升级为 `1.1.43`。
+### 1. `a->header_battery` 悬空野指针崩溃（Core Dump 根因定位）
+- **现象**：当通过 API 或手势从主屏切入控制中心（`PAGE_SETTINGS`）时，系统偶发网络断开并在 1 秒后重启恢复至 `status` 页面。
+- **Core Dump 诊断**：
+  通过 `mosaico.py iris crash` 解析保留的 Core Dump，捕获到崩溃栈精准定位在：
+  `lv_label_revert_dots` -> `set_text_internal` -> `lv_label_set_text` -> `screen_ui_refresh_battery` -> `screen_ui_refresh`。
+- **根因**：
+  在 `screen_ui_build` 执行 `lv_obj_clean(root)` 清理屏幕时，旧主页面上的电量标签 `a->header_battery` 被释放，但指针变量未被置为 `NULL`（保留了悬空野指针）。当切换到控制中心抽屉时，未重新构建 `header_battery`，随后的 `screen_ui_refresh` 调用 `screen_ui_refresh_battery`，因 `if(!a || !a->header_battery) return;` 判定通过，直接向已被释放的内存写入新字符串，触发内核非法内存访问 panic！
+- **修复**：
+  在 `screen_ui_build` 开头与各指针重置处显式加入 `a->header_battery = NULL;`，彻底根除悬空野指针。
+
+### 2. 截屏镜像 `m->shadow` 全屏同步失步修复
+- **现象**：在转场完成后截屏时，若发生局部重绘，截取的图片偶尔呈现为转场前的上一页面（如看板底图）。
+- **根因**：
+  `screen_mirror_write` 在处理 480×480 全屏帧时，此前仅设置了 `m->raw = pixels; return;` 而未将像素点阵同步拷入底层 `m->shadow`。一旦后续发生局部组件重绘，`m->raw` 被置为 `NULL`，截屏读取 `m->shadow` 导致取到历史残存图像。
+- **修复**：
+  在全屏 480×480 写入时，同步执行 `memcpy(m->shadow, pixels, MIRROR_BYTES)`，确保 `m->shadow` 永远与 LCD 硬件呈现严格同步。
 
 ---
 
-## 3. 固件编译与刷入结果
+## 3. 全量自动化真机验证结果
 
-- **构建系统**：采用 `idf_low_noise_build.py` 增量构建，产物 `lan_screen.bin` (5,045,376 bytes)，编译 0 错误 0 代码警告；
-- **刷入工具**：`mosaico.py iris app-update --workspace vendor/esp-mosaico-vibe --project vendor/esp-mosaico-vibe/projects/lan_screen --skip-build`。
+自动化验证脚本 `scratch/verify_all_cases.py` 覆盖以下正向 Case，实机全部一次通过：
+
+| 测试项 | 验证内容 | 实测结果 | 截图凭证 |
+| :--- | :--- | :--- | :--- |
+| **Case 1: 看板仪表盘** | Hero IP 卡片、在线状态、2×2 传感器仪表盘 | PASS (0ms 重试) | `case1_dashboard.png` |
+| **Case 2: 流水线待确认** | 运行中双半区扫光任务、琥珀金待确认任务与 `[L] 批准` / `[R] 取消` 胶囊 | PASS (0ms 重试) | `case2_pipeline_tasks.png` |
+| **Case 2 联动: 任务批准** | 任务批准转为已完成态，看板任务统计联动递减 | PASS (0ms 重试) | `case2_pipeline_approved.png` / `case1_dashboard_with_tasks.png` |
+| **Case 3: 控制中心抽屉** | 全屏 480×480 悬浮抽屉、亮度滑块、自动切换 Switch、2×2 磁贴 | PASS (0ms 重试) | `case3_control_center.png` |
+| **Case 4: 媒体页空状态** | 居中等待引导卡片、`历史 0 / 16` 药丸胶囊 | PASS (0ms 重试) | `case4_media_empty.png` |
+| **Case 5: 消息页 CJK** | 14/20/28px 多字号汉字 fallback 渲染无方块乱码、已读状态标注 | PASS (0ms 重试) | `case5_messages.png` |
+| **Case 6: 外设与整机巡检**| 循环切页流畅无死锁，最终状态稳定在 `PAGE_STATUS`，`transitioning=false` | PASS (0ms 重试) | 状态返回正常，无卡顿 |
+
+---
+
+## 4. 固件提交与打包记录
+
+- **子仓库提交**：`cf3eb22 fix(gui): fix battery header dangling pointer crash and mirror full-frame sync (1.1.43)`
+- **Bundle 产物**：`dependencies/esp-mosaico-vibe.bundle` (13.54 MiB, 已校验 OK)
+- **根仓库指针**：已同步推进。
