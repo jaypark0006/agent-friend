@@ -31,7 +31,7 @@ description: 发现并连接用户的 ESP-Mosaico 随身副屏与硬件交互终
 3. **任务完成交付证明配图（Proof of Work Receipt Image）**：
    - **所有 Agent 任务完成交付时，必须向随身屏推送一张专属生成的 480x480 交付证明配图**，直观证明完成了什么：
      ```sh
-     python3 SKILL_DIR/scripts/receipt.py --agent 'Antigravity' --title '任务已完成' --items '关键改动1' '关键改动2' '实机编译刷入成功' --version '1.1.30'
+     python3 SKILL_DIR/scripts/receipt.py --agent 'Antigravity' --title '任务已完成' --items '关键改动1' '关键改动2' '实机编译刷入成功' --version '1.1.44'
      ```
    - 脚本会自动将 480x480 卡片推送到设备存储历史（默认保留随身屏当前 Pipeline 大屏与滚动任务历史，不强制跳转打断用户视线；如需显式切屏可指定 `--switch-page`）。也可传入 `--image <path>` 呈现架构图、测试图或截图。
 
