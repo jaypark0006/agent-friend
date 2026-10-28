@@ -161,6 +161,7 @@ def main():
     p.add_argument("--color", default="#39e69d", help="Theme hex color")
     p.add_argument("--badge", default=None, help="Badge pill (e.g. RUNNING, DONE)")
     p.add_argument("--done", action="store_true", help="Mark task as completed")
+    p.add_argument("--error", action="store_true", help="Mark task as failed; --status is shown as the reason")
     p.add_argument("--delete", action="store_true", help="Remove task from screen")
     p.add_argument("--confirm", action="store_true", help="Request physical touch confirmation from user on screen")
     p.add_argument("--btn1", default="Approve", help="Primary button text (default: Approve)")
@@ -199,6 +200,8 @@ def main():
         payload["done"] = True
     elif args.progress >= 0:
         payload["done"] = False
+    if args.error:
+        payload["error"] = True
     if args.delete:
         payload["delete"] = True
 

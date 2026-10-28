@@ -48,7 +48,7 @@ def request(ip, path, body=None, mime='application/json', timeout=3):
 
 def identify(ip):
     try:
-        info = request(ip, '/api/info', timeout=0.8)
+        info = request(ip, '/api/status', timeout=1.5)
         return ip if info.get('app') == 'lan_screen' and neighbors().get(ip) == MAC else None
     except Exception:
         return None
