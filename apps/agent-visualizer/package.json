@@ -1,0 +1,10 @@
+{
+  "name": "mosaico-agent-visualizer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": { "build": "node build.mjs", "start": "node server.mjs" },
+  "dependencies": { "three": "0.180.0", "ws": "8.18.3" },
+  "devDependencies": { "esbuild": "0.25.10" }
+}

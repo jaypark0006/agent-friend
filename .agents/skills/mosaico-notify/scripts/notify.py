@@ -15,7 +15,8 @@ import sys
 import time
 import urllib.request
 
-MAC = '1c:29:04:d0:ad:2a'
+DEFAULT_MAC = '1c:29:04:d0:ad:2a'
+MAC = os.environ.get('MOSAICO_MAC', DEFAULT_MAC)
 CACHE = Path.home() / '.cache/mosaico-notify/address.json'
 class NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, *args, **kwargs):
@@ -49,7 +50,11 @@ def request(ip, path, body=None, mime='application/json', timeout=3):
 def identify(ip):
     try:
         info = request(ip, '/api/status', timeout=1.5)
-        return ip if info.get('app') == 'lan_screen' and neighbors().get(ip) == MAC else None
+        if info.get('app') == 'lan_screen':
+            neighbor_mac = neighbors().get(ip)
+            if not MAC or not neighbor_mac or neighbor_mac == MAC:
+                return ip
+        return None
     except Exception:
         return None
 

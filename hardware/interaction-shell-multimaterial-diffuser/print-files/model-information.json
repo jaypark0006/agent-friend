@@ -1,0 +1,91 @@
+{
+  "source_file": "ESP-Mosaico_Module_Interaction_square4-3D.3mf",
+  "source_sha256": "8ee0478b84d0025c83cbcb69b60c0c7910d99190452fc00aada208974aa509da",
+  "source_front_z_mm": -5.44999981,
+  "revision": "Two-PLA multipart co-print, 2026-10-19",
+  "assembly_count": 1,
+  "material_part_count": 5,
+  "membrane_thickness_mm": 0.4,
+  "peripheral_key_height_mm": 0.8,
+  "nominal_layer_height_mm": 0.2,
+  "body_material": 1,
+  "diffuser_material": 2,
+  "layer_interfaces": [
+    {
+      "z_mm": [
+        0,
+        0.2
+      ],
+      "shape": "Front visible membrane, 9.25 x 9.35 R1.55"
+    },
+    {
+      "z_mm": [
+        0.2,
+        0.4
+      ],
+      "shape": "Full wider shoulder, 10.55 x 10.15 R1.95; clipped to original envelope"
+    },
+    {
+      "z_mm": [
+        0.4,
+        0.6
+      ],
+      "shape": "Narrower peripheral neck, 9.75 x 9.85 R1.80; centre stays hollow"
+    },
+    {
+      "z_mm": [
+        0.6,
+        0.8
+      ],
+      "shape": "Wider peripheral head; centre stays hollow"
+    },
+    {
+      "z_mm": [
+        0.8,
+        1.2
+      ],
+      "shape": "Original shell covers outer head; optical aperture unchanged"
+    }
+  ],
+  "x_shoulder_step_mm": 0.4,
+  "y_shoulder_step_mm": 0.15,
+  "material_partition": "Each lens is intersected with the original integrated envelope; shell = envelope minus all four lenses.",
+  "joint_clearance_mm": 0,
+  "import_as": "One assembly, five material parts, shared coordinates; print together.",
+  "parts": [
+    {
+      "name": "00_shell_PLA_material_1",
+      "material": 1,
+      "mesh_build_status": "Error.NoError",
+      "volume_mm3": 4236.147780101935
+    },
+    {
+      "name": "01_diffuser_PLA_material_2",
+      "material": 2,
+      "mesh_build_status": "Error.NoError",
+      "volume_mm3": 47.602717540057604
+    },
+    {
+      "name": "02_diffuser_PLA_material_2",
+      "material": 2,
+      "mesh_build_status": "Error.NoError",
+      "volume_mm3": 47.60258471306098
+    },
+    {
+      "name": "03_diffuser_PLA_material_2",
+      "material": 2,
+      "mesh_build_status": "Error.NoError",
+      "volume_mm3": 47.60264336741187
+    },
+    {
+      "name": "04_diffuser_PLA_material_2",
+      "material": 2,
+      "mesh_build_status": "Error.NoError",
+      "volume_mm3": 47.60270951707692
+    }
+  ],
+  "slicer_run": false,
+  "print_run": false,
+  "interface_strength_verified": false,
+  "optical_performance_verified": false
+}

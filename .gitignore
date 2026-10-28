@@ -1,6 +1,8 @@
 .DS_Store
 .idf-install*.log
 .codex-runs/
+.claude-stage/
+scratch_core.bin
 dist/
 # SDK checkouts and build artifacts are dependencies; the firmware is a gitlink.
 vendor/*
