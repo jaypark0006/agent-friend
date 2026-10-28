@@ -16,6 +16,7 @@ description: 发现并连接用户的 ESP-Mosaico 随身副屏与硬件交互终
 1. **获取设备地址与动态 Skills**：
    - 使用 `discover(None)`：SSDP、ARP、缓存候选与身份校验；成功后自动刷新 `~/.cache/mosaico-notify/address.json`。发现阶段不等于重发通知；写入失败不得自动重发。
    - 动态拉取权威设备规范：`curl -s http://<DEVICE_IP>/skills` 作为固件能力与 API 唯一权威依据。
+   - 当设备 `/skills` 声明支持 `avatar` 时，用 `progress.py --avatar codex` 等由 Agent 自选工作中表情；不从标题推断。省略时保留已选表情，新任务默认通用；`--avatar ''` 清除选择。可选值以设备 `/skills` 为准。
 
 2. **单轮对话即新进度周期与 Title 规范（Turn-based Task Lifecycle & Title Spec）**：
    - 在每个 Session 内部，**用户的每一次对话 / 每一个新需求都是一个全新的任务（Task）**。

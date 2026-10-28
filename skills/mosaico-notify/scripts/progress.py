@@ -155,6 +155,7 @@ def main():
     p.add_argument("--id", default=None, help="Unique task/conversation identifier (decided by agent)")
     p.add_argument("--title", default=None, help="Task title on screen (recommended: <Agent>:<Session>-<Task>, concise <=22 CJK chars)")
     p.add_argument("--agent", default=None, help="Optional agent identity (e.g. Antigravity, Codex)")
+    p.add_argument("--avatar", default=None, help="Explicit working-face key; empty string resets to generic")
     p.add_argument("--status", default="", help="Current action description")
     p.add_argument("--progress", type=int, default=-1, help="0..100 progress percentage, or -1")
     p.add_argument("--color", default="#39e69d", help="Theme hex color")
@@ -190,6 +191,8 @@ def main():
         payload["badge"] = args.badge
     elif args.agent:
         payload["badge"] = args.agent
+    if args.avatar is not None:
+        payload["avatar"] = args.avatar
     if args.confirm:
         payload["action"] = {"type": "confirm", "options": [args.btn1, args.btn2]}
     if args.done or args.progress >= 100:
