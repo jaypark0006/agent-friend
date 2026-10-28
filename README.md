@@ -84,18 +84,67 @@ python3 skills/mosaico-notify/scripts/progress.py \
 
 ---
 
+## 🔨 固件开发、编译与打包分享
+
+### 1. 固件本地开发与低噪音编译
+若需对随身屏固件底层功能（LVGL 页面、传感器、WebSocket、字库与动画）进行开发，可在恢复环境后直接编译：
+
+```bash
+cd vendor/esp-mosaico-vibe
+
+# 使用官方低噪音增量构建工具（耗时通常仅需 2~4 秒）
+PATH=/opt/homebrew/bin:$PATH python3 submodule/esp-mosaico-utils/mosaico-tools/skills/idf-low-noise-build/scripts/idf_low_noise_build.py \
+  --idf-path /Users/qilei/esp/esp-idf-mosaico-7b9cc1a \
+  --project projects/lan_screen build
+```
+
+> [!NOTE]
+> 编译系统会在构建后（`POST_BUILD` 钩子）自动将 6.17 MB 的 Flash 紧凑点阵包（`screen_font_pack.bin`）4KB 边界对齐拼接至 `lan_screen.bin` 尾部，输出约 8.51 MB 的完整带持久化字库应用固件。
+
+### 2. 导出与打包固件分享（GitHub Release）
+仓库根目录提供了零依赖的便携式发布打包工具 [`scripts/export-release.py`](scripts/export-release.py)：
+
+```bash
+# 在根目录执行，一键导出最新固件并计算 SHA-256 校验和
+python3 scripts/export-release.py
+
+# 或显式指定版本与输出目录
+python3 scripts/export-release.py --version 1.1.54 --output-dir dist/release-v1.1.54
+```
+
+执行后将在 `dist/` 目录下生成标准发布文件包：
+- `dist/release-v1.1.54/lan_screen_v1.1.54.bin`（约 8.51 MB，已整合持久化字库）
+- `dist/release-v1.1.54/SHA256SUMS`（安全校验清单）
+
+发布开源版本时，只需将该 `.bin` 文件直接作为附件拖入 GitHub Releases 即可分享给所有用户。
+
+### 3. 用户刷机与固件更新
+- **途径 A（官方命令行工具）**：
+  ```bash
+  cd vendor/esp-mosaico-vibe
+  python3 mosaico.py iris app-update --project projects/lan_screen --device-id <DEVICE_ID> --skip-build
+  ```
+- **途径 B（通用 esptool 烧录）**：
+  ```bash
+  esptool.py --chip esp32s3 -b 921600 write_flash 0x140000 dist/release-v1.1.54/lan_screen_v1.1.54.bin
+  ```
+
+---
+
 ## 📂 项目结构
 
 ```text
 agent-friend/
 ├── LICENSE                                    # MIT 开源许可证
-├── README.md                                  # 项目说明
+├── README.md                                  # 项目说明与快速开始
 ├── AGENTS.md                                  # 项目长期参考与交付规范
 ├── dependencies/
 │   └── esp-mosaico-vibe.bundle               # 固件完整提交历史便携包
+├── dist/                                      # 编译打包导出的 Release 固件产物
 ├── scripts/
 │   ├── restore-firmware.py                    # 一键恢复固件工作区与依赖
-│   └── save-firmware-history.py               # 固件改动归档刷新脚本
+│   ├── save-firmware-history.py               # 固件改动归档刷新脚本
+│   └── export-release.py                      # 开源 Release 固件一键导出打包工具
 ├── skills/
 │   └── mosaico-notify/                        # Agent 随身屏交互技能（progress/notify/receipt）
 ├── hardware/                                  # 3D 打印外壳与导光件建模文件

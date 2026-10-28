@@ -1,62 +1,38 @@
 # 项目文档索引
 
-更新：2026-10-05。当前基线1.1.26；P1–P5重构已落地，完成编译与官方刷入，不包含功能测试。
+更新：2026-10-29。当前基线 **LAN Screen 1.1.54**。已全面落地 SPI Flash 持久化字库与 PSRAM LRU 缓存系统、13 种 Agent 专属动效脸、全双工 WebSocket Hub 及 Agent 伴侣界面。
 
-## 当前说明
+---
 
-- [应用文档总入口](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/README.md)
-- [当前功能/验证边界](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/current-state.md)
-- [REST与WebSocket](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/api.md)
-- [当前架构](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/architecture.md)
-- [内存预算](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/memory-budget.md)
-- [本轮重构交付](development/2026-10-05-refactor-1.1.26.md)
-- [源码架构审查](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/architecture-review.md)
-- [重构计划](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/refactor-plan.md)
-- [开发与交付](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/development.md)
+## 核心固件与协议文档
 
-## 资料与历史
+- [当前功能与交付状态（1.1.54）](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/current-state.md)
+- [REST 与 WebSocket API 规范](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/api.md)
+- [固件系统架构说明](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/architecture.md)
+- [交互子板（按键与 50Hz 原生 LED）接口规范](development/interaction-subboard-api.md)
+- [开发、编译与刷机交付指南](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/development.md)
 
-以下按路径列出全部项目docs说明；版本专题保留当时结论和证据，当前行为以前面的统一说明为准。历史验证授权不延续。
+---
 
-- [2026-10-03 改动复查](development/2026-10-03-review-and-fixes.md)
-- [摄像头色块细化（1.1.19）](development/2026-10-04-camera-detail-1.1.19.md)
-- [摄像头页停止重力旋转（1.1.21，历史策略）](development/2026-10-04-camera-fixed-rotation-1.1.21.md)
-- [摄像头安装方向与重力补偿（1.1.23）](development/2026-10-04-camera-gravity-compensation-1.1.23.md)
-- [摄像头左右校正与侧放补偿（1.1.24）](development/2026-10-04-camera-mirror-calibration-1.1.24.md)
-- [Claude 控制台设计咨询](development/2026-10-04-claude-console-design.md)
-- [文档整理与架构review（2026-10-04）](development/2026-10-04-documentation-and-refactor-review.md)
-- [图片、文字、摄像头功能测试与1.1.18交付](development/2026-10-04-functional-pages.md)
-- [LAN Screen 1.1.17 编译与安装](development/2026-10-04-install-1.1.17.md)
-- [设备触屏的摄像头第三页（1.1.20）](development/2026-10-04-native-camera-page-1.1.20.md)
-- [文字滚动与浏览器图片转换](development/2026-10-04-scroll-and-browser-upload.md)
-- [WebSocket管理面板（1.1.22）](development/2026-10-04-ws-workbench-1.1.22.md)
-- [用户开发工作方式](development/agent-work-preferences.md)
-- [自动旋转与文字 API 交付](development/auto-rotation-text.md)
-- [摄像头色块（设备第三页，1.1.24）](development/camera-color-blocks.md)
-- [社区公告与官方开发入口](development/community-reference.md)
-- [紧凑网页控制台（1.1.17，源码交付）](development/dense-web-console.md)
-- [扩展传感器 API（1.1.12，2026-10-04）](development/extended-sensor-api.md)
-- [交互子板与统一传感器接口](development/interaction-subboard-api.md)
-- [LAN Screen 首版验证记录](development/lan-screen-validation.md)
-- [LAN Screen — confirmed product baseline](development/lan-screen.md)
-- [长文字已读判定修复](development/long-message-read.md)
-- [LAN Screen 双主页面与截图](development/main-pages-and-preview.md)
-- [图片与推送文字双主页面](development/main-pages-design.md)
-- [自动切换](development/message-arrival-settings.md)
-- [姿态 API 开发与标定](development/orientation-api.md)
-- [LAN Screen 1.1.17 网页截图](development/screenshots/2026-10-04-console-1.1.17/README.md)
-- [滑动过渡](development/swipe-transitions.md)
-- [Lua 示例上传与 Vibe Mode](development/upload-and-vibe-mode.md)
-- [网页控制台重写（1.1.13，2026-10-04）](development/web-console.md)
-- [ESP-Mosaico 项目参考笔记](esp-mosaico-reference.md)
-- [ESP-Mosaico 实物观察与接线准备](hardware/2026-10-02-device-observations.md)
-- [ESP-Mosaico 网络控制台与脚本开发调查](hardware/2026-10-02-web-console.md)
+## 最新版本交付记录
 
-## 其他项目资料
+- [1.1.54 SPI Flash 持久化字库与 PSRAM LRU 动态按需缓存系统](development/2026-10-29-persistent-flash-font-1.1.54.md)
+- [1.1.53 Agent 专属工作中表情动效（13 种面孔与轮换）](development/2026-10-28-agent-avatars-1.1.53.md)
+- [1.1.48 Claude 设计 Agent 伴侣界面全新重构](development/2026-10-28-agent-companion-ui-1.1.48.md)
+- [1.1.47 卡片索引与 WebSocket RFC 合规性修复](development/2026-10-25-fix-card-index-and-ws-rfc-1.1.47.md)
+- [1.1.46 确认卡片索引精准定位与 LED 槽位寻址](development/2026-10-25-confirm-card-index-led-slot-1.1.46.md)
+- [1.1.45 全双工 WebSocket Hub 事件总线与反向直推](development/2026-10-25-websocket-hub-event-bus-1.1.45.md)
+- [1.1.44 稳定性与防假死/重启修复](development/2026-10-25-fix-freeze-reboot-1.1.44.md)
+- [1.1.43 Claude UI 设计稿一期落地](development/2026-10-25-claude-ui-design-v1.1.43.md)
+- [1.1.42 UX 体验与代码健壮性重构](development/2026-10-25-ux-code-refactor-1.1.42.md)
+- [1.1.41 SSDP / UPnP 局域网服务发现](development/2026-10-19-ssdp-upnp-discovery-1.1.41.md)
+- [1.1.40 顶栏电池死锁修复](development/2026-10-19-gui-deadlock-fix-1.1.40.md)
+- [1.1.39 电量计自愈与电池指示](development/2026-10-19-battery-ui-gauge-recovery-1.1.39.md)
 
-- [LAN Screen 1.1.42 典型 GUI 与 Claude 重设计参考包](design/gui-reference-1.1.42/README.md)
-- [Codex 实时活动屏动作样稿](design/codex-activity-motion.md)
-- [早期Lua计数示例](../apps/mosaico_lvgl_counter/README.md)
-- [实拍图片来源](../assets/photos/README.md)
-- [屏幕素材来源](../assets/screens/README.md)
-- [应用旧README归档](../vendor/esp-mosaico-vibe/projects/lan_screen/docs/history-through-1.1.24.md)
+---
+
+## 硬件与建模
+
+- [ESP-Mosaico 实物观察与硬件接线](hardware/2026-10-02-device-observations.md)
+- [多材质外壳与双色导光板 3D 打印模型](../hardware/interaction-shell-multimaterial-diffuser/)
+- [六轴 IMU 姿态校准参数](development/orientation-calibration.json)
