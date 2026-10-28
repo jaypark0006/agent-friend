@@ -86,20 +86,34 @@ python3 skills/mosaico-notify/scripts/progress.py \
 
 ## 🔨 固件开发、编译与打包分享
 
-### 1. 固件本地开发与低噪音编译
-若需对随身屏固件底层功能（LVGL 页面、传感器、WebSocket、字库与动画）进行开发，可在恢复环境后直接编译：
+### 1. 固件本地开发与编译
+
+#### 前置环境准备
+- **操作系统**：macOS / Linux / Windows (WSL2)
+- **开发工具**：Python 3.10+、Git
+- **SDK 环境**：推荐安装 [ESP-IDF v5.3+](https://docs.espressif.com/projects/esp-idf/zh_CN/latest/esp32s3/get-started/)
+  ```bash
+  # 激活 ESP-IDF 编译工具链（根据你的 IDF 安装路径）
+  . $HOME/esp/esp-idf/export.sh
+  ```
+
+#### 编译固件
+在恢复固件开发环境（`python3 scripts/restore-firmware.py`）后：
 
 ```bash
 cd vendor/esp-mosaico-vibe
 
-# 使用官方低噪音增量构建工具（耗时通常仅需 2~4 秒）
-PATH=/opt/homebrew/bin:$PATH python3 submodule/esp-mosaico-utils/mosaico-tools/skills/idf-low-noise-build/scripts/idf_low_noise_build.py \
-  --idf-path /Users/qilei/esp/esp-idf-mosaico-7b9cc1a \
+# 方式 A（推荐）：使用工程内建的低噪音增量构建工具（自动过滤高频噪音日志）
+python3 submodule/esp-mosaico-utils/mosaico-tools/skills/idf-low-noise-build/scripts/idf_low_noise_build.py \
   --project projects/lan_screen build
+
+# 方式 B：使用原生 ESP-IDF 工具构建
+cd projects/lan_screen
+idf.py build
 ```
 
 > [!NOTE]
-> 编译系统会在构建后（`POST_BUILD` 钩子）自动将 6.17 MB 的 Flash 紧凑点阵包（`screen_font_pack.bin`）4KB 边界对齐拼接至 `lan_screen.bin` 尾部，输出约 8.51 MB 的完整带持久化字库应用固件。
+> 编译系统会在构建后（`CMakeLists.txt` 中的 `POST_BUILD` 钩子）自动将 6.17 MB 的 Flash 紧凑点阵包（`screen_font_pack.bin`）4KB 边界对齐拼接至 `lan_screen.bin` 尾部，输出约 8.52 MB 的完整持久化字库应用固件。
 
 ### 2. 导出与打包固件分享（GitHub Release）
 仓库根目录提供了零依赖的便携式发布打包工具 [`scripts/export-release.py`](scripts/export-release.py)：
@@ -113,21 +127,40 @@ python3 scripts/export-release.py --version 1.1.54 --output-dir dist/release-v1.
 ```
 
 执行后将在 `dist/` 目录下生成标准发布文件包：
-- `dist/release-v1.1.54/lan_screen_v1.1.54.bin`（约 8.51 MB，已整合持久化字库）
+- `dist/release-v1.1.54/lan_screen_v1.1.54.bin`（约 8.52 MB，已整合持久化字库）
 - `dist/release-v1.1.54/SHA256SUMS`（安全校验清单）
 
 发布开源版本时，只需将该 `.bin` 文件直接作为附件拖入 GitHub Releases 即可分享给所有用户。
 
 ### 3. 用户刷机与固件更新
-- **途径 A（官方命令行工具）**：
-  ```bash
-  cd vendor/esp-mosaico-vibe
-  python3 mosaico.py iris app-update --project projects/lan_screen --device-id <DEVICE_ID> --skip-build
-  ```
-- **途径 B（通用 esptool 烧录）**：
+- **途径 A（通用 esptool 烧录，推荐所有开发者使用）**：
   ```bash
   esptool.py --chip esp32s3 -b 921600 write_flash 0x140000 dist/release-v1.1.54/lan_screen_v1.1.54.bin
   ```
+- **途径 B（原生 idf.py 烧录）**：
+  ```bash
+  cd vendor/esp-mosaico-vibe/projects/lan_screen
+  idf.py -p /dev/ttyUSB0 flash
+  ```
+- **途径 C（配套命令行工具 app-update）**：
+  ```bash
+  cd vendor/esp-mosaico-vibe
+  python3 mosaico.py iris app-update --project projects/lan_screen --skip-build
+  ```
+
+---
+
+## 🤝 参与贡献与提交 PR (Contributing)
+
+我们非常欢迎社区提交 Pull Request！请查阅详细的 [**CONTRIBUTING.md**](CONTRIBUTING.md) 贡献指南。
+
+简要流程：
+1. **Fork** 本仓库并克隆到本地；
+2. 运行 `python3 scripts/restore-firmware.py` 恢复固件工作区；
+3. 新建特性分支（`git checkout -b feature/awesome-feature`）；
+4. 修改代码并编译验证通过；
+5. 在 `vendor/esp-mosaico-vibe` 内提交 commit，然后回到根目录运行 `python3 scripts/save-firmware-history.py` 刷新归档 bundle；
+6. 在根仓库提交变更并推送至你的 Fork 仓库，发起 Pull Request！
 
 ---
 
