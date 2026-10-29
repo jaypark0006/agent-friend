@@ -57,8 +57,9 @@ python3 scripts/restore-firmware.py
 随身屏内置零依赖的 Agent 客户端脚本，位于 [`skills/mosaico-notify/`](skills/mosaico-notify/)：
 
 ```bash
-# 上报工作进度（指定专属动效脸与呼吸灯效）
+# 上报工作进度（显式指定 --id 维持任务连续性，指定专属动效脸与呼吸灯效）
 python3 skills/mosaico-notify/scripts/progress.py \
+  --id 'antigravity-refactor-01' \
   --title 'Antigravity:功能开发-重构模块' \
   --avatar antigravity \
   --progress 45 \
@@ -67,6 +68,7 @@ python3 skills/mosaico-notify/scripts/progress.py \
 
 # 向用户征求意见 / 等待物理确认（整屏橙色接管 + alert双闪，等待屏幕触摸或物理键）
 python3 skills/mosaico-notify/scripts/progress.py \
+  --id 'antigravity-refactor-01' \
   --title 'Antigravity:功能开发-重构模块' \
   --avatar antigravity \
   --status '是否批准部署到正式环境？' \
@@ -75,6 +77,7 @@ python3 skills/mosaico-notify/scripts/progress.py \
 
 # 任务收尾交付（绿色笑容 + 用时统计）
 python3 skills/mosaico-notify/scripts/progress.py \
+  --id 'antigravity-refactor-01' \
   --title 'Antigravity:功能开发-重构模块' \
   --avatar antigravity \
   --progress 100 --done \
@@ -133,9 +136,10 @@ python3 scripts/export-release.py --version 1.1.54 --output-dir dist/release-v1.
 发布开源版本时，只需将该 `.bin` 文件直接作为附件拖入 GitHub Releases 即可分享给所有用户。
 
 ### 3. 用户刷机与固件更新
-- **途径 A（通用 esptool 烧录，推荐所有开发者使用）**：
+- **途径 A（通用 esptool 烧录，写入 ota_0 应用分区 0x210000）**：
   ```bash
-  esptool.py --chip esp32s3 -b 921600 write_flash 0x140000 dist/release-v1.1.54/lan_screen_v1.1.54.bin
+  # 注：0x210000 为 partitions.csv 中 ota_0 分区的起始偏移
+  esptool.py --chip esp32s3 -b 921600 write_flash 0x210000 dist/release-v1.1.54/lan_screen_v1.1.54.bin
   ```
 - **途径 B（原生 idf.py 烧录）**：
   ```bash

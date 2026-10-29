@@ -56,8 +56,8 @@ idf.py build
 ### 3. 烧录与实机验证
 连接 ESP32-S3 设备至电脑：
 ```bash
-# 通用 esptool 烧录
-esptool.py --chip esp32s3 -b 921600 write_flash 0x140000 dist/release-v1.1.54/lan_screen_v1.1.54.bin
+# 通用 esptool 烧录至 ota_0 分区 (0x210000)
+esptool.py --chip esp32s3 -b 921600 write_flash 0x210000 dist/release-v1.1.54/lan_screen_v1.1.54.bin
 
 # 或使用 idf.py 烧录
 cd vendor/esp-mosaico-vibe/projects/lan_screen

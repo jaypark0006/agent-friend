@@ -15,8 +15,10 @@ import sys
 import time
 import urllib.request
 
-DEFAULT_MAC = '1c:29:04:d0:ad:2a'
-MAC = os.environ.get('MOSAICO_MAC', DEFAULT_MAC)
+# If MOSAICO_MAC or AGENT_FRIEND_MAC is set, enforce device binding; otherwise discover any active Agent Friend screen
+MAC = os.environ.get('MOSAICO_MAC') or os.environ.get('AGENT_FRIEND_MAC')
+if MAC:
+    MAC = MAC.lower()
 CACHE = Path.home() / '.cache/mosaico-notify/address.json'
 class NoRedirect(urllib.request.HTTPRedirectHandler):
     def redirect_request(self, *args, **kwargs):
@@ -52,7 +54,7 @@ def identify(ip):
         info = request(ip, '/api/status', timeout=1.5)
         if info.get('app') == 'lan_screen':
             neighbor_mac = neighbors().get(ip)
-            if not MAC or not neighbor_mac or neighbor_mac == MAC:
+            if not MAC or not neighbor_mac or neighbor_mac.lower() == MAC:
                 return ip
         return None
     except Exception:
@@ -98,14 +100,18 @@ def save_cache(ip):
 
 def discover(explicit):
     candidates = [explicit] if explicit else []
-    ssdp_ip = ssdp_discover(timeout=0.5)
-    if ssdp_ip:
-        candidates.append(ssdp_ip)
-    candidates += [ip for ip, mac in neighbors().items() if mac == MAC]
     try:
         candidates.append(json.loads(CACHE.read_text())['ip'])
     except (OSError, ValueError, KeyError):
         pass
+    ssdp_ip = ssdp_discover(timeout=0.5)
+    if ssdp_ip:
+        candidates.append(ssdp_ip)
+    if MAC:
+        candidates += [ip for ip, mac in neighbors().items() if mac.lower() == MAC]
+    else:
+        candidates += list(neighbors().keys())
+    candidates.append('192.168.5.92')
     candidates.append('192.168.5.61')
     for ip in dict.fromkeys(x for x in candidates if x):
         if identify(ip):

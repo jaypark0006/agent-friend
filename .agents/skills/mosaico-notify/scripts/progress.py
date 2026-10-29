@@ -104,37 +104,45 @@ class WebSocketHubClient:
         return res
 
     def wait_task_action(self, task_id, timeout=60):
-        self.sock.settimeout(timeout)
-        deadline = time.time() + timeout
-        while time.time() < deadline:
-            hdr = self._read_exact(2)
-            b1, b2 = hdr[0], hdr[1]
-            opcode = b1 & 0x0F
-            masked = (b2 & 0x80) != 0
-            payload_len = b2 & 0x7F
-            if payload_len == 126:
-                ext = self._read_exact(2)
-                payload_len = int.from_bytes(ext, 'big')
-            elif payload_len == 127:
-                ext = self._read_exact(8)
-                payload_len = int.from_bytes(ext, 'big')
-            mask_key = self._read_exact(4) if masked else None
-            payload = self._read_exact(payload_len)
-            if masked:
-                payload = bytes(b ^ mask_key[i % 4] for i, b in enumerate(payload))
+        deadline = time.monotonic() + timeout
+        while True:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                return None
+            try:
+                self.sock.settimeout(max(0.05, remaining))
+                hdr = self._read_exact(2)
+                b1, b2 = hdr[0], hdr[1]
+                opcode = b1 & 0x0F
+                masked = (b2 & 0x80) != 0
+                payload_len = b2 & 0x7F
+                if payload_len == 126:
+                    ext = self._read_exact(2)
+                    payload_len = int.from_bytes(ext, 'big')
+                elif payload_len == 127:
+                    ext = self._read_exact(8)
+                    payload_len = int.from_bytes(ext, 'big')
+                mask_key = self._read_exact(4) if masked else None
+                payload = self._read_exact(payload_len)
+                if masked:
+                    payload = bytes(b ^ mask_key[i % 4] for i, b in enumerate(payload))
 
-            if opcode == 0x8: # Close
+                if opcode == 0x8: # Close
+                    break
+                elif opcode == 0x9: # Ping -> Pong with identical payload, masked
+                    self._send_frame(0xA, payload)
+                elif opcode == 0x1: # Text
+                    try:
+                        msg = json.loads(payload.decode('utf-8', errors='replace'))
+                        if msg.get('type') == 'event' and msg.get('event') == 'task.action':
+                            if not task_id or msg.get('id') == task_id:
+                                return msg
+                    except Exception:
+                        pass
+            except (socket.timeout, TimeoutError):
+                return None
+            except Exception:
                 break
-            elif opcode == 0x9: # Ping -> Pong with identical payload, masked
-                self._send_frame(0xA, payload)
-            elif opcode == 0x1: # Text
-                try:
-                    msg = json.loads(payload.decode('utf-8', errors='replace'))
-                    if msg.get('type') == 'event' and msg.get('event') == 'task.action':
-                        if not task_id or msg.get('id') == task_id:
-                            return msg
-                except Exception:
-                    pass
         return None
 
     def close(self):
@@ -177,7 +185,11 @@ def main():
         print("Device not found on local network", file=sys.stderr)
         sys.exit(1)
 
-    task_id = args.id or "task-1"
+    if not args.id:
+        agent_prefix = args.avatar or args.agent or "task"
+        task_id = f"{agent_prefix}-{int(time.time())}"
+    else:
+        task_id = args.id
     task_title = args.title or (f"[{args.agent}] Task" if args.agent else "Task")
 
     payload = {
@@ -246,16 +258,28 @@ def main():
                 decision_event = ws.wait_task_action(task_id, timeout=args.timeout)
             else:
                 # If WS was unavailable, fallback to bounded HTTP polling with strict deadline
-                deadline = time.time() + args.timeout
-                while time.time() < deadline:
-                    time.sleep(0.5)
-                    st = request(ip, "/api/widget", timeout=3)
-                    for it in st.get("agents", []):
-                        if it.get("id") == task_id:
-                            res_val = it.get("action", {}).get("result")
-                            if res_val:
-                                decision_event = {"choice": res_val, "action": res_val, "trigger": "http", "id": task_id}
-                                break
+                deadline = time.monotonic() + args.timeout
+                while True:
+                    remaining = deadline - time.monotonic()
+                    if remaining <= 0:
+                        break
+                    time.sleep(min(0.5, remaining))
+                    try:
+                        st = request(ip, "/api/widget", timeout=min(3.0, max(0.5, remaining)))
+                        for it in st.get("agents", []):
+                            if it.get("id") == task_id:
+                                res_val = it.get("action", {}).get("result")
+                                if res_val:
+                                    action_name = "approve" if res_val == args.btn1 else "cancel"
+                                    decision_event = {
+                                        "choice": res_val,
+                                        "action": action_name,
+                                        "trigger": "http",
+                                        "id": task_id
+                                    }
+                                    break
+                    except Exception:
+                        pass
                     if decision_event:
                         break
         finally:
@@ -266,6 +290,8 @@ def main():
             print(json.dumps({
                 "ip": ip,
                 "decision": decision_event.get("choice", decision_event.get("action")),
+                "action": decision_event.get("action", "approve"),
+                "choice": decision_event.get("choice", ""),
                 "trigger": decision_event.get("trigger", "ws"),
                 "task_id": decision_event.get("id", task_id),
                 "event": decision_event
