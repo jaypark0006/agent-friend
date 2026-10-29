@@ -71,4 +71,4 @@ description: 发现并连接用户的 Agent Friend 桌面伴侣屏幕与物理�
 
 6. **全双工 WebSocket 事件总线（ws://<DEVICE_IP>/ws/hub）**：
    - **统一接入中枢**：`ws://<DEVICE_IP>/ws/hub`，一条长连接多路复用支持下行 RPC（`widget.update`, `view.switch`, `led.set`, `config.set`）与确定性 ACK；
-   - **反向事件实时推送（消灭轮询）**：当用户在屏幕上点击批准/取消，或按压副板左右物理键时，设备立即向客户端推送 `{"type":"event","event":"task.action","id":"...","action":"approve"|"cancel","choice":"...","trigger":"physical_button_left"|"physical_button_right"|"touch"}`。建议先建立 WS 监听再发确认卡片，杜绝确认窗口期遗漏。
+   - **反向事件实时推送（消灭轮询）**：当用户在屏幕或网页控制台点击批准/取消，或按压副板左右物理键时，设备立即向客户端推送 `{"type":"event","event":"task.action","id":"...","action":"approve"|"cancel","choice":"...","trigger":"physical_button_left"|"physical_button_right"|"touch"|"web"}`。建议先建立 WS 监听再发确认卡片，杜绝确认窗口期遗漏。
