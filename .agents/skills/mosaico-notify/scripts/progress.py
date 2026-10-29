@@ -161,8 +161,9 @@ class WebSocketHubClient:
 def main():
     p = argparse.ArgumentParser(description="Report task progress to Mosaico screen")
     p.add_argument("--id", default=None, help="Unique task/conversation identifier (decided by agent)")
-    p.add_argument("--title", default=None, help="Task title on screen (recommended: <Agent>:<Session>-<Task>, concise <=22 CJK chars)")
-    p.add_argument("--agent", default=None, help="Optional agent identity (e.g. Antigravity, Codex)")
+    p.add_argument("--title", default=None, help="The task only, e.g. 'Fix card index' (<=12 CJK chars fit one list row); omitted keeps the title on screen")
+    p.add_argument("--agent", default=None, help="Agent display name, e.g. Antigravity, Codex, Claude Code")
+    p.add_argument("--session", default=None, help="Session or project name, the same for every task of a session; empty string clears it")
     p.add_argument("--avatar", default=None, help="Explicit working-face key; empty string resets to generic")
     p.add_argument("--status", default="", help="Current action description")
     p.add_argument("--progress", type=int, default=-1, help="0..100 progress percentage, or -1")
@@ -190,20 +191,22 @@ def main():
         task_id = f"{agent_prefix}-{int(time.time())}"
     else:
         task_id = args.id
-    task_title = args.title or (f"[{args.agent}] Task" if args.agent else "Task")
-
     payload = {
         "id": task_id,
-        "title": task_title,
         "status": args.status,
         "progress": args.progress,
         "color": args.color,
         "show": True
     }
+    # Without a title the device keeps the current one ("Task" for a new card).
+    if args.title:
+        payload["title"] = args.title
+    if args.agent is not None:
+        payload["agent"] = args.agent
+    if args.session is not None:
+        payload["session"] = args.session
     if args.badge:
         payload["badge"] = args.badge
-    elif args.agent:
-        payload["badge"] = args.agent
     if args.avatar is not None:
         payload["avatar"] = args.avatar
     if args.confirm:

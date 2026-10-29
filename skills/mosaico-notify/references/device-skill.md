@@ -19,8 +19,10 @@ POST /api/widget HTTP/1.1
 Content-Type: application/json
 
 {
-  "id": "coder",                // Unique agent ID (required for multi-agent)
-  "title": "Backend Coder",     // Agent display name
+  "id": "coder-turn-3",         // Unique task ID chosen by the agent (not shown)
+  "agent": "Codex",             // Agent display name
+  "session": "Backend",         // Optional session or project name
+  "title": "Compile firmware",  // The task
   "status": "Compiling...",     // Current action / status text
   "progress": 68,               // 0..100 integer (-1 to hide progress bar)
   "badge": "RUNNING",          // Status pill (e.g. IDLE, RUNNING, DONE)
@@ -41,8 +43,10 @@ from urllib.request import Request, urlopen
 import json
 
 payload = {
-    "id": "coder",
-    "title": "Backend Coder",
+    "id": "coder-turn-3",
+    "agent": "Codex",
+    "session": "Backend",
+    "title": "Compile firmware",
     "status": "Compiling firmware artifacts...",
     "progress": 68,
     "color": "#39e69d",
@@ -58,7 +62,7 @@ urlopen(req, timeout=3)
 ```sh
 curl -X POST http://{{DEVICE_IP}}/api/widget \
   -H "Content-Type: application/json" \
-  -d '{"id":"test-agent","title":"Test Runner","status":"All 42 tests passed","progress":100,"badge":"DONE","color":"#39e69d"}'
+  -d '{"id":"test-agent","agent":"Codex","session":"Backend","title":"Run tests","status":"All 42 tests passed","progress":100,"badge":"DONE","color":"#39e69d"}'
 ```
 
 ## 2. Text Message Feed (POST /api/text)
