@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mosaico-mcp"
+version = "2.0.0"
+description = "Official zero-dependency Model Context Protocol (MCP) Server for ESP-Mosaico (Agent Friend) 2.0: 7,318-glyph CJK/Kana typesetting, Physical Blackboard for Multi-Agent Teams, L/R button decisions, 1s read receipts, and 480x480 AMOLED canvas."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Mosaico / Agent Friend Contributors"}
+]
+keywords = [
+    "mcp",
+    "model-context-protocol",
+    "esp-mosaico",
+    "agent-friend",
+    "multi-agent",
+    "blackboard",
+    "hardware-companion",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+]
+dependencies = []
+
+[project.optional-dependencies]
+image = ["Pillow>=10.0.0"]
+dev = ["pytest>=7.0.0"]
+
+[project.scripts]
+mosaico-mcp = "mosaico_mcp.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["mosaico_mcp*"]
