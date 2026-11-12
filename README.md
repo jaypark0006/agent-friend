@@ -2,7 +2,7 @@
 
 Agent Friend 把 AI 助手的任务进度、消息和确认请求放到桌面上的 480×480 触摸屏。你可以在屏幕、交互副板左右按键或网页控制台上处理确认，也可以直接推送文字和图片。
 
-当前设备上机安装版本为 **1.1.59**（2026-11-12，官方 `iris app-update` 刷入 normal/healthy，见[交付记录](docs/development/2026-11-12-mcp-blackboard-1.1.59.md)）；提供本地标准 MCP Server `mcp/`、板载无状态 `POST /mcp`、mDNS `mosaico.local`、物理共享黑板与双向消息收件箱，已完成真机端到端联调全绿验证。
+当前设备上机安装版本为 **1.1.60**（2026-11-12，官方 `iris app-update` 刷入 normal/healthy，见[交付记录](docs/development/2026-11-12-touch-scroll-fix-1.1.60.md)）；定位并根治 LVGL 9 触控滚动穿透根因，消息列表与任务列表触控跟手 1:1 顺滑滑动，防误触双重拦截已完成真机端到端联调全绿验证。提供本地标准 MCP Server `mcp/`、板载无状态 `POST /mcp`、mDNS `mosaico.local`、物理共享黑板与双向消息收件箱。
 
 ## 开始使用
 
