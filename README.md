@@ -1,94 +1,109 @@
-# Agent Friend · Mosaico 随身屏
+# Agent Friend · Mosaico 桌面智能体随身伴侣
 
-Agent Friend 把 AI 助手的任务进度、消息和确认请求放到桌面上的 480×480 触摸屏。你可以在屏幕、交互副板左右按键或网页控制台上处理确认，也可以直接推送文字和图片。
+Agent Friend 是一款专为开发者与 AI 智能体设计的物理桌面伴侣终端。它通过一块 480×480 高清触控彩屏与实体交互按键，将 AI 助手的任务进度、关键决策人机审批、双向收件箱及多智能体协作黑板带到现实桌面。
 
-当前设备上机安装版本为 **1.1.60**（2026-11-12，官方 `iris app-update` 刷入 normal/healthy，见[交付记录](docs/development/2026-11-12-touch-scroll-fix-1.1.60.md)）；定位并根治 LVGL 9 触控滚动穿透根因，消息列表与任务列表触控跟手 1:1 顺滑滑动，防误触双重拦截已完成真机端到端联调全绿验证。提供本地标准 MCP Server `mcp/`、板载无状态 `POST /mcp`、mDNS `mosaico.local`、物理共享黑板与双向消息收件箱。
+当前物理设备运行版本为 **1.1.61**（官方通道刷入 normal/healthy，详见[交付记录](docs/development/2026-11-12-fix-home-black-and-readme-1.1.61.md)）。
 
-## 开始使用
+---
 
-已经装好固件的设备，接入 Wi-Fi 后即可使用。让电脑或手机连接同一局域网，在浏览器打开设备 IP 或 `http://mosaico.local/`。
+## 核心亮点
 
-本机设备当前入口：**[打开网页控制台](http://192.168.5.42/)**（`http://mosaico.local/`）。IP 变化时，在设备顶栏或下拉控制中心的设备信息中查看新地址。
+- **高清触控与原生排版**：480×480 CO5300 触控彩屏，内置 7,318 汉字与假名点阵字库（Noto Sans SC 20/24/32px 原生点阵，SPI Flash 存储与动态 LRU 缓存），排版清晰跟手。
+- **6 颗高亮 RGB 情绪光环**：50Hz 原生硬件动效，实时呈现工作流水、推理呼吸、成功庆祝与警示双闪等动态光效。
+- **板载零安装标准 HTTP MCP**：固件内置原生 Streamable HTTP 端点（`http://mosaico.local/mcp`），主流 AI 客户端免装环境秒级直连。
+- **多智能体物理共享黑板（Shared Blackboard）**：支持跨智能体异步发布与订阅（`board_post` / `board_read`），多 Agent 无缝协作。
+- **人机在环物理裁决**：屏幕触控与副板实体按键（L / R）双模裁决，告别网页来回切换；机身橙色按键支持一键星标收藏与唤醒。
+- **全双工 WebSocket 事件总线**：毫秒级反向事件推送，裁决动作、切页与姿态变化即时直达。
 
-| 入口 | 用途 |
+---
+
+## 开机即用（浏览器控制台）
+
+将设备接入局域网 Wi-Fi 后，在同网络电脑或手机的浏览器中打开：
+
+👉 **[http://mosaico.local/](http://mosaico.local/)**（或访问设备顶栏显示的局域网 IP）
+
+| 控制台入口 | 主要功能 |
 | --- | --- |
-| 此刻 | 看正在做的事、任务列表、待确认请求和随身屏画面 |
-| 推送 | 发文字或收件箱留言、查看黑板回复与已读回执、粘贴或选择图片 |
-| 设备 | 调整自动跳转、灯光提示、画面角标，控制灯光及查看传感器 |
-| 开发者 | HTTP、WebSocket、镜头色块和模拟 Agent 工具 |
+| **此刻 (`#now`)** | 聚焦当前最重要任务、待审批主卡、任务列表与屏幕实时镜像 |
+| **推送 (`#send`)** | 发送高排印文字信笺、双向收件箱留言、查看黑板回复与回执、拖拽图片 |
+| **设备 (`#device`)** | 控制开关、6 颗 RGB 情绪灯光工作台、设备网络状态与折叠硬件诊断抽屉 |
+| **开发者 (`#dev`)** | REST API 测试台、WebSocket 实时总线、模拟智能体工作流 |
 
-完整操作见[使用指南](docs/user-guide.md)。
+完整交互与界面说明请参阅 **[使用指南](docs/user-guide.md)**。
+
+---
 
 ## 让 AI 助手接入
 
-### 方式一：标准 MCP 极速接入（推荐）
+### 方式一：板载原生 HTTP MCP 直连（推荐，零安装）
 
-支持 MCP 的客户端（Claude Desktop / Claude Code / Cursor / Codex / Antigravity 等）可通过标准 `stdio` 接入仓库内的零外部依赖 [Python MCP Server](mcp/README.md)（自动通过 mDNS `mosaico.local` 与 SSDP 发现局域网设备，也可设 `MOSAICO_HOST=<设备IP>`）：
+任何支持 Streamable HTTP MCP 的客户端（如 Claude Code、Cursor、Antigravity、Dify 等），均可直接填入设备的本地端点进行配置：
 
 ```json
 {
   "mcpServers": {
     "mosaico": {
-      "command": "uvx",
-      "args": ["--from", "./mcp", "mosaico-mcp"]
+      "url": "http://mosaico.local/mcp"
     }
   }
 }
 ```
 
-无 `uvx` 环境可直接将 `command` 设为 `"python3"`、`args` 设为 `["-m", "mosaico_mcp"]`（配合 `PYTHONPATH=./mcp`）。此外，1.1.59 固件内置无状态 Streamable HTTP 端点 `POST http://mosaico.local/mcp`（或 `http://<设备IP>/mcp`），支持远程 HTTP MCP 客户端零安装直连。
+内置丰富工具与资源：
+- **消息与收件箱**：`send_message`（投递富文本信笺与快捷回信胶囊）、`read_inbox_and_receipts`（读取人类回信与已读状态）；
+- **人机在环裁决**：`ask_human_decision`（触发整屏待确认态，等待人类实体键或触屏审批）；
+- **多智能体黑板**：`board_post`（在物理共享黑板发布结构化便签）、`board_read`（读取黑板内容）；
+- **智能体座席与画布**：`update_agent_seat`（注册 Agent 点阵面孔与任务状态）、`push_canvas`（投送 480×480 图片画布）。
 
-提供 8 个标准工具（`send_message`、`ask_human_decision`、`update_agent_seat`、`push_canvas`、`read_inbox_and_receipts`、`board_post`、`board_read`、`board_wait`）与 4 个资源（`mosaico://board`、`mosaico://inbox`、`mosaico://receipts`、`mosaico://status`），支持多 Agent 零轮询共享物理黑板协作与人机双向收件箱。
+*注：若你的客户端仅支持本地标准输入输出（`stdio`）通道或需要长连接阻塞监听，请参阅可选桥接模块文档 [`mcp/README.md`](mcp/README.md)。*
 
-### 方式二：设备自描述 `/skills` 接入
+### 方式二：一句话自描述接入（`/skills`）
 
-把下面这段话交给你使用的 AI 助手，并按设备当前地址替换 IP：
+向你的 AI 助手发送以下提示词（若未配置 mDNS，可将 `mosaico.local` 替换为设备屏幕顶栏 IP）：
 
-> 请读取 http://192.168.5.42/skills 并按其中的协议连接我的 Agent Friend 随身屏。每个新任务使用独立 ID，持续更新同一任务的进度，分别填写 agent、session、title；任务结束标记 done。需要我决定时先建立 WebSocket 监听，再发送待确认任务，并根据实际批准或取消事件继续。不要把超时当作批准。
+> 请读取 `http://mosaico.local/skills` 并连接我的桌面随身屏。在每个新任务中上报进度；需要我决策或审批时，使用待确认卡片并在随身屏呈现选项，等待我通过实体按键或屏幕触控裁决。
 
-设备自身提供协议说明，能调用局域网 HTTP / WebSocket 的助手可直接接入。仓库也提供可选的 [Python 通知脚本](skills/mosaico-notify/)；日常使用无需安装 ESP-IDF 或恢复固件源码。
+---
 
-## 设备操作与双向收件箱
+## 设备交互指南
 
-- 左右滑动在「此刻 → 任务 → 消息 → 画面」四个主页面间切换，不循环。
-- 顶部下拉打开控制中心，调整亮度、Wi-Fi 和设备设置，或进入镜头。
-- 待确认或待回看时，按屏上选项、交互副板 L/R 键或网页控制台决定；Agent 必须收到对应任务的事件才能继续。
-- **双向消息收件箱与物理黑板**：在网页控制台「推送」页开启「投递到 Agent 收件箱」可向 Agent 发送留言并预设左右快捷回复词；在随身屏「消息」页浏览便签满 1 秒自动回传已读回执（`read: true`），按副板 L/R 键可一键回复便签，短按机身橙色 AI 键可标星收藏（`★`），多 Agent 可通过共享黑板游标（`seq`）实时接力。
-- 任务、图片和消息历史在 RAM 中，重启后清空；Wi-Fi 和已保存的配置保留。
+- **主界面滑动手势**：四主页水平滑动切换，依次为：
+  `此刻`（Now） ⇄ `任务`（Tasks） ⇄ `消息`（Messages） ⇄ `画面`（Canvas）
+- **控制中心**：从屏幕顶部边缘往下滑动，呼出全屏控制抽屉，可调节背光亮度、查看 Wi-Fi 信号及进入相机模式。
+- **实体左右按键（L / R）**：在待确认任务时分别对应「批准 / 取消」；在消息界面对应便签底部的两个快捷回复胶囊。
+- **侧边橙色按键**：短按为当前浏览的消息打上星标收藏（`★`），或在屏幕休眠时即刻唤醒。
 
-硬件基于 **ESP-Mosaico / ESP32-S31**、480×480 CO5300 触摸屏；交互副板提供左右输入和 6 颗 RGB LED。摄像头为可选模块。不能将本项目作为 ESP32-S3 通用固件使用。
+---
 
-## 固件开发与安装
+## 硬件规格
 
-仅在开发或给另一台设备安装时需要恢复源码：
+- **核心主控**：ESP-Mosaico 架构芯片（`esp32s31`），集成高主频双核处理器与硬件加密引擎。
+- **显示模组**：480×480 CO5300 触控显示屏，支持全视角高刷新率渲染与硬件 DMA 传输。
+- **存储配置**：板载 16MB Flash 与高速 PSRAM。
+- **交互外设**：6 颗高亮 RGB LED 氛围灯珠、左右双物理按键、侧边按键、红外避障与体感姿态传感器。
+- **网络连接**：2.4GHz Wi-Fi 与低功耗蓝牙，原生支持 mDNS 域名解析与 SSDP 服务发现。
 
-```sh
-git clone https://github.com/jaypark0006/agent-friend.git
-cd agent-friend
-python3 scripts/restore-firmware.py
-```
+---
 
-目标为 `esp32s31`，ESP-IDF 固定提交为 `7b9cc1ac79f865983f59bb8ff3ff43eb74ff1dbe`。编译、依赖和安装步骤见[开发与交付](vendor/esp-mosaico-vibe/projects/lan_screen/docs/development.md)。设备写入统一使用 `python3 mosaico.py`：相同完整分区布局的应用更新使用 `iris app-update`；首次安装、新布局或外部资源变更按官方 `recover` / `iris system-update` 流程执行。
+## 固件升级与二次开发
 
-导出当前构建产物和校验和：
+- **固件升级**：普通用户可直接从 [GitHub Releases](https://github.com/jaypark0006/agent-friend/releases) 或仓库 `dist/` 目录下载打包好的最新固件二进制文件进行更新。
+- **二次开发**：固件源码、系统分区表、编译工具链及底层调试流程请参考 **[开发指南](vendor/esp-mosaico-vibe/projects/lan_screen/docs/development.md)** 与 **[贡献指南](CONTRIBUTING.md)**。
 
-```sh
-python3 scripts/export-release.py
-```
+---
 
-导出包保存在 `dist/release-v<版本>/`。本次本地导出不等于已经发布到 GitHub Releases。
+## 文档索引
 
-## 文档与源码
+- **[使用指南](docs/user-guide.md)**：日常功能使用与界面操作详解。
+- **[本地 MCP 模块说明](mcp/README.md)**：本地桥接工具与多智能体实战示例。
+- **[当前功能与交付状态](vendor/esp-mosaico-vibe/projects/lan_screen/docs/current-state.md)**：实机运行版本与功能演进记录。
+- **[REST 与 WebSocket API](vendor/esp-mosaico-vibe/projects/lan_screen/docs/api.md)**：设备网络协议完整规范。
+- **[硬件设计参考](docs/esp-mosaico-reference.md)** 与 **[外壳 3D 模型](hardware/)**：结构尺寸与 3D 打印模型。
+- **[贡献指南](CONTRIBUTING.md)**：项目规范与代码贡献说明。
 
-- [使用指南](docs/user-guide.md)
-- [标准 MCP Server 说明与多 Agent 示例](mcp/README.md)
-- [当前功能与安装状态](vendor/esp-mosaico-vibe/projects/lan_screen/docs/current-state.md)
-- [REST / WebSocket 接口](vendor/esp-mosaico-vibe/projects/lan_screen/docs/api.md)
-- [1.1.58 人工验收清单](vendor/esp-mosaico-vibe/projects/lan_screen/docs/acceptance-1.1.58.md)
-- [应用文档索引](vendor/esp-mosaico-vibe/projects/lan_screen/docs/README.md)
-- [硬件参考](docs/esp-mosaico-reference.md)与[外壳模型](hardware/)
-- [贡献指南](CONTRIBUTING.md)
+---
 
-固件源码在 `vendor/esp-mosaico-vibe` 子仓库。每次提交后，外层仓库保存子模块指针和 `dependencies/esp-mosaico-vibe.bundle`，便于恢复本地提交。
+## 开源许可
 
-项目源码采用 [MIT](LICENSE) 许可。底层依赖按各自许可，字体资产遵循 SIL Open Font License 1.1。
+本项目源码采用 [MIT License](LICENSE) 许可协议。第三方依赖组件遵循各自开源协议，字体资产遵循 SIL Open Font License 1.1。

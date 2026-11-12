@@ -2,7 +2,7 @@
 
 ## 1. 文档与架构入口
 
-- **当前基线版本**：`1.1.60`（见最新交付记录 [2026-11-12-touch-scroll-fix-1.1.60.md](docs/development/2026-11-12-touch-scroll-fix-1.1.60.md) 与 [2026-11-12-mcp-blackboard-1.1.59.md](docs/development/2026-11-12-mcp-blackboard-1.1.59.md)）。
+- **当前基线版本**：`1.1.61`（见最新交付记录 [2026-11-12-fix-home-black-and-readme-1.1.61.md](docs/development/2026-11-12-fix-home-black-and-readme-1.1.61.md) 与 [2026-11-12-touch-scroll-fix-1.1.60.md](docs/development/2026-11-12-touch-scroll-fix-1.1.60.md)）。
 - **历史演进归档**：历次版本交付摘要已归档至 [版本交付与历史演进归档](docs/development/release-history.md)，不再堆积于本文件。
 - **核心架构与 API**：
   - 固件工程目录：`vendor/esp-mosaico-vibe/projects/lan_screen`
